@@ -6,7 +6,7 @@ _New widget:_ *HRegExTextBox*
   # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
 *HSimpleList*
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
-  # Sort function to HSimpleList
+  # ~~Sort function to HSimpleList~~
   # Implement SelectionType ( One, Multi, None ), SelectionObjectCollection, SelectionIndexCollection
 
 _New widget:_ *HSimpleComboBox*
