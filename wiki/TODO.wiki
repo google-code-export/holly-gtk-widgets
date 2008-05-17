@@ -1,3 +1,4 @@
-  # AddRange function at HSimpleList.ObjectCollection and implement IEnumerable
+*HSimpleList*
+  # AddRange function at ObjectCollection and implement IEnumerable
   # Sort function to HSimpleList
-  
+  # Implement SelectionType ( One, Multi, None ), SelectionObjectCollection, SelectionIndexCollection
