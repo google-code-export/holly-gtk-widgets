@@ -7,7 +7,7 @@ _New widget:_ *HRegExTextBox*
 *HSimpleList*
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
   # ~~Sort function to HSimpleList~~
-  # Implement SelectionType ( One, Multi, None ), SelectionObjectCollection, SelectionIndexCollection
+  # ~~Implement SelectionType ( One, Multi, None ), add a method like object[] getSelectedItems() and int[] getSelectedIndexes()~~
   # write a page on the wiki with examples/screenshots for each feature
 
 _New widget:_ *HSimpleComboBox*
