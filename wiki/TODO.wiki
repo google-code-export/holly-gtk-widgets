@@ -1,5 +1,3 @@
-= TODO List =
-
   # AddRange function at HSimpleList.ObjectCollection and implement IEnumerable
   # Sort function to HSimpleList
   
