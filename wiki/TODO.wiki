@@ -2,3 +2,13 @@
   # AddRange function at ObjectCollection and implement IEnumerable
   # Sort function to HSimpleList
   # Implement SelectionType ( One, Multi, None ), SelectionObjectCollection, SelectionIndexCollection
+
+_New widget:_ *HSimpleComboBox*
+  # as much as similar to the winforms combobox
+  # DropDownHeight/DropDownWidth properties
+  # acces to popup list MeasureItem and DrawItem events 
+  # SelectedText, SelectedItem, SelectedIndex properties
+  # DisplayMember, ValueMember posibility to bound to a datasource
+
+_New widget:_ *HSimpleTree*
+  # as much as similar to the swt tree 
