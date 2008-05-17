@@ -129,12 +129,13 @@ namespace HollyLibrary
 			float fRadMin     = (dateTime.Minute)*6*PI / 180;
 			float fRadSec     = (dateTime.Second)*6*PI / 180;
 
+			
 			Cairo.PointD center = new Cairo.PointD( fCenterX, fCenterY );
+			
 			DrawCenterCircle( center, ( fRadius / 2 ) + 10, 6, CairoUtil.ColorFromHexa("#d5cab6", 0.8 ), e );
 			DrawCenterCircle( center, ( fRadius / 2 ) + 15, 1, CairoUtil.ColorFromHexa("#8f857b"), e );
 			DrawCenterCircle( center, ( fRadius / 2 ) + 16, 2, CairoUtil.ColorFromHexa("#d5cab6"), e );
 			DrawCenterCircle( center, ( fRadius / 2 ) + 17, 1, CairoUtil.ColorFromHexa("#8f857b"), e );
-
 			
 			
 			DrawLine( this.fHourTickness, this.fHourLength, hrColor , fRadHr , e );

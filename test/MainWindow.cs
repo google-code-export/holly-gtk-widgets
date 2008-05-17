@@ -16,15 +16,12 @@ public partial class MainWindow: Gtk.Window
 		this.hdateedit1.DateTimeFormatType = HollyLibrary.DateTimeFormatTypeEnum.ShortDate;
 		this.hdateedit1.CurrentDate        = DateTime.Now;
 		//
-		//this.hsimplelist1.OnMeasureItem += new HollyLibrary.MeasureItemEventHandler(this.OnHsimplelist1OnMeasureItem);
-        //this.hsimplelist1.OnDrawItem    += new HollyLibrary.DrawItemEventHandler(this.OnHsimplelist1OnDrawItem);
-		
-		//this.hfontpicker1.FontChange += new HollyLibrary.FontEventHandler(this.OnHfontpicker1FontChange);
 		for( int i = 0; i < 1000; i++ )
 		{
 			hsimplelist1.Items.Add( "my item " + i );
 		}
 		hsimplelist1.Items[10] = "my modified item!";
+		hsimplelist1.Items.Clear();
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -50,7 +47,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnButton2Clicked (object sender, System.EventArgs e)
 	{
-		
+		hsimplelist1.Sort();
 	}
 
 	protected virtual void OnHsimplelist1OnMeasureItem (object sender, HollyLibrary.MeasureItemEventArgs args)

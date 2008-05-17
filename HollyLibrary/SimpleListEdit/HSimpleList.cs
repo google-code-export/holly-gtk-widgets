@@ -44,7 +44,7 @@ namespace HollyLibrary
 			this.Items.OnItemAdded   += new ListAddEventHandler( this.on_item_added   );
 			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed );
 			this.items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated );
-			this.items.OnClear       += new EventHandler( this.on_list_cleared );
+			this.items.ClearList     += new EventHandler( this.on_list_cleared );
 		}
 		
 		private void RenderListItem (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter)
@@ -147,6 +147,20 @@ namespace HollyLibrary
 			selectedIndex = getSelectedIndex();
 			if( OnSelectedIndexChanged != null ) 
 				OnSelectedIndexChanged( this, new EventArgs() );
+		}
+		
+		public void Sort()
+		{
+			Items.Sort();
+			store.Clear();
+			foreach( object obj in Items ) store.AppendValues( obj );
+		}
+		
+		public void Sort( IComparer comparer )
+		{
+			Items.Sort( comparer );
+			store.Clear();
+			foreach( object obj in Items ) store.AppendValues( obj );
 		}
 
 		public int ItemHeight 

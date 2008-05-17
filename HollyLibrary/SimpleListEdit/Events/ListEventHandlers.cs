@@ -11,14 +11,18 @@ namespace HollyLibrary
 		private object new_value;
 		private int index;
 		
-		public object NewValue {
-			get {
+		public object NewValue 
+		{
+			get 
+			{
 				return new_value;
 			}
 		}
 
-		public int Index {
-			get {
+		public int Index 
+		{
+			get
+			{
 				return index;
 			}
 		}

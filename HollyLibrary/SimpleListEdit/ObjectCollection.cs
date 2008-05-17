@@ -10,84 +10,78 @@ using HollyLibrary;
 namespace HollyLibrary
 {
 
-	public class ObjectCollection 
+	public class ObjectCollection : CollectionBase
 	{
-		
-		List<object> inner = new List<object>();
 		
 		public event ListAddEventHandler OnItemAdded;
 		public event ListRemoveEventHandler OnItemRemoved;
 		public event ListUpdateEventHandler OnItemUpdated;
-		public event EventHandler OnClear;
+		public event EventHandler ClearList;
+		
+
+		public void AddRange( object[] objects )
+		{
+			foreach( object obj in objects )
+			{
+				this.Add( obj );
+			}
+		}
 		
 		public void Add (object item)
 		{
-			inner.Add(item);
+			
+			List.Add(item);
 			if( OnItemAdded != null ) 
 				OnItemAdded( this, new ListAddEventArgs( item ) );
-		}
-		
-		public List<object> InnerList
-		{
-			get
-			{
-				return inner;
-			}
 		}
 		
 		public object this[int index]
 		{
 			get
 			{
-				return inner[index];
+				return this.List[index];
 			}
 			set
 			{
-				inner[index] = value;
+				this.List[index] = value;
 				if( OnItemUpdated != null) 
 					OnItemUpdated( this, new ListUpdateEventArgs( index, value ) );
 			}
 		}
 		
+		internal void Sort()
+		{
+			this.InnerList.Sort();
+		}
+		internal void Sort( IComparer comparer )
+		{
+			this.InnerList.Sort(comparer);
+		}
+	
+		
 		public void Remove( object item )
 		{
-			int index = inner.IndexOf(item);
-			inner.Remove(item);
+			int index = this.List.IndexOf(item);
+			this.List.Remove(item);
 			if( OnItemRemoved != null ) 
 				OnItemRemoved( this, new ListRemoveEventArgs( index ) );
-		}
-		
-		public void RemoveAt(int index)
-		{
-			inner.RemoveAt(index);
-			if( OnItemRemoved != null ) 
-				OnItemRemoved( this, new ListRemoveEventArgs( index ) );
-		}
-		
-		public void Clear()
-		{
-			inner.Clear();
-			if( OnClear != null ) OnClear( this, new EventArgs() );
 		}
 		
 		public bool Contains (object item)
 		{
-			return inner.Contains(item);
+			return this.List.Contains(item);
 		}
 		
 		public int IndexOf( object item )
 		{
-			return inner.IndexOf(item);
+			return this.List.IndexOf(item);
 		}
 		
-		public int Count {
-			get 
-			{
-				return inner.Count;
-			}
+		protected override void OnClear ()
+		{
+			base.OnClear ();
+			if( ClearList != null ) ClearList( this, new EventArgs() );
 		}
-	
-		
-	
+
 	}
 }

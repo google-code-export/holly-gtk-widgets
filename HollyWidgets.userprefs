@@ -5,7 +5,9 @@
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
-        <Node name="test" expanded="True" />
+        <Node name="HollyLibrary" expanded="True">
+          <Node name="DateEdit" expanded="True" />
+        </Node>
       </Node>
     </ViewMemento>
     <ViewMemento id="ClassPad">
