@@ -1,0 +1,78 @@
+<Project name="HollyLibrary" fileversion="2.0" language="C#" clr-version="Net_2_0" ctype="DotNetProject">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Debug" assembly="HollyLibrary" />
+      <Build debugmode="True" target="Library" />
+      <Execution runwithwarnings="True" consolepause="False" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" definesymbols="DEBUG" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+    <Configuration name="Release" ctype="DotNetProjectConfiguration">
+      <Output directory="bin/Release" assembly="HollyLibrary" />
+      <Build debugmode="False" target="Library" />
+      <Execution runwithwarnings="True" consolepause="False" runtime="MsNet" clr-version="Net_2_0" />
+      <CodeGeneration compiler="Mcs" warninglevel="4" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" generatexmldocumentation="False" ctype="CSharpCompilerParameters" />
+    </Configuration>
+  </Configurations>
+  <Contents>
+    <File name="GrabUtil.cs" subtype="Code" buildaction="Compile" />
+    <File name="AssemblyInfo.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/gui.stetic" subtype="Code" buildaction="EmbedAsResource" />
+    <File name="gtk-gui/generated.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/objects.xml" subtype="Code" buildaction="EmbedAsResource" />
+    <File name="DateEdit" subtype="Directory" buildaction="Compile" />
+    <File name="DateEdit/HDateEdit.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.HDateEdit.cs" subtype="Code" buildaction="Compile" />
+    <File name="DateEdit/DateEditDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.DateEditDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="WinUtil.cs" subtype="Code" buildaction="Compile" />
+    <File name="DateEdit/AnalogClock.cs" subtype="Code" buildaction="Compile" />
+    <File name="CairoUtil.cs" subtype="Code" buildaction="Compile" />
+    <File name="DateEdit/DateTimeFormatTypeEnum.cs" subtype="Code" buildaction="Compile" />
+    <File name="FontEdit" subtype="Directory" buildaction="Compile" />
+    <File name="FontEdit/FontChooserDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.FontChooserDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="ComboEdit" subtype="Directory" buildaction="Compile" />
+    <File name="FontEdit/HFontPicker.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.HFontPicker.cs" subtype="Code" buildaction="Compile" />
+    <File name="ComboEdit/HBaseComboBox.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.HBaseComboBox.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit" subtype="Directory" buildaction="Compile" />
+    <File name="SimpleListEdit/HSimpleList.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit/CellRendererCustom.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit/ObjectCollection.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit/Events" subtype="Directory" buildaction="Compile" />
+    <File name="SimpleListEdit/Events/ListEventHandlers.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit/Events/DrawItemEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="SimpleListEdit/Events/MeasureItemEventArgs.cs" subtype="Code" buildaction="Compile" />
+  </Contents>
+  <References>
+    <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <ProjectReference type="Gac" localcopy="True" refto="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <ProjectReference type="Gac" localcopy="True" refto="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
+    <ProjectReference type="Gac" localcopy="True" refto="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </References>
+  <GtkDesignInfo isWidgetLibrary="True" gtkVersion="2.12.0">
+    <ExportedWidgets>
+      <Widget>HollyLibrary.ExEntry</Widget>
+      <Widget>HollyLibrary.HMaskedEntry</Widget>
+      <Widget>HollyLibrary.DateEdit</Widget>
+      <Widget>HollyLibrary.AnalogClock</Widget>
+      <Widget>HollyLibrary.HDateEdit</Widget>
+      <Widget>HollyLibrary.ExtendedCombo</Widget>
+      <Widget>HollyLibrary.TestCombo</Widget>
+      <Widget>HollyLibrary.HComboBox</Widget>
+      <Widget>comboBox</Widget>
+      <Widget>HollyLibrary.HFontPicker</Widget>
+      <Widget>HollyLibrary.test</Widget>
+      <Widget>HollyLibrary.HComboBoxBase</Widget>
+      <Widget>HollyLibrary.HBaseComboBox</Widget>
+      <Widget>HollyLibrary.HSimpleList</Widget>
+      <Widget>HollyLibrary.BaseList</Widget>
+    </ExportedWidgets>
+  </GtkDesignInfo>
+</Project>
