@@ -8,6 +8,7 @@ _New widget:_ *HRegExTextBox*
   # ~~add the Items property ( wich is an ObjectCollection, like in the winforms version ) ~~
   # ~~have the SelectedIndex property ( get/set ), SelectedObject ~~
   # ~~add the OwnerDrawn property with the MeasureItem and DrawItem events ~~
+  # ~~add the SelectedIndexChanged event~~
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
   # ~~Sort function to HSimpleList~~
   # ~~Implement SelectionType ( One, Multi, None ), add a method like object[] getSelectedItems() and int[] getSelectedIndexes()~~
