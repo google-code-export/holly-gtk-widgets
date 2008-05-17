@@ -5,7 +5,7 @@ _New widget:_ *HRegExTextBox*
 *HDateEdit*
   # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
 *HSimpleList*
-  # ~~add the Items property ( wich is an ObjectCollection ) ~~
+  # ~~add the Items property ( wich is an ObjectCollection, like in the winforms version ) ~~
   # ~~have the SelectedIndex property ( get/set ), SelectedObject ~~
   # ~~add the OwnerDrawn property with the MeasureItem and DrawItem events ~~
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
