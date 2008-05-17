@@ -10,14 +10,14 @@ using HollyLibrary;
 
 namespace HollyLibrary
 {
-	
+
 	public class HSimpleList : TreeView
 	{
 		//my standard properties
-		int itemHeight             = 25;
-		ObjectCollection items     = new ObjectCollection();
-		int selectedIndex          = -1;
-		bool ownerDraw             = false;
+		int itemHeight                 = 25;
+		ObjectCollection items         = new ObjectCollection();
+		int selectedIndex              = -1;
+		bool ownerDraw                 = false;
 		
 		public event EventHandler OnSelectedIndexChanged;
 		public event DrawItemEventHandler OnDrawItem;
@@ -27,13 +27,11 @@ namespace HollyLibrary
 		
 		public HSimpleList()
 		{
-			
 			this.HeadersVisible         = false;
 			TreeViewColumn firstColumn  = new Gtk.TreeViewColumn ();
 			CellRendererCustom cell     = new CellRendererCustom( this );
 			this.Reorderable            = true;
 			firstColumn.PackStart (cell, true);
-			
 			
 			firstColumn.SetCellDataFunc (cell, new Gtk.TreeCellDataFunc (RenderListItem));
 			
@@ -198,6 +196,30 @@ namespace HollyLibrary
 			return ret;
 		}
 		
+		private int[] getSelectedIndexes()
+		{
+			TreePath[] paths = this.Selection.GetSelectedRows();
+			int[] ret        = new int[ paths.Length ];
+			for( int i = 0; i < paths.Length; i++ )
+			{
+				TreePath path = paths[i];
+				ret[i]        =  int.Parse( path.ToString() );
+				Console.WriteLine( "selectat->"+ret[i] );
+			}
+			return ret;
+		}
+		
+		public object[] getSelectedItems()
+		{
+			int[] indexes  = getSelectedIndexes();
+			object[] ret   = new object[ indexes.Length ];
+			for( int i = 0; i< indexes.Length; i++ )
+			{
+				ret[i] = Items[ indexes[i] ];
+			}
+			return ret;
+		}
+		
 		public int SelectedIndex 
 		{
 			get 
@@ -275,6 +297,18 @@ namespace HollyLibrary
 			}
 			set {
 				ownerDraw = value;
+			}
+		}
+
+		public SelectionMode SelectionType 
+		{
+			get 
+			{
+				return this.Selection.Mode;
+			}
+			set 
+			{
+				this.Selection.Mode = value;
 			}
 		}
 		

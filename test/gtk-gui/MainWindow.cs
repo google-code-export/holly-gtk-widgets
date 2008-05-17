@@ -30,6 +30,8 @@ public partial class MainWindow {
     
     private Gtk.Button button2;
     
+    private Gtk.Button button3;
+    
     protected virtual void Build() {
         Stetic.Gui.Initialize(this);
         // Widget MainWindow
@@ -114,6 +116,17 @@ public partial class MainWindow {
         w8.Position = 4;
         w8.Expand = false;
         w8.Fill = false;
+        // Container child vbox2.Gtk.Box+BoxChild
+        this.button3 = new Gtk.Button();
+        this.button3.CanFocus = true;
+        this.button3.Name = "button3";
+        this.button3.UseUnderline = true;
+        this.button3.Label = Mono.Unix.Catalog.GetString("multiple selection test");
+        this.vbox2.Add(this.button3);
+        Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox2[this.button3]));
+        w9.Position = 5;
+        w9.Expand = false;
+        w9.Fill = false;
         this.Add(this.vbox2);
         if ((this.Child != null)) {
             this.Child.ShowAll();
@@ -128,5 +141,6 @@ public partial class MainWindow {
         this.hsimplelist1.OnDrawItem += new HollyLibrary.DrawItemEventHandler(this.OnHsimplelist1OnDrawItem);
         this.button1.Clicked += new System.EventHandler(this.OnButton1Clicked);
         this.button2.Clicked += new System.EventHandler(this.OnButton2Clicked);
+        this.button3.Clicked += new System.EventHandler(this.OnButton3Clicked);
     }
 }
