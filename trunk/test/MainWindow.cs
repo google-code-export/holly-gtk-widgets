@@ -21,7 +21,8 @@ public partial class MainWindow: Gtk.Window
 			hsimplelist1.Items.Add( "my item " + i );
 		}
 		hsimplelist1.Items[10] = "my modified item!";
-		hsimplelist1.Items.Clear();
+		//hsimplelist1.Items.Clear();
+		hsimplelist1.SelectionType = SelectionMode.Multiple;
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -71,6 +72,15 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnHdateedit1Changed (object sender, System.EventArgs e)
 	{
+	}
+
+	protected virtual void OnButton3Clicked (object sender, System.EventArgs e)
+	{
+		object[] items = hsimplelist1.getSelectedItems();
+		foreach( object obj in items )
+		{
+			Console.WriteLine( obj );
+		}
 	}
 
 	
