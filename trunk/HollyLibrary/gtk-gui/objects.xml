@@ -1,0 +1,52 @@
+<objects>
+  <object type="HollyLibrary.HDateEdit" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HDateEdit Properties">
+        <property name="CurrentDate" />
+        <property name="CustomFormat" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HDateEdit Signals">
+        <signal name="Changed" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.AnalogClock" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
+    <itemgroups>
+      <itemgroup label="AnalogClock Properties">
+        <property name="Datetime" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals>
+      <itemgroup label="HFontPicker Signals">
+        <signal name="FontChange" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HBaseComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals />
+  </object>
+  <object type="HollyLibrary.HSimpleList" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+    <itemgroups>
+      <itemgroup label="HSimpleList Properties">
+        <property name="ItemHeight" />
+        <property name="SelectedIndex" />
+        <property name="Text" />
+        <property name="OwnerDraw" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HSimpleList Signals">
+        <signal name="OnSelectedIndexChanged" />
+        <signal name="OnMeasureItem" />
+        <signal name="OnDrawItem" />
+      </itemgroup>
+    </signals>
+  </object>
+</objects>
