@@ -7,49 +7,20 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="546 309">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="400 176">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">MainWindow</property>
+    <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="Gtk.VBox" id="vbox2">
+      <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.HBox" id="hbox2">
+          <widget class="HollyLibrary.HSimpleComboBox" id="hsimplecombobox1">
             <property name="MemberName" />
-            <property name="Spacing">6</property>
-            <child>
-              <widget class="Gtk.Button" id="button19">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">button19</property>
-                <property name="UseUnderline">True</property>
-              </widget>
-              <packing>
-                <property name="Position">0</property>
-                <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="HollyLibrary.HDateEdit" id="hdateedit1">
-                <property name="MemberName" />
-                <property name="Events">ButtonPressMask</property>
-                <property name="CurrentDate">0</property>
-                <signal name="Changed" handler="OnHdateedit1Changed" />
-              </widget>
-              <packing>
-                <property name="Position">1</property>
-                <property name="AutoSize">False</property>
-              </packing>
-            </child>
-            <child>
-              <placeholder />
-            </child>
+            <property name="Events">ButtonPressMask</property>
+            <property name="DropDownHeight">0</property>
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -59,87 +30,10 @@
           </packing>
         </child>
         <child>
-          <widget class="HollyLibrary.HFontPicker" id="hfontpicker1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-            <signal name="FontChange" handler="OnHfontpicker1FontChange" />
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">False</property>
-            <property name="Expand">False</property>
-          </packing>
+          <placeholder />
         </child>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
-            <property name="MemberName" />
-            <property name="ShadowType">In</property>
-            <child>
-              <widget class="HollyLibrary.HSimpleList" id="hsimplelist1">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
-                <property name="HeadersClickable">True</property>
-                <property name="ItemHeight">20</property>
-                <property name="SelectedIndex">0</property>
-                <property name="OwnerDraw">True</property>
-                <signal name="OnSelectedIndexChanged" handler="OnHsimplelist1OnSelectedIndexChanged" />
-                <signal name="OnDrawItem" handler="OnHsimplelist1OnDrawItem" />
-              </widget>
-            </child>
-          </widget>
-          <packing>
-            <property name="Position">2</property>
-            <property name="AutoSize">True</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button1">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">button1</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnButton1Clicked" />
-          </widget>
-          <packing>
-            <property name="Position">3</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button2">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">sort</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnButton2Clicked" />
-          </widget>
-          <packing>
-            <property name="Position">4</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button3">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">multiple selection test</property>
-            <property name="UseUnderline">True</property>
-            <signal name="Clicked" handler="OnButton3Clicked" />
-          </widget>
-          <packing>
-            <property name="Position">5</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
+          <placeholder />
         </child>
       </widget>
     </child>

@@ -52,10 +52,7 @@
   <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
       <itemgroup label="HSimpleComboBox Properties">
-        <property name="DropDownWidth" />
         <property name="DropDownHeight" />
-        <property name="SelectedText" />
-        <property name="SelectedIndex" />
       </itemgroup>
     </itemgroups>
     <signals>

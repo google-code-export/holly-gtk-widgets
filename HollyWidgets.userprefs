@@ -1,21 +1,29 @@
 ﻿<UserCombinePreferences version="1.0" filename="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyWidgets.mds">
   <Files>
-    <File name="Welcome" />
+    <File name="HollyLibrary/SimpleComboBox/ComboListWindow.cs" line="23" column="33" />
+    <File name="HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" line="25" column="4" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
       <Node expanded="True">
         <Node name="HollyLibrary" expanded="True">
           <Node name="DateEdit" expanded="True" />
+          <Node name="FontEdit" expanded="True" />
+          <Node name="SimpleComboBox" expanded="True" />
+          <Node name="SimpleListEdit" expanded="True" />
         </Node>
+        <Node name="test" expanded="True" selected="True" />
       </Node>
     </ViewMemento>
     <ViewMemento id="ClassPad">
       <Node expanded="True" />
     </ViewMemento>
+    <ViewMemento id="MonoDevelop.NUnit.TestPad">
+      <Node />
+    </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="Welcome" />
+    <Property key="ActiveWindow" value="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>

@@ -17,11 +17,11 @@ namespace HollyLibrary
 			this.Visible        = false;
 		}
 		
-		public void ShowMe( int x, int y, int width, int height, Object SelectedItem )
+		public void ShowMe( int x, int y, int width, int height )
 		{
+			if( height == 0 ) height = 200;
 			this.Move  ( x    , y      );
 			this.Resize( width, height );
-			this.TvList.SelectedItem = SelectedItem;
 			this.ShowAll();
 			//grab focus
 			GrabUtil.GrabWindow( this );
@@ -32,6 +32,16 @@ namespace HollyLibrary
 			//remove focus
 			GrabUtil.RemoveGrab( this );
 			this.Hide();
+		}
+
+		protected virtual void OnButtonPressEvent (object o, Gtk.ButtonPressEventArgs args)
+		{
+			Close();
+		}
+
+		protected virtual void OnTvListRowActivated (object o, Gtk.RowActivatedArgs args)
+		{
+			Close();
 		}
 		
 		public HSimpleList List

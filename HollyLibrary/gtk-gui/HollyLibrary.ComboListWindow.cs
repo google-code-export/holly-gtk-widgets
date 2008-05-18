@@ -33,7 +33,7 @@ namespace HollyLibrary {
             this.TvList.CanFocus = true;
             this.TvList.Name = "TvList";
             this.TvList.HeadersClickable = true;
-            this.TvList.ItemHeight = 0;
+            this.TvList.ItemHeight = 20;
             this.TvList.SelectedIndex = 0;
             this.TvList.OwnerDraw = false;
             this.GtkScrolledWindow.Add(this.TvList);
@@ -44,6 +44,8 @@ namespace HollyLibrary {
             this.DefaultWidth = 264;
             this.DefaultHeight = 242;
             this.Show();
+            this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
+            this.TvList.RowActivated += new Gtk.RowActivatedHandler(this.OnTvListRowActivated);
         }
     }
 }

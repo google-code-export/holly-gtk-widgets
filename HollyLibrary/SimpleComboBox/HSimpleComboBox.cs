@@ -14,61 +14,62 @@ namespace HollyLibrary
 		ComboListWindow Popup = new ComboListWindow();
 		//properties
 		object selectedItem   = null;
-		int dropDownHeight    = 300, dropDownWidth = 200;
+		int dropDownHeight    = 200;
+		int dropDownWidth     = 0;
 
 		public HSimpleComboBox()
 		{
 			this.Build();
-			DropDownWidth = this.Allocation.Width;
-			this.comboBox.PopupButton.Clicked += new EventHandler( this.on_popup_open );
+			this.comboBox.Entry.IsEditable          = false;
+			this.comboBox.Entry.KeyReleaseEvent    += new Gtk.KeyReleaseEventHandler( this.on_entry_key_pressed );
+			this.comboBox.PopupButton.Clicked      += new EventHandler( this.on_popup_open        );
+			this.Popup.List.OnSelectedIndexChanged += new EventHandler( this.on_list_item_changed );
+		}
+		
+		private void on_entry_key_pressed ( object sender, Gtk.KeyReleaseEventArgs args )
+		{
+			if( args.Event.Key != Gdk.Key.Tab ) ShowPopup();
+		}
+		
+		private void on_list_item_changed( object sender, EventArgs args )
+		{
+			comboBox.Entry.Text = this.Popup.List.Text;
+		}
+
+		protected override void OnSizeAllocated (Gdk.Rectangle allocation)
+		{
+			base.OnSizeAllocated (allocation);
+			this.dropDownWidth = allocation.Width;
 		}
 		
 		private void on_popup_open( object sender, EventArgs args )
+		{
+			ShowPopup();
+		}
+		
+		public void ShowPopup()
 		{
 			int x, y;
 			this.ParentWindow.GetPosition( out x, out y );	
 			x += this.Allocation.Left;
 			y += this.Allocation.Top + this.Allocation.Height;
 			//show list popup
-			Popup.ShowMe( x, y, DropDownWidth, DropDownHeight, SelectedItem );
+			Popup.ShowMe( x, y, dropDownWidth, DropDownHeight );
 		}
 		
-		//TODO: implement this
-		public int SelectedIndex
-		{
-			get
-			{
-				//
-				return -1;
-			}
-			set
-			{
-				//
-			}
-		}
-		//TODO: implement this
-		public string SelectedText
+		public string Text
 		{
 			get
 			{
 				return comboBox.Entry.Text;
 			}
-			set
-			{
-				Popup.List.Text = value;
-			}
 		}
 		
-		//TODO:  implement this 
-		public object SelectedItem 
+		public HSimpleList List
 		{
-			get 
+			get
 			{
-				return selectedItem;
-			}
-			set 
-			{
-				selectedItem = value;
+				return Popup.List;
 			}
 		}
 
@@ -77,10 +78,6 @@ namespace HollyLibrary
 			get 
 			{
 				return dropDownWidth;
-			}
-			set 
-			{
-				dropDownWidth = value;
 			}
 		}
 

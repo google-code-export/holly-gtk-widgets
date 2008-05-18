@@ -15,7 +15,7 @@ namespace test
 			Gdk.Threads.Init ();
 
 			Application.Init ();
-			MainWindow win = new MainWindow ();
+			MainWin win = new MainWin();
 			win.Show ();
 			Gdk.Threads.Enter();
 			Application.Run ();
