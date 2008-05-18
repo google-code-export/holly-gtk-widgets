@@ -15,7 +15,7 @@ _New widget:_ *HRegExTextBox*
   # ( for the next version ) study a possible datasource binding ( DataSource, DisplayMember and ValueMember properties )
   # write a page on the wiki with examples/screenshots for each feature
 
-_New widget:_ *HSimpleComboBox*
+*HSimpleComboBox*
   # as much as similar to the winforms combobox
   # IsEditable property
   # ~~DropDownHeight property~~
