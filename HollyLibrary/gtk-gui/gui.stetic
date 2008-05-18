@@ -316,4 +316,36 @@
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Bin" id="HollyLibrary.HSimpleComboBox" design-size="359 36">
+    <property name="MemberName" />
+    <child>
+      <widget class="HollyLibrary.HBaseComboBox" id="comboBox">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="HollyLibrary.ComboListWindow" design-size="264 242">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">ComboListWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Decorated">False</property>
+    <child>
+      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+        <property name="MemberName" />
+        <property name="ShadowType">In</property>
+        <child>
+          <widget class="HollyLibrary.HSimpleList" id="TvList">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="ShowScrollbars">True</property>
+            <property name="HeadersClickable">True</property>
+            <property name="ItemHeight">0</property>
+            <property name="SelectedIndex">0</property>
+            <property name="OwnerDraw">False</property>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>
