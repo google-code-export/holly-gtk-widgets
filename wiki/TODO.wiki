@@ -23,6 +23,7 @@ _New widget:_ *HSimpleComboBox*
   # ~~Events: list MeasureItem and DrawItem~~ 
   # Events: DropDown, DropDownClosed, SelectedIndexChanged, TextChanged
   # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
+  # write a page on the wiki with examples/screenshots for each feature
 
 _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
