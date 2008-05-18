@@ -19,7 +19,7 @@ _New widget:_ *HSimpleComboBox*
   # as much as similar to the winforms combobox
   # IsEditable property
   # ~~DropDownHeight property~~
-  # ~~Text~~, SelectedText, SelectedItem, SelectedIndex properties
+  # ~~Text, SelectedItem, SelectedIndex properties~~
   # ~~Events: list MeasureItem and DrawItem~~ 
   # Events: DropDown, DropDownClosed, SelectedIndexChanged, TextChanged
   # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
