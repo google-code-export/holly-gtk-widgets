@@ -330,6 +330,7 @@
     <property name="Title" translatable="yes">ComboListWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Decorated">False</property>
+    <signal name="ButtonPressEvent" handler="OnButtonPressEvent" />
     <child>
       <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
         <property name="MemberName" />
@@ -340,9 +341,10 @@
             <property name="CanFocus">True</property>
             <property name="ShowScrollbars">True</property>
             <property name="HeadersClickable">True</property>
-            <property name="ItemHeight">0</property>
+            <property name="ItemHeight">20</property>
             <property name="SelectedIndex">0</property>
             <property name="OwnerDraw">False</property>
+            <signal name="RowActivated" handler="OnTvListRowActivated" />
           </widget>
         </child>
       </widget>

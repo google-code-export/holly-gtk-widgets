@@ -42,7 +42,7 @@ namespace HollyLibrary
 		
 		private void on_text_changed( object Sender, Gtk.KeyPressEventArgs args )
 		{
-			ShowFontPopup();
+			if( args.Event.Key != Gdk.Key.Tab ) ShowFontPopup();
 		}
 		
 		private void on_btn_clicked( object Sender, EventArgs args )
