@@ -17,9 +17,10 @@ _New widget:_ *HRegExTextBox*
 
 _New widget:_ *HSimpleComboBox*
   # as much as similar to the winforms combobox
-  # DropDownHeight/DropDownWidth properties
-  # SelectedText, SelectedItem, SelectedIndex properties
-  # Events: list MeasureItem and DrawItem 
+  # IsEditable property
+  # ~~DropDownHeight property~~
+  # ~~Text~~, SelectedText, SelectedItem, SelectedIndex properties
+  # ~~Events: list MeasureItem and DrawItem~~ 
   # Events: DropDown, DropDownClosed, SelectedIndexChanged, TextChanged
   # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
 
