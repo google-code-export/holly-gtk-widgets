@@ -11,24 +11,45 @@ namespace HollyLibrary
 	public partial class HSimpleComboBox : Gtk.Bin
 	{
 		//popup windor
-		ComboListWindow Popup = new ComboListWindow();
+		ComboListWindow Popup = null;
 		//properties
 		object selectedItem   = null;
 		int dropDownHeight    = 200;
 		int dropDownWidth     = 0;
+		
+		public event EventHandler DropDownOpened;
+		public event EventHandler DropDownClosed;
+		public event EventHandler TextChanged;
 
 		public HSimpleComboBox()
 		{
+			this.Popup                              = new ComboListWindow( this );
 			this.Build();
-			this.comboBox.Entry.IsEditable          = false;
-			this.comboBox.Entry.KeyReleaseEvent    += new Gtk.KeyReleaseEventHandler( this.on_entry_key_pressed );
+			this.IsEditable                         = false;
+			this.comboBox.Entry.KeyPressEvent      += new Gtk.KeyPressEventHandler( this.on_entry_key_pressed );
+			this.comboBox.Entry.Changed            += new EventHandler( this.OnTextChanged        );
 			this.comboBox.PopupButton.Clicked      += new EventHandler( this.on_popup_open        );
 			this.Popup.List.OnSelectedIndexChanged += new EventHandler( this.on_list_item_changed );
+			}
+		
+		public virtual void OnDropDownOpened( object sender, EventArgs args )
+		{
+			if( DropDownOpened != null ) DropDownOpened( sender, args );
 		}
 		
-		private void on_entry_key_pressed ( object sender, Gtk.KeyReleaseEventArgs args )
+		public virtual void  OnDropDownClosed( object sender, EventArgs args )
 		{
-			if( args.Event.Key != Gdk.Key.Tab ) ShowPopup();
+			if( DropDownClosed != null ) DropDownClosed( sender, args );
+		}
+		
+		public virtual  void OnTextChanged( object sender, EventArgs args )
+		{
+			if( TextChanged != null ) TextChanged( sender, args );
+		}
+		
+		private void on_entry_key_pressed ( object sender, Gtk.KeyPressEventArgs args )
+		{
+			if( args.Event.Key != Gdk.Key.Tab && !IsEditable ) ShowPopup();
 		}
 		
 		private void on_list_item_changed( object sender, EventArgs args )
@@ -55,6 +76,18 @@ namespace HollyLibrary
 			y += this.Allocation.Top + this.Allocation.Height;
 			//show list popup
 			Popup.ShowMe( x, y, dropDownWidth, DropDownHeight );
+		}
+		
+		public bool IsEditable
+		{
+			get
+			{
+				return comboBox.Entry.IsEditable;
+			}
+			set
+			{
+				comboBox.Entry.IsEditable = value;
+			}
 		}
 		
 		public string Text
