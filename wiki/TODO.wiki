@@ -31,6 +31,9 @@
   # ~~customizable tooltip text error, regular expression pattern~~ 
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
+_New widget:_ *HBaloonToolTip*
+  # It would be nice to have a baloon tooltip in gtk#
+
 _New widget:_ *HIpTextBox*
   # an Entry customized for ip addresses in multiple formats ( ipv4 ipv6 etc )
 
