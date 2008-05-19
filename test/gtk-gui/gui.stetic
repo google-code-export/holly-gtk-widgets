@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="400 176">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="400 287">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -21,6 +21,7 @@
             <property name="MemberName" />
             <property name="Events">ButtonPressMask</property>
             <property name="DropDownHeight">0</property>
+            <property name="IsEditable">False</property>
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -30,10 +31,48 @@
           </packing>
         </child>
         <child>
-          <placeholder />
+          <widget class="HollyLibrary.HFontPicker" id="hfontpicker1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">False</property>
+          </packing>
         </child>
         <child>
           <placeholder />
+        </child>
+        <child>
+          <widget class="HollyLibrary.HRegExEntry" id="hregexentry1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+          </widget>
+          <packing>
+            <property name="Position">3</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="HollyLibrary.HSimpleList" id="hsimplelist1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="HeadersClickable">True</property>
+                <property name="ItemHeight">0</property>
+                <property name="SelectedIndex">0</property>
+                <property name="OwnerDraw">False</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">4</property>
+            <property name="AutoSize">True</property>
+          </packing>
         </child>
       </widget>
     </child>
