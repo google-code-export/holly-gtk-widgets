@@ -1,11 +1,10 @@
 *HDateEditor*
+  # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
   # write a page on the wiki with examples/screenshots for each feature
 
 *HFontPicker*
   # write a page on the wiki with examples/screenshots for each feature
 
-*HDateEdit*
-  # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
 *HSimpleList*
   # ~~add the Items property ( wich is an ObjectCollection, like in the winforms version ) ~~
   # ~~have the SelectedIndex property ( get/set ), SelectedObject ~~
