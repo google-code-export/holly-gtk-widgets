@@ -1,0 +1,117 @@
+#summary HSimpleComboBox widget informations
+
+= Introduction =
+
+HSimpleComboBox is a simple combobox type widget, similar to the winforms ComboBox.  The popup inner list is a HSimpleList widget and you have access to all of the list features. 
+
+= Details =
+[http://lh3.ggpht.com/fr.daniil/SDFh9XasySI/AAAAAAAAABw/kTA_B5Ts9Rs/hsimplecombobox.jpg]
+
+* How to set if the combobox is editable or not:
+{{{
+   comboWidget.IsEditable = true;
+   //
+   comboWidget.IsEditable = false;
+}}}
+
+* How to set the drop down popup height:
+{{{
+   comboWidget.DropDownHeight = 500;
+}}}
+
+* Code sample:
+{{{
+// Test.cs created with MonoDevelop
+// User: dantes at 1:49 PM 5/19/2008
+//
+
+using System;
+using System.Drawing;
+using HollyLibrary;
+
+
+namespace test
+{
+	
+	
+	public class Test : Gtk.Window
+	{
+		
+		HSimpleComboBox combo = new HSimpleComboBox();
+
+                public Test() : base(Gtk.WindowType.Toplevel)
+                {
+                       this.DeleteEvent   += new Gtk.DeleteEventHandler( this.OnDeleteEvent );
+			
+			combo.List.OwnerDraw      = true;
+			combo.List.OnDrawItem    += new DrawItemEventHandler( this.on_draw_item );
+			combo.List.OnMeasureItem += new MeasureItemEventHandler( this.on_measure_item );
+                        combo.DropDownOpened     += new EventHandler( this.on_popup_opened );
+			combo.DropDownClosed     += new EventHandler( this.on_popup_closed );
+			
+                        //add the widget to the window
+                        this.Add( combo );
+			//add font list to list
+			FontFamily[] fonts = FontFamily.Families;
+			int i = 0;
+			foreach( FontFamily font in fonts )
+			{
+				combo.List.Items.Add( font.Name );
+			}
+                       //show window
+                       this.ShowAll();
+                }
+
+		private void on_draw_item( object o, DrawItemEventArgs args )
+		{
+			String font_name     = combo.List.Items[ args.ItemIndex ].ToString();
+			Graphics g           = args.Graphics;
+			g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+			
+			Font font            = new System.Drawing.Font( font_name, 10F );
+			Color color          = System.Drawing.Color.Black;
+			SolidBrush b         = new System.Drawing.SolidBrush( color );
+			g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );			
+
+		}
+				
+		private void on_popup_opened( object o, EventArgs args )
+		{
+			Console.WriteLine("popup opened");
+		}
+		
+		private void on_popup_closed( object o, EventArgs args )
+		{
+			Console.WriteLine("popup closed");
+		}
+
+		private void on_measure_item( object o, MeasureItemEventArgs args )
+		{
+			//make alternative heights for demonstration
+			if( args.Index % 2 == 0 )
+				args.ItemHeight = 20;
+			else
+				args.ItemHeight = 40;
+		}
+
+                protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
+                {
+                    Gtk.Application.Quit();
+                    args.RetVal = true;
+                }
+
+                public static void Main (string[] args)
+                {
+                   Gdk.Threads.Init ();
+                   Application.Init ();
+                   Test win = new Test();
+                   win.Show ();
+                   Gdk.Threads.Enter();
+                   Application.Run ();
+                   Gdk.Threads.Leave();
+                }
+
+	}
+}
+
+}}}
