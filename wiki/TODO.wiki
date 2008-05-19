@@ -29,7 +29,7 @@
 *HRegExEntry*
   # ~~an Entry that supports regular expression validation, with a small error/ok icon near with a tooltip~~
   # ~~customizable tooltip text error, regular expression pattern~~ 
-  # write a page on the wiki with examples/screenshots for each feature
+  # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 _New widget:_ *HIpTextBox*
   # an Entry customized for ip addresses in multiple formats ( ipv4 ipv6 etc )
