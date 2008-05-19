@@ -22,6 +22,7 @@ namespace test
 			this.hsimplecombobox1.DropDownOpened += new EventHandler( this.on_drop_down_opened );
 			this.hsimplecombobox1.DropDownClosed += new EventHandler( this.on_drop_down_closed );
 			this.hsimplecombobox1.TextChanged    += new EventHandler( this.on_text_changed );
+			this.hregexentry1.RegularExpression = "\\d{3}-\\d{2}-\\d{4}";
 		}
 		
 		private void on_text_changed( object o, EventArgs args )
