@@ -18,12 +18,12 @@
   # write a page on the wiki with examples/screenshots for each feature
 
 *HSimpleComboBox*
-  # as much as similar to the winforms combobox
-  # IsEditable property
+  # ~~as much as similar to the winforms combobox~~
+  # ~~IsEditable property~~
   # ~~DropDownHeight property~~
   # ~~Text, SelectedItem, SelectedIndex properties~~
   # ~~Events: list MeasureItem and DrawItem~~ 
-  # Events: DropDown, DropDownClosed, SelectedIndexChanged, TextChanged
+  # ~~Events: DropDownOpened, DropDownClosed, List.SelectedIndexChanged, TextChanged~~
   # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
   # write a page on the wiki with examples/screenshots for each feature
 
