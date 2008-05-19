@@ -26,5 +26,22 @@ public class MainWin : Gtk.Window
 	{
 	    Console.WriteLine( "font changed to:" + args.Font );		
 	}
+
+        protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
+	{
+		Gtk.Application.Quit();
+		args.RetVal = true;
+	}
+
+        public static void Main (string[] args)
+	{
+		Gdk.Threads.Init ();
+		Application.Init ();
+		MainWin win = new MainWin();
+		win.Show ();
+		Gdk.Threads.Enter();
+		Application.Run ();
+		Gdk.Threads.Leave();
+	}
 }
 }}}
