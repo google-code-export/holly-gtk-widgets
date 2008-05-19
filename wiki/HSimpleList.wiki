@@ -72,6 +72,14 @@ It supports multiple selection also.
    listWidget.ItemHeight = 25;
 }}}
 
+  * How to sort the list items:
+{{{
+   //use the default sorting:
+   listWidget.Sort();
+   //or use a comparer
+   listWidget.Sort( MyComparer );
+}}}
+
   * SelectionType example:
 Selection types are
   #Browse
