@@ -16,9 +16,13 @@ public class MainWin : Gtk.Window
 {
 	public MainWin() : base(Gtk.WindowType.Toplevel)
 	{
+            this.DeleteEvent  += new Gtk.DeleteEventHandler( this.OnDeleteEvent );
+            //create the picker widget
             HFontPicker picker = new HFontPicker();
             picker.FontChange += new FontEventHandler( this.OnFontChange );
+            //add the widget to the window
             this.add( picker );
+            //show window
             this.ShowAll();
         }
 
