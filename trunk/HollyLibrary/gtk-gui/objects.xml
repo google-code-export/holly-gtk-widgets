@@ -53,9 +53,15 @@
     <itemgroups>
       <itemgroup label="HSimpleComboBox Properties">
         <property name="DropDownHeight" />
+        <property name="IsEditable" />
       </itemgroup>
     </itemgroups>
     <signals>
+      <itemgroup label="HSimpleComboBox Signals">
+        <signal name="DropDownOpened" />
+        <signal name="DropDownClosed" />
+        <signal name="TextChanged" />
+      </itemgroup>
     </signals>
   </object>
 </objects>

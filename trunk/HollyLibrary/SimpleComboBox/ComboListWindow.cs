@@ -9,10 +9,12 @@ namespace HollyLibrary
 
 	public partial class ComboListWindow : Gtk.Window
 	{
+		HSimpleComboBox combo_parent;
 		
-		public ComboListWindow() : 
+		public ComboListWindow( HSimpleComboBox combo_parent ) : 
 				base(Gtk.WindowType.Popup)
 		{
+			this.combo_parent   = combo_parent;
 			this.Build();
 			this.Visible        = false;
 		}
@@ -25,6 +27,9 @@ namespace HollyLibrary
 			this.ShowAll();
 			//grab focus
 			GrabUtil.GrabWindow( this );
+			this.TvList.GrabFocus();
+			//invoke DropDownOpened
+			combo_parent.OnDropDownOpened( this, new EventArgs() );
 		}
 		
 		private void Close()
@@ -32,6 +37,7 @@ namespace HollyLibrary
 			//remove focus
 			GrabUtil.RemoveGrab( this );
 			this.Hide();
+			combo_parent.OnDropDownClosed( this, new EventArgs() );
 		}
 
 		protected virtual void OnButtonPressEvent (object o, Gtk.ButtonPressEventArgs args)

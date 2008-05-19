@@ -1,29 +1,30 @@
 ﻿<UserCombinePreferences version="1.0" filename="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyWidgets.mds">
   <Files>
-    <File name="HollyLibrary/SimpleComboBox/ComboListWindow.cs" line="23" column="33" />
-    <File name="HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" line="25" column="4" />
+    <File name="Welcome" />
+    <File name="HollyLibrary/SimpleComboBox/ComboListWindow.cs" line="43" column="4" />
+    <File name="HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" line="31" column="40" />
+    <File name="test/Main.cs" line="14" column="4" />
+    <File name="test/MainWin.cs" line="24" column="26" />
+    <File name="HollyLibrary/FontEdit/FontChooserDialog.cs" line="1" column="1" />
+    <File name="HollyLibrary/FontEdit/HFontPicker.cs" line="33" column="38" />
   </Files>
   <Views>
     <ViewMemento id="ProjectPad">
-      <Node expanded="True">
-        <Node name="HollyLibrary" expanded="True">
-          <Node name="DateEdit" expanded="True" />
-          <Node name="FontEdit" expanded="True" />
-          <Node name="SimpleComboBox" expanded="True" />
-          <Node name="SimpleListEdit" expanded="True" />
-        </Node>
-        <Node name="test" expanded="True" selected="True" />
+      <Node expanded="True" selected="True">
+        <Node name="test" expanded="True" />
       </Node>
     </ViewMemento>
     <ViewMemento id="ClassPad">
-      <Node expanded="True" />
+      <Node expanded="True">
+        <Node name="test" expanded="True" />
+      </Node>
     </ViewMemento>
     <ViewMemento id="MonoDevelop.NUnit.TestPad">
       <Node />
     </ViewMemento>
   </Views>
   <Properties>
-    <Property key="ActiveWindow" value="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" />
+    <Property key="ActiveWindow" value="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyLibrary/FontEdit/HFontPicker.cs" />
     <Property key="ActiveConfiguration" value="Debug" />
   </Properties>
 </UserCombinePreferences>
