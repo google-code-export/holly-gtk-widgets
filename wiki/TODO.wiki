@@ -12,7 +12,6 @@
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
   # ~~Sort function to HSimpleList~~
   # ~~Implement SelectionType ( One, Multi, None ), add a method like object[] getSelectedItems() and int[] getSelectedIndexes()~~
-  # ( for the next version ) study a possible datasource binding ( DataSource, DisplayMember and ValueMember properties )
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HSimpleComboBox*
@@ -22,7 +21,6 @@
   # ~~Text, SelectedItem, SelectedIndex properties~~
   # ~~Events: list MeasureItem and DrawItem~~ 
   # ~~Events: DropDownOpened, DropDownClosed, List.SelectedIndexChanged, TextChanged~~
-  # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HRegExEntry*
