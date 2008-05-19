@@ -4,7 +4,7 @@
 
 This widget is a simple list widget, as much as I could think similar to the winforms ListBox.  I created because it's faster to use then the usual treeview gtk widget.
 It also implements the nice ListBox events MeasureItem and DrawItem.
-It supports multiple sellection also.   
+It supports multiple selection also.   
 
 = Details =
 
@@ -163,51 +163,51 @@ namespace test
 	public class Test : Gtk.Window
 	{
 		
-		HSimpleList list   = new HSimpleList();
+	HSimpleList list   = new HSimpleList();
 
         public Test() : base(Gtk.WindowType.Toplevel)
         {
             this.DeleteEvent   += new Gtk.DeleteEventHandler( this.OnDeleteEvent );
-			list.OwnerDraw      = true;
-			list.OnDrawItem    += new DrawItemEventHandler( this.on_draw_item );
-			list.OnMeasureItem += new MeasureItemEventHandler( this.on_measure_item );
+	    list.OwnerDraw      = true;
+	    list.OnDrawItem    += new DrawItemEventHandler( this.on_draw_item );
+	    list.OnMeasureItem += new MeasureItemEventHandler( this.on_measure_item );
             //create a simple layout
-			Gtk.ScrolledWindow sw  = new Gtk.ScrolledWindow();
-			sw.Add( list );
-            //add the widget to the window
-            this.Add( sw );
-			//add font list to list
-			FontFamily[] fonts = FontFamily.Families;
-			int i = 0;
-			foreach( FontFamily font in fonts )
-			{
-				list.Items.Add( font.Name );
-			}
+	     Gtk.ScrolledWindow sw  = new Gtk.ScrolledWindow();
+	     sw.Add( list );
+             //add the widget to the window
+             this.Add( sw );
+	     //add font list to list
+	     FontFamily[] fonts = FontFamily.Families;
+	     int i = 0;
+	     foreach( FontFamily font in fonts )
+	     {
+		list.Items.Add( font.Name );
+	     }
             //show window
             this.ShowAll();
         }
 
-		private void on_draw_item( object o, DrawItemEventArgs args )
-		{
-			String font_name     = list.Items[ args.ItemIndex ].ToString();
-			Graphics g           = args.Graphics;
-			g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+	private void on_draw_item( object o, DrawItemEventArgs args )
+	{
+		String font_name     = list.Items[ args.ItemIndex ].ToString();
+		Graphics g           = args.Graphics;
+		g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
 			
-			Font font            = new System.Drawing.Font( font_name, 10F );
-			Color color          = System.Drawing.Color.Black;
-			SolidBrush b         = new System.Drawing.SolidBrush( color );
-			g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );			
+		Font font            = new System.Drawing.Font( font_name, 10F );
+		Color color          = System.Drawing.Color.Black;
+		SolidBrush b         = new System.Drawing.SolidBrush( color );
+		g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );			
 
-		}
+	}
 		
-		private void on_measure_item( object o, MeasureItemEventArgs args )
-		{
-			//make alternative heights for demonstration
-			if( args.Index % 2 == 0 )
-				args.ItemHeight = 20;
-			else
-				args.ItemHeight = 40;
-		}
+	private void on_measure_item( object o, MeasureItemEventArgs args )
+	{
+		//make alternative heights for demonstration
+		if( args.Index % 2 == 0 )
+			args.ItemHeight = 20;
+		else
+			args.ItemHeight = 40;
+	}
 
         protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
         {
