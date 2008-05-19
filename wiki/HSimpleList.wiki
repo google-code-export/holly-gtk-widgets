@@ -82,11 +82,11 @@ It supports multiple selection also.
 
   * SelectionType example:
 Selection types are
-  #Browse
-  #Extended
-  #Multiple
-  #None
-  #Single
+  # Browse
+  # Extended
+  # Multiple
+  # None
+  # Single
 In this example we will use the Multiple selection type:
 {{{
 using HollyLibrary;
