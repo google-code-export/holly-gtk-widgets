@@ -1,4 +1,4 @@
-#summary : HDateEditor widget informations.
+#summary HDateEditor widget informations.
 
 = Introduction =
 
