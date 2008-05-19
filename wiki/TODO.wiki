@@ -1,5 +1,4 @@
 *HDateEditor*
-  # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HFontPicker*
@@ -40,5 +39,8 @@ _New widget:_ *HIpTextBox*
 _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
 
+Feature plans:
+  * study databinding ( maibe I could add it to HSimpleList and HSimpleComboBox
   * some refactoring in the widgets events name
   * rebuild HFontPicker to be an extended HSimpleComboBox
+  * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
