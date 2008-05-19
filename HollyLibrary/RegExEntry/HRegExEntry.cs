@@ -51,7 +51,6 @@ namespace HollyLibrary
 
 		protected virtual void OnTextBoxChanged (object sender, System.EventArgs e)
 		{
-			Console.WriteLine("valid:" + IsTextValid);
 			if( IsTextValid )
 				SetImage( ImageType.Ok    );
 			else
