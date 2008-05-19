@@ -1,0 +1,30 @@
+#summary HFontPicker widget information
+
+= Introduction =
+
+This widget is an office like font picker.
+
+= Details =
+[http://lh6.ggpht.com/fr.daniil/SC2w4HasyPI/AAAAAAAAABU/7iB3NWBAf7Q/font-picker.jpg]
+
+  * code sample:
+{{{
+using HollyLibrary;
+using Gtk;
+
+public class MainWin : Gtk.Window
+{
+	public MainWin() : base(Gtk.WindowType.Toplevel)
+	{
+            HFontPicker picker = new HFontPicker();
+            picker.FontChange += new FontEventHandler( this.OnFontChange );
+            this.add( picker );
+            this.ShowAll();
+        }
+
+        protected virtual void OnFontChange (object sender, FontEventArgs args)
+	{
+	    Console.WriteLine( "font changed to:" + args.Font );		
+	}
+}
+}}}
