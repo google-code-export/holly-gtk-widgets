@@ -1,9 +1,9 @@
 *HDateEditor*
   # make a nicer clock :) Nice example: [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
-  # write a page on the wiki with examples/screenshots for each feature
+  # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HFontPicker*
-  # write a page on the wiki with examples/screenshots for each feature
+  # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HSimpleList*
   # ~~add the Items property ( wich is an ObjectCollection, like in the winforms version ) ~~
@@ -14,7 +14,7 @@
   # ~~Sort function to HSimpleList~~
   # ~~Implement SelectionType ( One, Multi, None ), add a method like object[] getSelectedItems() and int[] getSelectedIndexes()~~
   # ( for the next version ) study a possible datasource binding ( DataSource, DisplayMember and ValueMember properties )
-  # write a page on the wiki with examples/screenshots for each feature
+  # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HSimpleComboBox*
   # ~~as much as similar to the winforms combobox~~
