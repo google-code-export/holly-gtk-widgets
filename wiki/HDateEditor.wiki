@@ -8,7 +8,7 @@ This widget is a date time picker, supporting custom formatting options.
 
 [http://lh5.ggpht.com/fr.daniil/SC2x63asyQI/AAAAAAAAABg/GgtQyuEU_Es/datetime-picker.jpg]
 
-Formatting types:
+  * Formatting types:
   # Custom 
   # FullDateTime
   # ShortTime
@@ -16,14 +16,14 @@ Formatting types:
   # LongDate
   # LongTime
 
-  * How do I set a custom format?
+  * Custom format example:
 {{{
 this.dateEditWidget.DateTimeFormatType = HollyLibrary.DateTimeFormatTypeEnum.Custom;
 this.dateEditWidget.CustomFormat       = "dd/MM/yyyy 'and time is:' HH:mm:ss";
 this.dateEditWidget.CurrentDate        = DateTime.Now;
 }}}
 
-  * How do I set a simple short date-only format?
+  * Simple short date-only format example:
 {{{
 this.dateEditWidget.DateTimeFormatType = HollyLibrary.DateTimeFormatTypeEnum.ShortDate;
 this.dateEditWidget.CurrentDate        = DateTime.Now;
