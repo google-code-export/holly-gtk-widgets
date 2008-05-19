@@ -26,7 +26,7 @@
   # ( for the next version ) DisplayMember, ValueMember posibility to bound to a datasource
   # write a page on the wiki with examples/screenshots for each feature
 
-_New widget:_ *HRegExTextBox*
+_New widget:_ *HRegExEntry*
   # an Entry that supports regex validation, with a small error icon near with a tooltip
   # customizable error icon / tooltip text error
 
