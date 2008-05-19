@@ -9,12 +9,12 @@ This widget is a date time picker, supporting custom formatting options.
 [http://lh5.ggpht.com/fr.daniil/SC2x63asyQI/AAAAAAAAABg/GgtQyuEU_Es/datetime-picker.jpg]
 
 Formatting types:
-# Custom 
-# FullDateTime
-# ShortTime
-# ShortDate
-# LongDate
-# LongTime
+  # Custom 
+  # FullDateTime
+  # ShortTime
+  # ShortDate
+  # LongDate
+  # LongTime
 
   * How do I set a custom format?
 {{{
