@@ -28,6 +28,9 @@
   # ~~customizable tooltip text error, regular expression pattern~~ 
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
+_New widget:_ *HColorPicker*
+  # A color picker drop-down
+
 _New widget:_ *HBaloonToolTip*
   # It would be nice to have a baloon tooltip in gtk#
 
