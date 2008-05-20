@@ -12,5 +12,47 @@ namespace HollyLibrary {
     
     
     public partial class HRegExEntry {
+        
+        private Gtk.HBox hbox1;
+        
+        private Gtk.Entry TextBox;
+        
+        private Gtk.Image ErrorImage;
+        
+        protected virtual void Build() {
+            Stetic.Gui.Initialize(this);
+            // Widget HollyLibrary.HRegExEntry
+            Stetic.BinContainer.Attach(this);
+            this.Name = "HollyLibrary.HRegExEntry";
+            // Container child HollyLibrary.HRegExEntry.Gtk.Container+ContainerChild
+            this.hbox1 = new Gtk.HBox();
+            this.hbox1.Name = "hbox1";
+            this.hbox1.Spacing = 6;
+            this.hbox1.BorderWidth = ((uint)(5));
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.TextBox = new Gtk.Entry();
+            this.TextBox.CanFocus = true;
+            this.TextBox.Name = "TextBox";
+            this.TextBox.IsEditable = true;
+            this.TextBox.HasFrame = false;
+            this.TextBox.InvisibleChar = '●';
+            this.hbox1.Add(this.TextBox);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.hbox1[this.TextBox]));
+            w1.Position = 0;
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.ErrorImage = new Gtk.Image();
+            this.ErrorImage.Name = "ErrorImage";
+            this.hbox1.Add(this.ErrorImage);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.ErrorImage]));
+            w2.Position = 1;
+            w2.Expand = false;
+            w2.Fill = false;
+            this.Add(this.hbox1);
+            if ((this.Child != null)) {
+                this.Child.ShowAll();
+            }
+            this.Show();
+            this.TextBox.Changed += new System.EventHandler(this.OnTextBoxChanged);
+        }
     }
 }

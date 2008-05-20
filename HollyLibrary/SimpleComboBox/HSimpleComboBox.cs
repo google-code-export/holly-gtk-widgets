@@ -13,7 +13,6 @@ namespace HollyLibrary
 		//popup windor
 		ComboListWindow Popup = null;
 		//properties
-		object selectedItem   = null;
 		int dropDownHeight    = 200;
 		int dropDownWidth     = 0;
 		

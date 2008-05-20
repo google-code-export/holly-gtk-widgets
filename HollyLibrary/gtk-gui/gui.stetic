@@ -350,17 +350,19 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="HollyLibrary.HRegExEntry" design-size="311 48">
+  <widget class="Gtk.Bin" id="HollyLibrary.HRegExEntry" design-size="311 58">
     <property name="MemberName" />
     <child>
       <widget class="Gtk.HBox" id="hbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
+        <property name="BorderWidth">5</property>
         <child>
           <widget class="Gtk.Entry" id="TextBox">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="IsEditable">True</property>
+            <property name="HasFrame">False</property>
             <property name="InvisibleChar">●</property>
             <signal name="Changed" handler="OnTextBoxChanged" />
           </widget>

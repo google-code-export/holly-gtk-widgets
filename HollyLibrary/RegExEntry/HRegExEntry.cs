@@ -3,6 +3,7 @@
 //
 
 using System;
+using System.Text.RegularExpressions;
 
 namespace HollyLibrary
 {
@@ -22,6 +23,8 @@ namespace HollyLibrary
 		public HRegExEntry()
 		{
 			this.Build();
+			this.TextBox.FocusInEvent  += new Gtk.FocusInEventHandler ( delegate { this.QueueDraw(); } );
+			this.TextBox.FocusOutEvent += new Gtk.FocusOutEventHandler( delegate { this.QueueDraw(); } );
 		}
 		
 		protected override bool OnExposeEvent (Gdk.EventExpose evnt)
