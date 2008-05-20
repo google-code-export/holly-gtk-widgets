@@ -41,7 +41,7 @@ _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
 
 _New widget:_ *HGridView*
-  # a simpler version of SourceGrid for GTK
+  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid] for GTK
 
 Feature plans:
   * study databinding in winforms, maibe do something similar for gtk widgets
