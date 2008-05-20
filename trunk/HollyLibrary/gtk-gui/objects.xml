@@ -75,4 +75,12 @@
     </itemgroups>
     <signals />
   </object>
+  <object type="HollyLibrary.HColorPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals>
+      <itemgroup label="HColorPicker Signals">
+        <signal name="ColorChange" />
+      </itemgroup>
+    </signals>
+  </object>
 </objects>
