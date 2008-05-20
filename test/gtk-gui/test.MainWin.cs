@@ -15,9 +15,9 @@ namespace test {
         
         private Gtk.VBox vbox1;
         
-        private HollyLibrary.HSimpleComboBox hsimplecombobox1;
+        private HollyLibrary.HFontPicker BtnMoreColors;
         
-        private HollyLibrary.HFontPicker hfontpicker1;
+        private HollyLibrary.HColorPicker hcolorpicker1;
         
         private HollyLibrary.HRegExEntry hregexentry1;
         
@@ -36,23 +36,19 @@ namespace test {
             this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
-            this.hsimplecombobox1 = new HollyLibrary.HSimpleComboBox();
-            this.hsimplecombobox1.Events = ((Gdk.EventMask)(256));
-            this.hsimplecombobox1.Name = "hsimplecombobox1";
-            this.hsimplecombobox1.DropDownHeight = 0;
-            this.hsimplecombobox1.IsEditable = false;
-            this.vbox1.Add(this.hsimplecombobox1);
-            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.hsimplecombobox1]));
-            w1.Position = 0;
-            w1.Expand = false;
-            w1.Fill = false;
+            this.BtnMoreColors = new HollyLibrary.HFontPicker();
+            this.BtnMoreColors.Events = ((Gdk.EventMask)(256));
+            this.BtnMoreColors.Name = "BtnMoreColors";
+            this.vbox1.Add(this.BtnMoreColors);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnMoreColors]));
+            w1.Position = 1;
             // Container child vbox1.Gtk.Box+BoxChild
-            this.hfontpicker1 = new HollyLibrary.HFontPicker();
-            this.hfontpicker1.Events = ((Gdk.EventMask)(256));
-            this.hfontpicker1.Name = "hfontpicker1";
-            this.vbox1.Add(this.hfontpicker1);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hfontpicker1]));
-            w2.Position = 1;
+            this.hcolorpicker1 = new HollyLibrary.HColorPicker();
+            this.hcolorpicker1.Events = ((Gdk.EventMask)(256));
+            this.hcolorpicker1.Name = "hcolorpicker1";
+            this.vbox1.Add(this.hcolorpicker1);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcolorpicker1]));
+            w2.Position = 2;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hregexentry1 = new HollyLibrary.HRegExEntry();
             this.hregexentry1.Events = ((Gdk.EventMask)(256));
@@ -81,7 +77,7 @@ namespace test {
                 this.Child.ShowAll();
             }
             this.DefaultWidth = 400;
-            this.DefaultHeight = 287;
+            this.DefaultHeight = 289;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
         }
