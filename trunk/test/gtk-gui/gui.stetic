@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="400 287">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="400 289">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -17,21 +17,10 @@
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="HollyLibrary.HSimpleComboBox" id="hsimplecombobox1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-            <property name="DropDownHeight">0</property>
-            <property name="IsEditable">False</property>
-          </widget>
-          <packing>
-            <property name="Position">0</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
+          <placeholder />
         </child>
         <child>
-          <widget class="HollyLibrary.HFontPicker" id="hfontpicker1">
+          <widget class="HollyLibrary.HFontPicker" id="BtnMoreColors">
             <property name="MemberName" />
             <property name="Events">ButtonPressMask</property>
           </widget>
@@ -41,7 +30,14 @@
           </packing>
         </child>
         <child>
-          <placeholder />
+          <widget class="HollyLibrary.HColorPicker" id="hcolorpicker1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">False</property>
+          </packing>
         </child>
         <child>
           <widget class="HollyLibrary.HRegExEntry" id="hregexentry1">
