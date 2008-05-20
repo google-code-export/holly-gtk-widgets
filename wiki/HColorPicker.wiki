@@ -1,0 +1,13 @@
+#summary HColorPicker widget information
+= Introduction =
+
+It's a simple office like drop-down color picker
+
+[http://lh3.ggpht.com/fr.daniil/SDK_juwa6WI/AAAAAAAAACg/iwvd4Ku3zhk/color-picker.jpg?imgmax=144]
+
+= Details =
+
+  * To get or set the Color use the Color property
+{{{
+   colorPicker.Color = new Gdk.Color( 255, 0, 125 );
+}}}
