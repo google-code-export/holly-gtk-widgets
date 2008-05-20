@@ -391,14 +391,6 @@
       <placeholder />
     </child>
   </widget>
-  <widget class="Gtk.Window" id="HollyLibrary.HColorPickerDialog" design-size="400 300">
-    <property name="MemberName" />
-    <property name="Title" translatable="yes">HColorPickerDialog</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <child>
-      <placeholder />
-    </child>
-  </widget>
   <widget class="Gtk.Window" id="HollyLibrary.ColorPickerDialog" design-size="400 300">
     <property name="MemberName" />
     <property name="Title" translatable="yes">ColorPickerDialog</property>
