@@ -1,0 +1,15 @@
+#summary HToolTip widget information
+
+= Introduction =
+
+A nice baloon tooltip window for GTK.
+[http://lh4.ggpht.com/fr.daniil/SDayVaJcrpI/AAAAAAAAACo/0Ec8bJ6thso/h-gtk-baloon-tooltip.jpg]
+
+
+= Details =
+
+Use it like this:
+{{{
+   HollyLibrary.HToolTip.AddToolTip( button1, "My title", "My tooltip text" );
+   HollyLibrary.HToolTip.AddToolTip( button2, "My title", "buga buga"       );
+}}}
