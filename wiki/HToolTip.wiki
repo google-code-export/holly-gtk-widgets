@@ -3,6 +3,7 @@
 = Introduction =
 
 A nice baloon tooltip window for GTK.
+
 [http://lh4.ggpht.com/fr.daniil/SDayVaJcrpI/AAAAAAAAACo/0Ec8bJ6thso/h-gtk-baloon-tooltip.jpg]
 
 
