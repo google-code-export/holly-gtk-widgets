@@ -35,8 +35,8 @@
 *HToolTip*
   # ~~It would be nice to have a balloon tooltip in gtk#~~
   # ~~implement a small amount of time to wait until the tooltip appears~~
-  # make the background gradient colors customizable 
-  # make the icon customizable
+  # ~~make the background gradient colors customizable ~~
+  # ~~make the icon customizable~~
 
 _New widget:_ *HIpTextBox*
   # an Entry customized for ip addresses in multiple formats ( ipv4 ipv6 etc )
