@@ -34,7 +34,7 @@
 
 *HToolTip*
   # ~~It would be nice to have a balloon tooltip in gtk#~~
-  # implement a small amount of time to wait until the tooltip appears
+  # ~~implement a small amount of time to wait until the tooltip appears~~
   # make the background gradient colors customizable 
   # make the icon customizable
 
