@@ -10,15 +10,111 @@ using System.Collections.Generic;
 namespace HollyLibrary
 {
 	
+	class ToolTipData
+	{
+		String title, text;
+		Color color1 = Color.FromArgb( 251, 254, 255 );
+		Color color2 = Color.FromArgb( 229, 229, 239 );
+		String stockIcon = "gtk-dialog-info";
+		
+#region properties
+		public string Title {
+			get {
+				return title;
+			}
+			set {
+				title = value;
+			}
+		}
+
+		public string Text {
+			get {
+				return text;
+			}
+			set {
+				text = value;
+			}
+		}
+
+		public Color Color1 {
+			get {
+				return color1;
+			}
+			set {
+				color1 = value;
+			}
+		}
+
+		public Color Color2 {
+			get {
+				return color2;
+			}
+			set {
+				color2 = value;
+			}
+		}
+
+		public string StockIcon {
+			get {
+				return stockIcon;
+			}
+			set {
+				stockIcon = value;
+			}
+		}
+
+		
+#endregion
+		
+#region constructors
+		public ToolTipData( String title, String text, Color color1, Color color2, String stock )
+		{
+			this.Title  = title;
+			this.Text   = text;
+			this.Color1 = color1;
+			this.Color2 = color2;
+			this.StockIcon = stock;
+		}
+		
+		public ToolTipData( String title, String text, Color color1, Color color2 )
+		{
+			this.Title  = title;
+			this.Text   = text;
+			this.Color1 = color1;
+			this.Color2 = color2;
+		}
+		
+		public ToolTipData( String title, String text)
+		{
+			this.Title  = title;
+			this.Text   = text;
+		}
+		
+		public ToolTipData( String title, String text, String stock )
+		{
+			this.Title  = title;
+			this.Text   = text;
+			this.StockIcon = stock;
+		}
+#endregion
+		
+	}
 	
 	public partial class HToolTip : Gtk.Window
 	{
+		Color color1     = Color.FromArgb( 251, 254, 255 );
+		Color color2     = Color.FromArgb( 229, 229, 239 );
+		//
+		private static int toolTipInterval      = 1500;
+		private static bool is_interval_started = false;
+		private static Gtk.Widget CurrentWidget = null;
+		//
 		private int tail_height      = 30;
 		private int tail_left        = 30;
 		private int tail_width       = 60;
 		private int round_rect_angle = 15;
 		private static HToolTip instance;
-		private static Dictionary<Gtk.Widget,String[]> widgets = new Dictionary<Gtk.Widget,String[]>();
+		private static Dictionary<Gtk.Widget,ToolTipData> widgets = new Dictionary<Gtk.Widget,ToolTipData>();
 			
 		public HToolTip() : 
 				base(Gtk.WindowType.Popup)
@@ -35,6 +131,7 @@ namespace HollyLibrary
 		
 		public void Close()
 		{
+			instance.Visible = false;
 			instance.Hide();
 		}
 		
@@ -48,6 +145,7 @@ namespace HollyLibrary
 			}
 		}
 		
+#region properties
 		public String ToolTipText
 		{
 			get
@@ -71,29 +169,108 @@ namespace HollyLibrary
 				LblTitle.Markup = "<b>"+value+"</b>";
 			}
 		}
+
+		public static int ToolTipInterval 
+		{
+			get 
+			{
+				return toolTipInterval;
+			}
+			set
+			{
+				toolTipInterval = value;
+			}
+		}
+
+		public Color Color1 {
+			get {
+				return color1;
+			}
+			set {
+				color1 = value;
+			}
+		}
+
+		public Color Color2 {
+			get {
+				return color2;
+			}
+			set {
+				color2 = value;
+			}
+		}
+
+		public string StockIcon {
+			get {
+				return ImgIcon.Stock;
+			}
+			set {
+				ImgIcon.Stock = value;
+			}
+		}
+#endregion
+
+		public static void AddToolTip( Gtk.Widget widget, String title, String text, String StockIcon )
+		{
+			ToolTipData data = new ToolTipData( title, text, StockIcon );
+			AddWidget( widget, data );
+		}
+		
+		public static void AddToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2)
+		{
+			ToolTipData data = new ToolTipData( title, text, color1, color2  );
+			AddWidget( widget, data );
+		}
 		
 		public static void AddToolTip( Gtk.Widget widget, String title, String text )
 		{
-			widgets.Add( widget, new String[] { title, text } );
-			widget.DeleteEvent  += on_widget_delete;
-			widget.AddEvents( (int)Gdk.EventMask.PointerMotionMask );
-			widget.AddEvents( (int)Gdk.EventMask.PointerMotionHintMask );
-			widget.AddEvents( (int)Gdk.EventMask.LeaveNotifyMask );
-			widget.MotionNotifyEvent += on_widget_motion;
-			widget.LeaveNotifyEvent  += on_widget_out;
+			ToolTipData data = new ToolTipData( title, text );
+			AddWidget( widget, data );
+		}
+		
+		public static void AddToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2, String StockIcon )
+		{
+			ToolTipData data = new ToolTipData( title, text, color1, color2, StockIcon );
+			AddWidget( widget, data );
+		}
+		
+		private static void AddWidget( Gtk.Widget widget, ToolTipData data )
+		{
+			if( !widgets.ContainsKey( widget ) )
+			{
+				widgets.Add( widget, data );
+				widget.DeleteEvent  += on_widget_delete;
+				widget.AddEvents( (int)Gdk.EventMask.PointerMotionMask );
+				widget.AddEvents( (int)Gdk.EventMask.PointerMotionHintMask );
+				widget.AddEvents( (int)Gdk.EventMask.LeaveNotifyMask );
+				widget.MotionNotifyEvent += on_widget_motion;
+				widget.LeaveNotifyEvent  += on_widget_out;
+			}
+			else
+			{
+				widgets[widget] = data;
+			}
 		}
 		
 		private static void on_widget_out( object sender, Gtk.LeaveNotifyEventArgs args )
 		{
+			is_interval_started = false;
 			Instance.Close();
 		}
 		
 		private static void on_widget_motion( object sender, Gtk.MotionNotifyEventArgs args )
 		{
-			if( !Instance.Visible  )
+			CurrentWidget = (Gtk.Widget) sender;
+			is_interval_started = true;
+			GLib.Timeout.Add( (uint)ToolTipInterval, new GLib.TimeoutHandler( ShowMe ) );
+		}
+		
+		private static bool ShowMe()
+		{
+			if( !Instance.Visible  && is_interval_started )
 			{
-				Gtk.Widget w         = (Gtk.Widget) sender ;
-				String[] ToolTipData = widgets[ w ];
+				Gtk.Widget w         = CurrentWidget;
+				ToolTipData data     = widgets[ w ];
 				int x, y;
 				Gdk.ModifierType mt;
 				w.GdkWindow.GetPointer( out x, out y, out mt );
@@ -102,11 +279,15 @@ namespace HollyLibrary
 				x += _x;
 				y += _y;
 				Instance.Move( x , y );
-				Instance.ToolTipTitle = ToolTipData[0];
-				instance.ToolTipText  = ToolTipData[1] ;
+				Instance.ToolTipTitle = data.Title;
+				Instance.ToolTipText  = data.Text ;
+				Instance.Color1       = data.Color1;
+				Instance.Color2       = data.Color2;
+				Instance.StockIcon    = data.StockIcon;
 				Instance.Resize( 150, 100 );
 				Instance.Show();
 			}
+			return false;
 		}
 				
 		private static void on_widget_delete( object sender, EventArgs args )
@@ -114,6 +295,10 @@ namespace HollyLibrary
 			widgets.Remove( (Gtk.Widget) sender );
 		}
 		
+		protected virtual void OnSizeAllocated (object o, Gtk.SizeAllocatedArgs args)
+		{
+			makeShape();
+		}
 	
 #region make shape method
 		private void makeShape()
@@ -144,8 +329,8 @@ namespace HollyLibrary
 		{
 			Graphics g     = Gtk.DotNet.Graphics.FromDrawable( evnt.Window );
 			//fill background
-			Color c1       = Color.FromArgb( 251, 254, 255 );
-			Color c2       = Color.FromArgb( 229, 229, 239 );
+			Color c1       = this.Color1;
+			Color c2       = this.Color2;
 			Rectangle rect = new Rectangle( Allocation.X, Allocation.Y, Allocation.Width, Allocation.Height );
 			Brush b        = new LinearGradientBrush(rect, c1, c2, 90, true );
 			g.FillRectangle( b, rect );
@@ -183,10 +368,7 @@ namespace HollyLibrary
 		
 #endregion
 
-		protected virtual void OnSizeAllocated (object o, Gtk.SizeAllocatedArgs args)
-		{
-			makeShape();
-		}
+		
 	
 
 	

@@ -1,30 +1,27 @@
-﻿<UserCombinePreferences version="1.0" filename="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyWidgets.mds">
-  <Files>
-    <File name="Welcome" />
-    <File name="HollyLibrary/SimpleComboBox/ComboListWindow.cs" line="43" column="4" />
-    <File name="HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" line="31" column="40" />
-    <File name="test/Main.cs" line="14" column="4" />
-    <File name="test/MainWin.cs" line="24" column="26" />
-    <File name="HollyLibrary/FontEdit/FontChooserDialog.cs" line="1" column="1" />
-    <File name="HollyLibrary/FontEdit/HFontPicker.cs" line="33" column="38" />
-  </Files>
-  <Views>
-    <ViewMemento id="ProjectPad">
-      <Node expanded="True" selected="True">
-        <Node name="test" expanded="True" />
-      </Node>
-    </ViewMemento>
-    <ViewMemento id="ClassPad">
-      <Node expanded="True">
-        <Node name="test" expanded="True" />
-      </Node>
-    </ViewMemento>
-    <ViewMemento id="MonoDevelop.NUnit.TestPad">
-      <Node />
-    </ViewMemento>
-  </Views>
-  <Properties>
-    <Property key="ActiveWindow" value="/home/dantes/Documents/Mono projects/Holly Widgets/svn/HollyLibrary/FontEdit/HFontPicker.cs" />
-    <Property key="ActiveConfiguration" value="Debug" />
-  </Properties>
-</UserCombinePreferences>
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="test/MainWin.cs" ctype="Workbench">
+    <Files>
+      <File FileName="Welcome" />
+      <File FileName="test/MainWin.cs" Line="26" Column="65" />
+      <File FileName="test/Main.cs" Line="20" Column="11" />
+      <File FileName="HollyLibrary/WinUtil.cs" Line="64" Column="16" />
+      <File FileName="HollyLibrary/SimpleComboBox/HSimpleComboBox.cs" Line="82" Column="7" />
+      <File FileName="HollyLibrary/AssemblyInfo.cs" Line="13" Column="31" />
+      <File FileName="HollyLibrary/Tooltip/HToolTip.cs" Line="29" Column="16" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="HollyLibrary" expanded="True">
+            <Node name="Tooltip" expanded="True" />
+          </Node>
+          <Node name="test" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" StartupItem="test/test.mdp" ctype="Workspace" />
+</Properties>
