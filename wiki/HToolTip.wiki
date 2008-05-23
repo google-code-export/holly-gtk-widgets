@@ -11,9 +11,22 @@ A nice baloon tooltip window for GTK.
 
 Use it like this:
 {{{
-   //optional line - you can set from here the tooltip appear interval
-   HollyLibrary.HToolTip.ToolTipInterval = 1500; 
+using HollyLibrary;
+...
+
+   //optional line - you can set from here the tooltip appear interval( in nanosecs )
+   HollyLibrary.HToolTip.ToolTipInterval = 10; 
    //assign tooltips to some buttons
-   HollyLibrary.HToolTip.AddToolTip( button1, "My title", "My tooltip text" );
-   HollyLibrary.HToolTip.AddToolTip( button2, "My title", "buga buga"       );
+   String text = "My first line of text \r\n";
+   text       += "Second line of text bla bla \r\n";
+   text       += "last line of text";
+   //add the first simple tooltip ( with the default icon and colors )
+   HToolTip.AddToolTip( button1, "title 1", text  );  
+   //add the second tooltip with another stock-icon
+   HToolTip.AddToolTip( button2, "title 2", text, "gtk-yes" );
+   //add the third tooltip with customized colors
+   HToolTip.AddToolTip( button3, "title 3", text, Color.White, Color.Black );
+   //add the last tooltip with customized colors and another stock icon
+   HToolTip.AddToolTip( button4, "title 4", text, Color.Yellow, Color.Orange, "gtk-no" );
+
 }}}
