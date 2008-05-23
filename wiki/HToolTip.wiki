@@ -11,6 +11,9 @@ A nice baloon tooltip window for GTK.
 
 Use it like this:
 {{{
+   //optional line - you can set from here the tooltip appear interval
+   HollyLibrary.HToolTip.ToolTipInterval = 1500; 
+   //assign tooltips to some buttons
    HollyLibrary.HToolTip.AddToolTip( button1, "My title", "My tooltip text" );
    HollyLibrary.HToolTip.AddToolTip( button2, "My title", "buga buga"       );
 }}}
