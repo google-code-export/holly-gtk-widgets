@@ -27,12 +27,16 @@
   # ~~an Entry that supports regular expression validation, with a small error/ok icon near with a tooltip~~
   # ~~customizable tooltip text error, regular expression pattern~~ 
   # ~~write a page on the wiki with examples/screenshots for each feature~~
+  # use the HToolTip for tooltip message errors
 
 *HColorPicker*
   # ~~A color picker drop-down~~
 
-_New widget:_ *HBaloonToolTip*
-  # It would be nice to have a baloon tooltip in gtk#
+*HToolTip*
+  # ~~It would be nice to have a balloon tooltip in gtk#~~
+  # implement a small amount of time to wait until the tooltip appears
+  # make the background gradient colors customizable 
+  # make the icon customizable
 
 _New widget:_ *HIpTextBox*
   # an Entry customized for ip addresses in multiple formats ( ipv4 ipv6 etc )
