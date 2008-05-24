@@ -85,7 +85,7 @@ namespace HollyLibrary
 			if( type == ImageType.Error )
 			{
 				ErrorImage.Show();
-				HToolTip.AddToolTip( EbIcon, "Error", ErrorMessage, "gtk-dialog-warning" );
+				HToolTip.SetToolTip( EbIcon, "Error", ErrorMessage, "gtk-dialog-warning" );
 				ErrorImage.Stock         = "gtk-dialog-warning";
 			}
 			else

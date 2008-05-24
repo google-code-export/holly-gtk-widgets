@@ -215,25 +215,25 @@ namespace HollyLibrary
 		}
 #endregion
 
-		public static void AddToolTip( Gtk.Widget widget, String title, String text, String StockIcon )
+		public static void SetToolTip( Gtk.Widget widget, String title, String text, String StockIcon )
 		{
 			ToolTipData data = new ToolTipData( title, text, StockIcon );
 			AddWidget( widget, data );
 		}
 		
-		public static void AddToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2)
+		public static void SetToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2)
 		{
 			ToolTipData data = new ToolTipData( title, text, color1, color2  );
 			AddWidget( widget, data );
 		}
 		
-		public static void AddToolTip( Gtk.Widget widget, String title, String text )
+		public static void SetToolTip( Gtk.Widget widget, String title, String text )
 		{
 			ToolTipData data = new ToolTipData( title, text );
 			AddWidget( widget, data );
 		}
 		
-		public static void AddToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2, String StockIcon )
+		public static void SetToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2, String StockIcon )
 		{
 			ToolTipData data = new ToolTipData( title, text, color1, color2, StockIcon );
 			AddWidget( widget, data );

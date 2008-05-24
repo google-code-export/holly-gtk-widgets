@@ -746,6 +746,7 @@
                 <property name="MaxLength">3</property>
                 <property name="HasFrame">False</property>
                 <property name="InvisibleChar">●</property>
+                <property name="Xalign">0.5</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -773,6 +774,7 @@
                 <property name="MaxLength">3</property>
                 <property name="HasFrame">False</property>
                 <property name="InvisibleChar">●</property>
+                <property name="Xalign">0.5</property>
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -800,6 +802,7 @@
                 <property name="MaxLength">3</property>
                 <property name="HasFrame">False</property>
                 <property name="InvisibleChar">●</property>
+                <property name="Xalign">0.5</property>
               </widget>
               <packing>
                 <property name="Position">4</property>
@@ -835,6 +838,7 @@
             <property name="MaxLength">3</property>
             <property name="HasFrame">False</property>
             <property name="InvisibleChar">●</property>
+            <property name="Xalign">0.5</property>
           </widget>
           <packing>
             <property name="Position">1</property>
