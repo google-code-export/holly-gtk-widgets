@@ -572,8 +572,13 @@
   </widget>
   <widget class="Gtk.Window" id="HollyLibrary.HToolTip" design-size="424 215">
     <property name="MemberName" />
+    <property name="Visible">False</property>
     <property name="Title" translatable="yes">HToolTip</property>
     <property name="WindowPosition">CenterOnParent</property>
+    <property name="Decorated">False</property>
+    <property name="SkipPagerHint">True</property>
+    <property name="SkipTaskbarHint">True</property>
+    <property name="FocusOnMap">False</property>
     <signal name="SizeAllocated" handler="OnSizeAllocated" />
     <child>
       <widget class="Gtk.VBox" id="vbox4">

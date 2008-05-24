@@ -43,6 +43,10 @@ namespace HollyLibrary {
             this.Name = "HollyLibrary.HToolTip";
             this.Title = Mono.Unix.Catalog.GetString("HToolTip");
             this.WindowPosition = ((Gtk.WindowPosition)(4));
+            this.Decorated = false;
+            this.SkipPagerHint = true;
+            this.SkipTaskbarHint = true;
+            this.FocusOnMap = false;
             // Container child HollyLibrary.HToolTip.Gtk.Container+ContainerChild
             this.vbox4 = new Gtk.VBox();
             this.vbox4.Name = "vbox4";
@@ -151,7 +155,7 @@ namespace HollyLibrary {
             }
             this.DefaultWidth = 424;
             this.DefaultHeight = 215;
-            this.Show();
+            this.Hide();
             this.SizeAllocated += new Gtk.SizeAllocatedHandler(this.OnSizeAllocated);
         }
     }
