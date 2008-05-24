@@ -38,7 +38,7 @@
   # ~~make the background gradient colors customizable ~~
   # ~~make the icon customizable~~
 
-_New widget:_ *HIpTextBox*
+_New widget:_ *HIpEntry*
   # an Entry customized for ip addresses
 
 _New widget:_ *HSimpleTree*
