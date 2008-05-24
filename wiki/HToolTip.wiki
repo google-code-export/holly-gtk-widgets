@@ -17,7 +17,7 @@ using HollyLibrary;
    //add here your eventbox to the window
    ...
    ///and set the tooltip:
-   HToolTip.AddToolTip( eventBox, "title 1", "text"  );  
+   HToolTip.SetToolTip( eventBox, "title 1", "text"  );  
 }}}
 
 
@@ -35,12 +35,12 @@ using HollyLibrary;
    text       += "Second line of text bla bla \r\n";
    text       += "last line of text";
    //add the first simple tooltip ( with the default icon and colors )
-   HToolTip.AddToolTip( button1, "title 1", text  );  
+   HToolTip.SetToolTip( button1, "title 1", text  );  
    //add the second tooltip with another stock-icon
-   HToolTip.AddToolTip( button2, "title 2", text, "gtk-yes" );
+   HToolTip.SetToolTip( button2, "title 2", text, "gtk-yes" );
    //add the third tooltip with customized colors
-   HToolTip.AddToolTip( button3, "title 3", text, Color.White, Color.Black );
+   HToolTip.SetToolTip( button3, "title 3", text, Color.White, Color.Black );
    //add the last tooltip with customized colors and another stock icon
-   HToolTip.AddToolTip( button4, "title 4", text, Color.Yellow, Color.Orange, "gtk-no" );
+   HToolTip.SetToolTip( button4, "title 4", text, Color.Yellow, Color.Orange, "gtk-no" );
 
 }}}
