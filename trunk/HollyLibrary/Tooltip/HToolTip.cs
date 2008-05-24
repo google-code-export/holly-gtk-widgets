@@ -122,7 +122,6 @@ namespace HollyLibrary
 			this.AppPaintable       = true;
 			this.TypeHint           = Gdk.WindowTypeHint.Tooltip;
 			this.Build();
-			this.Hide();
 			instance                = this;
 			Spacer.HeightRequest    = tail_height;
 			SpacerLeft.WidthRequest = round_rect_angle;
