@@ -83,4 +83,13 @@
       </itemgroup>
     </signals>
   </object>
+  <object type="HollyLibrary.HIpEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HIpEntry Properties">
+        <property name="Text" />
+        <property name="ErrorMessage" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
 </objects>

@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="400 289">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="730 353">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -16,6 +16,18 @@
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
+        <child>
+          <widget class="HollyLibrary.HIpEntry" id="hipentry1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
         <child>
           <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
@@ -61,7 +73,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">0</property>
+            <property name="Position">1</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -71,7 +83,7 @@
             <property name="Events">ButtonPressMask</property>
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -81,7 +93,7 @@
             <property name="Events">ButtonPressMask</property>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -91,7 +103,7 @@
             <property name="Events">ButtonPressMask</property>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">4</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -112,7 +124,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">4</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
           </packing>
         </child>
