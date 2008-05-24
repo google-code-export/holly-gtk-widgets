@@ -37,9 +37,12 @@
   # ~~implement a small amount of time to wait until the tooltip appears~~
   # ~~make the background gradient colors customizable ~~
   # ~~make the icon customizable~~
+  # ~~write wiki page~~
 
-_New widget:_ *HIpEntry*
-  # an Entry customized for ip addresses
+*HIpEntry*
+  # ~~an Entry customized for ip addresses~~
+  # ~~add nice error message with baloon tooltip~~
+  # ~~write wiki page~~
 
 _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
