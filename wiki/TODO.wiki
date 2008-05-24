@@ -51,6 +51,17 @@ _New widget:_ *HGridView*
   # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
 
 Feature plans:
+  * GET RID OF:
+{{{
+Gdk.Threads.Init ();
+Application.Init ();
+MainWin win = new MainWin();
+win.Show ();
+Gdk.Threads.Enter();
+Application.Run ();
+Gdk.Threads.Leave();
+}}}
+in the main method !!
   * study databinding in winforms, maibe do something similar for gtk widgets
   * some refactoring in the widgets events name
   * rebuild HFontPicker to be an extended HSimpleComboBox
