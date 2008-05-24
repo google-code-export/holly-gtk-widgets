@@ -6,6 +6,20 @@ A nice baloon tooltip window for GTK.
 
 [http://lh4.ggpht.com/fr.daniil/SDayVaJcrpI/AAAAAAAAACo/0Ec8bJ6thso/h-gtk-baloon-tooltip.jpg]
 
+= ATTENTION! =
+If you want to add the tooltip to a Gtk.Image or an Gtk.Label you have to put those widgets first in a Gtk.EventBox, and set the tooltip to the eventbox.
+{{{
+using HollyLibrary;
+...
+   Gtk.Label lbl = new Gtk.Label("my label");
+   Gtk.EventBox eventBox = new Gtk.EventBox();
+   eventBox.Add( lbl );
+   //add here your eventbox to the window
+   ...
+   ///and set the tooltip:
+   HToolTip.AddToolTip( eventBox, "title 1", "text"  );  
+}}}
+
 
 = Details =
 
