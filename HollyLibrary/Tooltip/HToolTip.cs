@@ -208,6 +208,12 @@ namespace HollyLibrary
 				ImgIcon.Stock = value;
 			}
 		}
+
+		public int TailLeft {
+			get {
+				return tail_left;
+			}
+		}
 #endregion
 
 		public static void AddToolTip( Gtk.Widget widget, String title, String text, String StockIcon )
@@ -240,29 +246,33 @@ namespace HollyLibrary
 			{
 				widgets.Add( widget, data );
 				widget.DeleteEvent  += on_widget_delete;
+				widget.AddEvents( (int)Gdk.EventMask.ProximityInMask   );
 				widget.AddEvents( (int)Gdk.EventMask.PointerMotionMask );
 				widget.AddEvents( (int)Gdk.EventMask.PointerMotionHintMask );
-				widget.AddEvents( (int)Gdk.EventMask.LeaveNotifyMask );
-				widget.MotionNotifyEvent += on_widget_motion;
-				widget.LeaveNotifyEvent  += on_widget_out;
+				widget.AddEvents( (int)Gdk.EventMask.LeaveNotifyMask  );
+				widget.AddEvents( (int)Gdk.EventMask.AllEventsMask    );
+				widget.AddEvents( (int)Gdk.EventMask.EnterNotifyMask  );
+				widget.AddEvents( (int)Gdk.EventMask.FocusChangeMask  );
+				
+				widget.WidgetEvent += delegate(object sender, Gtk.WidgetEventArgs args)
+				{
+					if( args.Event.Type == Gdk.EventType.LeaveNotify )
+					{
+						is_interval_started = false;
+						Instance.Close();
+					}
+					if( args.Event.Type == Gdk.EventType.EnterNotify )
+					{
+						CurrentWidget       = (Gtk.Widget)sender;
+						is_interval_started = true;
+						GLib.Timeout.Add( (uint)ToolTipInterval, new GLib.TimeoutHandler( ShowMe ) );
+					}
+				};
 			}
 			else
 			{
 				widgets[widget] = data;
 			}
-		}
-		
-		private static void on_widget_out( object sender, Gtk.LeaveNotifyEventArgs args )
-		{
-			is_interval_started = false;
-			Instance.Close();
-		}
-		
-		private static void on_widget_motion( object sender, Gtk.MotionNotifyEventArgs args )
-		{
-			CurrentWidget = (Gtk.Widget) sender;
-			is_interval_started = true;
-			GLib.Timeout.Add( (uint)ToolTipInterval, new GLib.TimeoutHandler( ShowMe ) );
 		}
 		
 		private static bool ShowMe()
@@ -271,13 +281,20 @@ namespace HollyLibrary
 			{
 				Gtk.Widget w         = CurrentWidget;
 				ToolTipData data     = widgets[ w ];
-				int x, y;
+				int x = 0;
+				int y = 0;
+				//first take window position
+				w.ParentWindow.GetPosition( out x, out y );
+				//adauga locatia mausului in ea
+				int _x = 0;
+				int _y = 0;
 				Gdk.ModifierType mt;
-				w.GdkWindow.GetPointer( out x, out y, out mt );
-				int _x, _y;
-				w.GdkWindow.GetPosition( out _x, out _y );
+				//add pointer location
+				w.ParentWindow.GetPointer( out _x, out _y, out mt );
 				x += _x;
-				y += _y;
+				y += _y + 20;
+				//TODO: replace value with tail_left
+				x -= Instance.TailLeft;
 				Instance.Move( x , y );
 				Instance.ToolTipTitle = data.Title;
 				Instance.ToolTipText  = data.Text ;

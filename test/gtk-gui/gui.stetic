@@ -96,7 +96,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+          <widget class="Gtk.ScrolledWindow" id="SList">
             <property name="MemberName" />
             <property name="ShadowType">In</property>
             <child>
