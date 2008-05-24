@@ -41,12 +41,12 @@ namespace HollyLibrary
 		{
 			if( type == ImageType.Error )
 			{
-				HToolTip.AddToolTip( EbErrorImage, "Error", errorMessage, "gtk-dialog-warning" );
+				HToolTip.SetToolTip( EbErrorImage, "Error", errorMessage, "gtk-dialog-warning" );
 				ErrorImage.Stock         = "gtk-dialog-warning";
 			}
 			else
 			{
-				HToolTip.AddToolTip( EbErrorImage, "Ok", okMessage, "gtk-yes" );
+				HToolTip.SetToolTip( EbErrorImage, "Ok", okMessage, "gtk-yes" );
 				ErrorImage.Stock         = "gtk-yes";
 			}
 		}

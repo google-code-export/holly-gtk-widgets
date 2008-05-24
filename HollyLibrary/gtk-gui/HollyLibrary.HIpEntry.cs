@@ -60,6 +60,7 @@ namespace HollyLibrary {
             this.entry1.MaxLength = 3;
             this.entry1.HasFrame = false;
             this.entry1.InvisibleChar = '●';
+            this.entry1.Xalign = 0.5F;
             this.hbox4.Add(this.entry1);
             Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.hbox4[this.entry1]));
             w1.Position = 0;
@@ -81,6 +82,7 @@ namespace HollyLibrary {
             this.entry2.MaxLength = 3;
             this.entry2.HasFrame = false;
             this.entry2.InvisibleChar = '●';
+            this.entry2.Xalign = 0.5F;
             this.hbox4.Add(this.entry2);
             Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.hbox4[this.entry2]));
             w3.Position = 2;
@@ -102,6 +104,7 @@ namespace HollyLibrary {
             this.entry3.MaxLength = 3;
             this.entry3.HasFrame = false;
             this.entry3.InvisibleChar = '●';
+            this.entry3.Xalign = 0.5F;
             this.hbox4.Add(this.entry3);
             Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.hbox4[this.entry3]));
             w5.Position = 4;
@@ -128,6 +131,7 @@ namespace HollyLibrary {
             this.entry4.MaxLength = 3;
             this.entry4.HasFrame = false;
             this.entry4.InvisibleChar = '●';
+            this.entry4.Xalign = 0.5F;
             this.hbox3.Add(this.entry4);
             Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.hbox3[this.entry4]));
             w8.Position = 1;
