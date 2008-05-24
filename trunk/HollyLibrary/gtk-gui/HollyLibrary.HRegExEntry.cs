@@ -17,6 +17,8 @@ namespace HollyLibrary {
         
         private Gtk.Entry TextBox;
         
+        private Gtk.EventBox EbErrorImage;
+        
         private Gtk.Image ErrorImage;
         
         protected virtual void Build() {
@@ -40,13 +42,18 @@ namespace HollyLibrary {
             Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.hbox1[this.TextBox]));
             w1.Position = 0;
             // Container child hbox1.Gtk.Box+BoxChild
+            this.EbErrorImage = new Gtk.EventBox();
+            this.EbErrorImage.Name = "EbErrorImage";
+            this.EbErrorImage.VisibleWindow = false;
+            // Container child EbErrorImage.Gtk.Container+ContainerChild
             this.ErrorImage = new Gtk.Image();
             this.ErrorImage.Name = "ErrorImage";
-            this.hbox1.Add(this.ErrorImage);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.ErrorImage]));
-            w2.Position = 1;
-            w2.Expand = false;
-            w2.Fill = false;
+            this.EbErrorImage.Add(this.ErrorImage);
+            this.hbox1.Add(this.EbErrorImage);
+            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.hbox1[this.EbErrorImage]));
+            w3.Position = 1;
+            w3.Expand = false;
+            w3.Fill = false;
             this.Add(this.hbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();

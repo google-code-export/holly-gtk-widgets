@@ -372,8 +372,14 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Image" id="ErrorImage">
+          <widget class="Gtk.EventBox" id="EbErrorImage">
             <property name="MemberName" />
+            <property name="VisibleWindow">False</property>
+            <child>
+              <widget class="Gtk.Image" id="ErrorImage">
+                <property name="MemberName" />
+              </widget>
+            </child>
           </widget>
           <packing>
             <property name="Position">1</property>

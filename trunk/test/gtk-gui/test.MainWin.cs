@@ -29,7 +29,7 @@ namespace test {
         
         private HollyLibrary.HRegExEntry hregexentry1;
         
-        private Gtk.ScrolledWindow GtkScrolledWindow;
+        private Gtk.ScrolledWindow SList;
         
         private HollyLibrary.HSimpleList hsimplelist1;
         
@@ -99,10 +99,10 @@ namespace test {
             Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hregexentry1]));
             w7.Position = 3;
             // Container child vbox1.Gtk.Box+BoxChild
-            this.GtkScrolledWindow = new Gtk.ScrolledWindow();
-            this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-            this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
-            // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+            this.SList = new Gtk.ScrolledWindow();
+            this.SList.Name = "SList";
+            this.SList.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child SList.Gtk.Container+ContainerChild
             this.hsimplelist1 = new HollyLibrary.HSimpleList();
             this.hsimplelist1.CanFocus = true;
             this.hsimplelist1.Name = "hsimplelist1";
@@ -110,9 +110,9 @@ namespace test {
             this.hsimplelist1.ItemHeight = 0;
             this.hsimplelist1.SelectedIndex = 0;
             this.hsimplelist1.OwnerDraw = false;
-            this.GtkScrolledWindow.Add(this.hsimplelist1);
-            this.vbox1.Add(this.GtkScrolledWindow);
-            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
+            this.SList.Add(this.hsimplelist1);
+            this.vbox1.Add(this.SList);
+            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
             w9.Position = 4;
             this.Add(this.vbox1);
             if ((this.Child != null)) {
