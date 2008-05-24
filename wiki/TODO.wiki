@@ -1,3 +1,4 @@
+= VERSION 1.0 =
 *HDateEditor*
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
@@ -47,10 +48,9 @@
 _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
 
-_New widget:_ *HGridView*
-  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
+_New widget:_ *HComboTree*
+  # a combobox that shows a HSimpleTree at popup
 
-Feature plans:
   * GET RID OF:
 {{{
 Gdk.Threads.Init ();
@@ -62,7 +62,16 @@ Application.Run ();
 Gdk.Threads.Leave();
 }}}
 in the main method !!
-  * study databinding in winforms, maibe do something similar for gtk widgets
   * some refactoring in the widgets events name
   * rebuild HFontPicker to be an extended HSimpleComboBox
+
+= VERSION 2.0 =
+
+_New widget:_ *HComboCalculator*
+  # a combobox with a calculator popup to do calculations
+
+_New widget:_ *HGridView*
+  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
+
+  * study databinding in winforms, maibe do something similar for gtk widgets
   * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
