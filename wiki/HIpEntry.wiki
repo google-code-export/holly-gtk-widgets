@@ -1,8 +1,10 @@
 #summary A widget that allows the user to enter an IPv4 address.
 
 = Introduction =
+
 A widget that allows the user to enter an IPv4 address.
 It performs some checks to see if user input is valid and implements the Text property to get/set the ip address as a string. It also has an ErrorMessage property for the tooltip error.
 
-Details =
+= Details =
+
 [http://lh3.ggpht.com/fr.daniil/SDf-_Y-OB4I/AAAAAAAAACw/vviGJc39EBo/gtk-ip-entry.jpg]
