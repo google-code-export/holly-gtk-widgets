@@ -39,7 +39,7 @@
   # ~~make the icon customizable~~
 
 _New widget:_ *HIpTextBox*
-  # an Entry customized for ip addresses in multiple formats ( ipv4 ipv6 etc )
+  # an Entry customized for ip addresses
 
 _New widget:_ *HSimpleTree*
   # as much as similar to the winforms treeview
