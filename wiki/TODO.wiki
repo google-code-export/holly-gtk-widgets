@@ -90,7 +90,8 @@ _New widget:_ *HPictureBox*
 ||Normal||The image is placed in the upper-left corner of the PictureBox. The image is clipped if it is larger than the PictureBox it is contained in. ||
 ||StretchImage||The image within the PictureBox is stretched or shrunk to fit the size of the PictureBox. ||
 ||Zoom||The size of the image is increased or decreased maintaining the size ratio.|| 
-
+  # SaveAs( String file, String type ) method ( type= jpg/png etc ) 
+  # ImageChanged event
 
 _New widget:_ *HGridView*
   # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
