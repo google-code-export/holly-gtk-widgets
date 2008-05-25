@@ -67,6 +67,9 @@ in the main method !!
 
 = VERSION 2.0 =
 
+_New widget:_ *HCheckBoxSimpleList*
+  # a HSimpleList with checkboxed items
+
 _New widget:_ *HNumericEntry*
   # a entry only for numeric values
   # support for negative values
