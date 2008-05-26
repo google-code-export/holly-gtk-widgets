@@ -48,6 +48,7 @@
 *HTreeView*
   # ~~simpler to use like the winforms treeview~~
   # implement the SelectedNodes property && SelectionMode
+  # implement the ParentNode property to HTreeNode
   # write wiki page
 
 _New widget:_ *HComboTree*
