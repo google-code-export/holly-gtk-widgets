@@ -1,0 +1,43 @@
+#summary A simple to use treeview for Gtk, similar to the winforms version
+
+= Introduction =
+
+This is an extended Gtk.TreeView, wich you can use more easy/faster. 
+
+= Details =
+  * Adding nodes:
+{{{
+    //make the tree to show node icons and have checkboxes and to be editable
+    treeview.NodeIconVisible = true;
+    treeview.IsCheckBoxTree  = true;
+    treeview.Editable        = true;
+
+    //add a root element
+    HTreeNode root   = new HTreeNode( "root node" );
+    //IMPORTANT: before adding childs, add base root elements to the treeview
+    treeview.Nodes.Add( root );
+
+    //lets add a few childs
+    root.Nodes.Add( new HTreeNode("child1") );
+
+    //lets add a nod with icon
+    Gdk.Pixbuf icon = GraphUtil.pixbufFromStock("gtk-yes", Gtk.IconSize.Button );
+    root.Nodes.Add( new HTreeNode("child2", icon ) );
+
+    //add a node with a different icon when it's expanded
+    Gdk.Pixbuf icon_expanded = GraphUtil.pixbufFromStock("gtk-no", Gtk.IconSize.Button );
+    root.Nodes.Add( new HTreeNode("child3", icon, icon_expanded) );
+
+    //add a simple nod that is checked
+    root.Nodes.Add( new HTreeNode("i'm checked!", true ) );
+}}}
+
+  * Removing/changing nodes:
+{{{
+   HTreeNode nod_to_be_removed = treeview.Nodes[0];
+   treeview.Nodes.Remove( nod_to_be_removed );
+
+   //change a node
+   HTreeNode new_node = new HTreeNode( "my new node!" );
+   treeview.Nodes[0]  = new_node;
+}}}
