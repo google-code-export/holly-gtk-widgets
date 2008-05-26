@@ -56,8 +56,9 @@
   # ~~a combobox that shows a HSimpleTree at popup~~
   # ~~write a wiki page~~
 
-
-
+*HComboFolder
+  # a combobox folder chooser widget 
+  # wiki page
 
 ----
   * write wiki page for utilities classes with examples
