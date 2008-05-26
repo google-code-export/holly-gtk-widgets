@@ -10,8 +10,14 @@ A easy to use combobox with a treeview inside
 
 = Details =
 
-to access the tree use
+Example:
 {{{
-   combo.Tree
+   HTreeNode root   = new HTreeNode( "gigi1" );
+   combobox.Tree.Nodes.Add( root );
+			
+   root.Nodes.Add( new HTreeNode( "gigi2" ) );
+   root.Nodes.Add( new HTreeNode( "gigi3" ) );
+   root.Nodes.Add( new HTreeNode( "gigi4" ) );
+
 }}}
-see the wiki for the HTreeView [http://code.google.com/p/holly-gtk-widgets/wiki/HTreeView here]
+see the wiki for the HTreeView [http://code.google.com/p/holly-gtk-widgets/wiki/HTreeView here] for more info.
