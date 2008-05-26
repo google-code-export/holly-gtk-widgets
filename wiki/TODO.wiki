@@ -52,10 +52,14 @@
   # ~~implement the IsExpanded property to HTreeNode~~
   # ~~write wiki page~~
 
-  *HComboTree*
+*HComboTree*
   # a combobox that shows a HSimpleTree at popup
   # write a wiki page
-   
+
+
+
+
+----
   * write wiki page for utilities classes with examples
   * GET RID OF:
 {{{
