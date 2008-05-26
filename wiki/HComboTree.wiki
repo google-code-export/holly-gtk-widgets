@@ -1,0 +1,17 @@
+#summary A combobox that shows a HTreeView as a popup
+
+= Introduction =
+
+A easy to use combobox with a treeview inside
+
+
+[http://lh4.ggpht.com/fr.daniil/SDrjCtKf7XI/AAAAAAAAADA/q1RITVqwA1M/gtk-combo-tree.jpg]
+
+
+= Details =
+
+to access the tree use
+{{{
+   combo.Tree
+}}}
+see the wiki for the HTreeView [http://code.google.com/p/holly-gtk-widgets/wiki/HTreeView here]
