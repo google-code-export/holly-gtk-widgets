@@ -58,6 +58,6 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
 }}}
 
   * Other nodes methods:
-|| method    || description ||
-|| HTreeNode.selectAllChilds() ||  select all nodes childs ||
-|| deselectAllChilds()         ||deselect all nodes childs ||
+|| *Method*    || *Description* ||
+|| {{{HTreeNode.selectAllChilds()}}} ||  select all nodes childs ||
+|| {{{deselectAllChilds()}}}         ||deselect all nodes childs ||
