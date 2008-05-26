@@ -15,6 +15,10 @@ namespace test {
         
         private Gtk.VBox vbox1;
         
+        private Gtk.ScrolledWindow GtkScrolledWindow;
+        
+        private HollyLibrary.HTreeView htreeview1;
+        
         private HollyLibrary.HIpEntry hipentry1;
         
         private Gtk.HBox hbox1;
@@ -46,14 +50,30 @@ namespace test {
             this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
+            this.GtkScrolledWindow = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+            this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+            this.htreeview1 = new HollyLibrary.HTreeView();
+            this.htreeview1.CanFocus = true;
+            this.htreeview1.Name = "htreeview1";
+            this.htreeview1.HeadersClickable = true;
+            this.htreeview1.IsCheckBoxTree = false;
+            this.htreeview1.Editable = false;
+            this.htreeview1.NodeIconVisible = true;
+            this.GtkScrolledWindow.Add(this.htreeview1);
+            this.vbox1.Add(this.GtkScrolledWindow);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
+            w2.Position = 0;
+            // Container child vbox1.Gtk.Box+BoxChild
             this.hipentry1 = new HollyLibrary.HIpEntry();
             this.hipentry1.Events = ((Gdk.EventMask)(256));
             this.hipentry1.Name = "hipentry1";
             this.vbox1.Add(this.hipentry1);
-            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.hipentry1]));
-            w1.Position = 0;
-            w1.Expand = false;
-            w1.Fill = false;
+            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.hipentry1]));
+            w3.Position = 1;
+            w3.Expand = false;
+            w3.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hbox1 = new Gtk.HBox();
             this.hbox1.Name = "hbox1";
@@ -62,11 +82,12 @@ namespace test {
             this.button2 = new Gtk.Button();
             this.button2.CanFocus = true;
             this.button2.Name = "button2";
+            this.button2.UseStock = true;
             this.button2.UseUnderline = true;
-            this.button2.Label = Mono.Unix.Catalog.GetString("button2");
+            this.button2.Label = "gtk-ok";
             this.hbox1.Add(this.button2);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.button2]));
-            w2.Position = 0;
+            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.button2]));
+            w4.Position = 0;
             // Container child hbox1.Gtk.Box+BoxChild
             this.button3 = new Gtk.Button();
             this.button3.CanFocus = true;
@@ -74,8 +95,8 @@ namespace test {
             this.button3.UseUnderline = true;
             this.button3.Label = Mono.Unix.Catalog.GetString("button3");
             this.hbox1.Add(this.button3);
-            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.hbox1[this.button3]));
-            w3.Position = 1;
+            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.hbox1[this.button3]));
+            w5.Position = 1;
             // Container child hbox1.Gtk.Box+BoxChild
             this.button4 = new Gtk.Button();
             this.button4.CanFocus = true;
@@ -83,32 +104,32 @@ namespace test {
             this.button4.UseUnderline = true;
             this.button4.Label = Mono.Unix.Catalog.GetString("button4");
             this.hbox1.Add(this.button4);
-            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.button4]));
-            w4.Position = 2;
+            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox1[this.button4]));
+            w6.Position = 2;
             this.vbox1.Add(this.hbox1);
-            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
-            w5.Position = 1;
+            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+            w7.Position = 2;
             // Container child vbox1.Gtk.Box+BoxChild
             this.BtnMoreColors = new HollyLibrary.HFontPicker();
             this.BtnMoreColors.Events = ((Gdk.EventMask)(256));
             this.BtnMoreColors.Name = "BtnMoreColors";
             this.vbox1.Add(this.BtnMoreColors);
-            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnMoreColors]));
-            w6.Position = 2;
+            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnMoreColors]));
+            w8.Position = 3;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hcolorpicker1 = new HollyLibrary.HColorPicker();
             this.hcolorpicker1.Events = ((Gdk.EventMask)(256));
             this.hcolorpicker1.Name = "hcolorpicker1";
             this.vbox1.Add(this.hcolorpicker1);
-            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcolorpicker1]));
-            w7.Position = 3;
+            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcolorpicker1]));
+            w9.Position = 4;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hregexentry1 = new HollyLibrary.HRegExEntry();
             this.hregexentry1.Events = ((Gdk.EventMask)(256));
             this.hregexentry1.Name = "hregexentry1";
             this.vbox1.Add(this.hregexentry1);
-            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox1[this.hregexentry1]));
-            w8.Position = 4;
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox1[this.hregexentry1]));
+            w10.Position = 5;
             // Container child vbox1.Gtk.Box+BoxChild
             this.SList = new Gtk.ScrolledWindow();
             this.SList.Name = "SList";
@@ -123,16 +144,18 @@ namespace test {
             this.hsimplelist1.OwnerDraw = false;
             this.SList.Add(this.hsimplelist1);
             this.vbox1.Add(this.SList);
-            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
-            w10.Position = 5;
+            Gtk.Box.BoxChild w12 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
+            w12.Position = 6;
             this.Add(this.vbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
             this.DefaultWidth = 730;
-            this.DefaultHeight = 353;
+            this.DefaultHeight = 451;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
+            this.button2.Clicked += new System.EventHandler(this.OnButton2Clicked);
+            this.button3.Clicked += new System.EventHandler(this.OnButton3Clicked);
         }
     }
 }

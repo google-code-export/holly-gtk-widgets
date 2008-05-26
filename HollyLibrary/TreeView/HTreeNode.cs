@@ -20,14 +20,12 @@ namespace HollyLibrary
 		Gdk.Pixbuf icon         = null;
 		Gdk.Pixbuf opened_icon  = null;
 		string text             = "";
-		//items
-		NodeCollection nodes    = new NodeCollection();
-		HTreeNode parent        = null;
+		HTreeNode parentNode    = null;
 		private bool isExpanded = false;
 		bool _checked           = false;
-		//events
-		public event EventHandler DrawNode;
-		public event EventHandler MeasureNode;
+		//nodes
+		NodeCollection nodes    = new NodeCollection();
+		
 		
 #region constructors
 		public HTreeNode()
@@ -103,6 +101,7 @@ namespace HollyLibrary
 			args.NewNode.Store     = args.OldNode.Store;
 			args.NewNode.InnerIter = args.OldNode.InnerIter;
 			args.NewNode.Treeview  = args.OldNode.Treeview;
+			args.NewNode.ParentNode= args.OldNode.ParentNode;
 			Store.SetValues( args.OldNode.InnerIter, args.NewNode );
 		}
 		
@@ -114,10 +113,11 @@ namespace HollyLibrary
 		
 		public virtual void OnNodeAdded( object sender, NodeAddEventArgs args )
 		{
-			Gtk.TreeIter iter   = Store.AppendValues(InnerIter, args.Node );
-			args.Node.Store     = Store;
-			args.Node.innerIter = iter;
-			args.Node.Treeview  = Treeview;
+			Gtk.TreeIter iter    = Store.AppendValues(InnerIter, args.Node );
+			args.Node.Store      = Store;
+			args.Node.innerIter  = iter;
+			args.Node.Treeview   = Treeview;
+			args.Node.ParentNode = this;
 		}
 		
 		public virtual void OnDrawItem( DrawItemEventArgs args )	
@@ -160,19 +160,15 @@ namespace HollyLibrary
 			}
 		}
 
-		public HTreeNode Parent 
+		public bool IsExpanded 
 		{
-			get {
-				return parent;
-			}
-			set {
-				parent = value;
-			}
-		}
-
-		public bool IsExpanded {
-			get {
+			get 
+			{
 				return isExpanded;
+			}
+			internal set
+			{
+				isExpanded = value;
 			}
 		}
 
@@ -180,7 +176,7 @@ namespace HollyLibrary
 			get {
 				return innerIter;
 			}
-			set {
+			internal set {
 				innerIter = value;
 			}
 		}
@@ -209,7 +205,7 @@ namespace HollyLibrary
 			get {
 				return store;
 			}
-			set {
+			internal set {
 				store = value;
 			}
 		}
@@ -220,6 +216,18 @@ namespace HollyLibrary
 			}
 			set {
 				treeview = value;
+			}
+		}
+
+		public HTreeNode ParentNode 
+		{
+			get 
+			{
+				return parentNode;
+			}
+			internal set 
+			{
+				parentNode = value;
 			}
 		}
 

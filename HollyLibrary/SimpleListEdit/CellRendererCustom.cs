@@ -8,8 +8,7 @@ using Gdk;
 
 namespace HollyLibrary
 {
-	
-	
+
 	public class CellRendererCustom : CellRenderer
 	{
 		HSimpleList Father;
@@ -31,7 +30,7 @@ namespace HollyLibrary
 		}
 
 		protected override void Render (Drawable window, Widget widget, Rectangle background_area, Rectangle cell_area, Rectangle expose_area, CellRendererState flags)
-		{
+		{	
 			Father.DrawItem(ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 		}
 

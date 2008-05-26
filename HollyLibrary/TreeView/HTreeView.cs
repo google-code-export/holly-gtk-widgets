@@ -30,6 +30,11 @@ namespace HollyLibrary
 			this.HeadersVisible = false;
 			this.EnableSearch   = true;
 			//
+			AddBaseColumn();
+		}
+		
+		public virtual void AddBaseColumn()
+		{
 			BaseColumn     = new TreeViewColumn();
 			//set renderers properties
 			cell_chk.Toggled           += OnCelltoggled;
@@ -49,8 +54,12 @@ namespace HollyLibrary
 			Nodes.NodeAdded   += OnNodeAdded;
 			Nodes.NodeRemoved += OnNodeRemoved;
 			Nodes.NodeUpdated += OnNodeUpdated;
+			//
+			this.RowExpanded  += OnExpandRow;
+			this.RowCollapsed += OnCollapseRow;
 		}
 		
+		//checkbox cell function
 		private void OnChkDataFunc(
 		                        Gtk.TreeViewColumn col, Gtk.CellRenderer cell,
 		                        Gtk.TreeModel model, Gtk.TreeIter iter
@@ -61,6 +70,7 @@ namespace HollyLibrary
 			c.Active             = nod.Checked;
 		}
 		
+		//text cell function
 		private void OnTextDataFunc(
 		                        Gtk.TreeViewColumn col, Gtk.CellRenderer cell,
 		                        Gtk.TreeModel model, Gtk.TreeIter iter
@@ -72,6 +82,7 @@ namespace HollyLibrary
 			c.Text             = nod.Text;
 		}
 		
+		//icon data function
 		private void OnIconDataFunc(
 		                        Gtk.TreeViewColumn col, Gtk.CellRenderer cell,
 		                        Gtk.TreeModel model, Gtk.TreeIter iter)
@@ -87,13 +98,13 @@ namespace HollyLibrary
 				c.Pixbuf = nod.Icon;
 		}
 		
+		//checkbox state changed
 		private void OnCelltoggled( object sender, ToggledArgs args )
 		{
-			CellRendererToggle toggle = (CellRendererToggle) sender;
-			
             TreeIter iter;
             if (store.GetIterFromString(out iter, args.Path))
             {
+				
 				HTreeNode nod = getNodeFromIter( iter );
 				nod.Checked   = !nod.Checked;
 				//(de)select all childs
@@ -105,6 +116,7 @@ namespace HollyLibrary
 
 		}
 		
+		//returns a HTreeNode from an iter
 		private HTreeNode getNodeFromIter( TreeIter iter )
 		{
 			HTreeNode ret = store.GetValue( iter, 0 ) as HTreeNode;
@@ -132,6 +144,18 @@ namespace HollyLibrary
 			args.NewNode.InnerIter = args.OldNode.InnerIter;
 			args.NewNode.Treeview  = args.OldNode.Treeview;
 			store.SetValues( args.OldNode.InnerIter, args.NewNode );
+		}
+		
+		public virtual void OnExpandRow( object sender, RowExpandedArgs args )
+		{
+			HTreeNode nod  = getNodeFromIter( args.Iter );
+			nod.IsExpanded = true;
+		}
+		
+		public virtual void OnCollapseRow( object sender, RowCollapsedArgs args )
+		{
+			HTreeNode nod  = getNodeFromIter( args.Iter );
+			nod.IsExpanded = false;
 		}
 #endregion
 
@@ -168,15 +192,45 @@ namespace HollyLibrary
 			}
 		}
 
-		public bool Editable {
-			get {
+		public bool Editable 
+		{
+			get 
+			{
 				return cell_text.Editable;
 			}
-			set {
+			set 
+			{
 				cell_text.Editable = value;
 			}
 		}
+		
+		public HTreeNode[] SelectedNodes
+		{
+			get
+			{
+				TreePath[] paths = this.Selection.GetSelectedRows();
+				HTreeNode[] ret  = new HTreeNode[ paths.Length ];
+				for( int i = 0; i < ret.Length; i++ )
+				{
+					TreePath path = paths[i];
+					TreeIter iter;
+					store.GetIter( out iter, path );
+					ret[i]        = getNodeFromIter(iter);
+				}
+				return ret;
+			}
+		}
+		
+		public HTreeNode SelectedNode
+		{
+			get
+			{
+				return SelectedNodes[0];
+			}
+		}
+		
 #endregion
 	
+		
 	}
 }
