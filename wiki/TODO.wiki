@@ -53,8 +53,8 @@
   # ~~write wiki page~~
 
 *HComboTree*
-  # a combobox that shows a HSimpleTree at popup
-  # write a wiki page
+  # ~~a combobox that shows a HSimpleTree at popup~~
+  # ~~write a wiki page~~
 
 
 
