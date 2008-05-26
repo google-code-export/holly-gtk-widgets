@@ -45,12 +45,15 @@
   # ~~add nice error message with baloon tooltip~~
   # ~~write wiki page~~
 
-_New widget:_ *HSimpleTree*
-  # as much as similar to the winforms treeview
+*HTreeView*
+  # ~~simpler to use like the winforms treeview~~
+  # implement the SelectedNodes property && SelectionMode
+  # write wiki page
 
 _New widget:_ *HComboTree*
   # a combobox that shows a HSimpleTree at popup
-
+   
+  * write wiki page for utilities classes with examples
   * GET RID OF:
 {{{
 Gdk.Threads.Init ();
