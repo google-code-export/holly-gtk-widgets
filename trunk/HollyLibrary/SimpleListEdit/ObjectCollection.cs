@@ -53,6 +53,7 @@ namespace HollyLibrary
 		{
 			this.InnerList.Sort();
 		}
+		
 		internal void Sort( IComparer comparer )
 		{
 			this.InnerList.Sort(comparer);

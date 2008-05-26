@@ -265,6 +265,7 @@
   </widget>
   <widget class="Gtk.Bin" id="HollyLibrary.HBaseComboBox" design-size="391 81">
     <property name="MemberName" />
+    <property name="GeneratePublic">False</property>
     <child>
       <widget class="Gtk.HBox" id="hbox3">
         <property name="MemberName" />

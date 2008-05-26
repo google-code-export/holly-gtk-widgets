@@ -98,6 +98,7 @@ namespace HollyLibrary
 		protected override bool OnExposeEvent (Gdk.EventExpose evnt)
 		{
 			Gdk.Rectangle rect = new Gdk.Rectangle( Allocation.X, Allocation.Y, Allocation.Width , Allocation.Height );
+			if( CurrentEntry == null ) CurrentEntry = entries[0];
 			Gtk.Entry TextBox  = CurrentEntry;
 			Gtk.Style.PaintFlatBox( TextBox.Style, this.GdkWindow, TextBox.State, TextBox.ShadowType, this.Allocation, TextBox, "entry_bg", rect.X, rect.Y, rect.Width, rect.Height );
 			Gtk.Style.PaintShadow ( TextBox.Style, this.GdkWindow, TextBox.State, TextBox.ShadowType, this.Allocation, TextBox, "entry"   , rect.X, rect.Y, rect.Width, rect.Height );

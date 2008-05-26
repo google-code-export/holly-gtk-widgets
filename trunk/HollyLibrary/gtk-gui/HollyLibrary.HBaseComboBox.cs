@@ -11,7 +11,7 @@
 namespace HollyLibrary {
     
     
-    public partial class HBaseComboBox {
+    internal partial class HBaseComboBox {
         
         private Gtk.HBox hbox3;
         

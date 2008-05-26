@@ -9,7 +9,7 @@ namespace HollyLibrary
 {
 	
 	
-	public partial class HBaseComboBox : Gtk.Bin
+	internal partial class HBaseComboBox : Gtk.Bin
 	{
 		
 		public HBaseComboBox()

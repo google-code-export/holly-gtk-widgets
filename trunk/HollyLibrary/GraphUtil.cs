@@ -13,6 +13,21 @@ namespace HollyLibrary
 	public class GraphUtil
 	{
 		
+		public static Gdk.Pixbuf pixbufFromStock( String stock_id, Gtk.IconSize size )
+		{
+			Gdk.Pixbuf ret  = null;
+			try
+			{
+				Gtk.IconSet iset = Gtk.IconFactory.LookupDefault( stock_id );
+				ret              = iset.RenderIcon( Gtk.Widget.DefaultStyle, Gtk.TextDirection.None, Gtk.StateType.Normal, size, null, "" );
+			}
+			catch(Exception ex)
+			{
+				Console.WriteLine( ex.Message + ex.StackTrace );
+			}
+			return ret;
+		}
+		
 		private Graphics mGraphics; 
         public Graphics Graphics 
         { 
@@ -140,7 +155,9 @@ namespace HollyLibrary
         } 
         #endregion 
 
-        #region Gets the desired Capsular path. 
+        
+
+#region Gets the desired Capsular path. 
         private GraphicsPath GetCapsule( RectangleF baseRect ) 
         { 
             float diameter; 

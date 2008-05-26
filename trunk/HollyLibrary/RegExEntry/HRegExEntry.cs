@@ -80,6 +80,7 @@ namespace HollyLibrary
 			}
 		}
 #endregion
+
 #region properties
 		public bool IsTextValid
 		{

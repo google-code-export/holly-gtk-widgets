@@ -92,4 +92,14 @@
     </itemgroups>
     <signals />
   </object>
+  <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+    <itemgroups>
+      <itemgroup label="HTreeView Properties">
+        <property name="IsCheckBoxTree" />
+        <property name="Editable" />
+        <property name="NodeIconVisible" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
 </objects>
