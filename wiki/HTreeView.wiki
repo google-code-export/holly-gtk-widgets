@@ -3,7 +3,9 @@
 = Introduction =
 
 This is an extended Gtk.TreeView, wich you can use more easy/faster. 
+
 [http://lh3.ggpht.com/fr.daniil/SDqlsaY_NNI/AAAAAAAAAC4/3WrR4PqqRNU/gtk-htreeview.jpg]
+
 
 = Details =
   * Adding nodes:
