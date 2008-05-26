@@ -20,7 +20,7 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
     //lets add a few childs
     root.Nodes.Add( new HTreeNode("child1") );
 
-    //lets add a nod with icon
+    //lets add a node with icon
     Gdk.Pixbuf icon = GraphUtil.pixbufFromStock("gtk-yes", Gtk.IconSize.Button );
     root.Nodes.Add( new HTreeNode("child2", icon ) );
 
@@ -28,7 +28,7 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
     Gdk.Pixbuf icon_expanded = GraphUtil.pixbufFromStock("gtk-no", Gtk.IconSize.Button );
     root.Nodes.Add( new HTreeNode("child3", icon, icon_expanded) );
 
-    //add a simple nod that is checked
+    //add a simple node that is checked
     root.Nodes.Add( new HTreeNode("i'm checked!", true ) );
 }}}
 
@@ -40,4 +40,19 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
    //change a node
    HTreeNode new_node = new HTreeNode( "my new node!" );
    treeview.Nodes[0]  = new_node;
+}}}
+  
+  * Get the selected node
+{{{
+   HTreeNode node = treeview.SelectedNode;
+}}}
+
+  * Get the selected nodes with multiple selection
+{{{
+   treeview.Selection.Mode = Gtk.SelectionMode.Multiple;
+   ...
+   foreach( HTreeNode node in treeview.SelectedNodes )
+   {
+       Console.WriteLine("selected node: "+ node.Text );
+   }
 }}}
