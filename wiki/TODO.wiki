@@ -47,7 +47,7 @@
 
 *HTreeView*
   # ~~simpler to use like the winforms treeview~~
-  # implement the SelectedNodes property && SelectionMode
+  # ~~implement the SelectedNodes && SelectedNode property~~
   # implement the ParentNode property to HTreeNode
   # write wiki page
 
