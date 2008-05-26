@@ -50,10 +50,11 @@
   # ~~implement the SelectedNodes && SelectedNode property~~
   # ~~implement the ParentNode property to HTreeNode~~
   # ~~implement the IsExpanded property to HTreeNode~~
-  # write wiki page
+  # ~~write wiki page~~
 
-_New widget:_ *HComboTree*
+  *HComboTree*
   # a combobox that shows a HSimpleTree at popup
+  # write a wiki page
    
   * write wiki page for utilities classes with examples
   * GET RID OF:
