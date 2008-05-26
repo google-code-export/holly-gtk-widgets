@@ -57,7 +57,8 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
    }
 }}}
 
-  * Other nodes methods:
+  * Other nodes methods/properties :
 || *Method*    || *Description* ||
 || {{{HTreeNode.selectAllChilds()}}} ||  select all nodes childs ||
 || {{{deselectAllChilds()}}}         ||deselect all nodes childs ||
+|| {{{IsExpanded}}}                  || returns true if the nod is expanded ||
