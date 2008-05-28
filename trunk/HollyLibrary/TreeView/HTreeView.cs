@@ -31,6 +31,8 @@ namespace HollyLibrary
 			this.EnableSearch   = true;
 			//
 			AddBaseColumn();
+			this.RowExpanded  += OnExpandRow;
+			this.RowCollapsed += OnCollapseRow;
 		}
 		
 		public virtual void AddBaseColumn()
@@ -55,8 +57,7 @@ namespace HollyLibrary
 			Nodes.NodeRemoved += OnNodeRemoved;
 			Nodes.NodeUpdated += OnNodeUpdated;
 			//
-			this.RowExpanded  += OnExpandRow;
-			this.RowCollapsed += OnCollapseRow;
+			
 		}
 		
 		//checkbox cell function
@@ -122,6 +123,7 @@ namespace HollyLibrary
 			HTreeNode ret = store.GetValue( iter, 0 ) as HTreeNode;
 			return ret;
 		}
+		
 		
 #region node-events
 		public virtual void OnNodeAdded( object sender, NodeAddEventArgs args )

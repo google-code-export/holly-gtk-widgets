@@ -878,4 +878,43 @@
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Bin" id="HollyLibrary.HComboTree" design-size="388 69">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="HollyLibrary.HBaseComboBox" id="comboBox">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="HollyLibrary.TreePopupDialog" design-size="322 325">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <property name="Title" translatable="yes">TreePopupDialog</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Decorated">False</property>
+    <property name="SkipPagerHint">True</property>
+    <property name="SkipTaskbarHint">True</property>
+    <signal name="ButtonPressEvent" handler="OnButtonPressEvent" />
+    <child>
+      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+        <property name="MemberName" />
+        <property name="ShadowType">In</property>
+        <child>
+          <widget class="HollyLibrary.HTreeView" id="Tree">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="ShowScrollbars">True</property>
+            <property name="HeadersClickable">True</property>
+            <property name="IsCheckBoxTree">False</property>
+            <property name="Editable">False</property>
+            <property name="NodeIconVisible">False</property>
+            <signal name="ButtonPressEvent" handler="OnTreeButtonPressEvent" />
+            <signal name="RowActivated" handler="OnTreeRowActivated" />
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>

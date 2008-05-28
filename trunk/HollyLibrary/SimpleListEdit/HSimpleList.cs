@@ -7,6 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Gtk;
 using HollyLibrary;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace HollyLibrary
 {
@@ -38,11 +40,11 @@ namespace HollyLibrary
 			this.Model                  = store;
 			this.AppendColumn( firstColumn );
 			
-			
 			this.Items.OnItemAdded   += new ListAddEventHandler( this.on_item_added   );
 			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed );
 			this.items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated );
 			this.items.ClearList     += new EventHandler( this.on_list_cleared );
+			
 		}
 		
 		private void RenderListItem (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter)
@@ -69,27 +71,25 @@ namespace HollyLibrary
 		
 		public virtual void DrawItem ( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
 		{
+			DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 			//
 			if( OwnerDraw && OnDrawItem != null )
 			{
-				DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 				OnDrawItem( this, args );
 			}
 			else
-			{
-				Pango.Layout layout;
-				layout       = new Pango.Layout( widget.PangoContext );
-				
-				layout.Width = widget.Allocation.Width * (int)Pango.Scale.PangoScale;
-				String text  = Items[ItemIndex].ToString();
-				layout.FontDescription = this.Style.FontDescription;
-				layout.SetMarkup( text );
-				
-				window.DrawLayout( 
-				                  widget.Style.TextGC( widget.State ),
-				                  cell_area.X, cell_area.Y, layout 
-				                 );
-				layout.Dispose();
+			{				
+				String text      = Items[ItemIndex].ToString();
+				//take font from style
+				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
+				// take color from style
+				Gdk.Color gcolor = Style.Foreground( this.State );
+				Color c          = Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
+				Brush b          = new SolidBrush( c );
+				//set quality to HighSpeed
+				args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
+				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+				args.Graphics.Dispose();
 			}
 		}
 		
@@ -109,12 +109,14 @@ namespace HollyLibrary
 			Gtk.TreeIter iter;
 			this.Model.GetIterFromString( out iter, args.Index.ToString() );
 			this.Model.SetValue( iter, 0, args.NewValue );
+			this.QueueDraw();
 		}
 		
 		private void on_item_added( object Sender, ListAddEventArgs args )
 		{
 			//adauga in store
 			store.AppendValues( args.Value );
+			this.QueueDraw();
 		}
 		
 		private void on_item_removed( object Sender, ListRemoveEventArgs args )
@@ -123,12 +125,14 @@ namespace HollyLibrary
 			Gtk.TreeIter iter;
 			this.Model.GetIterFromString( out iter, args.Index.ToString() );
 			store.Remove( ref iter );
+			this.QueueDraw();
 		}
 		
 		private void on_list_cleared( object Sender, EventArgs args )
 		{
 			//sterge toate itemurile
 			store.Clear();
+			this.QueueDraw();
 		}
 
 		protected override void OnRowActivated (TreePath path, TreeViewColumn column)
