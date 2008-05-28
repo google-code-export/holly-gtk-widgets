@@ -58,10 +58,12 @@
 
 *HComboFolder
   # ~~a combobox folder chooser widget ~~
-  # wiki page
+  # ~~wiki page~~
 
 ----
   * write wiki page for utilities classes with examples
+  * add all kind of events to all widgets ( look at their winforms equivalent ) 
+  * some refactoring in the widgets events name
   * GET RID OF:
 {{{
 Gdk.Threads.Init ();
@@ -73,7 +75,6 @@ Application.Run ();
 Gdk.Threads.Leave();
 }}}
 in the main method !!
-  * some refactoring in the widgets events name
   * rebuild HFontPicker to be an extended HSimpleComboBox
 
 = VERSION 2.0 =
