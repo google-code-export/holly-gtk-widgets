@@ -58,7 +58,11 @@ namespace HollyLibrary
 		{
 			this.InnerList.Sort(comparer);
 		}
-	
+		
+		public new void RemoveAt( int index )
+		{
+			Remove( this.List[index] );
+		}
 		
 		public void Remove( object item )
 		{
