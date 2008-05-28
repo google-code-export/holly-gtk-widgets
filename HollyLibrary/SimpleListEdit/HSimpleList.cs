@@ -82,7 +82,7 @@ namespace HollyLibrary
 				//take font from style
 				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
 				// take color from style
-				Gdk.Color gcolor = Style.Foreground( this.State );
+				Gdk.Color gcolor = Style.Foreground( StateType.Normal );
 				Color c          = Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
 				Brush b          = new SolidBrush( c );
 				//set quality to HighSpeed

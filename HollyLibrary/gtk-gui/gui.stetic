@@ -927,7 +927,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="HollyLibrary.FolderChooserDialog" design-size="316 271">
+  <widget class="Gtk.Window" id="HollyLibrary.FolderChooserDialog" design-size="355 271">
     <property name="MemberName" />
     <property name="Visible">False</property>
     <property name="Title" translatable="yes">FolderChooserDialog</property>
@@ -981,14 +981,50 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="BtnNewFolder">
+          <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="UseStock">True</property>
-            <property name="Type">StockItem</property>
-            <property name="StockId">gtk-new</property>
-            <signal name="ButtonPressEvent" handler="OnBtnNewFolderButtonPressEvent" />
-            <property name="label">gtk-new</property>
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="Xalign">0</property>
+                <property name="LabelProp" translatable="yes">Add new folder:</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Entry" id="TxtNewFolder">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="InvisibleChar">●</property>
+                <signal name="KeyReleaseEvent" handler="OnTxtNewFolderKeyReleaseEvent" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="BtnNewFolder">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="UseStock">True</property>
+                <property name="Type">StockItem</property>
+                <property name="StockId">gtk-add</property>
+                <signal name="Clicked" handler="OnBtnNewFolderClicked" />
+                <signal name="ButtonPressEvent" handler="OnBtnNewFolderButtonPressEvent" />
+                <property name="label">gtk-add</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="Position">2</property>

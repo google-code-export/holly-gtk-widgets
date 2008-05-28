@@ -15,9 +15,9 @@ namespace test {
         
         private Gtk.VBox vbox1;
         
-        private Gtk.ScrolledWindow GtkScrolledWindow;
+        private HollyLibrary.HComboFolder hcombofolder1;
         
-        private HollyLibrary.HTreeView htreeview1;
+        private HollyLibrary.HComboTree hcombotree1;
         
         private HollyLibrary.HIpEntry hipentry1;
         
@@ -30,10 +30,6 @@ namespace test {
         private Gtk.Button button4;
         
         private HollyLibrary.HFontPicker BtnMoreColors;
-        
-        private HollyLibrary.HColorPicker hcolorpicker1;
-        
-        private HollyLibrary.HRegExEntry hregexentry1;
         
         private Gtk.ScrolledWindow SList;
         
@@ -50,28 +46,28 @@ namespace test {
             this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
-            this.GtkScrolledWindow = new Gtk.ScrolledWindow();
-            this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-            this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
-            // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-            this.htreeview1 = new HollyLibrary.HTreeView();
-            this.htreeview1.CanFocus = true;
-            this.htreeview1.Name = "htreeview1";
-            this.htreeview1.HeadersClickable = true;
-            this.htreeview1.IsCheckBoxTree = false;
-            this.htreeview1.Editable = false;
-            this.htreeview1.NodeIconVisible = true;
-            this.GtkScrolledWindow.Add(this.htreeview1);
-            this.vbox1.Add(this.GtkScrolledWindow);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
-            w2.Position = 0;
+            this.hcombofolder1 = new HollyLibrary.HComboFolder();
+            this.hcombofolder1.Events = ((Gdk.EventMask)(256));
+            this.hcombofolder1.Name = "hcombofolder1";
+            this.hcombofolder1.DropDownHeight = 0;
+            this.vbox1.Add(this.hcombofolder1);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcombofolder1]));
+            w1.Position = 0;
+            // Container child vbox1.Gtk.Box+BoxChild
+            this.hcombotree1 = new HollyLibrary.HComboTree();
+            this.hcombotree1.Events = ((Gdk.EventMask)(256));
+            this.hcombotree1.Name = "hcombotree1";
+            this.hcombotree1.DropDownHeight = 0;
+            this.vbox1.Add(this.hcombotree1);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcombotree1]));
+            w2.Position = 1;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hipentry1 = new HollyLibrary.HIpEntry();
             this.hipentry1.Events = ((Gdk.EventMask)(256));
             this.hipentry1.Name = "hipentry1";
             this.vbox1.Add(this.hipentry1);
             Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.hipentry1]));
-            w3.Position = 1;
+            w3.Position = 2;
             w3.Expand = false;
             w3.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
@@ -108,28 +104,14 @@ namespace test {
             w6.Position = 2;
             this.vbox1.Add(this.hbox1);
             Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
-            w7.Position = 2;
+            w7.Position = 3;
             // Container child vbox1.Gtk.Box+BoxChild
             this.BtnMoreColors = new HollyLibrary.HFontPicker();
             this.BtnMoreColors.Events = ((Gdk.EventMask)(256));
             this.BtnMoreColors.Name = "BtnMoreColors";
             this.vbox1.Add(this.BtnMoreColors);
             Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnMoreColors]));
-            w8.Position = 3;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.hcolorpicker1 = new HollyLibrary.HColorPicker();
-            this.hcolorpicker1.Events = ((Gdk.EventMask)(256));
-            this.hcolorpicker1.Name = "hcolorpicker1";
-            this.vbox1.Add(this.hcolorpicker1);
-            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcolorpicker1]));
-            w9.Position = 4;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.hregexentry1 = new HollyLibrary.HRegExEntry();
-            this.hregexentry1.Events = ((Gdk.EventMask)(256));
-            this.hregexentry1.Name = "hregexentry1";
-            this.vbox1.Add(this.hregexentry1);
-            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox1[this.hregexentry1]));
-            w10.Position = 5;
+            w8.Position = 4;
             // Container child vbox1.Gtk.Box+BoxChild
             this.SList = new Gtk.ScrolledWindow();
             this.SList.Name = "SList";
@@ -144,18 +126,19 @@ namespace test {
             this.hsimplelist1.OwnerDraw = false;
             this.SList.Add(this.hsimplelist1);
             this.vbox1.Add(this.SList);
-            Gtk.Box.BoxChild w12 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
-            w12.Position = 6;
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
+            w10.Position = 5;
             this.Add(this.vbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 730;
-            this.DefaultHeight = 451;
+            this.DefaultWidth = 320;
+            this.DefaultHeight = 333;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
             this.button2.Clicked += new System.EventHandler(this.OnButton2Clicked);
             this.button3.Clicked += new System.EventHandler(this.OnButton3Clicked);
+            this.hsimplelist1.RowActivated += new Gtk.RowActivatedHandler(this.OnHsimplelist1RowActivated);
         }
     }
 }

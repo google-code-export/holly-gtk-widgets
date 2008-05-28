@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="730 451">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="320 333">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -17,24 +17,25 @@
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+          <widget class="HollyLibrary.HComboFolder" id="hcombofolder1">
             <property name="MemberName" />
-            <property name="ShadowType">In</property>
-            <child>
-              <widget class="HollyLibrary.HTreeView" id="htreeview1">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
-                <property name="HeadersClickable">True</property>
-                <property name="IsCheckBoxTree">False</property>
-                <property name="Editable">False</property>
-                <property name="NodeIconVisible">True</property>
-              </widget>
-            </child>
+            <property name="Events">ButtonPressMask</property>
+            <property name="DropDownHeight">0</property>
           </widget>
           <packing>
             <property name="Position">0</property>
-            <property name="AutoSize">True</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="HollyLibrary.HComboTree" id="hcombotree1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+            <property name="DropDownHeight">0</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">False</property>
           </packing>
         </child>
         <child>
@@ -43,7 +44,7 @@
             <property name="Events">ButtonPressMask</property>
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -97,7 +98,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -107,27 +108,7 @@
             <property name="Events">ButtonPressMask</property>
           </widget>
           <packing>
-            <property name="Position">3</property>
-            <property name="AutoSize">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="HollyLibrary.HColorPicker" id="hcolorpicker1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-          </widget>
-          <packing>
             <property name="Position">4</property>
-            <property name="AutoSize">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="HollyLibrary.HRegExEntry" id="hregexentry1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-          </widget>
-          <packing>
-            <property name="Position">5</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -144,11 +125,12 @@
                 <property name="ItemHeight">0</property>
                 <property name="SelectedIndex">0</property>
                 <property name="OwnerDraw">False</property>
+                <signal name="RowActivated" handler="OnHsimplelist1RowActivated" />
               </widget>
             </child>
           </widget>
           <packing>
-            <property name="Position">6</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
           </packing>
         </child>

@@ -21,6 +21,12 @@ namespace HollyLibrary {
         
         private Gtk.HSeparator hseparator1;
         
+        private Gtk.HBox hbox1;
+        
+        private Gtk.Label label1;
+        
+        private Gtk.Entry TxtNewFolder;
+        
         private Gtk.Button BtnNewFolder;
         
         protected virtual void Build() {
@@ -65,22 +71,47 @@ namespace HollyLibrary {
             w3.Expand = false;
             w3.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
+            this.hbox1 = new Gtk.HBox();
+            this.hbox1.Name = "hbox1";
+            this.hbox1.Spacing = 6;
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.label1 = new Gtk.Label();
+            this.label1.Name = "label1";
+            this.label1.Xalign = 0F;
+            this.label1.LabelProp = Mono.Unix.Catalog.GetString("Add new folder:");
+            this.hbox1.Add(this.label1);
+            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.label1]));
+            w4.Position = 0;
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.TxtNewFolder = new Gtk.Entry();
+            this.TxtNewFolder.CanFocus = true;
+            this.TxtNewFolder.Name = "TxtNewFolder";
+            this.TxtNewFolder.IsEditable = true;
+            this.TxtNewFolder.InvisibleChar = '●';
+            this.hbox1.Add(this.TxtNewFolder);
+            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.hbox1[this.TxtNewFolder]));
+            w5.Position = 1;
+            // Container child hbox1.Gtk.Box+BoxChild
             this.BtnNewFolder = new Gtk.Button();
             this.BtnNewFolder.CanFocus = true;
             this.BtnNewFolder.Name = "BtnNewFolder";
             this.BtnNewFolder.UseStock = true;
             this.BtnNewFolder.UseUnderline = true;
-            this.BtnNewFolder.Label = "gtk-new";
-            this.vbox1.Add(this.BtnNewFolder);
-            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnNewFolder]));
-            w4.Position = 2;
-            w4.Expand = false;
-            w4.Fill = false;
+            this.BtnNewFolder.Label = "gtk-add";
+            this.hbox1.Add(this.BtnNewFolder);
+            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox1[this.BtnNewFolder]));
+            w6.Position = 2;
+            w6.Expand = false;
+            this.vbox1.Add(this.hbox1);
+            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+            w7.Position = 2;
+            w7.Expand = false;
+            w7.Fill = false;
             this.Add(this.vbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 316;
+            this.DefaultWidth = 355;
             this.DefaultHeight = 271;
             this.Hide();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
@@ -88,6 +119,8 @@ namespace HollyLibrary {
             this.FolderTree.BeforeNodeExpand += new HollyLibrary.NodeBeforeExpandHandler(this.OnFolderTreeBeforeNodeExpand);
             this.FolderTree.CursorChanged += new System.EventHandler(this.OnFolderTreeCursorChanged);
             this.FolderTree.RowActivated += new Gtk.RowActivatedHandler(this.OnFolderTreeRowActivated);
+            this.TxtNewFolder.KeyReleaseEvent += new Gtk.KeyReleaseEventHandler(this.OnTxtNewFolderKeyReleaseEvent);
+            this.BtnNewFolder.Clicked += new System.EventHandler(this.OnBtnNewFolderClicked);
             this.BtnNewFolder.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnBtnNewFolderButtonPressEvent);
         }
     }
