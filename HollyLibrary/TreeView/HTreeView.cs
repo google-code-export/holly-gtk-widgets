@@ -7,6 +7,27 @@ using Gtk;
 
 namespace HollyLibrary
 {
+	public class NodeEventArgs : EventArgs
+	{
+		private HTreeNode node;
+		
+		public HTreeNode Node {
+			get 
+			{
+				return node;
+			}
+		}
+		
+		public NodeEventArgs( HTreeNode node )
+		{
+			this.node = node;
+		}
+	}
+	
+	public delegate void NodeExpandedHandler ( object sender, NodeEventArgs args );
+	public delegate void NodeCollapsedHandler( object sender, NodeEventArgs args );
+	public delegate void NodeBeforeExpandHandler  ( object sender, NodeEventArgs args );
+	public delegate void NodeBeforeCollapseHandler( object sender, NodeEventArgs args );
 	
 	public class HTreeView : TreeView
 	{
@@ -22,6 +43,11 @@ namespace HollyLibrary
 		CellRendererText cell_text     = new CellRendererText();
 		//node list
 		private NodeCollection nodes   = new NodeCollection();
+		//my events
+		public event NodeExpandedHandler NodeExpanded;
+		public event NodeCollapsedHandler NodeCollapsed;
+		public event NodeBeforeCollapseHandler BeforeNodeCollapse;
+		public event NodeBeforeExpandHandler BeforeNodeExpand;
 		
 		public HTreeView()
 		{
@@ -33,6 +59,8 @@ namespace HollyLibrary
 			AddBaseColumn();
 			this.RowExpanded  += OnExpandRow;
 			this.RowCollapsed += OnCollapseRow;
+			this.TestExpandRow   += OnTestExpandRow;
+			this.TestCollapseRow += OnTestCollapseRow;
 		}
 		
 		public virtual void AddBaseColumn()
@@ -132,12 +160,14 @@ namespace HollyLibrary
 			args.Node.Store     = store;
 			args.Node.InnerIter = iter;
 			args.Node.Treeview  = this;
+			QueueDraw();
 		}
 		
 		public virtual void OnNodeRemoved( object sender, NodeRemoveEventArgs args )
 		{
 			Gtk.TreeIter iter = args.Node.InnerIter;
 			store.Remove( ref iter );
+			QueueDraw();
 		}
 		
 		public virtual void OnNodeUpdated( object sender, NodeUpdateEventArgs args )
@@ -146,21 +176,58 @@ namespace HollyLibrary
 			args.NewNode.InnerIter = args.OldNode.InnerIter;
 			args.NewNode.Treeview  = args.OldNode.Treeview;
 			store.SetValues( args.OldNode.InnerIter, args.NewNode );
+			QueueDraw();
 		}
 		
 		public virtual void OnExpandRow( object sender, RowExpandedArgs args )
 		{
 			HTreeNode nod  = getNodeFromIter( args.Iter );
 			nod.IsExpanded = true;
+			if( NodeExpanded != null ) NodeExpanded( this, new NodeEventArgs( nod ) );
+			QueueDraw();
 		}
 		
 		public virtual void OnCollapseRow( object sender, RowCollapsedArgs args )
 		{
 			HTreeNode nod  = getNodeFromIter( args.Iter );
 			nod.IsExpanded = false;
+			if( NodeCollapsed != null ) NodeCollapsed( this, new NodeEventArgs( nod ) );
+			QueueDraw();
+		}
+		
+		public virtual void OnTestExpandRow( object sender, TestExpandRowArgs args )
+		{
+			HTreeNode node = getNodeFromIter( args.Iter );
+			if( BeforeNodeExpand != null ) BeforeNodeExpand( sender, new NodeEventArgs( node ) );
+		}
+		
+		public virtual void OnTestCollapseRow( object sender, TestCollapseRowArgs args )
+		{
+			HTreeNode node = getNodeFromIter( args.Iter );
+			if( BeforeNodeCollapse != null ) BeforeNodeCollapse( sender, new NodeEventArgs( node ) );
 		}
 #endregion
 
+		public void selectNode( HTreeNode node )
+		{
+			//this.Selection.SelectIter( node.InnerIter );
+			TreePath path = Model.GetPath( node.InnerIter );
+			this.Selection.SelectPath( path );
+			//move cursor to selection
+			this.SetCursor( path, this.Columns[0], false );
+		}
+		
+		public void expandNode( HTreeNode node )
+		{
+			TreePath path = this.Model.GetPath( node.InnerIter );
+			ExpandToPath( path );
+		}
+		
+		public void collapseNode( HTreeNode node )
+		{
+			TreePath path = this.Model.GetPath( node.InnerIter );
+			CollapseRow( path );
+		}
 #region properties
 		public bool NodeIconVisible
 		{
@@ -227,7 +294,10 @@ namespace HollyLibrary
 		{
 			get
 			{
-				return SelectedNodes[0];
+				if( SelectedNodes.Length > 0 )
+					return SelectedNodes[0];
+				else
+					return null;
 			}
 		}
 		

@@ -43,7 +43,6 @@ namespace HollyLibrary
 			this.Items.OnItemAdded   += new ListAddEventHandler( this.on_item_added   );
 			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed );
 			this.items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated );
-			this.items.ClearList     += new EventHandler( this.on_list_cleared );
 			
 		}
 		
@@ -127,14 +126,7 @@ namespace HollyLibrary
 			store.Remove( ref iter );
 			this.QueueDraw();
 		}
-		
-		private void on_list_cleared( object Sender, EventArgs args )
-		{
-			//sterge toate itemurile
-			store.Clear();
-			this.QueueDraw();
-		}
-
+	
 		protected override void OnRowActivated (TreePath path, TreeViewColumn column)
 		{
 			base.OnRowActivated (path, column);
