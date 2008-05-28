@@ -57,7 +57,7 @@
   # ~~write a wiki page~~
 
 *HComboFolder
-  # a combobox folder chooser widget 
+  # ~~a combobox folder chooser widget ~~
   # wiki page
 
 ----
