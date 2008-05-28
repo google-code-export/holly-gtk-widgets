@@ -50,8 +50,11 @@ It supports multiple selection also.
 
   * How to remove all items from list:
 {{{
-   listWidget.RemoveAllItems()
+   listWidget.RemoveAllItems();
+   //or:
+   listWidget.Items.Clear();
 }}}
+
 
   * How to get / change the selected index/item :
 {{{
