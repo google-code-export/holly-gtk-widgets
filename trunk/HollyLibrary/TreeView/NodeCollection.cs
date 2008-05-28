@@ -63,6 +63,10 @@ namespace HollyLibrary
 			this.InnerList.Sort(comparer);
 		}
 	
+		public new void RemoveAt( int index )
+		{
+			Remove( (HTreeNode) List[index] );
+		}
 		
 		public void Remove( HTreeNode node )
 		{
