@@ -56,7 +56,7 @@
   # ~~a combobox that shows a HSimpleTree at popup~~
   # ~~write a wiki page~~
 
-*HComboFolder
+*HComboFolder*
   # ~~a combobox folder chooser widget ~~
   # ~~wiki page~~
 
@@ -76,6 +76,10 @@ Gdk.Threads.Leave();
 }}}
 in the main method !!
   * rebuild HFontPicker to be an extended HSimpleComboBox
+  * a lot of testing to each event/property for every widget
+  * build docs on every wiki page with the api's like in swt javadocs ( eg. [http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/browser/Browser.html here] )
+  * remove all unnecesary references ( like pango, cairo etc )
+  * write on home page that you need System.Drawing and other libraries
 
 = VERSION 2.0 =
 
