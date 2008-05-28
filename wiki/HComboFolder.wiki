@@ -1,0 +1,12 @@
+#summary A combobox with a folder-tree popup
+
+= Introduction =
+
+a combobox widget with a folder tree popup
+
+
+[http://lh4.ggpht.com/fr.daniil/SD2eomqEj-I/AAAAAAAAADI/8CgFaNkOiCo/gtk-folder-combo.jpg]
+
+= Details =
+
+use the SelectedPath property to get/set the directory.
