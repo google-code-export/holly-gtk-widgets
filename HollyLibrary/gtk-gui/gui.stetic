@@ -954,7 +954,7 @@
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
                 <property name="HeadersClickable">True</property>
-                <property name="NodeIconVisible">False</property>
+                <property name="NodeIconVisible">True</property>
                 <property name="IsCheckBoxTree">False</property>
                 <property name="Editable">False</property>
                 <signal name="ButtonPressEvent" handler="OnFolderTreeButtonPressEvent" />

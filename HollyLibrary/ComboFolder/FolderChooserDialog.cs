@@ -13,11 +13,15 @@ namespace HollyLibrary
 	public partial class FolderChooserDialog : Gtk.Window
 	{
 		HComboFolder father;
-		char separator   = System.IO.Path.DirectorySeparatorChar;
+		char separator         = System.IO.Path.DirectorySeparatorChar;
+		Gdk.Pixbuf folder_icon, drive_icon;
 		
 		public FolderChooserDialog( HComboFolder father ) : 
 				base(Gtk.WindowType.Popup)
 		{
+			folder_icon = new Gdk.Pixbuf( this.GetType().Assembly, "folder.png");
+			drive_icon  = new Gdk.Pixbuf( this.GetType().Assembly, "drive.png");
+			
 			this.father = father;
 			this.Build();
 			//incarca baza
@@ -26,7 +30,7 @@ namespace HollyLibrary
 			{
 				// adauga doar discurile fixe
 				if( di.DriveType == DriveType.Fixed )
-					FolderTree.Nodes.Add( new HTreeNode( di.Name ) );
+					FolderTree.Nodes.Add( new HTreeNode( di.Name, drive_icon ) );
 			}
 			//add dummy childs
 			foreach( HTreeNode node in FolderTree.Nodes )
@@ -142,7 +146,7 @@ namespace HollyLibrary
 			node.Nodes.Clear();
 			foreach( DirectoryInfo d in dirs )
 			{
-				node.Nodes.Add( new HTreeNode( d.Name ) );
+				node.Nodes.Add( new HTreeNode( d.Name, folder_icon ) );
 			}
 			//add dummy childs
 			foreach( HTreeNode n in node.Nodes )
