@@ -49,7 +49,7 @@ namespace HollyLibrary {
             this.FolderTree.CanFocus = true;
             this.FolderTree.Name = "FolderTree";
             this.FolderTree.HeadersClickable = true;
-            this.FolderTree.NodeIconVisible = false;
+            this.FolderTree.NodeIconVisible = true;
             this.FolderTree.IsCheckBoxTree = false;
             this.FolderTree.Editable = false;
             this.GtkScrolledWindow.Add(this.FolderTree);
@@ -80,7 +80,7 @@ namespace HollyLibrary {
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 318;
+            this.DefaultWidth = 316;
             this.DefaultHeight = 271;
             this.Hide();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
