@@ -186,6 +186,34 @@ namespace HollyLibrary
 		{
 			Close();
 		}
+
+		protected virtual void OnBtnNewFolderClicked (object sender, System.EventArgs e)
+		{
+			//add new folder here
+			HTreeNode node = FolderTree.SelectedNode;
+			Console.WriteLine( node.Text );
+			String name    = TxtNewFolder.Text.Trim();
+			if( node != null && !name.Equals("") )
+			{
+				String path = getPathFromNode( node );
+				path += separator + name;
+				try
+				{
+					Directory.CreateDirectory( path );
+					node.Nodes.Add( new HTreeNode( name, folder_icon ) );				
+				}
+				catch(Exception ex)
+				{
+					Console.WriteLine( ex.Message );
+				}
+			}
+		}
+
+		protected virtual void OnTxtNewFolderKeyReleaseEvent (object o, Gtk.KeyReleaseEventArgs args)
+		{
+			if( args.Event.Key == Gdk.Key.Return )
+				OnBtnNewFolderClicked( BtnNewFolder, new EventArgs() );
+		}
 		
 	}
 	
