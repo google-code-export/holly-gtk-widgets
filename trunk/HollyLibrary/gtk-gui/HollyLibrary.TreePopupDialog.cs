@@ -35,9 +35,9 @@ namespace HollyLibrary {
             this.Tree.CanFocus = true;
             this.Tree.Name = "Tree";
             this.Tree.HeadersClickable = true;
+            this.Tree.NodeIconVisible = false;
             this.Tree.IsCheckBoxTree = false;
             this.Tree.Editable = false;
-            this.Tree.NodeIconVisible = false;
             this.GtkScrolledWindow.Add(this.Tree);
             this.Add(this.GtkScrolledWindow);
             if ((this.Child != null)) {

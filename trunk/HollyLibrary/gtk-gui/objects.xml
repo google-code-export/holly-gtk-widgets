@@ -95,18 +95,34 @@
   <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
     <itemgroups>
       <itemgroup label="HTreeView Properties">
+        <property name="NodeIconVisible" />
         <property name="IsCheckBoxTree" />
         <property name="Editable" />
-        <property name="NodeIconVisible" />
       </itemgroup>
     </itemgroups>
-    <signals />
+    <signals>
+      <itemgroup label="HTreeView Signals">
+        <signal name="NodeExpanded" />
+        <signal name="NodeCollapsed" />
+        <signal name="BeforeNodeCollapse" />
+        <signal name="BeforeNodeExpand" />
+      </itemgroup>
+    </signals>
   </object>
   <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
       <itemgroup label="HComboTree Properties">
         <property name="DropDownHeight" />
         <property name="Text" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.HComboFolder" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HComboFolder Properties">
+        <property name="DropDownHeight" />
+        <property name="SelectedPath" />
       </itemgroup>
     </itemgroups>
     <signals />

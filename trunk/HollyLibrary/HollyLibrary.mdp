@@ -76,6 +76,11 @@
     <File name="gtk-gui/HollyLibrary.HComboTree.cs" subtype="Code" buildaction="Compile" />
     <File name="ComboTree/TreePopupDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.TreePopupDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="ComboFolder" subtype="Directory" buildaction="Compile" />
+    <File name="ComboFolder/HComboFolder.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.HComboFolder.cs" subtype="Code" buildaction="Compile" />
+    <File name="ComboFolder/FolderChooserDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.FolderChooserDialog.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -111,6 +116,7 @@
       <Widget>HollyLibrary.HIpEntry</Widget>
       <Widget>HollyLibrary.HTreeView</Widget>
       <Widget>HollyLibrary.HComboTree</Widget>
+      <Widget>HollyLibrary.HComboFolder</Widget>
     </ExportedWidgets>
   </GtkDesignInfo>
 </Project>

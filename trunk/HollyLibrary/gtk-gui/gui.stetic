@@ -907,12 +907,95 @@
             <property name="CanFocus">True</property>
             <property name="ShowScrollbars">True</property>
             <property name="HeadersClickable">True</property>
+            <property name="NodeIconVisible">False</property>
             <property name="IsCheckBoxTree">False</property>
             <property name="Editable">False</property>
-            <property name="NodeIconVisible">False</property>
             <signal name="ButtonPressEvent" handler="OnTreeButtonPressEvent" />
             <signal name="RowActivated" handler="OnTreeRowActivated" />
           </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="HollyLibrary.HComboFolder" design-size="426 44">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="HollyLibrary.HBaseComboBox" id="comboBox">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="HollyLibrary.FolderChooserDialog" design-size="316 271">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <property name="Title" translatable="yes">FolderChooserDialog</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="BorderWidth">2</property>
+    <property name="Decorated">False</property>
+    <property name="SkipPagerHint">True</property>
+    <property name="SkipTaskbarHint">True</property>
+    <property name="FocusOnMap">False</property>
+    <signal name="ButtonPressEvent" handler="OnButtonPressEvent" />
+    <child>
+      <widget class="Gtk.VBox" id="vbox1">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <property name="BorderWidth">4</property>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <property name="BorderWidth">2</property>
+            <child>
+              <widget class="HollyLibrary.HTreeView" id="FolderTree">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="HeadersClickable">True</property>
+                <property name="NodeIconVisible">False</property>
+                <property name="IsCheckBoxTree">False</property>
+                <property name="Editable">False</property>
+                <signal name="ButtonPressEvent" handler="OnFolderTreeButtonPressEvent" />
+                <signal name="BeforeNodeExpand" handler="OnFolderTreeBeforeNodeExpand" />
+                <signal name="CursorChanged" handler="OnFolderTreeCursorChanged" />
+                <signal name="RowActivated" handler="OnFolderTreeRowActivated" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HSeparator" id="hseparator1">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="BtnNewFolder">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="UseStock">True</property>
+            <property name="Type">StockItem</property>
+            <property name="StockId">gtk-new</property>
+            <signal name="ButtonPressEvent" handler="OnBtnNewFolderButtonPressEvent" />
+            <property name="label">gtk-new</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
         </child>
       </widget>
     </child>

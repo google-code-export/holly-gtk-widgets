@@ -68,6 +68,14 @@ namespace HollyLibrary
 			Remove( (HTreeNode) List[index] );
 		}
 		
+		public new void Clear()
+		{
+			for( int i = this.List.Count - 1; i >=0; i-- )
+			{
+				RemoveAt(i);
+			}
+		}
+		
 		public void Remove( HTreeNode node )
 		{
 			this.List.Remove(node);

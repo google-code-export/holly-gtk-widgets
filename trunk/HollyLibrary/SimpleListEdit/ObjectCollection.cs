@@ -16,7 +16,6 @@ namespace HollyLibrary
 		public event ListAddEventHandler OnItemAdded;
 		public event ListRemoveEventHandler OnItemRemoved;
 		public event ListUpdateEventHandler OnItemUpdated;
-		public event EventHandler ClearList;
 		
 
 		public void AddRange( object[] objects )
@@ -82,10 +81,12 @@ namespace HollyLibrary
 			return this.List.IndexOf(item);
 		}
 		
-		protected override void OnClear ()
+		public new void Clear()
 		{
-			base.OnClear ();
-			if( ClearList != null ) ClearList( this, new EventArgs() );
+			for( int i = this.List.Count - 1; i >=0; i-- )
+			{
+				RemoveAt(i);
+			}
 		}
 
 	}
