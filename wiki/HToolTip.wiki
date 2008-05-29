@@ -31,6 +31,7 @@ Methods:
 Properties:
 
 || _int_ || *ToolTipInterval* || Sets the tooltip appear interval in miliseconds ||
+
 ----
 
 Code sample:
