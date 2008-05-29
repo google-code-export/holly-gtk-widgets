@@ -69,6 +69,10 @@
   * ~~write on home page that you need System.Drawing and other requierments ~~
   * a lot of testing to each event/property for every widget
 
+----
+
+----
+
 = VERSION 2.0 =
 
 _New widget:_ *HCheckBoxSimpleList*
