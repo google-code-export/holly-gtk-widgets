@@ -4,6 +4,10 @@
 
 This widget is an office like font picker.
 
+= Details =
+[http://lh6.ggpht.com/fr.daniil/SC2w4HasyPI/AAAAAAAAABU/7iB3NWBAf7Q/font-picker.jpg]
+
+
 
 ----
 
@@ -18,9 +22,6 @@ Events:
 
 ----
 
-
-= Details =
-[http://lh6.ggpht.com/fr.daniil/SC2w4HasyPI/AAAAAAAAABU/7iB3NWBAf7Q/font-picker.jpg]
 
   * code sample:
 {{{
