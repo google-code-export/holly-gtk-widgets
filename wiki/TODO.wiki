@@ -64,21 +64,10 @@
   * ~~write wiki page for utilities classes~~
   * ~~add all kind of events to all widgets ( look at their winforms equivalent ) ~~
   * ~~some refactoring in the widgets events name~~
-  * GET RID OF:
-{{{
-Gdk.Threads.Init ();
-Application.Init ();
-MainWin win = new MainWin();
-win.Show ();
-Gdk.Threads.Enter();
-Application.Run ();
-Gdk.Threads.Leave();
-}}}
-in the main method !!
-  * a lot of testing to each event/property for every widget
   * ~~build docs on every wiki page with the widget api's~~
   * ~~remove all unnecesary references~~
   * ~~write on home page that you need System.Drawing and other requierments ~~
+  * a lot of testing to each event/property for every widget
 
 = VERSION 2.0 =
 
