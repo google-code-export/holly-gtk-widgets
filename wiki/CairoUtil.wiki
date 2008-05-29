@@ -1,0 +1,6 @@
+#summary CairoUtil class
+
+|| _ Cairo.Color _ || static * ColorFromHexa * || ( String str, double alpha ) || returns a Cairo.Color from a hexa code with a specified alpha ( 0 - 1 ) ||
+|| _ Cairo.Color _ || static * ColorFromHexa * || ( String str ) || returns a Cairo.Color from a hexa code ||
+|| _ Cairo.Color _ || static * ColorFromRgb  * || ( int r, int g, int b ) || returns a Cairo.Color from red green and blue values ( 0 - 255 ) ||
+|| _ Cairo.Color _ || static * ColorFromRgb  * || ( int r, int g, int b, int a ) || returns a Cairo.Color from red, green, blue ( 0 - 255 ) and alpha ( 0 - 1 ||
