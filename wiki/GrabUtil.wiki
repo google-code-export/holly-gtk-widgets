@@ -1,0 +1,4 @@
+#summary window grabbing
+
+|| _ void _ || static * GrabWindow * || ( Gtk.Window window ) || grab the specified window ||
+|| _ void _ || static * RemoveGrab * || ( Gtk.Window window ) ||  remove grab to window ||
