@@ -4,6 +4,21 @@
 
 This widget is an office like font picker.
 
+
+----
+
+Methods:
+|| _ void _ || * ShowPopup() * || - || shows the font popup ||
+
+Properties:
+|| _ string _ || * Font * || gets/sets the current selected font ||
+
+Events:
+||_ FontEventHandler _|| * FontChange * || - raised when the current font changes ||
+
+----
+
+
 = Details =
 [http://lh6.ggpht.com/fr.daniil/SC2w4HasyPI/AAAAAAAAABU/7iB3NWBAf7Q/font-picker.jpg]
 
