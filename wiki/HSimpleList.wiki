@@ -14,11 +14,11 @@ It supports multiple selection also.
 
 Methods:
 || bool || IsSelected || ( int index ) || returns true if index is the Selected index ||
-|| void || RemoveAllItems || || removes all items - equivalent with Items.Clear()     ||
-|| void || Sort       ||  || sorts the items of the list 
+|| void || RemoveAllItems || - || removes all items - equivalent with Items.Clear()     ||
+|| void || Sort       || - || sorts the items of the list ||
 || void || Sort       || ( IComparer comparer ) || sorts the items of the list using a custom comparer||
-|| object[] || getSelectedItems || || returns an array of the selected items ||
-|| int[]    || getSelectedIndexes || || returns an array of the selected indexes ||
+|| object[] || getSelectedItems || - || returns an array of the selected items ||
+|| int[]    || getSelectedIndexes || - || returns an array of the selected indexes ||
 
 Properties:
 || int || SelectedIndex || gets/sets the current selected index ||
