@@ -4,8 +4,25 @@
 
 a combobox widget with a folder tree popup
 
-
 [http://lh4.ggpht.com/fr.daniil/SD2eomqEj-I/AAAAAAAAADI/8CgFaNkOiCo/gtk-folder-combo.jpg]
+
+
+
+----
+
+Methods:
+_none_
+
+Properties:
+|| _ string _ || * SelectedPath * || gets/sets the current path ||
+|| _ int    _ || * DropDownHeight * || gets/sets the current dropdown popup height ||
+
+
+Events:
+|| _ EventHandler _ || * PathChanged * || - raised when the current path has changed ||
+
+----
+
 
 = Details =
 
