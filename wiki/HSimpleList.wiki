@@ -10,6 +10,18 @@ It supports multiple selection also.
 
 [http://lh3.ggpht.com/fr.daniil/SC2zgXasyRI/AAAAAAAAABo/ZCjZjHBqLdA/simple-gtk-list.jpg]
 
+----
+
+Methods:
+
+Properties:
+
+Events:
+
+----
+
+= Code samples =
+
   * How to add a an item to the list:
 {{{
    class MyClass
