@@ -14,7 +14,7 @@ _ none _
 Properties:
 || _ string _ || * Text * || gets/sets the current ip as a string ||
 || _ string _ || * ErrorMessage * || gets/sets the error message  ||
-|| _ bool   _ || * IsValid * || true if ip is a valid ipv4 address ||
+|| _ bool   _ || * IsValid * || true if value entered is a valid ipv4 address ||
 
 Events:
 _ none _
