@@ -4,6 +4,11 @@
 
 HSimpleComboBox is a simple combobox type widget, similar to the winforms ComboBox.  The popup inner list is a HSimpleList widget and you have access to all of the list features. 
 
+= Details =
+[http://lh3.ggpht.com/fr.daniil/SDFh9XasySI/AAAAAAAAABw/kTA_B5Ts9Rs/hsimplecombobox.jpg]
+
+
+
 ----
 
 Methods:
@@ -26,8 +31,7 @@ Events:
 
 
 
-= Details =
-[http://lh3.ggpht.com/fr.daniil/SDFh9XasySI/AAAAAAAAABw/kTA_B5Ts9Rs/hsimplecombobox.jpg]
+
 
 * How to set if the combobox is editable or not:
 {{{
