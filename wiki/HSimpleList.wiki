@@ -30,9 +30,10 @@ Properties:
 || _Gtk.SelectionMode_   || *SelectionType* || the current list selection mode ||
 
 Events:
-||_EventHandler_||*SelectedIndexChanged*|| - raised when the selection index changes ||
-||_DrawItemEventHandler_||*DrawItem*|| - usefull when you set the OwnerDrawn to true. See code sample for example ||
-||_MeasureItemEventHandler_||*MeasureItem*|| - usefull when you set the OwnerDrawn to true. See code sample for example ||
+||_EventHandler_|| * SelectedIndexChanged * || - raised when the selection index changes ||
+||_DrawItemEventHandler_|| * DrawItem * || - usefull when you set the OwnerDrawn to true. See code sample for example ||
+||_MeasureItemEventHandler_|| * MeasureItem * || - usefull when you set the OwnerDrawn to true. See code sample for example ||
+
 ----
 
 = Code samples =
