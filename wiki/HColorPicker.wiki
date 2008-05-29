@@ -3,6 +3,9 @@
 
 It's a simple office like drop-down color picker
 
+[http://lh3.ggpht.com/fr.daniil/SDK_juwa6WI/AAAAAAAAACg/iwvd4Ku3zhk/color-picker.jpg]
+
+
 
 ----
 
@@ -18,7 +21,6 @@ Events:
 ----
 
 
-[http://lh3.ggpht.com/fr.daniil/SDK_juwa6WI/AAAAAAAAACg/iwvd4Ku3zhk/color-picker.jpg]
 
 = Details =
 
