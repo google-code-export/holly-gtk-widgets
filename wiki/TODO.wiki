@@ -62,7 +62,7 @@
 
 ----
   * write wiki page for utilities classes with examples
-  * add all kind of events to all widgets ( look at their winforms equivalent ) 
+  * ~~add all kind of events to all widgets ( look at their winforms equivalent ) ~~
   * some refactoring in the widgets events name
   * GET RID OF:
 {{{
