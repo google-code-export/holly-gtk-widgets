@@ -22,8 +22,7 @@ using HollyLibrary;
 ----
 Methods:
 ||_void_ SetToolTip || ( Gtk.Widget widget, String title, String text, String StockIcon )
-Sets the tooltip for widget, with a title, a body text and a stock icon.
-||
+Sets the tooltip for widget, with a title, a body text and a stock icon.||
 
 
 = Details =
