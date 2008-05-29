@@ -7,25 +7,9 @@ using Gtk;
 
 namespace HollyLibrary
 {
-	public class NodeEventArgs : EventArgs
-	{
-		private HTreeNode node;
-		
-		public HTreeNode Node {
-			get 
-			{
-				return node;
-			}
-		}
-		
-		public NodeEventArgs( HTreeNode node )
-		{
-			this.node = node;
-		}
-	}
 	
-	public delegate void NodeExpandedHandler ( object sender, NodeEventArgs args );
-	public delegate void NodeCollapsedHandler( object sender, NodeEventArgs args );
+	public delegate void NodeExpandedHandler      ( object sender, NodeEventArgs args );
+	public delegate void NodeCollapsedHandler     ( object sender, NodeEventArgs args );
 	public delegate void NodeBeforeExpandHandler  ( object sender, NodeEventArgs args );
 	public delegate void NodeBeforeCollapseHandler( object sender, NodeEventArgs args );
 	
@@ -44,10 +28,10 @@ namespace HollyLibrary
 		//node list
 		private NodeCollection nodes   = new NodeCollection();
 		//my events
-		public event NodeExpandedHandler NodeExpanded;
-		public event NodeCollapsedHandler NodeCollapsed;
+		public event NodeExpandedHandler       NodeExpanded;
+		public event NodeCollapsedHandler      NodeCollapsed;
 		public event NodeBeforeCollapseHandler BeforeNodeCollapse;
-		public event NodeBeforeExpandHandler BeforeNodeExpand;
+		public event NodeBeforeExpandHandler   BeforeNodeExpand;
 		
 		public HTreeView()
 		{

@@ -22,7 +22,7 @@ namespace HollyLibrary
 		public override void GetSize (Widget widget, ref Rectangle cell_area, out int x_offset, out int y_offset, out int width, out int height)
 		{
 			Rectangle result;
-			Father.MeasureItem( ItemIndex, widget, ref cell_area, out result );
+			Father.OnMeasureItem( ItemIndex, widget, ref cell_area, out result );
 			x_offset = result.X;
 			y_offset = result.Y;
 			width    = result.Width;
@@ -31,7 +31,7 @@ namespace HollyLibrary
 
 		protected override void Render (Drawable window, Widget widget, Rectangle background_area, Rectangle cell_area, Rectangle expose_area, CellRendererState flags)
 		{	
-			Father.DrawItem(ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
+			Father.OnDrawItem(ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 		}
 
 		public int ItemIndex 

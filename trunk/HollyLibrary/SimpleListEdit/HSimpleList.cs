@@ -21,9 +21,10 @@ namespace HollyLibrary
 		int selectedIndex              = -1;
 		bool ownerDraw                 = false;
 		
-		public event EventHandler OnSelectedIndexChanged;
-		public event DrawItemEventHandler OnDrawItem;
-		public event MeasureItemEventHandler OnMeasureItem;
+		//events
+		public event EventHandler            SelectedIndexChanged;
+		public event DrawItemEventHandler    DrawItem;
+		public event MeasureItemEventHandler MeasureItem;
 		
 		Gtk.ListStore store = new Gtk.ListStore( typeof( string ) );
 		
@@ -53,13 +54,13 @@ namespace HollyLibrary
 		}
 
 		//pot fi overrideuite pentru a crea o lista cat mai customizata
-		public virtual void MeasureItem ( int ItemIndex, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
+		public virtual void OnMeasureItem ( int ItemIndex, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
 		{
 			//	
 			MeasureItemEventArgs args = new MeasureItemEventArgs( ItemIndex, cell_area );
 			
-			if( ownerDraw &&  OnMeasureItem != null )
-				OnMeasureItem( this, args );					
+			if( ownerDraw &&  MeasureItem != null )
+				MeasureItem( this, args );					
 			else
 				args.ItemHeight  = ItemHeight; 			
 			result.X       = args.ItemLeft;
@@ -68,13 +69,13 @@ namespace HollyLibrary
 			result.Height  = args.ItemHeight;
 		}
 		
-		public virtual void DrawItem ( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
+		public virtual void OnDrawItem ( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
 		{
 			DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 			//
-			if( OwnerDraw && OnDrawItem != null )
+			if( OwnerDraw && DrawItem != null )
 			{
-				OnDrawItem( this, args );
+				DrawItem( this, args );
 			}
 			else
 			{				
@@ -131,16 +132,16 @@ namespace HollyLibrary
 		{
 			base.OnRowActivated (path, column);
 			selectedIndex = getSelectedIndex();
-			if( OnSelectedIndexChanged != null ) 
-				OnSelectedIndexChanged( this, new EventArgs() );
+			if( SelectedIndexChanged != null ) 
+				SelectedIndexChanged( this, new EventArgs() );
 		}
 		
 		protected override void OnCursorChanged ()
 		{
 			base.OnCursorChanged ();
 			selectedIndex = getSelectedIndex();
-			if( OnSelectedIndexChanged != null ) 
-				OnSelectedIndexChanged( this, new EventArgs() );
+			if( SelectedIndexChanged != null ) 
+				SelectedIndexChanged( this, new EventArgs() );
 		}
 		
 		public void Sort()

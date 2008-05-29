@@ -8,7 +8,7 @@
     </itemgroups>
     <signals>
       <itemgroup label="HDateEdit Signals">
-        <signal name="Changed" />
+        <signal name="DateChanged" />
       </itemgroup>
     </signals>
   </object>
@@ -43,9 +43,9 @@
     </itemgroups>
     <signals>
       <itemgroup label="HSimpleList Signals">
-        <signal name="OnSelectedIndexChanged" />
-        <signal name="OnMeasureItem" />
-        <signal name="OnDrawItem" />
+        <signal name="SelectedIndexChanged" />
+        <signal name="DrawItem" />
+        <signal name="MeasureItem" />
       </itemgroup>
     </signals>
   </object>
@@ -116,7 +116,11 @@
         <property name="Text" />
       </itemgroup>
     </itemgroups>
-    <signals />
+    <signals>
+      <itemgroup label="HComboTree Signals">
+        <signal name="ValueChanged" />
+      </itemgroup>
+    </signals>
   </object>
   <object type="HollyLibrary.HComboFolder" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
@@ -125,6 +129,10 @@
         <property name="SelectedPath" />
       </itemgroup>
     </itemgroups>
-    <signals />
+    <signals>
+      <itemgroup label="HComboFolder Signals">
+        <signal name="PathChanged" />
+      </itemgroup>
+    </signals>
   </object>
 </objects>

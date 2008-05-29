@@ -50,8 +50,8 @@ namespace HollyLibrary
 
 			
 			this.Build();
-			this.TvFonts.OnDrawItem    += new DrawItemEventHandler(this.OnTvFontsOnDrawItem);
-			this.TvFonts.OnMeasureItem += new MeasureItemEventHandler( this.OnTvFontsOnMeasureItem );
+			this.TvFonts.DrawItem    += new DrawItemEventHandler(this.OnTvFontsOnDrawItem);
+			this.TvFonts.MeasureItem += new MeasureItemEventHandler( this.OnTvFontsOnMeasureItem );
 			
 			//grab dialog
 			GrabUtil.GrabWindow(this);
