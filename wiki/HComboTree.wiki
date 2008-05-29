@@ -8,6 +8,21 @@ A easy to use combobox with a treeview inside
 [http://lh4.ggpht.com/fr.daniil/SDrjCtKf7XI/AAAAAAAAADA/q1RITVqwA1M/gtk-combo-tree.jpg]
 
 
+Methods:
+_ none _
+
+Properties:
+|| _ string _ || * Text * || gets/sets the current text ||
+|| _ HTreeView _ || * Tree * || gets the popup treewidget as a HTreeView ||
+|| _ int       _ || * DropDownHeight * || gets/sets the current drop down height ||
+
+Events:
+||_ EventHandler _|| * ValueChanged * || - raised when the current text changes ||
+
+----
+
+
+
 = Details =
 
 Example:
