@@ -22,10 +22,10 @@ using HollyLibrary;
 ----
 Methods:
 
-||_void_ || *SetToolTip( Gtk.Widget widget, String title, String text, String StockIcon )* ||  Sets the tooltip for widget, with a title, a body text and a stock icon.||
-||_void_|| *SetToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2 )* ||  Sets the tooltip for widget, with a title, a body text and custom gradient colors.||
-||_void_|| *SetToolTip( Gtk.Widget widget, String title, String text )* ||  Sets the tooltip for widget, with a title and a body text using default colors and icon.||
-||_void_|| *SetToolTip( Gtk.Widget widget, String title, String text, Color color1, Color color2, String StockIcon )* ||  Sets the tooltip for widget, with a title, a body text , custom gradient colors and custom stock icon.||
+||_void_ || *SetToolTip||( Gtk.Widget widget, String title, String text, String StockIcon )* ||  Sets the tooltip for widget, with a title, a body text and a stock icon.||
+||_void_|| *SetToolTip||( Gtk.Widget widget, String title, String text, Color color1, Color color2 )* ||  Sets the tooltip for widget, with a title, a body text and custom gradient colors.||
+||_void_|| *SetToolTip||( Gtk.Widget widget, String title, String text )* ||  Sets the tooltip for widget, with a title and a body text using default colors and icon.||
+||_void_|| *SetToolTip||( Gtk.Widget widget, String title, String text, Color color1, Color color2, String StockIcon )* ||  Sets the tooltip for widget, with a title, a body text , custom gradient colors and custom stock icon.||
 = Details =
 
 Use it like this:
