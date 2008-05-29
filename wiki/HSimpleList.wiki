@@ -13,8 +13,21 @@ It supports multiple selection also.
 ----
 
 Methods:
+|| bool || IsSelected || ( int index ) || returns true if index is the Selected index ||
+|| void || RemoveAllItems || || removes all items - equivalent with Items.Clear()     ||
+|| void || Sort       ||  || sorts the items of the list 
+|| void || Sort       || ( IComparer comparer ) || sorts the items of the list using a custom comparer||
+|| object[] || getSelectedItems || || returns an array of the selected items ||
+|| int[]    || getSelectedIndexes || || returns an array of the selected indexes ||
 
 Properties:
+|| int || SelectedIndex || gets/sets the current selected index ||
+|| int || ItemHeight    || gets/sets the item's default height  ||
+|| ObjectCollection || Items || list items collection           ||
+|| object || SelectedItem || gets/sets the current selected item ||
+|| string || Text         || gets/sets the current selected item ( as a string ) ||
+|| bool   || OwnerDraw    || gets/sets the items drawing mode. ||
+|| Gtk.SelectionMode   || SelectionType || the current list selection mode ||
 
 Events:
 
