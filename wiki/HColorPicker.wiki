@@ -3,6 +3,21 @@
 
 It's a simple office like drop-down color picker
 
+
+----
+
+Methods:
+_ none _
+
+Properties:
+|| _ Gdk.Color _ || * Color * || gets/sets the current selected color ||
+
+Events:
+||_ ColorChangeEventHandler _|| * ColorChange * || - raised when the selected color changes ||
+
+----
+
+
 [http://lh3.ggpht.com/fr.daniil/SDK_juwa6WI/AAAAAAAAACg/iwvd4Ku3zhk/color-picker.jpg]
 
 = Details =
