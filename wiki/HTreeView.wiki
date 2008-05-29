@@ -7,6 +7,35 @@ This is an extended Gtk.TreeView, wich you can use more easy/faster.
 [http://lh3.ggpht.com/fr.daniil/SDqlsaY_NNI/AAAAAAAAAC4/3WrR4PqqRNU/gtk-htreeview.jpg]
 
 
+----
+
+Methods:
+|| _ void _ || * selectNode * || ( HTreeNode node ) || selects a specific node and move cursor on it ||
+|| _ void _ || * expandNode * || ( HTreeNode node ) || expand a specific node ||
+|| _ void _ || * collapseNode * || ( HTreeNode node ) || collapses a specific node ||
+|| _ HTreeNode _ || * getNodeFromIter * || ( Gtk.TreeIter iter ) || gets the HTreeNode from a Gtk.TreeIter, else returns null ||
+
+
+Properties:
+|| _ bool _ || * NodeIconVisible * || if true, nodes have icon ||
+|| _ bool _ || * IsCheckBoxTree  * || if true, nodes have checkbox ||
+|| _ bool _ || * Editable        * || if true, nodes are editable ||
+|| _ NodeCollection _ || * Nodes * || the node collection of the tree ||
+|| _ HTreeNode[]    _ || * SelectedNodes * || gets the selected nodes as an array ||
+|| _ HTreeNode      _ || * SelectedNode  * || gets the selected node ||
+
+
+Events:
+||_ NodeEventHandler _|| * NodeExpanded * || - raised after a node is expanded ||
+||_ NodeEventHandler _|| * NodeCollapsed * || - raised after a node is collapsed ||
+||_ NodeEventHandler _|| * BeforeNodeExpand * || - raised before a node is expanded ||
+||_ NodeEventHandler _|| * BeforeNodeCollapse * || - raised before a node is collapsed ||
+
+----
+
+
+
+
 = Details =
   * Adding nodes:
 {{{
