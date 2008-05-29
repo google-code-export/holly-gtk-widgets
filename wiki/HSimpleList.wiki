@@ -23,14 +23,16 @@ Methods:
 Properties:
 || _int_ || *SelectedIndex* || gets/sets the current selected index ||
 || _int_ || *ItemHeight*    || gets/sets the item's default height  ||
-|| _ObjectCollection_ || *Items* || list items collection           ||
-|| _object_ || *SelectedItem* || gets/sets the current selected item ||
+|| _ ObjectCollection _ || *Items* || list items collection           ||
+|| _ object_  || *SelectedItem* || gets/sets the current selected item ||
 || _string_ || *Text*         || gets/sets the current selected item ( as a string ) ||
 || _bool_   || *OwnerDraw*    || gets/sets the items drawing mode. ||
 || _Gtk.SelectionMode_   || *SelectionType* || the current list selection mode ||
 
 Events:
-
+||_EventHandler_||*SelectedIndexChanged*|| - raised when the selection index changes ||
+||_DrawItemEventHandler_||*DrawItem*|| - usefull when you set the OwnerDrawn to true. See code sample for example ||
+||_MeasureItemEventHandler_||*MeasureItem*|| - usefull when you set the OwnerDrawn to true. See code sample for example ||
 ----
 
 = Code samples =
