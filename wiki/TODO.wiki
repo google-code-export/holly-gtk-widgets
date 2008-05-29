@@ -78,6 +78,9 @@
 _New widget:_ *HCheckBoxSimpleList*
   # a HSimpleList with checkboxed items
 
+_New widget:_ *HImageComboBox*
+  # a HSimpleComboBox with an icon on every item
+
 _New widget:_ *HNumericEntry*
   # a entry only for numeric values
   # support for negative values
