@@ -63,7 +63,7 @@
 ----
   * write wiki page for utilities classes with examples
   * ~~add all kind of events to all widgets ( look at their winforms equivalent ) ~~
-  * some refactoring in the widgets events name
+  * ~~some refactoring in the widgets events name~~
   * GET RID OF:
 {{{
 Gdk.Threads.Init ();
@@ -75,10 +75,9 @@ Application.Run ();
 Gdk.Threads.Leave();
 }}}
 in the main method !!
-  * rebuild HFontPicker to be an extended HSimpleComboBox
   * a lot of testing to each event/property for every widget
-  * build docs on every wiki page with the api's like in swt javadocs ( eg. [http://help.eclipse.org/stable/nftopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/browser/Browser.html here] )
-  * remove all unnecesary references ( like pango, cairo etc )
+  * ~~build docs on every wiki page with the widget api's~~
+  * ~~remove all unnecesary references~~
   * write on home page that you need System.Drawing and other libraries
 
 = VERSION 2.0 =
@@ -115,5 +114,6 @@ _New widget:_ *HPictureBox*
 _New widget:_ *HGridView*
   # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
 
+  * rebuild HFontPicker to be an extended HSimpleComboBox
   * study databinding in winforms, maibe do something similar for gtk widgets
   * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
