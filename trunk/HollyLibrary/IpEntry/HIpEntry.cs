@@ -106,6 +106,14 @@ namespace HollyLibrary
 			return base.OnExposeEvent (evnt);
 		}
 		
+		public bool IsValid
+		{
+			get
+			{
+				return Regex.IsMatch( Text, ValidationString );
+			}
+		}
+		
 		public String Text
 		{
 			get

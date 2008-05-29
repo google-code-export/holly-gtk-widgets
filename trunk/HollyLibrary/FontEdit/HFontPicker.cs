@@ -42,12 +42,12 @@ namespace HollyLibrary
 		
 		private void on_text_changed( object Sender, Gtk.KeyPressEventArgs args )
 		{
-			if( args.Event.Key != Gdk.Key.Tab ) ShowFontPopup();
+			if( args.Event.Key != Gdk.Key.Tab ) ShowPopup();
 		}
 		
 		private void on_btn_clicked( object Sender, EventArgs args )
 		{
-			ShowFontPopup();			
+			ShowPopup();			
 		}
 		
 		public void FocusOnEntry()
@@ -55,7 +55,7 @@ namespace HollyLibrary
 			comboBox.Entry.GrabFocus();
 		}
 		
-		private void ShowFontPopup()
+		public void ShowPopup()
 		{
 			int x, y;
 			this.ParentWindow.GetPosition( out x, out y );	
@@ -65,12 +65,34 @@ namespace HollyLibrary
 			FontChooserDialog.ShowMe(x,y, Allocation.Width, on_font_change, FontStore, comboBox.Entry.Text, this );
 		}
 		
-		private void on_font_change( object SEnder, FontEventArgs args )
+		private void on_font_change( object Sender, FontEventArgs args )
 		{
 			comboBox.Entry.Text = args.Font;
 			comboBox.Entry.ModifyFont( Pango.FontDescription.FromString( args.Font ) );
 			if( FontChange != null ) FontChange( this, args );
 		}
+		
+		public String Font
+		{
+			get
+			{
+				return comboBox.Entry.Style.FontDesc.Family;
+			}
+			set
+			{
+				try
+				{
+					Pango.FontDescription fd = Pango.FontDescription.FromString( value );
+					comboBox.Entry.Text      = value;
+					comboBox.Entry.ModifyFont( fd );
+				}
+				catch
+				{
+					Console.WriteLine("bad font");
+				}
+			}
+		}
+		
 	}
 	
 }

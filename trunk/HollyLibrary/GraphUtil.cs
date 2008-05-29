@@ -98,8 +98,7 @@ namespace HollyLibrary
         #endregion 
 
         #region Get the desired Rounded Rectangle path. 
-        public GraphicsPath GetRoundedRect(RectangleF baseRect, 
-           float radius) 
+        public GraphicsPath GetRoundedRect(RectangleF baseRect,float radius) 
         {
             // if corner radius is less than or equal to zero, 
 

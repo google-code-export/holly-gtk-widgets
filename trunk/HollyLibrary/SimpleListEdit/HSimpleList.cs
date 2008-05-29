@@ -158,29 +158,7 @@ namespace HollyLibrary
 			foreach( object obj in Items ) store.AppendValues( obj );
 		}
 
-		public int ItemHeight 
-		{
-			get
-			{
-				return itemHeight;
-			}
-			set
-			{
-				itemHeight = value;
-			}
-		}
-
-		public ObjectCollection Items 
-		{
-			get
-			{
-				return items;
-			}
-			set
-			{
-				items = value;
-			}
-		}
+		
 
 		private int getSelectedIndex()
 		{
@@ -193,7 +171,7 @@ namespace HollyLibrary
 			return ret;
 		}
 		
-		private int[] getSelectedIndexes()
+		public int[] getSelectedIndexes()
 		{
 			TreePath[] paths = this.Selection.GetSelectedRows();
 			int[] ret        = new int[ paths.Length ];
@@ -238,6 +216,30 @@ namespace HollyLibrary
 			}
 		}
 
+		public int ItemHeight 
+		{
+			get
+			{
+				return itemHeight;
+			}
+			set
+			{
+				itemHeight = value;
+			}
+		}
+
+		public ObjectCollection Items 
+		{
+			get
+			{
+				return items;
+			}
+			set
+			{
+				items = value;
+			}
+		}
+		
 		public object SelectedItem 
 		{
 			get 
@@ -301,6 +303,7 @@ namespace HollyLibrary
 		{
 			get 
 			{
+				
 				return this.Selection.Mode;
 			}
 			set 

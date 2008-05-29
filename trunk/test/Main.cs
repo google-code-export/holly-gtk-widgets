@@ -12,14 +12,10 @@ namespace test
 	{
 		public static void Main (string[] args)
 		{
-			Gdk.Threads.Init ();
-
 			Application.Init ();
 			MainWin win = new MainWin();
 			win.Show ();
-			Gdk.Threads.Enter();
 			Application.Run ();
-			Gdk.Threads.Leave();
 		}
 	}
 }

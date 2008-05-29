@@ -28,7 +28,8 @@ namespace HollyLibrary
 
 			CurrentDate = DateTime.Now;
 			NormalColor = comboBox.Entry.Style.Text( Gtk.StateType.Normal );
-			comboBox.Entry.Changed += new EventHandler( OnTxtDateChanged );
+			//
+			comboBox.Entry.Changed       += new EventHandler( OnTxtDateChanged );
 			comboBox.PopupButton.Clicked += new EventHandler( OnBtnShowCalendarClicked );
 		}
 		

@@ -95,6 +95,10 @@ namespace HollyLibrary
 			{
 				return comboBox.Entry.Text;
 			}
+			set
+			{
+				comboBox.Entry.Text = value;
+			}
 		}
 		
 		public HSimpleList List
@@ -102,14 +106,6 @@ namespace HollyLibrary
 			get
 			{
 				return Popup.List;
-			}
-		}
-
-		public int DropDownWidth 
-		{
-			get 
-			{
-				return dropDownWidth;
 			}
 		}
 
