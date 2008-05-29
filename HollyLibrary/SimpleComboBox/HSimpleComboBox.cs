@@ -28,7 +28,7 @@ namespace HollyLibrary
 			this.comboBox.Entry.KeyPressEvent      += new Gtk.KeyPressEventHandler( this.on_entry_key_pressed );
 			this.comboBox.Entry.Changed            += new EventHandler( this.OnTextChanged        );
 			this.comboBox.PopupButton.Clicked      += new EventHandler( this.on_popup_open        );
-			this.Popup.List.OnSelectedIndexChanged += new EventHandler( this.on_list_item_changed );
+			this.Popup.List.SelectedIndexChanged += new EventHandler( this.on_list_item_changed );
 			}
 		
 		public virtual void OnDropDownOpened( object sender, EventArgs args )

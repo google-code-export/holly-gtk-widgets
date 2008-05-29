@@ -10,9 +10,11 @@ namespace HollyLibrary
 	
 	public partial class HComboTree : Gtk.Bin
 	{
-		
+		//events
+		public event EventHandler ValueChanged;
+		//popup
 		TreePopupDialog Popup;
-		
+		//vars
 		int  dropDownHeight = 300;
 		
 		public HComboTree()
@@ -41,6 +43,7 @@ namespace HollyLibrary
 			set
 			{
 				comboBox.Entry.Text = value;
+				if( ValueChanged != null ) ValueChanged( this, new EventArgs() );
 			}
 		}
 		

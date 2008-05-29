@@ -14,7 +14,7 @@ namespace HollyLibrary
 	public partial class HDateEdit : Gtk.Bin
 	{
 		//events
-		public event EventHandler Changed;
+		public event EventHandler DateChanged;
 		//properties
 		DateTimeFormatTypeEnum dateTimeFormatType = DateTimeFormatTypeEnum.FullDateTime;
 		private String customFormat               = "";
@@ -74,7 +74,7 @@ namespace HollyLibrary
 			{
 				comboBox.Entry.ModifyText( Gtk.StateType.Normal, ErrorColor );
 			}
-			if( Changed != null ) Changed ( this, e );
+			if( DateChanged != null ) DateChanged ( this, e );
 		}
 	
 		public String Text
