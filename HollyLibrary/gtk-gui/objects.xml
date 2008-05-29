@@ -21,7 +21,11 @@
     <signals />
   </object>
   <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
-    <itemgroups />
+    <itemgroups>
+      <itemgroup label="HFontPicker Properties">
+        <property name="Font" />
+      </itemgroup>
+    </itemgroups>
     <signals>
       <itemgroup label="HFontPicker Signals">
         <signal name="FontChange" />
@@ -54,6 +58,7 @@
       <itemgroup label="HSimpleComboBox Properties">
         <property name="DropDownHeight" />
         <property name="IsEditable" />
+        <property name="Text" />
       </itemgroup>
     </itemgroups>
     <signals>

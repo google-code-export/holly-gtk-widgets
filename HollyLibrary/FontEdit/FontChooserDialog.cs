@@ -50,8 +50,6 @@ namespace HollyLibrary
 
 			
 			this.Build();
-			this.TvFonts.DrawItem    += new DrawItemEventHandler(this.OnTvFontsOnDrawItem);
-			this.TvFonts.MeasureItem += new MeasureItemEventHandler( this.OnTvFontsOnMeasureItem );
 			
 			//grab dialog
 			GrabUtil.GrabWindow(this);
@@ -169,17 +167,13 @@ namespace HollyLibrary
 			Close();
 		}
 
-		protected virtual void OnTvFontsOnSelectedIndexChanged (object sender, System.EventArgs e)
+		protected virtual void OnTvFontsSelectedIndexChanged (object sender, System.EventArgs e)
 		{
 			this.SelectCurrentFont();
 		}
-
-		protected virtual void OnTvFontsOnMeasureItem( object sender, HollyLibrary.MeasureItemEventArgs args)
-		{
-			args.ItemHeight = 25;
-		}
 		
-		protected virtual void OnTvFontsOnDrawItem (object sender, HollyLibrary.DrawItemEventArgs args)
+
+		protected virtual void OnTvFontsDrawItem (object sender, HollyLibrary.DrawItemEventArgs args)
 		{
 			Graphics g           = args.Graphics;
 			g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
@@ -187,7 +181,12 @@ namespace HollyLibrary
 			Font font            = new System.Drawing.Font( font_name, 10F );
 			Color color          = System.Drawing.Color.Black;
 			SolidBrush b         = new System.Drawing.SolidBrush( color );
-			g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );			
+			g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );
+		}
+
+		protected virtual void OnTvFontsMeasureItem (object sender, HollyLibrary.MeasureItemEventArgs args)
+		{
+			args.ItemHeight = 25;
 		}
 
 

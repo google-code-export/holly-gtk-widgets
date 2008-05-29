@@ -8,10 +8,7 @@ using Gtk;
 namespace HollyLibrary
 {
 	
-	public delegate void NodeExpandedHandler      ( object sender, NodeEventArgs args );
-	public delegate void NodeCollapsedHandler     ( object sender, NodeEventArgs args );
-	public delegate void NodeBeforeExpandHandler  ( object sender, NodeEventArgs args );
-	public delegate void NodeBeforeCollapseHandler( object sender, NodeEventArgs args );
+	public delegate void NodeEventHandler      ( object sender, NodeEventArgs args );
 	
 	public class HTreeView : TreeView
 	{
@@ -28,10 +25,10 @@ namespace HollyLibrary
 		//node list
 		private NodeCollection nodes   = new NodeCollection();
 		//my events
-		public event NodeExpandedHandler       NodeExpanded;
-		public event NodeCollapsedHandler      NodeCollapsed;
-		public event NodeBeforeCollapseHandler BeforeNodeCollapse;
-		public event NodeBeforeExpandHandler   BeforeNodeExpand;
+		public event NodeEventHandler       NodeExpanded;
+		public event NodeEventHandler      NodeCollapsed;
+		public event NodeEventHandler BeforeNodeCollapse;
+		public event NodeEventHandler   BeforeNodeExpand;
 		
 		public HTreeView()
 		{
@@ -130,9 +127,17 @@ namespace HollyLibrary
 		}
 		
 		//returns a HTreeNode from an iter
-		private HTreeNode getNodeFromIter( TreeIter iter )
+		public HTreeNode getNodeFromIter( TreeIter iter )
 		{
-			HTreeNode ret = store.GetValue( iter, 0 ) as HTreeNode;
+			HTreeNode ret = null;
+			try
+			{
+				ret = store.GetValue( iter, 0 ) as HTreeNode;
+			}
+			catch
+			{
+				ret = null;
+			}
 			return ret;
 		}
 		

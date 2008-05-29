@@ -54,9 +54,11 @@ namespace HollyLibrary {
             this.DefaultHeight = 173;
             this.Show();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
-            this.TvFonts.SelectedIndexChanged += new System.EventHandler(this.OnTvFontsOnSelectedIndexChanged);
             this.TvFonts.RowActivated += new Gtk.RowActivatedHandler(this.OnTvFontsRowActivated);
             this.TvFonts.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnTvFontsButtonPressEvent);
+            this.TvFonts.DrawItem += new HollyLibrary.DrawItemEventHandler(this.OnTvFontsDrawItem);
+            this.TvFonts.MeasureItem += new HollyLibrary.MeasureItemEventHandler(this.OnTvFontsMeasureItem);
+            this.TvFonts.SelectedIndexChanged += new System.EventHandler(this.OnTvFontsSelectedIndexChanged);
         }
     }
 }

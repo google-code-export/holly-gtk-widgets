@@ -116,9 +116,9 @@ namespace HollyLibrary {
             this.Hide();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
             this.FolderTree.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnFolderTreeButtonPressEvent);
-            this.FolderTree.BeforeNodeExpand += new HollyLibrary.NodeBeforeExpandHandler(this.OnFolderTreeBeforeNodeExpand);
             this.FolderTree.CursorChanged += new System.EventHandler(this.OnFolderTreeCursorChanged);
             this.FolderTree.RowActivated += new Gtk.RowActivatedHandler(this.OnFolderTreeRowActivated);
+            this.FolderTree.BeforeNodeExpand += new HollyLibrary.NodeEventHandler(this.OnFolderTreeBeforeNodeExpand);
             this.TxtNewFolder.KeyReleaseEvent += new Gtk.KeyReleaseEventHandler(this.OnTxtNewFolderKeyReleaseEvent);
             this.BtnNewFolder.Clicked += new System.EventHandler(this.OnBtnNewFolderClicked);
             this.BtnNewFolder.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnBtnNewFolderButtonPressEvent);
