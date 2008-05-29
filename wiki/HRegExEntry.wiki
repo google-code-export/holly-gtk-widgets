@@ -5,6 +5,28 @@
 [http://lh3.ggpht.com/fr.daniil/SDFlIXasyTI/AAAAAAAAAB4/5mN7NVnXC-c/regex1.jpg]
 [http://lh4.ggpht.com/fr.daniil/SDFlInasyUI/AAAAAAAAACA/-uKsC6BXGos/regex2.jpg]
 
+
+
+----
+
+Methods:
+_ none _
+
+Properties:
+|| _ Gtk.Entry _ || * Entry * || gets the inner Entry ||
+|| _ string    _ || * Text  * || gets/sets the current text ||
+|| _ bool      _ || * IsTextValid * || returns true if current text is valid ||
+|| _ string    _ || * RegularExpression * || regular expression used to check the text ||
+|| _ string    _ || * OkMessage         * || the tooltip message when text is valid ||
+|| _ string    _ || * ErrorMessage      * || the tooltip message when text is not valid ||
+
+
+Events:
+_ none _
+
+----
+
+
 = Details =
   * Code sample:
 
