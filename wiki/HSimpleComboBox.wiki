@@ -4,6 +4,28 @@
 
 HSimpleComboBox is a simple combobox type widget, similar to the winforms ComboBox.  The popup inner list is a HSimpleList widget and you have access to all of the list features. 
 
+----
+
+Methods:
+|| _ void _ || * ShowPopup() * || - || shows the list popup ||
+
+Properties:
+|| _ bool _ || * IsEditable * || gets/sets if the combobox is editable ||
+|| _ string _ || * Text     * || gets/sets the current value as a text ||
+|| _ HSimpleList _ || * List * || gets the popup list widget ||
+|| _ int         _ || * DropDownHeight * || gets/sets the popup height ||
+
+
+Events:
+||_ EventHandler _|| * DropDownOpened * || - raised when the popup is opened ||
+||_ EventHandler _|| * DropDownClosed * || - raised when the popup is closed ||
+||_ EventHandler _|| * TextChanged    * || - raised when the current text changes ||
+
+
+----
+
+
+
 = Details =
 [http://lh3.ggpht.com/fr.daniil/SDFh9XasySI/AAAAAAAAABw/kTA_B5Ts9Rs/hsimplecombobox.jpg]
 
