@@ -67,7 +67,7 @@
   * ~~build docs on every wiki page with the widget api's~~
   * ~~remove all unnecesary references~~
   * ~~write on home page that you need System.Drawing and other requierments ~~
-  * a lot of testing to each event/property for every widget
+  * make a big test application with every widget on it  
 
 ----
 
