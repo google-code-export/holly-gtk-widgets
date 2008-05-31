@@ -30,7 +30,7 @@ Events:
 ||_ NodeEventHandler _|| * NodeCollapsed * || - raised after a node is collapsed ||
 ||_ NodeEventHandler _|| * BeforeNodeExpand * || - raised before a node is expanded ||
 ||_ NodeEventHandler _|| * BeforeNodeCollapse * || - raised before a node is collapsed ||
-
+||_ NodeEventHandler _|| * NodeEdited   * || - raised when an node's text is changed ||
 ----
 
 
