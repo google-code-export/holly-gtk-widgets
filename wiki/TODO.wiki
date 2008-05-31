@@ -94,6 +94,10 @@ _New widget:_ *HNumericEntry*
 _New widget:_ *HComboCalculator*
   # a combobox with a calculator popup to do calculations
 
+_New widget:_ *HSchedulingCalendar*
+  # a nice calendar widget with scheduling features 
+  # see [http://www.componentsource.com/res/pub/img/products/full/516409.gif here] a nice one
+
 _New widget:_ *HImageCheckbox*
   # a checkbox with images for Checked, Indeterminate and Unchecked states
 
