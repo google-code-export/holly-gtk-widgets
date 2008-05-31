@@ -13,7 +13,7 @@
   # ~~AddRange function at ObjectCollection and implement System.Collection.CollectionBase~~
   # ~~Sort function to HSimpleList~~
   # ~~Implement SelectionType ( One, Multi, None ), add a method like object[] getSelectedItems() and int[] getSelectedIndexes()~~
-  # fix Items.RemoveAt(index) bug!
+  # ~~fix Items.RemoveAt(index) bug!~~
   # ~~write a page on the wiki with examples/screenshots for each feature~~
 
 *HSimpleComboBox*
