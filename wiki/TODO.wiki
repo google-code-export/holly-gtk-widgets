@@ -72,8 +72,8 @@
   * ~~remove all unnecesary references~~
   * ~~write on home page that you need System.Drawing and other requierments ~~
   * ~~make a big test application with every widget on it  ~~
-  * fix ALT+TAB key press on HBaseComboBox
-  * test all HSimpleList, HSimpleComboBox and HTreeView events ( maibe add this to the demo )
+  * ~~fix ALT+TAB key press on HBaseComboBox~~
+  * testing testing testing
 
 ----
 
