@@ -110,6 +110,7 @@ _New widget:_ *HPictureBox*
 _New widget:_ *HGridView*
   # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
 
+  * make drag and drop work in HSimpleList and HTreeView
   * rebuild HFontPicker to be an extended HSimpleComboBox
   * study databinding in winforms, maibe do something similar for gtk widgets
   * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
