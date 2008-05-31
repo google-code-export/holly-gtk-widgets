@@ -71,6 +71,7 @@
   * editable property bug at HTreeView
   * when i press the right key button on a HTreeNode that has childs, expand it
   * when i press the left key button on a HTreeNode that has childs , collapse it
+  * test all HSimpleList, HSimpleComboBox and HTreeView events
 
 ----
 
