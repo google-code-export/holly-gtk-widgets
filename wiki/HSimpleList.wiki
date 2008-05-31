@@ -40,16 +40,6 @@ Events:
 
   * How to add a an item to the list:
 {{{
-   class MyClass
-   {
-       ...
- 
-       public override string ToString()
-       {
-           return "I'm a class!";
-       }
-   }
-   ...
    listWidget.Items.Add("test!");
    //or add a object 
    listWidget.Items.Add( new MyClass() );
