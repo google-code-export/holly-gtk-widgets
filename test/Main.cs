@@ -14,7 +14,7 @@ namespace test
 		{
 			Application.Init ();
 			MainWin win = new MainWin();
-			win.Show ();
+			win.ShowAll ();
 			Application.Run ();
 		}
 	}

@@ -13,132 +13,636 @@ namespace test {
     
     public partial class MainWin {
         
+        private Gtk.Notebook notebook1;
+        
+        private Gtk.VPaned vpaned1;
+        
         private Gtk.VBox vbox1;
+        
+        private Gtk.VBox vbox2;
+        
+        private Gtk.Label label2;
+        
+        private Gtk.Button BtnTreeViewDemo;
+        
+        private Gtk.Frame frame1;
+        
+        private Gtk.Alignment GtkAlignment3;
+        
+        private Gtk.ScrolledWindow GtkScrolledWindow;
+        
+        private Gtk.TextView textview1;
+        
+        private Gtk.Label GtkLabel3;
+        
+        private Gtk.Label label1;
+        
+        private Gtk.VBox vbox3;
+        
+        private Gtk.Label label4;
+        
+        private Gtk.Button BtnSimpleListDemo;
+        
+        private Gtk.Frame frame2;
+        
+        private Gtk.Alignment GtkAlignment4;
+        
+        private Gtk.ScrolledWindow GtkScrolledWindow1;
+        
+        private Gtk.TextView textview2;
+        
+        private Gtk.Label GtkLabel4;
+        
+        private Gtk.Label label3;
+        
+        private Gtk.VBox vbox4;
+        
+        private Gtk.Label label6;
+        
+        private Gtk.Button BtnStartComboDemo;
+        
+        private Gtk.ScrolledWindow GtkScrolledWindow2;
+        
+        private Gtk.TextView textview3;
+        
+        private Gtk.Label label5;
+        
+        private Gtk.VBox vbox5;
+        
+        private Gtk.Label label14;
+        
+        private Gtk.Button ComboTreeDemo;
+        
+        private Gtk.ScrolledWindow GtkScrolledWindow3;
+        
+        private Gtk.TextView TxtComboTree;
+        
+        private Gtk.Label label9;
+        
+        private Gtk.VBox vbox6;
+        
+        private Gtk.Frame frame3;
+        
+        private Gtk.Alignment GtkAlignment8;
+        
+        private Gtk.HBox hbox2;
+        
+        private HollyLibrary.HColorPicker ColorPicker;
+        
+        private Gtk.Label GtkLabel6;
+        
+        private Gtk.Frame frame4;
+        
+        private Gtk.Alignment GtkAlignment1;
         
         private HollyLibrary.HComboFolder hcombofolder1;
         
-        private HollyLibrary.HComboTree hcombotree1;
+        private Gtk.Label GtkLabel7;
+        
+        private Gtk.Frame frame5;
+        
+        private Gtk.Alignment GtkAlignment2;
+        
+        private HollyLibrary.HDateEdit hdateedit2;
+        
+        private Gtk.Label GtkLabel8;
+        
+        private Gtk.Frame frame6;
+        
+        private Gtk.Alignment GtkAlignment5;
+        
+        private HollyLibrary.HFontPicker hfontpicker1;
+        
+        private Gtk.Label GtkLabel9;
+        
+        private Gtk.Frame frame7;
+        
+        private Gtk.Alignment GtkAlignment6;
         
         private HollyLibrary.HIpEntry hipentry1;
         
-        private Gtk.HBox hbox1;
+        private Gtk.Label GtkLabel10;
         
-        private Gtk.Button button2;
+        private Gtk.Frame frame8;
         
-        private Gtk.Button button3;
+        private Gtk.Alignment GtkAlignment7;
         
-        private Gtk.Button button4;
+        private Gtk.VBox vbox7;
         
-        private HollyLibrary.HFontPicker BtnMoreColors;
+        private HollyLibrary.HRegExEntry RegExEntry;
         
-        private Gtk.ScrolledWindow SList;
+        private Gtk.HBox hbox13;
         
-        private HollyLibrary.HSimpleList hsimplelist1;
+        private Gtk.Label label12;
+        
+        private Gtk.Entry TxtRegularExpresion;
+        
+        private Gtk.Button BtnApplyRegex;
+        
+        private Gtk.Label GtkLabel11;
+        
+        private Gtk.Button BtnToolTip;
+        
+        private Gtk.Label label7;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
             // Widget test.MainWin
             this.Name = "test.MainWin";
             this.Title = Mono.Unix.Catalog.GetString("MainWin");
-            this.WindowPosition = ((Gtk.WindowPosition)(4));
+            this.WindowPosition = ((Gtk.WindowPosition)(3));
             // Container child test.MainWin.Gtk.Container+ContainerChild
+            this.notebook1 = new Gtk.Notebook();
+            this.notebook1.CanFocus = true;
+            this.notebook1.Name = "notebook1";
+            this.notebook1.CurrentPage = 4;
+            this.notebook1.Scrollable = true;
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.vpaned1 = new Gtk.VPaned();
+            this.vpaned1.CanFocus = true;
+            this.vpaned1.Name = "vpaned1";
+            this.vpaned1.Position = 42;
+            // Container child vpaned1.Gtk.Paned+PanedChild
             this.vbox1 = new Gtk.VBox();
             this.vbox1.Name = "vbox1";
             this.vbox1.Spacing = 6;
             // Container child vbox1.Gtk.Box+BoxChild
+            this.vbox2 = new Gtk.VBox();
+            this.vbox2.Name = "vbox2";
+            this.vbox2.Spacing = 6;
+            // Container child vbox2.Gtk.Box+BoxChild
+            this.label2 = new Gtk.Label();
+            this.label2.Name = "label2";
+            this.label2.LabelProp = Mono.Unix.Catalog.GetString("<b>HTreeView</b>");
+            this.label2.UseMarkup = true;
+            this.vbox2.Add(this.label2);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox2[this.label2]));
+            w1.Position = 0;
+            w1.Expand = false;
+            w1.Fill = false;
+            // Container child vbox2.Gtk.Box+BoxChild
+            this.BtnTreeViewDemo = new Gtk.Button();
+            this.BtnTreeViewDemo.CanFocus = true;
+            this.BtnTreeViewDemo.Name = "BtnTreeViewDemo";
+            this.BtnTreeViewDemo.UseUnderline = true;
+            this.BtnTreeViewDemo.Label = Mono.Unix.Catalog.GetString("Start demo");
+            this.vbox2.Add(this.BtnTreeViewDemo);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox2[this.BtnTreeViewDemo]));
+            w2.Position = 1;
+            w2.Expand = false;
+            w2.Fill = false;
+            this.vbox1.Add(this.vbox2);
+            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.vbox2]));
+            w3.Position = 0;
+            w3.Expand = false;
+            w3.Fill = false;
+            this.vpaned1.Add(this.vbox1);
+            Gtk.Paned.PanedChild w4 = ((Gtk.Paned.PanedChild)(this.vpaned1[this.vbox1]));
+            w4.Resize = false;
+            // Container child vpaned1.Gtk.Paned+PanedChild
+            this.frame1 = new Gtk.Frame();
+            this.frame1.Name = "frame1";
+            this.frame1.ShadowType = ((Gtk.ShadowType)(0));
+            // Container child frame1.Gtk.Container+ContainerChild
+            this.GtkAlignment3 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment3.Name = "GtkAlignment3";
+            this.GtkAlignment3.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment3.Gtk.Container+ContainerChild
+            this.GtkScrolledWindow = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+            this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+            this.textview1 = new Gtk.TextView();
+            this.textview1.Buffer.Text = "using System;\nusing HollyLibrary;\nusing Gtk;\n\nnamespace test\n{\n\t\n\tpublic class TreeView : Window\n\t{\n\t\t//the tree widget\n\t\tHTreeView tree       = new HTreeView();\n\t\t//buttons\n\t\tButton BtnAddNode    = new Button(\"Add node\");\n\t\tButton BtnRemoveNode = new Button(\"Remove node\");\n\t\tButton BtnEditNode   = new Button(\"Edit node\");\n\t\t//checkboxes\n\t\tCheckButton ChkNodeIconVisible = new CheckButton(\"Node icon is visible\");\n\t\tCheckButton ChkCheckBoxTree    = new CheckButton(\"Tree is checkbox tree\");\n\t\tCheckButton ChkEditableTree    = new CheckButton(\"Tree is editable\");\n\t\t\n\t\tpublic TreeView() : base( WindowType.Toplevel )\n\t\t{\n\t\t\tthis.WindowPosition = Gtk.WindowPosition.CenterAlways;\n\t\t\t//\n\t\t\tinitGui();\n\t\t\t//button events\n\t\t\tBtnAddNode.Clicked         += OnBtnAddClicked;\n\t\t\tBtnEditNode.Clicked        += OnBtnEditClicked;\n\t\t\tBtnRemoveNode.Clicked      += OnBtnRemoveClicked;\n\t\t\t//checkbox events\n\t\t\tChkCheckBoxTree.Toggled    += OnCheckBoxChecked;\n\t\t\tChkEditableTree.Toggled    += OnEditableChecked;\n\t\t\tChkNodeIconVisible.Toggled += OnNodeIconChecked;\n\t\t}\n\t\t\n\t\tprivate void OnBtnAddClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//make a icon from a stock image\n\t\t\tGdk.Pixbuf icon = GraphUtil.pixbufFromStock(\"gtk-yes\", IconSize.Button );\n\t\t\t//create the new node\n\t\t\tHTreeNode node  = new HTreeNode( \"new node!\", icon );\n\t\t\t//check if there is a node selected\n\t\t\tHTreeNode selected_node = tree.SelectedNode;\n\t\t\t//if no node is selected, add the new node directly to the base\n\t\t\tif( selected_node == null )\n\t\t\t\ttree.Nodes.Add( node );\n\t\t\telse\n\t\t\t\tselected_node.Nodes.Add( node );\n\t\t}\n\t\t\n\t\tprivate void OnBtnEditClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//change the text/icon to the selected node\n\t\t\tHTreeNode node = tree.SelectedNode;\n\t\t\tif( node != null )\n\t\t\t{\n\t\t\t\tnode.Text = \"new and shiny modified value!\";\n\t\t\t\tnode.Icon = GraphUtil.pixbufFromStock(\"gtk-add\", IconSize.Button );\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnBtnRemoveClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//remove the selected node\n\t\t\tHTreeNode node = tree.SelectedNode;\n\t\t\tif( node != null )\n\t\t\t{\n\t\t\t\tif( node.ParentNode == null )\n\t\t\t\t\ttree.Nodes.Remove( node );\n\t\t\t\telse\n\t\t\t\t\tnode.ParentNode.Nodes.Remove( node );\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnCheckBoxChecked( object sender, EventArgs args )\n\t\t{\n\t\t\ttree.IsCheckBoxTree = ChkCheckBoxTree.Active;\n\t\t}\n\t\t\n\t\tprivate void OnEditableChecked( object sender, EventArgs args )\n\t\t{\n\t\t\ttree.Editable = ChkEditableTree.Active;\n\t\t}\n\t\t\n\t\tprivate void OnNodeIconChecked( object sender, EventArgs args )\n\t\t{\n\t\t\ttree.NodeIconVisible = ChkNodeIconVisible.Active;\n\t\t}\n\t\t\n\t\tprivate void initGui()\n\t\t{\n\t\t\t//create the layout\n\t\t\tVBox layout = new VBox();\n\t\t\t//add the treeview\n\t\t\tScrolledWindow swTree = new ScrolledWindow();\n\t\t\tswTree.AddWithViewport( tree );\n\t\t\tlayout.PackStart( swTree );\n\t\t\t//add the add/edit/remove buttons\n\t\t\tHBox hbox = new HBox();\n\t\t\thbox.PackStart  ( BtnAddNode    );\n\t\t\thbox.PackStart  ( BtnEditNode   );\n\t\t\thbox.PackStart  ( BtnRemoveNode );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add the checkboxes\n\t\t\thbox      = new HBox();\n\t\t\thbox.PackStart  ( ChkNodeIconVisible );\n\t\t\thbox.PackStart  ( ChkCheckBoxTree    );\n\t\t\thbox.PackStart  ( ChkEditableTree    );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add layout\n\t\t\tthis.Add( layout );\n\t\t}\n\t\t\n\t}\n}\n";
+            this.textview1.CanFocus = true;
+            this.textview1.Name = "textview1";
+            this.textview1.Editable = false;
+            this.GtkScrolledWindow.Add(this.textview1);
+            this.GtkAlignment3.Add(this.GtkScrolledWindow);
+            this.frame1.Add(this.GtkAlignment3);
+            this.GtkLabel3 = new Gtk.Label();
+            this.GtkLabel3.Name = "GtkLabel3";
+            this.GtkLabel3.LabelProp = Mono.Unix.Catalog.GetString("<b>Code</b>");
+            this.GtkLabel3.UseMarkup = true;
+            this.frame1.LabelWidget = this.GtkLabel3;
+            this.vpaned1.Add(this.frame1);
+            this.notebook1.Add(this.vpaned1);
+            // Notebook tab
+            this.label1 = new Gtk.Label();
+            this.label1.Name = "label1";
+            this.label1.LabelProp = Mono.Unix.Catalog.GetString("HTreeView");
+            this.notebook1.SetTabLabel(this.vpaned1, this.label1);
+            this.label1.ShowAll();
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.vbox3 = new Gtk.VBox();
+            this.vbox3.Name = "vbox3";
+            this.vbox3.Spacing = 6;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.label4 = new Gtk.Label();
+            this.label4.Name = "label4";
+            this.label4.LabelProp = Mono.Unix.Catalog.GetString("<b>HSimpleList</b>");
+            this.label4.UseMarkup = true;
+            this.vbox3.Add(this.label4);
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox3[this.label4]));
+            w10.Position = 0;
+            w10.Expand = false;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.BtnSimpleListDemo = new Gtk.Button();
+            this.BtnSimpleListDemo.CanFocus = true;
+            this.BtnSimpleListDemo.Name = "BtnSimpleListDemo";
+            this.BtnSimpleListDemo.UseUnderline = true;
+            this.BtnSimpleListDemo.Label = Mono.Unix.Catalog.GetString("Start demo");
+            this.vbox3.Add(this.BtnSimpleListDemo);
+            Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(this.vbox3[this.BtnSimpleListDemo]));
+            w11.Position = 1;
+            w11.Expand = false;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.frame2 = new Gtk.Frame();
+            this.frame2.Name = "frame2";
+            this.frame2.ShadowType = ((Gtk.ShadowType)(0));
+            // Container child frame2.Gtk.Container+ContainerChild
+            this.GtkAlignment4 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment4.Name = "GtkAlignment4";
+            this.GtkAlignment4.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment4.Gtk.Container+ContainerChild
+            this.GtkScrolledWindow1 = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
+            this.GtkScrolledWindow1.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
+            this.textview2 = new Gtk.TextView();
+            this.textview2.Buffer.Text = "using Gtk;\nusing System;\nusing System.Drawing;\nusing System.Drawing.Drawing2D;\nusing HollyLibrary;\n\nnamespace test\n{\n\t\n\tpublic class SimpleList : Window\n\t{\n\t\t//the list widget\n\t\tHSimpleList list = new HSimpleList();\n\t\t//buttons\n\t\tButton BtnAdd    = new Button(\"Add item\");\n\t\tButton BtnRemove = new Button(\"Remove item\");\n\t\tButton BtnEdit   = new Button(\"Edit item\");\n\t\t//checkboxes\n\t\tCheckButton ChkOwnerDrawned = new CheckButton(\"List is ownerdrawed\");\n\t\t\n\t\tpublic SimpleList() : base( WindowType.Toplevel )\n\t\t{\n\t\t\tthis.Title          = \"HSimpleList demo\";\n\t\t\tthis.WindowPosition = Gtk.WindowPosition.CenterAlways;\n\t\t\tthis.Resize( 320, 240 );\n\t\t\t//\n\t\t\tinitGui();\n\t\t\t//button events\n\t\t\tBtnAdd.Clicked          += OnBtnAddClicked;\n\t\t\tBtnEdit.Clicked         += OnBtnEditClicked;\n\t\t\tBtnRemove.Clicked       += OnBtnRemoveClicked;\n\t\t\t//checkbox events\n\t\t\tChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;\n\t\t\t//ownerdrawned event\n\t\t\tlist.DrawItem           += OnItemDraw;\n\t\t}\n\t\t\n\t\tprivate void OnBtnAddClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//add a list item\n\t\t\tlist.Items.Add(\"new item !\");\n\t\t}\n\t\t\n\t\tprivate void OnBtnEditClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//change the current selected item's text\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t{\n\t\t\t\tlist.Items[ list.SelectedIndex ] = \"i'm modified\";\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnBtnRemoveClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//remove the selected item\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t\tlist.Items.RemoveAt( list.SelectedIndex );\n\t\t\t\n\t\t}\n\t\t\n\t\tprivate void OnOwnerDrawnedChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.OwnerDraw      = ChkOwnerDrawned.Active;\n\t\t}\n\t\t\n\t\tprivate void OnItemDraw( object sender, DrawItemEventArgs args )\n\t\t{\n\t\t\tString text      = list.Items[ args.ItemIndex ].ToString();\n\t\t\t//take font from style\n\t\t\tFont font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );\n\t\t\t\n\t\t\t// take color from style\n\t\t\tColor c          = Color.Blue;\n\t\t\tif( args.ItemIndex % 2 == 0 ) c = Color.Red;\n\t\t\t\n\t\t\tBrush b          = new SolidBrush( c );\n\t\t\t//set quality to HighSpeed\n\t\t\targs.Graphics.CompositingQuality = CompositingQuality.HighSpeed;\n\t\t\targs.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );\n\t\t\targs.Graphics.Dispose();\n\t\t}\n\t\t\n\t\tprivate void initGui()\n\t\t{\n\t\t\t//create the layout\n\t\t\tVBox layout       = new VBox();\n\t\t\t//add the list\n\t\t\tScrolledWindow sw = new ScrolledWindow();\n\t\t\tsw.AddWithViewport( list );\n\t\t\tlayout.PackStart  ( sw   );\n\t\t\t//add the add/edit/remove buttons\n\t\t\tHBox hbox = new HBox();\n\t\t\thbox.PackStart  ( BtnAdd    );\n\t\t\thbox.PackStart  ( BtnEdit   );\n\t\t\thbox.PackStart  ( BtnRemove );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add the checkbox\n\t\t\tlayout.PackStart( ChkOwnerDrawned, false, true, 0 );\n\t\t\t//add layout\n\t\t\tthis.Add( layout );\n\t\t}\n\t\t\n\t}\n}\n";
+            this.textview2.CanFocus = true;
+            this.textview2.Name = "textview2";
+            this.textview2.Editable = false;
+            this.GtkScrolledWindow1.Add(this.textview2);
+            this.GtkAlignment4.Add(this.GtkScrolledWindow1);
+            this.frame2.Add(this.GtkAlignment4);
+            this.GtkLabel4 = new Gtk.Label();
+            this.GtkLabel4.Name = "GtkLabel4";
+            this.GtkLabel4.LabelProp = Mono.Unix.Catalog.GetString("<b>Code</b>");
+            this.GtkLabel4.UseMarkup = true;
+            this.frame2.LabelWidget = this.GtkLabel4;
+            this.vbox3.Add(this.frame2);
+            Gtk.Box.BoxChild w15 = ((Gtk.Box.BoxChild)(this.vbox3[this.frame2]));
+            w15.Position = 2;
+            this.notebook1.Add(this.vbox3);
+            Gtk.Notebook.NotebookChild w16 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox3]));
+            w16.Position = 1;
+            // Notebook tab
+            this.label3 = new Gtk.Label();
+            this.label3.Name = "label3";
+            this.label3.LabelProp = Mono.Unix.Catalog.GetString("HSimpleList");
+            this.notebook1.SetTabLabel(this.vbox3, this.label3);
+            this.label3.ShowAll();
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.vbox4 = new Gtk.VBox();
+            this.vbox4.Name = "vbox4";
+            this.vbox4.Spacing = 6;
+            // Container child vbox4.Gtk.Box+BoxChild
+            this.label6 = new Gtk.Label();
+            this.label6.Name = "label6";
+            this.label6.LabelProp = Mono.Unix.Catalog.GetString("<b>HSimpleComboBox</b>");
+            this.label6.UseMarkup = true;
+            this.vbox4.Add(this.label6);
+            Gtk.Box.BoxChild w17 = ((Gtk.Box.BoxChild)(this.vbox4[this.label6]));
+            w17.Position = 0;
+            w17.Expand = false;
+            w17.Fill = false;
+            // Container child vbox4.Gtk.Box+BoxChild
+            this.BtnStartComboDemo = new Gtk.Button();
+            this.BtnStartComboDemo.CanFocus = true;
+            this.BtnStartComboDemo.Name = "BtnStartComboDemo";
+            this.BtnStartComboDemo.UseUnderline = true;
+            this.BtnStartComboDemo.Label = Mono.Unix.Catalog.GetString("Start demo");
+            this.vbox4.Add(this.BtnStartComboDemo);
+            Gtk.Box.BoxChild w18 = ((Gtk.Box.BoxChild)(this.vbox4[this.BtnStartComboDemo]));
+            w18.Position = 1;
+            w18.Expand = false;
+            w18.Fill = false;
+            // Container child vbox4.Gtk.Box+BoxChild
+            this.GtkScrolledWindow2 = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow2.Name = "GtkScrolledWindow2";
+            this.GtkScrolledWindow2.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow2.Gtk.Container+ContainerChild
+            this.textview3 = new Gtk.TextView();
+            this.textview3.Buffer.Text = "using Gtk;\nusing System;\nusing System.Drawing;\nusing System.Drawing.Drawing2D;\nusing HollyLibrary;\n\nnamespace test\n{\n\t\n\tpublic class SimpleComboBox : Window\n\t{\n\t\t//the list widget\n\t\tHSimpleComboBox cmb = new HSimpleComboBox();\n\t\t//buttons\n\t\tButton BtnAdd    = new Button(\"Add item\");\n\t\tButton BtnRemove = new Button(\"Remove last item\");\n\t\tButton BtnEdit   = new Button(\"Edit last item\");\n\t\t//checkboxes\n\t\tCheckButton ChkOwnerDrawned = new CheckButton(\"Popup list is ownerdrawed\");\n\t\tCheckButton ChkEditable     = new CheckButton(\"Editable combo\");\n\t\t\n\t\tpublic SimpleComboBox() : base( WindowType.Toplevel )\n\t\t{\n\t\t\tthis.Title          = \"SimpleComboBox demo\";\n\t\t\tthis.WindowPosition = Gtk.WindowPosition.CenterAlways;\n\t\t\tthis.Resize( 320, 240 );\n\t\t\t//\n\t\t\tinitGui();\n\t\t\t//button events\n\t\t\tBtnAdd.Clicked          += OnBtnAddClicked;\n\t\t\tBtnEdit.Clicked         += OnBtnEditClicked;\n\t\t\tBtnRemove.Clicked       += OnBtnRemoveClicked;\n\t\t\t//checkbox events\n\t\t\tChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;\n\t\t\tChkEditable.Toggled     += OnEditableChecked;\n\t\t\t//ownerdrawned event\n\t\t\tcmb.List.DrawItem       += OnItemDraw;\n\t\t}\n\t\t\n\t\tprivate void OnBtnAddClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//add a list item\n\t\t\tcmb.List.Items.Add(\"new item !\");\n\t\t}\n\t\t\n\t\tprivate void OnBtnEditClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//change the last item's text\n\t\t\tif( cmb.List.Items.Count > 0 )\n\t\t\t{\n\t\t\t\tcmb.List.Items[ cmb.List.Items.Count - 1 ] = \"i'm modified\";\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnBtnRemoveClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//remove the selected item\n\t\t\tif( cmb.List.Items.Count > 0 )\n\t\t\t\tcmb.List.Items.RemoveAt( cmb.List.Items.Count - 1 );\n\t\t\t\n\t\t}\n\t\t\n\t\tprivate void OnEditableChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tcmb.IsEditable = ChkEditable.Active;\n\t\t}\n\t\t\n\t\tprivate void OnOwnerDrawnedChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tcmb.List.OwnerDraw      = ChkOwnerDrawned.Active;\n\t\t}\n\t\t\n\t\tprivate void OnItemDraw( object sender, DrawItemEventArgs args )\n\t\t{\n\t\t\tString text      = cmb.List.Items[ args.ItemIndex ].ToString();\n\t\t\t//take font from style\n\t\t\tFont font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );\n\t\t\t\n\t\t\t// take color from style\n\t\t\tColor c          = Color.Blue;\n\t\t\tif( args.ItemIndex % 2 == 0 ) c = Color.Red;\n\t\t\t\n\t\t\tBrush b          = new SolidBrush( c );\n\t\t\t//set quality to HighSpeed\n\t\t\targs.Graphics.CompositingQuality = CompositingQuality.HighSpeed;\n\t\t\targs.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );\n\t\t\targs.Graphics.Dispose();\n\t\t}\n\t\t\n\t\tprivate void initGui()\n\t\t{\n\t\t\t//create the layout\n\t\t\tVBox layout       = new VBox();\n\t\t\t//add the combo\n\t\t\tlayout.PackStart( cmb, false, false, 2);\n\t\t\t//add the add/edit/remove buttons\n\t\t\tHBox hbox = new HBox();\n\t\t\thbox.PackStart  ( BtnAdd    );\n\t\t\thbox.PackStart  ( BtnEdit   );\n\t\t\thbox.PackStart  ( BtnRemove );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add the checkbox\n\t\t\thbox      = new HBox();\n\t\t\thbox.PackStart( ChkOwnerDrawned );\n\t\t\thbox.PackStart( ChkEditable     );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add layout\n\t\t\tthis.Add( layout );\n\t\t}\n\t\t\n\t}\n}\n";
+            this.textview3.CanFocus = true;
+            this.textview3.Name = "textview3";
+            this.GtkScrolledWindow2.Add(this.textview3);
+            this.vbox4.Add(this.GtkScrolledWindow2);
+            Gtk.Box.BoxChild w20 = ((Gtk.Box.BoxChild)(this.vbox4[this.GtkScrolledWindow2]));
+            w20.Position = 2;
+            this.notebook1.Add(this.vbox4);
+            Gtk.Notebook.NotebookChild w21 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox4]));
+            w21.Position = 2;
+            // Notebook tab
+            this.label5 = new Gtk.Label();
+            this.label5.Name = "label5";
+            this.label5.LabelProp = Mono.Unix.Catalog.GetString("HSimpleComboBox");
+            this.notebook1.SetTabLabel(this.vbox4, this.label5);
+            this.label5.ShowAll();
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.vbox5 = new Gtk.VBox();
+            this.vbox5.Name = "vbox5";
+            this.vbox5.Spacing = 6;
+            // Container child vbox5.Gtk.Box+BoxChild
+            this.label14 = new Gtk.Label();
+            this.label14.Name = "label14";
+            this.label14.LabelProp = Mono.Unix.Catalog.GetString("<b>HComboTree</b>");
+            this.label14.UseMarkup = true;
+            this.vbox5.Add(this.label14);
+            Gtk.Box.BoxChild w22 = ((Gtk.Box.BoxChild)(this.vbox5[this.label14]));
+            w22.Position = 0;
+            w22.Expand = false;
+            w22.Fill = false;
+            // Container child vbox5.Gtk.Box+BoxChild
+            this.ComboTreeDemo = new Gtk.Button();
+            this.ComboTreeDemo.CanFocus = true;
+            this.ComboTreeDemo.Name = "ComboTreeDemo";
+            this.ComboTreeDemo.UseUnderline = true;
+            this.ComboTreeDemo.Label = Mono.Unix.Catalog.GetString("Start demo");
+            this.vbox5.Add(this.ComboTreeDemo);
+            Gtk.Box.BoxChild w23 = ((Gtk.Box.BoxChild)(this.vbox5[this.ComboTreeDemo]));
+            w23.Position = 1;
+            w23.Expand = false;
+            w23.Fill = false;
+            // Container child vbox5.Gtk.Box+BoxChild
+            this.GtkScrolledWindow3 = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow3.Name = "GtkScrolledWindow3";
+            this.GtkScrolledWindow3.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow3.Gtk.Container+ContainerChild
+            this.TxtComboTree = new Gtk.TextView();
+            this.TxtComboTree.CanFocus = true;
+            this.TxtComboTree.Name = "TxtComboTree";
+            this.GtkScrolledWindow3.Add(this.TxtComboTree);
+            this.vbox5.Add(this.GtkScrolledWindow3);
+            Gtk.Box.BoxChild w25 = ((Gtk.Box.BoxChild)(this.vbox5[this.GtkScrolledWindow3]));
+            w25.Position = 2;
+            this.notebook1.Add(this.vbox5);
+            Gtk.Notebook.NotebookChild w26 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox5]));
+            w26.Position = 3;
+            // Notebook tab
+            this.label9 = new Gtk.Label();
+            this.label9.Name = "label9";
+            this.label9.LabelProp = Mono.Unix.Catalog.GetString("HComboTree");
+            this.notebook1.SetTabLabel(this.vbox5, this.label9);
+            this.label9.ShowAll();
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.vbox6 = new Gtk.VBox();
+            this.vbox6.Name = "vbox6";
+            this.vbox6.Spacing = 6;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame3 = new Gtk.Frame();
+            this.frame3.Name = "frame3";
+            this.frame3.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame3.Gtk.Container+ContainerChild
+            this.GtkAlignment8 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment8.Name = "GtkAlignment8";
+            this.GtkAlignment8.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment8.Gtk.Container+ContainerChild
+            this.hbox2 = new Gtk.HBox();
+            this.hbox2.Name = "hbox2";
+            this.hbox2.Spacing = 6;
+            // Container child hbox2.Gtk.Box+BoxChild
+            this.ColorPicker = new HollyLibrary.HColorPicker();
+            this.ColorPicker.WidthRequest = 108;
+            this.ColorPicker.Events = ((Gdk.EventMask)(256));
+            this.ColorPicker.Name = "ColorPicker";
+            this.hbox2.Add(this.ColorPicker);
+            Gtk.Box.BoxChild w27 = ((Gtk.Box.BoxChild)(this.hbox2[this.ColorPicker]));
+            w27.Position = 0;
+            w27.Expand = false;
+            this.GtkAlignment8.Add(this.hbox2);
+            this.frame3.Add(this.GtkAlignment8);
+            this.GtkLabel6 = new Gtk.Label();
+            this.GtkLabel6.Name = "GtkLabel6";
+            this.GtkLabel6.LabelProp = Mono.Unix.Catalog.GetString("<b>HColorPicker</b>");
+            this.GtkLabel6.UseMarkup = true;
+            this.frame3.LabelWidget = this.GtkLabel6;
+            this.vbox6.Add(this.frame3);
+            Gtk.Box.BoxChild w30 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame3]));
+            w30.Position = 0;
+            w30.Expand = false;
+            w30.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame4 = new Gtk.Frame();
+            this.frame4.Name = "frame4";
+            this.frame4.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame4.Gtk.Container+ContainerChild
+            this.GtkAlignment1 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment1.Name = "GtkAlignment1";
+            this.GtkAlignment1.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment1.Gtk.Container+ContainerChild
             this.hcombofolder1 = new HollyLibrary.HComboFolder();
             this.hcombofolder1.Events = ((Gdk.EventMask)(256));
             this.hcombofolder1.Name = "hcombofolder1";
             this.hcombofolder1.DropDownHeight = 0;
-            this.vbox1.Add(this.hcombofolder1);
-            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcombofolder1]));
-            w1.Position = 0;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.hcombotree1 = new HollyLibrary.HComboTree();
-            this.hcombotree1.Events = ((Gdk.EventMask)(256));
-            this.hcombotree1.Name = "hcombotree1";
-            this.hcombotree1.DropDownHeight = 0;
-            this.vbox1.Add(this.hcombotree1);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcombotree1]));
-            w2.Position = 1;
-            // Container child vbox1.Gtk.Box+BoxChild
+            this.GtkAlignment1.Add(this.hcombofolder1);
+            this.frame4.Add(this.GtkAlignment1);
+            this.GtkLabel7 = new Gtk.Label();
+            this.GtkLabel7.Name = "GtkLabel7";
+            this.GtkLabel7.LabelProp = Mono.Unix.Catalog.GetString("<b>HComboFolder</b>");
+            this.GtkLabel7.UseMarkup = true;
+            this.frame4.LabelWidget = this.GtkLabel7;
+            this.vbox6.Add(this.frame4);
+            Gtk.Box.BoxChild w33 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame4]));
+            w33.Position = 1;
+            w33.Expand = false;
+            w33.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame5 = new Gtk.Frame();
+            this.frame5.Name = "frame5";
+            this.frame5.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame5.Gtk.Container+ContainerChild
+            this.GtkAlignment2 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment2.Name = "GtkAlignment2";
+            this.GtkAlignment2.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment2.Gtk.Container+ContainerChild
+            this.hdateedit2 = new HollyLibrary.HDateEdit();
+            this.hdateedit2.Events = ((Gdk.EventMask)(256));
+            this.hdateedit2.Name = "hdateedit2";
+            this.hdateedit2.CurrentDate = new System.DateTime(0);
+            this.GtkAlignment2.Add(this.hdateedit2);
+            this.frame5.Add(this.GtkAlignment2);
+            this.GtkLabel8 = new Gtk.Label();
+            this.GtkLabel8.Name = "GtkLabel8";
+            this.GtkLabel8.LabelProp = Mono.Unix.Catalog.GetString("<b>HDateEdit</b>");
+            this.GtkLabel8.UseMarkup = true;
+            this.frame5.LabelWidget = this.GtkLabel8;
+            this.vbox6.Add(this.frame5);
+            Gtk.Box.BoxChild w36 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame5]));
+            w36.Position = 2;
+            w36.Expand = false;
+            w36.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame6 = new Gtk.Frame();
+            this.frame6.Name = "frame6";
+            this.frame6.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame6.Gtk.Container+ContainerChild
+            this.GtkAlignment5 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment5.Name = "GtkAlignment5";
+            this.GtkAlignment5.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment5.Gtk.Container+ContainerChild
+            this.hfontpicker1 = new HollyLibrary.HFontPicker();
+            this.hfontpicker1.Events = ((Gdk.EventMask)(256));
+            this.hfontpicker1.Name = "hfontpicker1";
+            this.GtkAlignment5.Add(this.hfontpicker1);
+            this.frame6.Add(this.GtkAlignment5);
+            this.GtkLabel9 = new Gtk.Label();
+            this.GtkLabel9.Name = "GtkLabel9";
+            this.GtkLabel9.LabelProp = Mono.Unix.Catalog.GetString("<b>HFontPicker</b>");
+            this.GtkLabel9.UseMarkup = true;
+            this.frame6.LabelWidget = this.GtkLabel9;
+            this.vbox6.Add(this.frame6);
+            Gtk.Box.BoxChild w39 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame6]));
+            w39.Position = 3;
+            w39.Expand = false;
+            w39.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame7 = new Gtk.Frame();
+            this.frame7.Name = "frame7";
+            this.frame7.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame7.Gtk.Container+ContainerChild
+            this.GtkAlignment6 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment6.Name = "GtkAlignment6";
+            this.GtkAlignment6.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment6.Gtk.Container+ContainerChild
             this.hipentry1 = new HollyLibrary.HIpEntry();
             this.hipentry1.Events = ((Gdk.EventMask)(256));
             this.hipentry1.Name = "hipentry1";
-            this.vbox1.Add(this.hipentry1);
-            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.hipentry1]));
-            w3.Position = 2;
-            w3.Expand = false;
-            w3.Fill = false;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.hbox1 = new Gtk.HBox();
-            this.hbox1.Name = "hbox1";
-            this.hbox1.Spacing = 6;
-            // Container child hbox1.Gtk.Box+BoxChild
-            this.button2 = new Gtk.Button();
-            this.button2.CanFocus = true;
-            this.button2.Name = "button2";
-            this.button2.UseStock = true;
-            this.button2.UseUnderline = true;
-            this.button2.Label = "gtk-ok";
-            this.hbox1.Add(this.button2);
-            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.button2]));
-            w4.Position = 0;
-            // Container child hbox1.Gtk.Box+BoxChild
-            this.button3 = new Gtk.Button();
-            this.button3.CanFocus = true;
-            this.button3.Name = "button3";
-            this.button3.UseUnderline = true;
-            this.button3.Label = Mono.Unix.Catalog.GetString("button3");
-            this.hbox1.Add(this.button3);
-            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.hbox1[this.button3]));
-            w5.Position = 1;
-            // Container child hbox1.Gtk.Box+BoxChild
-            this.button4 = new Gtk.Button();
-            this.button4.CanFocus = true;
-            this.button4.Name = "button4";
-            this.button4.UseUnderline = true;
-            this.button4.Label = Mono.Unix.Catalog.GetString("button4");
-            this.hbox1.Add(this.button4);
-            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox1[this.button4]));
-            w6.Position = 2;
-            this.vbox1.Add(this.hbox1);
-            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
-            w7.Position = 3;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.BtnMoreColors = new HollyLibrary.HFontPicker();
-            this.BtnMoreColors.Events = ((Gdk.EventMask)(256));
-            this.BtnMoreColors.Name = "BtnMoreColors";
-            this.vbox1.Add(this.BtnMoreColors);
-            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox1[this.BtnMoreColors]));
-            w8.Position = 4;
-            // Container child vbox1.Gtk.Box+BoxChild
-            this.SList = new Gtk.ScrolledWindow();
-            this.SList.Name = "SList";
-            this.SList.ShadowType = ((Gtk.ShadowType)(1));
-            // Container child SList.Gtk.Container+ContainerChild
-            this.hsimplelist1 = new HollyLibrary.HSimpleList();
-            this.hsimplelist1.CanFocus = true;
-            this.hsimplelist1.Name = "hsimplelist1";
-            this.hsimplelist1.HeadersClickable = true;
-            this.hsimplelist1.ItemHeight = 0;
-            this.hsimplelist1.SelectedIndex = 0;
-            this.hsimplelist1.OwnerDraw = false;
-            this.SList.Add(this.hsimplelist1);
-            this.vbox1.Add(this.SList);
-            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.vbox1[this.SList]));
-            w10.Position = 5;
-            this.Add(this.vbox1);
+            this.GtkAlignment6.Add(this.hipentry1);
+            this.frame7.Add(this.GtkAlignment6);
+            this.GtkLabel10 = new Gtk.Label();
+            this.GtkLabel10.Name = "GtkLabel10";
+            this.GtkLabel10.LabelProp = Mono.Unix.Catalog.GetString("<b>HIpEntry</b>");
+            this.GtkLabel10.UseMarkup = true;
+            this.frame7.LabelWidget = this.GtkLabel10;
+            this.vbox6.Add(this.frame7);
+            Gtk.Box.BoxChild w42 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame7]));
+            w42.Position = 4;
+            w42.Expand = false;
+            w42.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.frame8 = new Gtk.Frame();
+            this.frame8.Name = "frame8";
+            this.frame8.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child frame8.Gtk.Container+ContainerChild
+            this.GtkAlignment7 = new Gtk.Alignment(0F, 0F, 1F, 1F);
+            this.GtkAlignment7.Name = "GtkAlignment7";
+            this.GtkAlignment7.LeftPadding = ((uint)(12));
+            // Container child GtkAlignment7.Gtk.Container+ContainerChild
+            this.vbox7 = new Gtk.VBox();
+            this.vbox7.Name = "vbox7";
+            this.vbox7.Spacing = 6;
+            // Container child vbox7.Gtk.Box+BoxChild
+            this.RegExEntry = new HollyLibrary.HRegExEntry();
+            this.RegExEntry.Events = ((Gdk.EventMask)(256));
+            this.RegExEntry.Name = "RegExEntry";
+            this.vbox7.Add(this.RegExEntry);
+            Gtk.Box.BoxChild w43 = ((Gtk.Box.BoxChild)(this.vbox7[this.RegExEntry]));
+            w43.Position = 0;
+            w43.Expand = false;
+            w43.Fill = false;
+            // Container child vbox7.Gtk.Box+BoxChild
+            this.hbox13 = new Gtk.HBox();
+            this.hbox13.Name = "hbox13";
+            this.hbox13.Spacing = 6;
+            // Container child hbox13.Gtk.Box+BoxChild
+            this.label12 = new Gtk.Label();
+            this.label12.Name = "label12";
+            this.label12.LabelProp = Mono.Unix.Catalog.GetString("Regular expression used:");
+            this.hbox13.Add(this.label12);
+            Gtk.Box.BoxChild w44 = ((Gtk.Box.BoxChild)(this.hbox13[this.label12]));
+            w44.Position = 0;
+            w44.Expand = false;
+            w44.Fill = false;
+            // Container child hbox13.Gtk.Box+BoxChild
+            this.TxtRegularExpresion = new Gtk.Entry();
+            this.TxtRegularExpresion.CanFocus = true;
+            this.TxtRegularExpresion.Name = "TxtRegularExpresion";
+            this.TxtRegularExpresion.Text = Mono.Unix.Catalog.GetString("\\d{3}-\\d{2}-\\d{4}");
+            this.TxtRegularExpresion.IsEditable = true;
+            this.TxtRegularExpresion.InvisibleChar = '●';
+            this.hbox13.Add(this.TxtRegularExpresion);
+            Gtk.Box.BoxChild w45 = ((Gtk.Box.BoxChild)(this.hbox13[this.TxtRegularExpresion]));
+            w45.Position = 1;
+            // Container child hbox13.Gtk.Box+BoxChild
+            this.BtnApplyRegex = new Gtk.Button();
+            this.BtnApplyRegex.CanFocus = true;
+            this.BtnApplyRegex.Name = "BtnApplyRegex";
+            this.BtnApplyRegex.UseStock = true;
+            this.BtnApplyRegex.UseUnderline = true;
+            this.BtnApplyRegex.Label = "gtk-apply";
+            this.hbox13.Add(this.BtnApplyRegex);
+            Gtk.Box.BoxChild w46 = ((Gtk.Box.BoxChild)(this.hbox13[this.BtnApplyRegex]));
+            w46.Position = 2;
+            w46.Expand = false;
+            w46.Fill = false;
+            this.vbox7.Add(this.hbox13);
+            Gtk.Box.BoxChild w47 = ((Gtk.Box.BoxChild)(this.vbox7[this.hbox13]));
+            w47.Position = 1;
+            w47.Expand = false;
+            w47.Fill = false;
+            this.GtkAlignment7.Add(this.vbox7);
+            this.frame8.Add(this.GtkAlignment7);
+            this.GtkLabel11 = new Gtk.Label();
+            this.GtkLabel11.Name = "GtkLabel11";
+            this.GtkLabel11.LabelProp = Mono.Unix.Catalog.GetString("<b>HRegExEntry</b>");
+            this.GtkLabel11.UseMarkup = true;
+            this.frame8.LabelWidget = this.GtkLabel11;
+            this.vbox6.Add(this.frame8);
+            Gtk.Box.BoxChild w50 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame8]));
+            w50.Position = 5;
+            w50.Expand = false;
+            w50.Fill = false;
+            // Container child vbox6.Gtk.Box+BoxChild
+            this.BtnToolTip = new Gtk.Button();
+            this.BtnToolTip.CanFocus = true;
+            this.BtnToolTip.Name = "BtnToolTip";
+            this.BtnToolTip.UseUnderline = true;
+            // Container child BtnToolTip.Gtk.Container+ContainerChild
+            Gtk.Alignment w51 = new Gtk.Alignment(0.5F, 0.5F, 0F, 0F);
+            // Container child GtkAlignment.Gtk.Container+ContainerChild
+            Gtk.HBox w52 = new Gtk.HBox();
+            w52.Spacing = 2;
+            // Container child GtkHBox.Gtk.Container+ContainerChild
+            Gtk.Image w53 = new Gtk.Image();
+            w53.Pixbuf = Stetic.IconLoader.LoadIcon(this, "gtk-about", Gtk.IconSize.Menu, 16);
+            w52.Add(w53);
+            // Container child GtkHBox.Gtk.Container+ContainerChild
+            Gtk.Label w55 = new Gtk.Label();
+            w55.LabelProp = Mono.Unix.Catalog.GetString("Look ! I have a baloon tooltip over me!");
+            w55.UseUnderline = true;
+            w52.Add(w55);
+            w51.Add(w52);
+            this.BtnToolTip.Add(w51);
+            this.vbox6.Add(this.BtnToolTip);
+            Gtk.Box.BoxChild w59 = ((Gtk.Box.BoxChild)(this.vbox6[this.BtnToolTip]));
+            w59.Position = 6;
+            w59.Expand = false;
+            w59.Fill = false;
+            this.notebook1.Add(this.vbox6);
+            Gtk.Notebook.NotebookChild w60 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox6]));
+            w60.Position = 4;
+            // Notebook tab
+            this.label7 = new Gtk.Label();
+            this.label7.Name = "label7";
+            this.label7.LabelProp = Mono.Unix.Catalog.GetString("Other widgets");
+            this.notebook1.SetTabLabel(this.vbox6, this.label7);
+            this.label7.ShowAll();
+            this.Add(this.notebook1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 320;
-            this.DefaultHeight = 333;
+            this.DefaultWidth = 434;
+            this.DefaultHeight = 543;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
-            this.button2.Clicked += new System.EventHandler(this.OnButton2Clicked);
-            this.button3.Clicked += new System.EventHandler(this.OnButton3Clicked);
-            this.hsimplelist1.RowActivated += new Gtk.RowActivatedHandler(this.OnHsimplelist1RowActivated);
+            this.BtnTreeViewDemo.Clicked += new System.EventHandler(this.OnBtnTreeViewDemoClicked);
+            this.BtnSimpleListDemo.Clicked += new System.EventHandler(this.OnBtnSimpleListDemoClicked);
+            this.BtnStartComboDemo.Clicked += new System.EventHandler(this.OnBtnStartComboDemoClicked);
+            this.ComboTreeDemo.Clicked += new System.EventHandler(this.OnComboTreeDemoClicked);
+            this.BtnApplyRegex.Clicked += new System.EventHandler(this.OnBtnApplyRegexClicked);
         }
     }
 }

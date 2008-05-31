@@ -81,22 +81,36 @@ namespace HollyLibrary {
             this.BtnClear = new Gtk.Button();
             this.BtnClear.CanFocus = true;
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.UseStock = true;
             this.BtnClear.UseUnderline = true;
-            this.BtnClear.Label = "gtk-clear";
+            // Container child BtnClear.Gtk.Container+ContainerChild
+            Gtk.Alignment w2 = new Gtk.Alignment(0.5F, 0.5F, 0F, 0F);
+            // Container child GtkAlignment.Gtk.Container+ContainerChild
+            Gtk.HBox w3 = new Gtk.HBox();
+            w3.Spacing = 2;
+            // Container child GtkHBox.Gtk.Container+ContainerChild
+            Gtk.Image w4 = new Gtk.Image();
+            w4.Pixbuf = Stetic.IconLoader.LoadIcon(this, "gtk-clear", Gtk.IconSize.Menu, 16);
+            w3.Add(w4);
+            // Container child GtkHBox.Gtk.Container+ContainerChild
+            Gtk.Label w6 = new Gtk.Label();
+            w6.LabelProp = Mono.Unix.Catalog.GetString("Now");
+            w6.UseUnderline = true;
+            w3.Add(w6);
+            w2.Add(w3);
+            this.BtnClear.Add(w2);
             this.hbox2.Add(this.BtnClear);
-            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox2[this.BtnClear]));
-            w2.Position = 0;
+            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.hbox2[this.BtnClear]));
+            w10.Position = 0;
             this.vbox2.Add(this.hbox2);
-            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox2[this.hbox2]));
-            w3.Position = 1;
-            w3.Expand = false;
-            w3.Fill = false;
+            Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(this.vbox2[this.hbox2]));
+            w11.Position = 1;
+            w11.Expand = false;
+            w11.Fill = false;
             this.hbox1.Add(this.vbox2);
-            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.vbox2]));
-            w4.Position = 0;
-            w4.Expand = false;
-            w4.Fill = false;
+            Gtk.Box.BoxChild w12 = ((Gtk.Box.BoxChild)(this.hbox1[this.vbox2]));
+            w12.Position = 0;
+            w12.Expand = false;
+            w12.Fill = false;
             // Container child hbox1.Gtk.Box+BoxChild
             this.vbox3 = new Gtk.VBox();
             this.vbox3.Name = "vbox3";
@@ -106,8 +120,8 @@ namespace HollyLibrary {
             this.Clock.Name = "Clock";
             this.Clock.Datetime = new System.DateTime(0);
             this.vbox3.Add(this.Clock);
-            Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.vbox3[this.Clock]));
-            w5.Position = 0;
+            Gtk.Box.BoxChild w13 = ((Gtk.Box.BoxChild)(this.vbox3[this.Clock]));
+            w13.Position = 0;
             // Container child vbox3.Gtk.Box+BoxChild
             this.hbox3 = new Gtk.HBox();
             this.hbox3.Name = "hbox3";
@@ -117,10 +131,10 @@ namespace HollyLibrary {
             this.label4.Name = "label4";
             this.label4.LabelProp = Mono.Unix.Catalog.GetString("H:");
             this.hbox3.Add(this.label4);
-            Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox3[this.label4]));
-            w6.Position = 0;
-            w6.Expand = false;
-            w6.Fill = false;
+            Gtk.Box.BoxChild w14 = ((Gtk.Box.BoxChild)(this.hbox3[this.label4]));
+            w14.Position = 0;
+            w14.Expand = false;
+            w14.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
             this.TxtHour = new Gtk.SpinButton(0, 24, 1);
             this.TxtHour.CanFocus = true;
@@ -129,19 +143,19 @@ namespace HollyLibrary {
             this.TxtHour.ClimbRate = 1;
             this.TxtHour.Numeric = true;
             this.hbox3.Add(this.TxtHour);
-            Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtHour]));
-            w7.Position = 1;
-            w7.Expand = false;
-            w7.Fill = false;
+            Gtk.Box.BoxChild w15 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtHour]));
+            w15.Position = 1;
+            w15.Expand = false;
+            w15.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
             this.label2 = new Gtk.Label();
             this.label2.Name = "label2";
             this.label2.LabelProp = Mono.Unix.Catalog.GetString("M:");
             this.hbox3.Add(this.label2);
-            Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.hbox3[this.label2]));
-            w8.Position = 2;
-            w8.Expand = false;
-            w8.Fill = false;
+            Gtk.Box.BoxChild w16 = ((Gtk.Box.BoxChild)(this.hbox3[this.label2]));
+            w16.Position = 2;
+            w16.Expand = false;
+            w16.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
             this.TxtMin = new Gtk.SpinButton(0, 60, 1);
             this.TxtMin.CanFocus = true;
@@ -150,19 +164,19 @@ namespace HollyLibrary {
             this.TxtMin.ClimbRate = 1;
             this.TxtMin.Numeric = true;
             this.hbox3.Add(this.TxtMin);
-            Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtMin]));
-            w9.Position = 3;
-            w9.Expand = false;
-            w9.Fill = false;
+            Gtk.Box.BoxChild w17 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtMin]));
+            w17.Position = 3;
+            w17.Expand = false;
+            w17.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
             this.label3 = new Gtk.Label();
             this.label3.Name = "label3";
             this.label3.LabelProp = Mono.Unix.Catalog.GetString("S:");
             this.hbox3.Add(this.label3);
-            Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.hbox3[this.label3]));
-            w10.Position = 4;
-            w10.Expand = false;
-            w10.Fill = false;
+            Gtk.Box.BoxChild w18 = ((Gtk.Box.BoxChild)(this.hbox3[this.label3]));
+            w18.Position = 4;
+            w18.Expand = false;
+            w18.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
             this.TxtSec = new Gtk.SpinButton(0, 60, 1);
             this.TxtSec.CanFocus = true;
@@ -171,25 +185,25 @@ namespace HollyLibrary {
             this.TxtSec.ClimbRate = 1;
             this.TxtSec.Numeric = true;
             this.hbox3.Add(this.TxtSec);
-            Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtSec]));
-            w11.Position = 5;
-            w11.Expand = false;
-            w11.Fill = false;
+            Gtk.Box.BoxChild w19 = ((Gtk.Box.BoxChild)(this.hbox3[this.TxtSec]));
+            w19.Position = 5;
+            w19.Expand = false;
+            w19.Fill = false;
             this.vbox3.Add(this.hbox3);
-            Gtk.Box.BoxChild w12 = ((Gtk.Box.BoxChild)(this.vbox3[this.hbox3]));
-            w12.Position = 1;
-            w12.Expand = false;
+            Gtk.Box.BoxChild w20 = ((Gtk.Box.BoxChild)(this.vbox3[this.hbox3]));
+            w20.Position = 1;
+            w20.Expand = false;
             this.hbox1.Add(this.vbox3);
-            Gtk.Box.BoxChild w13 = ((Gtk.Box.BoxChild)(this.hbox1[this.vbox3]));
-            w13.Position = 1;
-            w13.Expand = false;
-            w13.Fill = false;
+            Gtk.Box.BoxChild w21 = ((Gtk.Box.BoxChild)(this.hbox1[this.vbox3]));
+            w21.Position = 1;
+            w21.Expand = false;
+            w21.Fill = false;
             this.Add(this.hbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 452;
-            this.DefaultHeight = 227;
+            this.DefaultWidth = 491;
+            this.DefaultHeight = 263;
             this.Show();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
             this.CCalendar.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnCalendar4ButtonPressEvent);

@@ -227,6 +227,8 @@ namespace HollyLibrary
 			set
 			{
 				cell_icon.Visible = value;
+				Columns[0].QueueResize();
+				QueueDraw();
 			}
 		}
 		
@@ -239,6 +241,8 @@ namespace HollyLibrary
 			set 
 			{
 				cell_chk.Visible = value;
+				Columns[0].QueueResize();
+				QueueDraw();
 			}
 		}
 
@@ -259,6 +263,8 @@ namespace HollyLibrary
 			set 
 			{
 				cell_text.Editable = value;
+				Columns[0].QueueResize();
+				QueueDraw();
 			}
 		}
 		

@@ -7,131 +7,1005 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="320 333">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="434 543">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
-    <property name="WindowPosition">CenterOnParent</property>
+    <property name="WindowPosition">CenterAlways</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="Gtk.VBox" id="vbox1">
+      <widget class="Gtk.Notebook" id="notebook1">
         <property name="MemberName" />
-        <property name="Spacing">6</property>
+        <property name="CanFocus">True</property>
+        <property name="CurrentPage">4</property>
+        <property name="Scrollable">True</property>
         <child>
-          <widget class="HollyLibrary.HComboFolder" id="hcombofolder1">
+          <widget class="Gtk.VPaned" id="vpaned1">
             <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-            <property name="DropDownHeight">0</property>
+            <property name="CanFocus">True</property>
+            <property name="Position">42</property>
+            <child>
+              <widget class="Gtk.VBox" id="vbox1">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.VBox" id="vbox2">
+                    <property name="MemberName" />
+                    <property name="Spacing">6</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label2">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">&lt;b&gt;HTreeView&lt;/b&gt;</property>
+                        <property name="UseMarkup">True</property>
+                      </widget>
+                      <packing>
+                        <property name="Position">0</property>
+                        <property name="AutoSize">True</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Button" id="BtnTreeViewDemo">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="Type">TextOnly</property>
+                        <property name="Label" translatable="yes">Start demo</property>
+                        <property name="UseUnderline">True</property>
+                        <signal name="Clicked" handler="OnBtnTreeViewDemoClicked" />
+                      </widget>
+                      <packing>
+                        <property name="Position">1</property>
+                        <property name="AutoSize">True</property>
+                        <property name="Expand">False</property>
+                        <property name="Fill">False</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Resize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame1">
+                <property name="MemberName" />
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment3">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                        <property name="MemberName" />
+                        <property name="ShadowType">In</property>
+                        <child>
+                          <widget class="Gtk.TextView" id="textview1">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="ShowScrollbars">True</property>
+                            <property name="Editable">False</property>
+                            <property name="Text" translatable="yes">using System;
+using HollyLibrary;
+using Gtk;
+
+namespace test
+{
+	
+	public class TreeView : Window
+	{
+		//the tree widget
+		HTreeView tree       = new HTreeView();
+		//buttons
+		Button BtnAddNode    = new Button("Add node");
+		Button BtnRemoveNode = new Button("Remove node");
+		Button BtnEditNode   = new Button("Edit node");
+		//checkboxes
+		CheckButton ChkNodeIconVisible = new CheckButton("Node icon is visible");
+		CheckButton ChkCheckBoxTree    = new CheckButton("Tree is checkbox tree");
+		CheckButton ChkEditableTree    = new CheckButton("Tree is editable");
+		
+		public TreeView() : base( WindowType.Toplevel )
+		{
+			this.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			//
+			initGui();
+			//button events
+			BtnAddNode.Clicked         += OnBtnAddClicked;
+			BtnEditNode.Clicked        += OnBtnEditClicked;
+			BtnRemoveNode.Clicked      += OnBtnRemoveClicked;
+			//checkbox events
+			ChkCheckBoxTree.Toggled    += OnCheckBoxChecked;
+			ChkEditableTree.Toggled    += OnEditableChecked;
+			ChkNodeIconVisible.Toggled += OnNodeIconChecked;
+		}
+		
+		private void OnBtnAddClicked( object sender, EventArgs args )
+		{
+			//make a icon from a stock image
+			Gdk.Pixbuf icon = GraphUtil.pixbufFromStock("gtk-yes", IconSize.Button );
+			//create the new node
+			HTreeNode node  = new HTreeNode( "new node!", icon );
+			//check if there is a node selected
+			HTreeNode selected_node = tree.SelectedNode;
+			//if no node is selected, add the new node directly to the base
+			if( selected_node == null )
+				tree.Nodes.Add( node );
+			else
+				selected_node.Nodes.Add( node );
+		}
+		
+		private void OnBtnEditClicked( object sender, EventArgs args )
+		{
+			//change the text/icon to the selected node
+			HTreeNode node = tree.SelectedNode;
+			if( node != null )
+			{
+				node.Text = "new and shiny modified value!";
+				node.Icon = GraphUtil.pixbufFromStock("gtk-add", IconSize.Button );
+			}
+		}
+		
+		private void OnBtnRemoveClicked( object sender, EventArgs args )
+		{
+			//remove the selected node
+			HTreeNode node = tree.SelectedNode;
+			if( node != null )
+			{
+				if( node.ParentNode == null )
+					tree.Nodes.Remove( node );
+				else
+					node.ParentNode.Nodes.Remove( node );
+			}
+		}
+		
+		private void OnCheckBoxChecked( object sender, EventArgs args )
+		{
+			tree.IsCheckBoxTree = ChkCheckBoxTree.Active;
+		}
+		
+		private void OnEditableChecked( object sender, EventArgs args )
+		{
+			tree.Editable = ChkEditableTree.Active;
+		}
+		
+		private void OnNodeIconChecked( object sender, EventArgs args )
+		{
+			tree.NodeIconVisible = ChkNodeIconVisible.Active;
+		}
+		
+		private void initGui()
+		{
+			//create the layout
+			VBox layout = new VBox();
+			//add the treeview
+			ScrolledWindow swTree = new ScrolledWindow();
+			swTree.AddWithViewport( tree );
+			layout.PackStart( swTree );
+			//add the add/edit/remove buttons
+			HBox hbox = new HBox();
+			hbox.PackStart  ( BtnAddNode    );
+			hbox.PackStart  ( BtnEditNode   );
+			hbox.PackStart  ( BtnRemoveNode );
+			layout.PackStart( hbox, false, true, 0 );
+			//add the checkboxes
+			hbox      = new HBox();
+			hbox.PackStart  ( ChkNodeIconVisible );
+			hbox.PackStart  ( ChkCheckBoxTree    );
+			hbox.PackStart  ( ChkEditableTree    );
+			layout.PackStart( hbox, false, true, 0 );
+			//add layout
+			this.Add( layout );
+		}
+		
+	}
+}
+</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel3">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;Code&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+          </widget>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">HTreeView</property>
           </widget>
           <packing>
-            <property name="Position">0</property>
-            <property name="AutoSize">False</property>
+            <property name="type">tab</property>
           </packing>
         </child>
         <child>
-          <widget class="HollyLibrary.HComboTree" id="hcombotree1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-            <property name="DropDownHeight">0</property>
-          </widget>
-          <packing>
-            <property name="Position">1</property>
-            <property name="AutoSize">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="HollyLibrary.HIpEntry" id="hipentry1">
-            <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
-          </widget>
-          <packing>
-            <property name="Position">2</property>
-            <property name="AutoSize">True</property>
-            <property name="Expand">False</property>
-            <property name="Fill">False</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.HBox" id="hbox1">
+          <widget class="Gtk.VBox" id="vbox3">
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="Gtk.Button" id="button2">
+              <widget class="Gtk.Label" id="label4">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="UseStock">True</property>
-                <property name="Type">StockItem</property>
-                <property name="StockId">gtk-ok</property>
-                <signal name="Clicked" handler="OnButton2Clicked" />
-                <property name="label">gtk-ok</property>
+                <property name="LabelProp" translatable="yes">&lt;b&gt;HSimpleList&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
                 <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Button" id="button3">
+              <widget class="Gtk.Button" id="BtnSimpleListDemo">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">button3</property>
+                <property name="Label" translatable="yes">Start demo</property>
                 <property name="UseUnderline">True</property>
-                <signal name="Clicked" handler="OnButton3Clicked" />
+                <signal name="Clicked" handler="OnBtnSimpleListDemoClicked" />
               </widget>
               <packing>
                 <property name="Position">1</property>
                 <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Button" id="button4">
+              <widget class="Gtk.Frame" id="frame2">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">button4</property>
-                <property name="UseUnderline">True</property>
+                <property name="ShadowType">None</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment4">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
+                        <property name="MemberName" />
+                        <property name="ShadowType">In</property>
+                        <child>
+                          <widget class="Gtk.TextView" id="textview2">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="ShowScrollbars">True</property>
+                            <property name="Editable">False</property>
+                            <property name="Text" translatable="yes">using Gtk;
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using HollyLibrary;
+
+namespace test
+{
+	
+	public class SimpleList : Window
+	{
+		//the list widget
+		HSimpleList list = new HSimpleList();
+		//buttons
+		Button BtnAdd    = new Button("Add item");
+		Button BtnRemove = new Button("Remove item");
+		Button BtnEdit   = new Button("Edit item");
+		//checkboxes
+		CheckButton ChkOwnerDrawned = new CheckButton("List is ownerdrawed");
+		
+		public SimpleList() : base( WindowType.Toplevel )
+		{
+			this.Title          = "HSimpleList demo";
+			this.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			this.Resize( 320, 240 );
+			//
+			initGui();
+			//button events
+			BtnAdd.Clicked          += OnBtnAddClicked;
+			BtnEdit.Clicked         += OnBtnEditClicked;
+			BtnRemove.Clicked       += OnBtnRemoveClicked;
+			//checkbox events
+			ChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;
+			//ownerdrawned event
+			list.DrawItem           += OnItemDraw;
+		}
+		
+		private void OnBtnAddClicked( object sender, EventArgs args )
+		{
+			//add a list item
+			list.Items.Add("new item !");
+		}
+		
+		private void OnBtnEditClicked( object sender, EventArgs args )
+		{
+			//change the current selected item's text
+			if( list.SelectedIndex != -1 )
+			{
+				list.Items[ list.SelectedIndex ] = "i'm modified";
+			}
+		}
+		
+		private void OnBtnRemoveClicked( object sender, EventArgs args )
+		{
+			//remove the selected item
+			if( list.SelectedIndex != -1 )
+				list.Items.RemoveAt( list.SelectedIndex );
+			
+		}
+		
+		private void OnOwnerDrawnedChecked( object sender, EventArgs args )
+		{
+			list.OwnerDraw      = ChkOwnerDrawned.Active;
+		}
+		
+		private void OnItemDraw( object sender, DrawItemEventArgs args )
+		{
+			String text      = list.Items[ args.ItemIndex ].ToString();
+			//take font from style
+			Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );
+			
+			// take color from style
+			Color c          = Color.Blue;
+			if( args.ItemIndex % 2 == 0 ) c = Color.Red;
+			
+			Brush b          = new SolidBrush( c );
+			//set quality to HighSpeed
+			args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
+			args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+			args.Graphics.Dispose();
+		}
+		
+		private void initGui()
+		{
+			//create the layout
+			VBox layout       = new VBox();
+			//add the list
+			ScrolledWindow sw = new ScrolledWindow();
+			sw.AddWithViewport( list );
+			layout.PackStart  ( sw   );
+			//add the add/edit/remove buttons
+			HBox hbox = new HBox();
+			hbox.PackStart  ( BtnAdd    );
+			hbox.PackStart  ( BtnEdit   );
+			hbox.PackStart  ( BtnRemove );
+			layout.PackStart( hbox, false, true, 0 );
+			//add the checkbox
+			layout.PackStart( ChkOwnerDrawned, false, true, 0 );
+			//add layout
+			this.Add( layout );
+		}
+		
+	}
+}
+</property>
+                          </widget>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;Code&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
                 <property name="Position">2</property>
-                <property name="AutoSize">False</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">HSimpleList</property>
+          </widget>
+          <packing>
+            <property name="type">tab</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VBox" id="vbox4">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label6">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;HSimpleComboBox&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="BtnStartComboDemo">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Start demo</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnBtnStartComboDemoClicked" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow2">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.TextView" id="textview3">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShowScrollbars">True</property>
+                    <property name="Text">using Gtk;
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using HollyLibrary;
+
+namespace test
+{
+	
+	public class SimpleComboBox : Window
+	{
+		//the list widget
+		HSimpleComboBox cmb = new HSimpleComboBox();
+		//buttons
+		Button BtnAdd    = new Button("Add item");
+		Button BtnRemove = new Button("Remove last item");
+		Button BtnEdit   = new Button("Edit last item");
+		//checkboxes
+		CheckButton ChkOwnerDrawned = new CheckButton("Popup list is ownerdrawed");
+		CheckButton ChkEditable     = new CheckButton("Editable combo");
+		
+		public SimpleComboBox() : base( WindowType.Toplevel )
+		{
+			this.Title          = "SimpleComboBox demo";
+			this.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			this.Resize( 320, 240 );
+			//
+			initGui();
+			//button events
+			BtnAdd.Clicked          += OnBtnAddClicked;
+			BtnEdit.Clicked         += OnBtnEditClicked;
+			BtnRemove.Clicked       += OnBtnRemoveClicked;
+			//checkbox events
+			ChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;
+			ChkEditable.Toggled     += OnEditableChecked;
+			//ownerdrawned event
+			cmb.List.DrawItem       += OnItemDraw;
+		}
+		
+		private void OnBtnAddClicked( object sender, EventArgs args )
+		{
+			//add a list item
+			cmb.List.Items.Add("new item !");
+		}
+		
+		private void OnBtnEditClicked( object sender, EventArgs args )
+		{
+			//change the last item's text
+			if( cmb.List.Items.Count &gt; 0 )
+			{
+				cmb.List.Items[ cmb.List.Items.Count - 1 ] = "i'm modified";
+			}
+		}
+		
+		private void OnBtnRemoveClicked( object sender, EventArgs args )
+		{
+			//remove the selected item
+			if( cmb.List.Items.Count &gt; 0 )
+				cmb.List.Items.RemoveAt( cmb.List.Items.Count - 1 );
+			
+		}
+		
+		private void OnEditableChecked( object sender, EventArgs args )
+		{
+			cmb.IsEditable = ChkEditable.Active;
+		}
+		
+		private void OnOwnerDrawnedChecked( object sender, EventArgs args )
+		{
+			cmb.List.OwnerDraw      = ChkOwnerDrawned.Active;
+		}
+		
+		private void OnItemDraw( object sender, DrawItemEventArgs args )
+		{
+			String text      = cmb.List.Items[ args.ItemIndex ].ToString();
+			//take font from style
+			Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );
+			
+			// take color from style
+			Color c          = Color.Blue;
+			if( args.ItemIndex % 2 == 0 ) c = Color.Red;
+			
+			Brush b          = new SolidBrush( c );
+			//set quality to HighSpeed
+			args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
+			args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+			args.Graphics.Dispose();
+		}
+		
+		private void initGui()
+		{
+			//create the layout
+			VBox layout       = new VBox();
+			//add the combo
+			layout.PackStart( cmb, false, false, 2);
+			//add the add/edit/remove buttons
+			HBox hbox = new HBox();
+			hbox.PackStart  ( BtnAdd    );
+			hbox.PackStart  ( BtnEdit   );
+			hbox.PackStart  ( BtnRemove );
+			layout.PackStart( hbox, false, true, 0 );
+			//add the checkbox
+			hbox      = new HBox();
+			hbox.PackStart( ChkOwnerDrawned );
+			hbox.PackStart( ChkEditable     );
+			layout.PackStart( hbox, false, true, 0 );
+			//add layout
+			this.Add( layout );
+		}
+		
+	}
+}
+</property>
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label5">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">HSimpleComboBox</property>
+          </widget>
+          <packing>
+            <property name="type">tab</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.VBox" id="vbox5">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label14">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">&lt;b&gt;HComboTree&lt;/b&gt;</property>
+                <property name="UseMarkup">True</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="ComboTreeDemo">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Start demo</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnComboTreeDemoClicked" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow3">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.TextView" id="TxtComboTree">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="ShowScrollbars">True</property>
+                    <property name="Text" translatable="yes" />
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
               </packing>
             </child>
           </widget>
           <packing>
             <property name="Position">3</property>
-            <property name="AutoSize">False</property>
           </packing>
         </child>
         <child>
-          <widget class="HollyLibrary.HFontPicker" id="BtnMoreColors">
+          <widget class="Gtk.Label" id="label9">
             <property name="MemberName" />
-            <property name="Events">ButtonPressMask</property>
+            <property name="LabelProp" translatable="yes">HComboTree</property>
           </widget>
           <packing>
-            <property name="Position">4</property>
-            <property name="AutoSize">False</property>
+            <property name="type">tab</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="SList">
+          <widget class="Gtk.VBox" id="vbox6">
             <property name="MemberName" />
-            <property name="ShadowType">In</property>
+            <property name="Spacing">6</property>
             <child>
-              <widget class="HollyLibrary.HSimpleList" id="hsimplelist1">
+              <widget class="Gtk.Frame" id="frame3">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment8">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="Gtk.HBox" id="hbox2">
+                        <property name="MemberName" />
+                        <property name="Spacing">6</property>
+                        <child>
+                          <widget class="HollyLibrary.HColorPicker" id="ColorPicker">
+                            <property name="MemberName" />
+                            <property name="WidthRequest">108</property>
+                            <property name="Events">ButtonPressMask</property>
+                          </widget>
+                          <packing>
+                            <property name="Position">0</property>
+                            <property name="AutoSize">False</property>
+                            <property name="Expand">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder />
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel6">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HColorPicker&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame4">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment1">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="HollyLibrary.HComboFolder" id="hcombofolder1">
+                        <property name="MemberName" />
+                        <property name="Events">ButtonPressMask</property>
+                        <property name="DropDownHeight">0</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel7">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HComboFolder&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame5">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment2">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="HollyLibrary.HDateEdit" id="hdateedit2">
+                        <property name="MemberName" />
+                        <property name="Events">ButtonPressMask</property>
+                        <property name="CurrentDate">0</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel8">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HDateEdit&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame6">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment5">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="HollyLibrary.HFontPicker" id="hfontpicker1">
+                        <property name="MemberName" />
+                        <property name="Events">ButtonPressMask</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel9">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HFontPicker&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame7">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment6">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="HollyLibrary.HIpEntry" id="hipentry1">
+                        <property name="MemberName" />
+                        <property name="Events">ButtonPressMask</property>
+                        <property name="ErrorMessage">My customised error message</property>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel10">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HIpEntry&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">4</property>
+                <property name="AutoSize">False</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Frame" id="frame8">
+                <property name="MemberName" />
+                <property name="ShadowType">In</property>
+                <child>
+                  <widget class="Gtk.Alignment" id="GtkAlignment7">
+                    <property name="MemberName" />
+                    <property name="Xalign">0</property>
+                    <property name="Yalign">0</property>
+                    <property name="LeftPadding">12</property>
+                    <child>
+                      <widget class="Gtk.VBox" id="vbox7">
+                        <property name="MemberName" />
+                        <property name="Spacing">6</property>
+                        <child>
+                          <widget class="HollyLibrary.HRegExEntry" id="RegExEntry">
+                            <property name="MemberName" />
+                            <property name="Events">ButtonPressMask</property>
+                            <property name="OkMessage">My customised ok message</property>
+                            <property name="ErrorMessage">A custom error message</property>
+                          </widget>
+                          <packing>
+                            <property name="Position">0</property>
+                            <property name="AutoSize">True</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.HBox" id="hbox13">
+                            <property name="MemberName" />
+                            <property name="Spacing">6</property>
+                            <child>
+                              <widget class="Gtk.Label" id="label12">
+                                <property name="MemberName" />
+                                <property name="LabelProp" translatable="yes">Regular expression used:</property>
+                              </widget>
+                              <packing>
+                                <property name="Position">0</property>
+                                <property name="AutoSize">True</property>
+                                <property name="Expand">False</property>
+                                <property name="Fill">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.Entry" id="TxtRegularExpresion">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Text" translatable="yes">\d{3}-\d{2}-\d{4}</property>
+                                <property name="IsEditable">True</property>
+                                <property name="InvisibleChar">●</property>
+                              </widget>
+                              <packing>
+                                <property name="Position">1</property>
+                                <property name="AutoSize">True</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.Button" id="BtnApplyRegex">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="UseStock">True</property>
+                                <property name="Type">StockItem</property>
+                                <property name="StockId">gtk-apply</property>
+                                <signal name="Clicked" handler="OnBtnApplyRegexClicked" />
+                                <property name="label">gtk-apply</property>
+                              </widget>
+                              <packing>
+                                <property name="Position">2</property>
+                                <property name="AutoSize">True</property>
+                                <property name="Expand">False</property>
+                                <property name="Fill">False</property>
+                              </packing>
+                            </child>
+                          </widget>
+                          <packing>
+                            <property name="Position">1</property>
+                            <property name="AutoSize">True</property>
+                            <property name="Expand">False</property>
+                            <property name="Fill">False</property>
+                          </packing>
+                        </child>
+                      </widget>
+                    </child>
+                  </widget>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="GtkLabel11">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">&lt;b&gt;HRegExEntry&lt;/b&gt;</property>
+                    <property name="UseMarkup">True</property>
+                  </widget>
+                  <packing>
+                    <property name="type">label_item</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">5</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="BtnToolTip">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
-                <property name="HeadersClickable">True</property>
-                <property name="ItemHeight">0</property>
-                <property name="SelectedIndex">0</property>
-                <property name="OwnerDraw">False</property>
-                <signal name="RowActivated" handler="OnHsimplelist1RowActivated" />
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-about Menu</property>
+                <property name="Label" translatable="yes">Look ! I have a baloon tooltip over me!</property>
+                <property name="UseUnderline">True</property>
               </widget>
+              <packing>
+                <property name="Position">6</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
             </child>
           </widget>
           <packing>
-            <property name="Position">5</property>
-            <property name="AutoSize">True</property>
+            <property name="Position">4</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label7">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Other widgets</property>
+          </widget>
+          <packing>
+            <property name="type">tab</property>
           </packing>
         </child>
       </widget>

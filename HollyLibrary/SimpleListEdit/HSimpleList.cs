@@ -296,6 +296,7 @@ namespace HollyLibrary
 			}
 			set {
 				ownerDraw = value;
+				QueueDraw();
 			}
 		}
 
