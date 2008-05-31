@@ -111,6 +111,7 @@
         <signal name="NodeCollapsed" />
         <signal name="BeforeNodeCollapse" />
         <signal name="BeforeNodeExpand" />
+        <signal name="NodeEdited" />
       </itemgroup>
     </signals>
   </object>

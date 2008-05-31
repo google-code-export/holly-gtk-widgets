@@ -29,6 +29,7 @@ namespace HollyLibrary
 		public event NodeEventHandler      NodeCollapsed;
 		public event NodeEventHandler BeforeNodeCollapse;
 		public event NodeEventHandler   BeforeNodeExpand;
+		public event NodeEventHandler         NodeEdited;
 		
 		public HTreeView()
 		{
@@ -38,10 +39,14 @@ namespace HollyLibrary
 			this.EnableSearch   = true;
 			//
 			AddBaseColumn();
-			this.RowExpanded  += OnExpandRow;
-			this.RowCollapsed += OnCollapseRow;
-			this.TestExpandRow   += OnTestExpandRow;
-			this.TestCollapseRow += OnTestCollapseRow;
+			this.RowExpanded      += OnExpandRow;
+			this.RowCollapsed     += OnCollapseRow;
+			this.TestExpandRow    += OnTestExpandRow;
+			this.TestCollapseRow  += OnTestCollapseRow;
+			//add cell edited change listener
+			cell_text.Edited      += OnTextEdited;
+			//key listener
+			this.KeyReleaseEvent  +=OnKeyReleased;
 		}
 		
 		public virtual void AddBaseColumn()
@@ -67,6 +72,29 @@ namespace HollyLibrary
 			Nodes.NodeUpdated += OnNodeUpdated;
 			//
 			
+		}
+		
+		private void OnTextEdited( object sender, EditedArgs args )
+		{
+			TreeIter iter;
+			store.GetIter( out iter, new TreePath( args.Path ) );
+			HTreeNode node = getNodeFromIter( iter );
+			node.Text      = args.NewText;
+			if( NodeEdited != null ) NodeEdited( this, new NodeEventArgs( node ) );
+		}
+		
+		private void OnKeyReleased( object sender, KeyReleaseEventArgs args )
+		{
+			//if selected node has children nodes, expanded or collapsed
+			//on right/left arrow button press
+			HTreeNode node = SelectedNode;
+			if( node != null && node.Nodes.Count > 0 )
+			{
+				if( args.Event.Key == Gdk.Key.Right )
+					expandNode  ( node );
+				else if( args.Event.Key == Gdk.Key.Left )
+					collapseNode( node );
+			}
 		}
 		
 		//checkbox cell function

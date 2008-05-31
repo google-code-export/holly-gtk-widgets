@@ -16,7 +16,7 @@
       <widget class="Gtk.Notebook" id="notebook1">
         <property name="MemberName" />
         <property name="CanFocus">True</property>
-        <property name="CurrentPage">4</property>
+        <property name="CurrentPage">0</property>
         <property name="Scrollable">True</property>
         <child>
           <widget class="Gtk.VPaned" id="vpaned1">
@@ -115,7 +115,9 @@ namespace test
 		
 		public TreeView() : base( WindowType.Toplevel )
 		{
+			this.Title          = "HTreeView demo";
 			this.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			this.Resize( 320, 240 );
 			//
 			initGui();
 			//button events
@@ -126,6 +128,9 @@ namespace test
 			ChkCheckBoxTree.Toggled    += OnCheckBoxChecked;
 			ChkEditableTree.Toggled    += OnEditableChecked;
 			ChkNodeIconVisible.Toggled += OnNodeIconChecked;
+			//make the tree to show icons by default
+			ChkNodeIconVisible.Active   = true;
+			
 		}
 		
 		private void OnBtnAddClicked( object sender, EventArgs args )
@@ -306,6 +311,7 @@ namespace test
 		Button BtnAdd    = new Button("Add item");
 		Button BtnRemove = new Button("Remove item");
 		Button BtnEdit   = new Button("Edit item");
+		Button BtnSort   = new Button("Sort");
 		//checkboxes
 		CheckButton ChkOwnerDrawned = new CheckButton("List is ownerdrawed");
 		
@@ -320,10 +326,16 @@ namespace test
 			BtnAdd.Clicked          += OnBtnAddClicked;
 			BtnEdit.Clicked         += OnBtnEditClicked;
 			BtnRemove.Clicked       += OnBtnRemoveClicked;
+			BtnSort.Clicked         += OnBtnSortClicked;
 			//checkbox events
 			ChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;
 			//ownerdrawned event
 			list.DrawItem           += OnItemDraw;
+		}
+		
+		private void OnBtnSortClicked( object sender, EventArgs args )
+		{
+			list.Sort();
 		}
 		
 		private void OnBtnAddClicked( object sender, EventArgs args )
@@ -384,6 +396,7 @@ namespace test
 			hbox.PackStart  ( BtnAdd    );
 			hbox.PackStart  ( BtnEdit   );
 			hbox.PackStart  ( BtnRemove );
+			hbox.PackStart  ( BtnSort   );
 			layout.PackStart( hbox, false, true, 0 );
 			//add the checkbox
 			layout.PackStart( ChkOwnerDrawned, false, true, 0 );
@@ -649,7 +662,112 @@ namespace test
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="ShowScrollbars">True</property>
-                    <property name="Text" translatable="yes" />
+                    <property name="Text" translatable="yes">using Gtk;
+using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using HollyLibrary;
+
+namespace test
+{
+	
+	public class ComboTree : Window
+	{
+		//the combotree widget
+		HComboTree cmb     = new HComboTree();
+		//buttons
+		Button BtnAdd      = new Button( "Add node"       );
+		Button BtnAddChild = new Button( "Add child node" );
+		Button BtnRemove   = new Button( "Remove node"    );
+		//checkboxes
+		CheckButton ChkShowIcon = new CheckButton("Show tree icons");
+		CheckButton ChkEditable = new CheckButton("Editable tree items");
+		
+		public ComboTree() : base( WindowType.Toplevel )
+		{
+			this.Title          = "SimpleComboBox demo";
+			this.WindowPosition = Gtk.WindowPosition.CenterAlways;
+			this.Resize( 320, 240 );
+			//
+			initGui();
+			//button events
+			BtnAdd.Clicked          += OnBtnAddClicked;
+			BtnAddChild.Clicked     += OnBtnAddChildClicked;
+			BtnRemove.Clicked       += OnBtnRemoveClicked;
+			//checkbox events
+			ChkShowIcon.Toggled     += OnShowIconChecked;
+			ChkEditable.Toggled     += OnEditableChecked;
+		}
+		
+		private void OnBtnAddClicked( object sender, EventArgs args )
+		{
+			//add a list item
+			Gdk.Pixbuf icon = GraphUtil.pixbufFromStock("gtk-add", IconSize.Button );
+			int node_nr     = cmb.Tree.Nodes.Count;
+			cmb.Tree.Nodes.Add( new HTreeNode( "node " + node_nr , icon ) );
+		}
+		
+		private void OnBtnAddChildClicked( object sender, EventArgs args )
+		{
+			//add a new child node
+			if( cmb.Tree.SelectedNode != null )
+			{
+				HTreeNode father_node = cmb.Tree.SelectedNode;
+				Gdk.Pixbuf icon       = GraphUtil.pixbufFromStock("gtk-remove", IconSize.Button );
+				HTreeNode new_node    = new HTreeNode("gigi kent", icon );
+				father_node.Nodes.Add( new_node );
+			}
+		}
+		
+		private void OnBtnRemoveClicked( object sender, EventArgs args )
+		{
+			//remove the selected node
+			HTreeNode node = cmb.Tree.SelectedNode;
+			if( node != null )
+			{
+				HTreeNode parent_node = node.ParentNode;
+				if( parent_node == null )
+					cmb.Tree.Nodes.Remove( node );
+				else
+					parent_node.Nodes.Remove( node );
+			}
+			
+		}
+		
+		private void OnEditableChecked( object sender, EventArgs args )
+		{
+			cmb.Tree.Editable        = ChkEditable.Active;
+		}
+		
+		private void OnShowIconChecked( object sender, EventArgs args )
+		{
+			cmb.Tree.NodeIconVisible = ChkShowIcon.Active;
+		}
+		
+		private void initGui()
+		{
+			//create the layout
+			VBox layout       = new VBox();
+			//add the combo
+			layout.PackStart( cmb, false, false, 2);
+			//add the add/edit/remove buttons
+			HBox hbox = new HBox();
+			hbox.PackStart  ( BtnAdd    );
+			hbox.PackStart  ( BtnAddChild   );
+			hbox.PackStart  ( BtnRemove );
+			layout.PackStart( hbox, false, true, 0 );
+			//add the checkbox
+			hbox      = new HBox();
+			hbox.PackStart( ChkShowIcon );
+			hbox.PackStart( ChkEditable );
+			layout.PackStart( hbox, false, true, 0 );
+			//add layout
+			this.Add( layout );
+		}
+		
+	}
+}
+</property>
                   </widget>
                 </child>
               </widget>
