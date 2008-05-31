@@ -42,9 +42,12 @@ namespace HollyLibrary
 			}
 			set
 			{
-				this.List[index] = value;
-				if( OnItemUpdated != null) 
-					OnItemUpdated( this, new ListUpdateEventArgs( index, value ) );
+				if( index >=0 && index < this.List.Count )
+				{
+					this.List[index] = value;
+					if( OnItemUpdated != null) 
+						OnItemUpdated( this, new ListUpdateEventArgs( index, value ) );
+				}
 			}
 		}
 		
@@ -60,7 +63,8 @@ namespace HollyLibrary
 		
 		public new void RemoveAt( int index )
 		{
-			Remove( this.List[index] );
+			if( index >=0 && index < this.List.Count )
+				Remove( this.List[index] );
 		}
 		
 		public void Remove( object item )
