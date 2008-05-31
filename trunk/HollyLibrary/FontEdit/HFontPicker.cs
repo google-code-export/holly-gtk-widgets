@@ -37,12 +37,6 @@ namespace HollyLibrary
 			}
 			//
 			comboBox.PopupButton.Clicked += new EventHandler( this.on_btn_clicked );
-			comboBox.Entry.KeyPressEvent += new Gtk.KeyPressEventHandler( this.on_text_changed );
-		}
-		
-		private void on_text_changed( object Sender, Gtk.KeyPressEventArgs args )
-		{
-			if( args.Event.Key != Gdk.Key.Tab ) ShowPopup();
 		}
 		
 		private void on_btn_clicked( object Sender, EventArgs args )

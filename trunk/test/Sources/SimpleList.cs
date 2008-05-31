@@ -15,6 +15,7 @@ namespace test
 		Button BtnAdd    = new Button("Add item");
 		Button BtnRemove = new Button("Remove item");
 		Button BtnEdit   = new Button("Edit item");
+		Button BtnSort   = new Button("Sort");
 		//checkboxes
 		CheckButton ChkOwnerDrawned = new CheckButton("List is ownerdrawed");
 		
@@ -29,10 +30,16 @@ namespace test
 			BtnAdd.Clicked          += OnBtnAddClicked;
 			BtnEdit.Clicked         += OnBtnEditClicked;
 			BtnRemove.Clicked       += OnBtnRemoveClicked;
+			BtnSort.Clicked         += OnBtnSortClicked;
 			//checkbox events
 			ChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;
 			//ownerdrawned event
 			list.DrawItem           += OnItemDraw;
+		}
+		
+		private void OnBtnSortClicked( object sender, EventArgs args )
+		{
+			list.Sort();
 		}
 		
 		private void OnBtnAddClicked( object sender, EventArgs args )
@@ -93,6 +100,7 @@ namespace test
 			hbox.PackStart  ( BtnAdd    );
 			hbox.PackStart  ( BtnEdit   );
 			hbox.PackStart  ( BtnRemove );
+			hbox.PackStart  ( BtnSort   );
 			layout.PackStart( hbox, false, true, 0 );
 			//add the checkbox
 			layout.PackStart( ChkOwnerDrawned, false, true, 0 );
