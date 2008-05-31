@@ -10,7 +10,7 @@ using GLib;
 namespace HollyLibrary
 {
 	
-	public class AnalogClock : Gtk.DrawingArea
+	internal class AnalogClock : Gtk.DrawingArea
 	{
 		const float PI = 3.141592654F;
 		float fRadius;

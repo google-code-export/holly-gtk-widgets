@@ -49,6 +49,7 @@ namespace HollyLibrary {
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
             this.Tree.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnTreeButtonPressEvent);
             this.Tree.RowActivated += new Gtk.RowActivatedHandler(this.OnTreeRowActivated);
+            this.Tree.CursorChanged += new System.EventHandler(this.OnTreeCursorChanged);
         }
     }
 }

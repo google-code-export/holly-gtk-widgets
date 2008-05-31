@@ -12,7 +12,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.AnalogClock" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
+  <object type="HollyLibrary.AnalogClock" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
     <itemgroups>
       <itemgroup label="AnalogClock Properties">
         <property name="Datetime" />

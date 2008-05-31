@@ -20,36 +20,17 @@ namespace test
 			
 			this.Build();
 			
-			String text = "My first line of text \r\n";
-			text       += "Second line of text bla bla \r\n";
-			text       += "last line of text";
-			HToolTip.ToolTipInterval = 500;
-			HToolTip.SetToolTip( button2, "title 2", text, "gtk-yes" );
-			HToolTip.SetToolTip( button3, "title 3", text + text, System.Drawing.Color.White, System.Drawing.Color.Black );
-			HToolTip.SetToolTip( hsimplelist1, "title 4", "buga buga", System.Drawing.Color.Yellow, System.Drawing.Color.Orange, "gtk-no" );
-			//tree tests:
-			Gdk.Pixbuf icon1 = GraphUtil.pixbufFromStock("gtk-no", Gtk.IconSize.Button );
-			Gdk.Pixbuf icon2 = GraphUtil.pixbufFromStock("gtk-yes" , Gtk.IconSize.Button );
+			//set colorpicker color
+			ColorPicker.Color = new Gdk.Color( 255, 0, 0 );
 			
-
-			HollyLibrary.HTreeView htreeview1 = this.hcombotree1.Tree;
-			htreeview1.NodeIconVisible = true;
-			HTreeNode root   = new HTreeNode( "gigi1", icon1, icon2 );
-			htreeview1.Nodes.Add( root );
+			//add tooltip
+			HToolTip.ToolTipInterval = 10;
+			HToolTip.SetToolTip( BtnToolTip, "A nice bold title", "Hello! I am a baloon tooltip!");
 			
-			root.Nodes.Add( new HTreeNode( "gigi2",true ) );
-			root.Nodes.Add( new HTreeNode( "gigi4", icon2 ) );
-			root.Nodes.Add( new HTreeNode( "gigi5", icon2 ) );
-			HTreeNode nod = new HTreeNode( "gigi6", icon2 );
-			root.Nodes.Add( nod );
-			
-			nod.Nodes.Add ( new HTreeNode( "gigi7", icon2 ) );
-			root.Nodes.Add( new HTreeNode( "gigi8", icon2 ) );
-			root.Nodes.Add( new HTreeNode( "gigi9", icon2 ) );
-			
-			for( int i = 0; i < 100; i++ )
-				hsimplelist1.Items.Add(i.ToString());
+			//set default regex
+			RegExEntry.RegularExpression = "\\d{3}-\\d{2}-\\d{4}";
 		}
+		
 
 		
 		protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
@@ -58,20 +39,36 @@ namespace test
 			args.RetVal = true;
 		}
 
-		protected virtual void OnButton2Clicked (object sender, System.EventArgs e)
+		protected virtual void OnBtnTreeViewDemoClicked (object sender, System.EventArgs e)
 		{
-			hsimplelist1.Items.Add("http://youtube.com/watch?v=oHutO06nGto&feature=related");
+			TreeView win = new TreeView();
+			win.ShowAll();
 		}
 
-		protected virtual void OnButton3Clicked (object sender, System.EventArgs e)
+		protected virtual void OnBtnSimpleListDemoClicked (object sender, System.EventArgs e)
 		{
-		
+			SimpleList win = new SimpleList();
+			win.ShowAll();
 		}
 
-		protected virtual void OnHsimplelist1RowActivated (object o, Gtk.RowActivatedArgs args)
+		protected virtual void OnBtnStartComboDemoClicked (object sender, System.EventArgs e)
 		{
-			hsimplelist1.Items.RemoveAt( hsimplelist1.SelectedIndex );
+			SimpleComboBox win =new SimpleComboBox();
+			win.ShowAll();
 		}
+
+		protected virtual void OnComboTreeDemoClicked (object sender, System.EventArgs e)
+		{
+			ComboTree win = new ComboTree();
+			win.ShowAll();
+		}
+
+		protected virtual void OnBtnApplyRegexClicked (object sender, System.EventArgs e)
+		{
+			RegExEntry.RegularExpression = TxtRegularExpresion.Text;
+		}
+
+	
 
 		
 	}

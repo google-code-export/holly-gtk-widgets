@@ -60,6 +60,12 @@ namespace HollyLibrary
 			father.Text = Tree.SelectedNode.Text;
 			Close();
 		}
+
+		protected virtual void OnTreeCursorChanged (object sender, System.EventArgs e)
+		{
+			if( Tree.SelectedNode != null )
+				father.Text = Tree.SelectedNode.Text;
+		}
 		
 	}
 }
