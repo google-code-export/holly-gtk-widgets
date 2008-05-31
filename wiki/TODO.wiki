@@ -68,6 +68,9 @@
   * ~~remove all unnecesary references~~
   * ~~write on home page that you need System.Drawing and other requierments ~~
   * make a big test application with every widget on it  
+  * editable property bug at HTreeView
+  * when i press the right key button on a HTreeNode that has childs, expand it
+  * when i press the left key button on a HTreeNode that has childs , collapse it
 
 ----
 
