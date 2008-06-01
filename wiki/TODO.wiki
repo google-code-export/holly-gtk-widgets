@@ -69,7 +69,7 @@
   * ~~add all kind of events to all widgets ( look at their winforms equivalent ) ~~
   * ~~some refactoring in the widgets events name~~
   * ~~build docs on every wiki page with the widget api's~~
-  * ~~remove all unnecesary references~~
+  * ~~remove all unnecessary references~~
   * ~~write on home page that you need System.Drawing and other requierments ~~
   * ~~make a big test application with every widget on it  ~~
   * ~~fix ALT+TAB key press on HBaseComboBox~~
@@ -84,11 +84,14 @@
 _New widget:_ *HCheckBoxSimpleList*
   # a HSimpleList with checkboxed items
 
+_New widget:_ *HIconedSimpleList*
+  # a HSimpleList with a pixbuf icon on each item
+
 _New widget:_ *HImageComboBox*
   # a HSimpleComboBox with an icon on every item
 
 _New widget:_ *HNumericEntry*
-  # a entry only for numeric values
+  # a entry only for numeric values ( not a numeric up/down )
   # support for negative values
 
 _New widget:_ *HComboCalculator*
@@ -96,7 +99,7 @@ _New widget:_ *HComboCalculator*
 
 _New widget:_ *HSchedulingCalendar*
   # a nice calendar widget with scheduling features 
-  # see [http://www.componentsource.com/res/pub/img/products/full/516409.gif here] a nice one
+  # see [http://www.devexpress.com/Products/NET/WinForms/XtraScheduler here] a nice one
 
 _New widget:_ *HImageCheckbox*
   # a checkbox with images for Checked, Indeterminate and Unchecked states
@@ -122,5 +125,5 @@ _New widget:_ *HGridView*
 
   * make drag and drop work in HSimpleList and HTreeView
   * rebuild HFontPicker to be an extended HSimpleComboBox
-  * study databinding in winforms, maibe do something similar for gtk widgets
+  * study data binding in winforms, maybe do something similar for gtk widgets
   * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
