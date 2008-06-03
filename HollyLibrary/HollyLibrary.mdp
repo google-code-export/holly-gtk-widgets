@@ -19,45 +19,20 @@
     <File name="gtk-gui/gui.stetic" subtype="Code" buildaction="EmbedAsResource" />
     <File name="gtk-gui/generated.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/objects.xml" subtype="Code" buildaction="EmbedAsResource" />
-    <File name="DateEdit" subtype="Directory" buildaction="Compile" />
-    <File name="DateEdit/HDateEdit.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HDateEdit.cs" subtype="Code" buildaction="Compile" />
-    <File name="DateEdit/DateEditDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.DateEditDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="WinUtil.cs" subtype="Code" buildaction="Compile" />
-    <File name="DateEdit/AnalogClock.cs" subtype="Code" buildaction="Compile" />
     <File name="CairoUtil.cs" subtype="Code" buildaction="Compile" />
-    <File name="DateEdit/DateTimeFormatTypeEnum.cs" subtype="Code" buildaction="Compile" />
-    <File name="FontEdit" subtype="Directory" buildaction="Compile" />
-    <File name="FontEdit/FontChooserDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.FontChooserDialog.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboEdit" subtype="Directory" buildaction="Compile" />
-    <File name="FontEdit/HFontPicker.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HFontPicker.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboEdit/HBaseComboBox.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HBaseComboBox.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit" subtype="Directory" buildaction="Compile" />
-    <File name="SimpleListEdit/HSimpleList.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit/CellRendererCustom.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit/ObjectCollection.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit/Events" subtype="Directory" buildaction="Compile" />
-    <File name="SimpleListEdit/Events/ListEventHandlers.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit/Events/DrawItemEventArgs.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleListEdit/Events/MeasureItemEventArgs.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleComboBox" subtype="Directory" buildaction="Compile" />
-    <File name="SimpleComboBox/HSimpleComboBox.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HSimpleComboBox.cs" subtype="Code" buildaction="Compile" />
-    <File name="SimpleComboBox/ComboListWindow.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.ComboListWindow.cs" subtype="Code" buildaction="Compile" />
     <File name="RegExEntry" subtype="Directory" buildaction="Compile" />
     <File name="RegExEntry/HRegExEntry.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HRegExEntry.cs" subtype="Code" buildaction="Compile" />
-    <File name="ColorPicker" subtype="Directory" buildaction="Compile" />
-    <File name="ColorPicker/HColorPicker.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HColorPicker.cs" subtype="Code" buildaction="Compile" />
-    <File name="ColorPicker/ColorPickerDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.ColorPickerDialog.cs" subtype="Code" buildaction="Compile" />
-    <File name="ColorPicker/ColorChangeEventArgs.cs" subtype="Code" buildaction="Compile" />
     <File name="Tooltip" subtype="Directory" buildaction="Compile" />
     <File name="Tooltip/HToolTip.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HToolTip.cs" subtype="Code" buildaction="Compile" />
@@ -65,25 +40,49 @@
     <File name="IpEntry" subtype="Directory" buildaction="Compile" />
     <File name="IpEntry/HIpEntry.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HIpEntry.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeView" subtype="Directory" buildaction="Compile" />
-    <File name="TreeView/HTreeNode.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeView/HTreeView.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeView/Events" subtype="Directory" buildaction="Compile" />
-    <File name="TreeView/Events/NodeEventList.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeView/NodeCollection.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboTree" subtype="Directory" buildaction="Compile" />
-    <File name="ComboTree/HComboTree.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HComboTree.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboTree/TreePopupDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.TreePopupDialog.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboFolder" subtype="Directory" buildaction="Compile" />
-    <File name="ComboFolder/HComboFolder.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HComboFolder.cs" subtype="Code" buildaction="Compile" />
-    <File name="ComboFolder/FolderChooserDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.FolderChooserDialog.cs" subtype="Code" buildaction="Compile" />
     <File name="drive.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="folder.png" subtype="Code" buildaction="EmbedAsResource" />
-    <File name="TreeView/Events/NodeEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos" subtype="Directory" buildaction="Compile" />
+    <File name="Combos/ComboEdit/HBaseComboBox.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ComboFolder/FolderChooserDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ComboFolder/HComboFolder.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ColorPicker/ColorChangeEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ColorPicker/ColorPickerDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ColorPicker/HColorPicker.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ComboTree/HComboTree.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/ComboTree/TreePopupDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/DateEdit/AnalogClock.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/DateEdit/DateEditDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/DateEdit/DateTimeFormatTypeEnum.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/DateEdit/HDateEdit.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/FontEdit/FontChooserDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/FontEdit/HFontPicker.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/SimpleComboBox/ComboListWindow.cs" subtype="Code" buildaction="Compile" />
+    <File name="Combos/SimpleComboBox/HSimpleComboBox.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/TreeView/HTreeNode.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/TreeView/HTreeView.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/TreeView/NodeCollection.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/TreeView/Events/NodeEventList.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/SimpleListEdit/HSimpleList.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/SimpleListEdit/ObjectCollection.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/SimpleListEdit/Events/DrawItemEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/SimpleListEdit/Events/ListEventHandlers.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/SimpleListEdit/Events/MeasureItemEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/TreeView/Events/NodeEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/CellRendererCustom.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/ICustomCellTreeView.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/List" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/List/HList.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/List/HListItem.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/List/ListItemCollection.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/List/Events" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/List/Events/ListItemEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/List/Events/ListItemEventList.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
