@@ -116,9 +116,7 @@ namespace HollyLibrary {
             this.vbox3.Name = "vbox3";
             this.vbox3.Spacing = 6;
             // Container child vbox3.Gtk.Box+BoxChild
-            this.Clock = new HollyLibrary.AnalogClock();
-            this.Clock.Name = "Clock";
-            this.Clock.Datetime = new System.DateTime(0);
+            this.Clock = null;
             this.vbox3.Add(this.Clock);
             Gtk.Box.BoxChild w13 = ((Gtk.Box.BoxChild)(this.vbox3[this.Clock]));
             w13.Position = 0;

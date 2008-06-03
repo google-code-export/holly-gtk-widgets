@@ -21,9 +21,7 @@ namespace HollyLibrary {
             Stetic.BinContainer.Attach(this);
             this.Name = "HollyLibrary.HDateEdit";
             // Container child HollyLibrary.HDateEdit.Gtk.Container+ContainerChild
-            this.comboBox = new HollyLibrary.HBaseComboBox();
-            this.comboBox.Events = ((Gdk.EventMask)(256));
-            this.comboBox.Name = "comboBox";
+            this.comboBox = null;
             this.Add(this.comboBox);
             if ((this.Child != null)) {
                 this.Child.ShowAll();

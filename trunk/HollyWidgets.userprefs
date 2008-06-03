@@ -2,26 +2,26 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/TreeViewBased/List/Events/ListItemEventList.cs" ctype="Workbench">
     <Files>
       <File FileName="Welcome" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/Events/NodeEventList.cs" Line="15" Column="27" />
-      <File FileName="HollyLibrary/Combos/ComboFolder/FolderChooserDialog.cs" Line="131" Column="1" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="11" Column="75" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeNode.cs" Line="1" Column="1" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/NodeCollection.cs" Line="1" Column="1" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/Events/NodeEventArgs.cs" Line="13" Column="17" />
       <File FileName="HollyLibrary/TreeViewBased/ICustomCellTreeView.cs" Line="15" Column="12" />
-      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="16" Column="58" />
       <File FileName="HollyLibrary/TreeViewBased/CellRendererCustom.cs" Line="24" Column="21" />
       <File FileName="HollyLibrary/TreeViewBased/List/HList.cs" Line="1" Column="1" />
       <File FileName="HollyLibrary/TreeViewBased/List/HListItem.cs" Line="1" Column="1" />
       <File FileName="HollyLibrary/TreeViewBased/List/ListItemCollection.cs" Line="1" Column="1" />
       <File FileName="HollyLibrary/TreeViewBased/List/Events/ListItemEventArgs.cs" Line="1" Column="1" />
-      <File FileName="HollyLibrary/TreeViewBased/List/Events/ListItemEventList.cs" Line="18" Column="2" />
+      <File FileName="HollyLibrary/TreeViewBased/List/Events/ListItemEventList.cs" Line="12" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="HollyLibrary" expanded="True" />
-          <Node name="test" expanded="True" />
+          <Node name="HollyLibrary" expanded="True">
+            <Node name="TreeViewBased" expanded="True">
+              <Node name="TreeView" expanded="True">
+                <Node name="Events" expanded="True">
+                  <Node name="NodeEventArgs.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
