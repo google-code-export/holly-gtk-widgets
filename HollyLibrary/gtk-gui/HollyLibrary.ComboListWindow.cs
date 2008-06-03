@@ -29,13 +29,7 @@ namespace HollyLibrary {
             this.GtkScrolledWindow.Name = "GtkScrolledWindow";
             this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
             // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-            this.TvList = new HollyLibrary.HSimpleList();
-            this.TvList.CanFocus = true;
-            this.TvList.Name = "TvList";
-            this.TvList.HeadersClickable = true;
-            this.TvList.ItemHeight = 20;
-            this.TvList.SelectedIndex = 0;
-            this.TvList.OwnerDraw = false;
+            this.TvList = null;
             this.GtkScrolledWindow.Add(this.TvList);
             this.Add(this.GtkScrolledWindow);
             if ((this.Child != null)) {
@@ -45,7 +39,6 @@ namespace HollyLibrary {
             this.DefaultHeight = 242;
             this.Show();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
-            this.TvList.RowActivated += new Gtk.RowActivatedHandler(this.OnTvListRowActivated);
         }
     }
 }
