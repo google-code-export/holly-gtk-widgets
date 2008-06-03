@@ -81,20 +81,23 @@
 
 = VERSION 2.0 =
 
-_New widget:_ *HCheckBoxSimpleList*
-  # a HSimpleList with checkboxed items
-
-_New widget:_ *HIconedSimpleList*
-  # a HSimpleList with a pixbuf icon on each item
-
-_New widget:_ *HImageComboBox*
-  # a HSimpleComboBox with an icon on every item
 
 ==================================================
 
-Or better then to build 3 differet widgets, make the HSimpleList to support checkbox and icon to each row.  
-Also, make the inner list items to be a special class called SimpleListItem.
+Make the HSimpleList to support checkbox and icon to each row.
+new events :
+   ItemCheckedStateChanged
+new methods :
+   getCheckedItems()
+new properties:
+   IsIconVisible
+   IsCheckboxList
 
+Also, make the inner list items to be a special class called SimpleListItem, and transform
+ObjectCollection to ListItemCollection
+
+* update changes on wiki and write code sample 
+* show how to use the new list features on the HSimpleCombobox ( for example how to have a combo with icons on evry item ) 
 ==================================================
 
 _New widget:_ *HNumericEntry*
@@ -110,11 +113,11 @@ _New widget:_ *HImageCheckbox*
 _New widget:_ *HPictureBox*
   # a picturebox widget similar to the winforms one
   # ErrorImage property - Gets or sets the image to display when an error occurs during the image-loading process or if the image load is canceled.
-  # Image - Gets or sets the image that is displayed ( winforms image );
-  # ImagePixbuf - Gets or sets the image that is displayed ( gtk pixbuf );
-  # ImagePixmap - Gets or sets the image that is displayed ( gtk pixmap );
+  # Image        - Gets or sets the image that is displayed ( winforms image );
+  # ImagePixbuf  - Gets or sets the image that is displayed ( gtk pixbuf );
+  # ImagePixmap  - Gets or sets the image that is displayed ( gtk pixmap );
   # InitialImage - Gets or sets the image displayed in the PictureBox control when the main image is loading.
-  # SizeMode - Indicates how the image is displayed.
+  # SizeMode     - Indicates how the image is displayed.
 
 ||Member name||Description||
 ||CenterImage||The image is displayed in the center if the PictureBox is larger than the image. If the image is larger than the PictureBox, the picture is placed in the center of the PictureBox and the outside edges are clipped. ||
