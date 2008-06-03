@@ -31,7 +31,13 @@ namespace HollyLibrary {
             this.GtkScrolledWindow.Name = "GtkScrolledWindow";
             this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
             // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-            this.Tree = null;
+            this.Tree = new HollyLibrary.HTreeView();
+            this.Tree.CanFocus = true;
+            this.Tree.Name = "Tree";
+            this.Tree.HeadersClickable = true;
+            this.Tree.NodeIconVisible = false;
+            this.Tree.IsCheckBoxTree = false;
+            this.Tree.Editable = false;
             this.GtkScrolledWindow.Add(this.Tree);
             this.Add(this.GtkScrolledWindow);
             if ((this.Child != null)) {
@@ -41,6 +47,9 @@ namespace HollyLibrary {
             this.DefaultHeight = 325;
             this.Hide();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
+            this.Tree.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnTreeButtonPressEvent);
+            this.Tree.RowActivated += new Gtk.RowActivatedHandler(this.OnTreeRowActivated);
+            this.Tree.CursorChanged += new System.EventHandler(this.OnTreeCursorChanged);
         }
     }
 }

@@ -51,7 +51,13 @@ namespace HollyLibrary {
             this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
             this.GtkScrolledWindow.BorderWidth = ((uint)(2));
             // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-            this.FolderTree = null;
+            this.FolderTree = new HollyLibrary.HTreeView();
+            this.FolderTree.CanFocus = true;
+            this.FolderTree.Name = "FolderTree";
+            this.FolderTree.HeadersClickable = true;
+            this.FolderTree.NodeIconVisible = true;
+            this.FolderTree.IsCheckBoxTree = false;
+            this.FolderTree.Editable = false;
             this.GtkScrolledWindow.Add(this.FolderTree);
             this.vbox1.Add(this.GtkScrolledWindow);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
@@ -109,6 +115,10 @@ namespace HollyLibrary {
             this.DefaultHeight = 271;
             this.Hide();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
+            this.FolderTree.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnFolderTreeButtonPressEvent);
+            this.FolderTree.CursorChanged += new System.EventHandler(this.OnFolderTreeCursorChanged);
+            this.FolderTree.RowActivated += new Gtk.RowActivatedHandler(this.OnFolderTreeRowActivated);
+            this.FolderTree.BeforeNodeExpand += new HollyLibrary.NodeEventHandler(this.OnFolderTreeBeforeNodeExpand);
             this.TxtNewFolder.KeyReleaseEvent += new Gtk.KeyReleaseEventHandler(this.OnTxtNewFolderKeyReleaseEvent);
             this.BtnNewFolder.Clicked += new System.EventHandler(this.OnBtnNewFolderClicked);
             this.BtnNewFolder.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnBtnNewFolderButtonPressEvent);

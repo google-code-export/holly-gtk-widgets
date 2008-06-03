@@ -35,7 +35,13 @@ namespace HollyLibrary {
             this.GtkScrolledWindow.Name = "GtkScrolledWindow";
             this.GtkScrolledWindow.ShadowType = ((Gtk.ShadowType)(1));
             // Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-            this.TvFonts = null;
+            this.TvFonts = new HollyLibrary.HSimpleList();
+            this.TvFonts.CanFocus = true;
+            this.TvFonts.Name = "TvFonts";
+            this.TvFonts.HeadersClickable = true;
+            this.TvFonts.ItemHeight = 0;
+            this.TvFonts.SelectedIndex = 0;
+            this.TvFonts.OwnerDraw = true;
             this.GtkScrolledWindow.Add(this.TvFonts);
             this.vbox1.Add(this.GtkScrolledWindow);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
@@ -48,6 +54,11 @@ namespace HollyLibrary {
             this.DefaultHeight = 173;
             this.Show();
             this.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnButtonPressEvent);
+            this.TvFonts.RowActivated += new Gtk.RowActivatedHandler(this.OnTvFontsRowActivated);
+            this.TvFonts.ButtonPressEvent += new Gtk.ButtonPressEventHandler(this.OnTvFontsButtonPressEvent);
+            this.TvFonts.DrawItem += new HollyLibrary.DrawItemEventHandler(this.OnTvFontsDrawItem);
+            this.TvFonts.MeasureItem += new HollyLibrary.MeasureItemEventHandler(this.OnTvFontsMeasureItem);
+            this.TvFonts.SelectedIndexChanged += new System.EventHandler(this.OnTvFontsSelectedIndexChanged);
         }
     }
 }
