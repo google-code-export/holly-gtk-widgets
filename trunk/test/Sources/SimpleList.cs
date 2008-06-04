@@ -17,7 +17,8 @@ namespace test
 		Button BtnEdit   = new Button("Edit item");
 		Button BtnSort   = new Button("Sort");
 		//checkboxes
-		CheckButton ChkOwnerDrawned = new CheckButton("List is ownerdrawed");
+		CheckButton ChkOwnerDrawned   = new CheckButton("List is ownerdrawed");
+		CheckButton ChkIsCheckBoxList = new CheckButton("Checkbox list");
 		
 		public SimpleList() : base( WindowType.Toplevel )
 		{
@@ -32,7 +33,8 @@ namespace test
 			BtnRemove.Clicked       += OnBtnRemoveClicked;
 			BtnSort.Clicked         += OnBtnSortClicked;
 			//checkbox events
-			ChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;
+			ChkOwnerDrawned.Toggled   += OnOwnerDrawnedChecked;
+			ChkIsCheckBoxList.Toggled += OnIsCheckBoxListChecked;
 			//ownerdrawned event
 			list.DrawItem           += OnItemDraw;
 		}
@@ -70,6 +72,11 @@ namespace test
 			list.OwnerDraw      = ChkOwnerDrawned.Active;
 		}
 		
+		private void OnIsCheckBoxListChecked( object sender, EventArgs args )
+		{
+			list.IsCheckBoxList = ChkIsCheckBoxList.Active;
+		}
+		
 		private void OnItemDraw( object sender, DrawItemEventArgs args )
 		{
 			String text      = list.Items[ args.ItemIndex ].ToString();
@@ -102,8 +109,12 @@ namespace test
 			hbox.PackStart  ( BtnRemove );
 			hbox.PackStart  ( BtnSort   );
 			layout.PackStart( hbox, false, true, 0 );
-			//add the checkbox
-			layout.PackStart( ChkOwnerDrawned, false, true, 0 );
+			//add the checkboxes
+			hbox = new HBox();
+			hbox.PackStart( ChkOwnerDrawned  , true, true, 0 );
+			hbox.PackStart( ChkIsCheckBoxList, true, true, 0 );
+			//
+			layout.PackStart( hbox, false, true, 0 );
 			//add layout
 			this.Add( layout );
 		}

@@ -158,8 +158,7 @@ namespace test {
             // Container child test.MainWin.Gtk.Container+ContainerChild
             this.notebook1 = new Gtk.Notebook();
             this.notebook1.CanFocus = true;
-            this.notebook1.Name = "notebook1";
-            this.notebook1.CurrentPage = 5;
+            this.notebook1.CurrentPage = 1;
             this.notebook1.Scrollable = true;
             // Container child notebook1.Gtk.Notebook+NotebookChild
             this.vpaned1 = new Gtk.VPaned();
@@ -274,7 +273,7 @@ namespace test {
             this.GtkScrolledWindow1.ShadowType = ((Gtk.ShadowType)(1));
             // Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
             this.textview2 = new Gtk.TextView();
-            this.textview2.Buffer.Text = "using Gtk;\nusing System;\nusing System.Drawing;\nusing System.Drawing.Drawing2D;\nusing HollyLibrary;\n\nnamespace test\n{\n\t\n\tpublic class SimpleList : Window\n\t{\n\t\t//the list widget\n\t\tHSimpleList list = new HSimpleList();\n\t\t//buttons\n\t\tButton BtnAdd    = new Button(\"Add item\");\n\t\tButton BtnRemove = new Button(\"Remove item\");\n\t\tButton BtnEdit   = new Button(\"Edit item\");\n\t\tButton BtnSort   = new Button(\"Sort\");\n\t\t//checkboxes\n\t\tCheckButton ChkOwnerDrawned = new CheckButton(\"List is ownerdrawed\");\n\t\t\n\t\tpublic SimpleList() : base( WindowType.Toplevel )\n\t\t{\n\t\t\tthis.Title          = \"HSimpleList demo\";\n\t\t\tthis.WindowPosition = Gtk.WindowPosition.CenterAlways;\n\t\t\tthis.Resize( 320, 240 );\n\t\t\t//\n\t\t\tinitGui();\n\t\t\t//button events\n\t\t\tBtnAdd.Clicked          += OnBtnAddClicked;\n\t\t\tBtnEdit.Clicked         += OnBtnEditClicked;\n\t\t\tBtnRemove.Clicked       += OnBtnRemoveClicked;\n\t\t\tBtnSort.Clicked         += OnBtnSortClicked;\n\t\t\t//checkbox events\n\t\t\tChkOwnerDrawned.Toggled += OnOwnerDrawnedChecked;\n\t\t\t//ownerdrawned event\n\t\t\tlist.DrawItem           += OnItemDraw;\n\t\t}\n\t\t\n\t\tprivate void OnBtnSortClicked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.Sort();\n\t\t}\n\t\t\n\t\tprivate void OnBtnAddClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//add a list item\n\t\t\tlist.Items.Add(\"new item !\");\n\t\t}\n\t\t\n\t\tprivate void OnBtnEditClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//change the current selected item's text\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t{\n\t\t\t\tlist.Items[ list.SelectedIndex ] = \"i'm modified\";\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnBtnRemoveClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//remove the selected item\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t\tlist.Items.RemoveAt( list.SelectedIndex );\n\t\t\t\n\t\t}\n\t\t\n\t\tprivate void OnOwnerDrawnedChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.OwnerDraw      = ChkOwnerDrawned.Active;\n\t\t}\n\t\t\n\t\tprivate void OnItemDraw( object sender, DrawItemEventArgs args )\n\t\t{\n\t\t\tString text      = list.Items[ args.ItemIndex ].ToString();\n\t\t\t//take font from style\n\t\t\tFont font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );\n\t\t\t\n\t\t\t// take color from style\n\t\t\tColor c          = Color.Blue;\n\t\t\tif( args.ItemIndex % 2 == 0 ) c = Color.Red;\n\t\t\t\n\t\t\tBrush b          = new SolidBrush( c );\n\t\t\t//set quality to HighSpeed\n\t\t\targs.Graphics.CompositingQuality = CompositingQuality.HighSpeed;\n\t\t\targs.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );\n\t\t\targs.Graphics.Dispose();\n\t\t}\n\t\t\n\t\tprivate void initGui()\n\t\t{\n\t\t\t//create the layout\n\t\t\tVBox layout       = new VBox();\n\t\t\t//add the list\n\t\t\tScrolledWindow sw = new ScrolledWindow();\n\t\t\tsw.AddWithViewport( list );\n\t\t\tlayout.PackStart  ( sw   );\n\t\t\t//add the add/edit/remove buttons\n\t\t\tHBox hbox = new HBox();\n\t\t\thbox.PackStart  ( BtnAdd    );\n\t\t\thbox.PackStart  ( BtnEdit   );\n\t\t\thbox.PackStart  ( BtnRemove );\n\t\t\thbox.PackStart  ( BtnSort   );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add the checkbox\n\t\t\tlayout.PackStart( ChkOwnerDrawned, false, true, 0 );\n\t\t\t//add layout\n\t\t\tthis.Add( layout );\n\t\t}\n\t\t\n\t}\n}\n";
+            this.textview2.Buffer.Text = "using Gtk;\nusing System;\nusing System.Drawing;\nusing System.Drawing.Drawing2D;\nusing HollyLibrary;\n\nnamespace test\n{\n\t\n\tpublic class SimpleList : Window\n\t{\n\t\t//the list widget\n\t\tHSimpleList list = new HSimpleList();\n\t\t//buttons\n\t\tButton BtnAdd    = new Button(\"Add item\");\n\t\tButton BtnRemove = new Button(\"Remove item\");\n\t\tButton BtnEdit   = new Button(\"Edit item\");\n\t\tButton BtnSort   = new Button(\"Sort\");\n\t\t//checkboxes\n\t\tCheckButton ChkOwnerDrawned   = new CheckButton(\"List is ownerdrawed\");\n\t\tCheckButton ChkIsCheckBoxList = new CheckButton(\"Checkbox list\");\n\t\t\n\t\tpublic SimpleList() : base( WindowType.Toplevel )\n\t\t{\n\t\t\tthis.Title          = \"HSimpleList demo\";\n\t\t\tthis.WindowPosition = Gtk.WindowPosition.CenterAlways;\n\t\t\tthis.Resize( 320, 240 );\n\t\t\t//\n\t\t\tinitGui();\n\t\t\t//button events\n\t\t\tBtnAdd.Clicked          += OnBtnAddClicked;\n\t\t\tBtnEdit.Clicked         += OnBtnEditClicked;\n\t\t\tBtnRemove.Clicked       += OnBtnRemoveClicked;\n\t\t\tBtnSort.Clicked         += OnBtnSortClicked;\n\t\t\t//checkbox events\n\t\t\tChkOwnerDrawned.Toggled   += OnOwnerDrawnedChecked;\n\t\t\tChkIsCheckBoxList.Toggled += OnIsCheckBoxListChecked;\n\t\t\t//ownerdrawned event\n\t\t\tlist.DrawItem           += OnItemDraw;\n\t\t}\n\t\t\n\t\tprivate void OnBtnSortClicked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.Sort();\n\t\t}\n\t\t\n\t\tprivate void OnBtnAddClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//add a list item\n\t\t\tlist.Items.Add(\"new item !\");\n\t\t}\n\t\t\n\t\tprivate void OnBtnEditClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//change the current selected item's text\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t{\n\t\t\t\tlist.Items[ list.SelectedIndex ] = \"i'm modified\";\n\t\t\t}\n\t\t}\n\t\t\n\t\tprivate void OnBtnRemoveClicked( object sender, EventArgs args )\n\t\t{\n\t\t\t//remove the selected item\n\t\t\tif( list.SelectedIndex != -1 )\n\t\t\t\tlist.Items.RemoveAt( list.SelectedIndex );\n\t\t\t\n\t\t}\n\t\t\n\t\tprivate void OnOwnerDrawnedChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.OwnerDraw      = ChkOwnerDrawned.Active;\n\t\t}\n\t\t\n\t\tprivate void OnIsCheckBoxListChecked( object sender, EventArgs args )\n\t\t{\n\t\t\tlist.IsCheckBoxList = ChkIsCheckBoxList.Active;\n\t\t}\n\t\t\n\t\tprivate void OnItemDraw( object sender, DrawItemEventArgs args )\n\t\t{\n\t\t\tString text      = list.Items[ args.ItemIndex ].ToString();\n\t\t\t//take font from style\n\t\t\tFont font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000, FontStyle.Bold );\n\t\t\t\n\t\t\t// take color from style\n\t\t\tColor c          = Color.Blue;\n\t\t\tif( args.ItemIndex % 2 == 0 ) c = Color.Red;\n\t\t\t\n\t\t\tBrush b          = new SolidBrush( c );\n\t\t\t//set quality to HighSpeed\n\t\t\targs.Graphics.CompositingQuality = CompositingQuality.HighSpeed;\n\t\t\targs.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );\n\t\t\targs.Graphics.Dispose();\n\t\t}\n\t\t\n\t\tprivate void initGui()\n\t\t{\n\t\t\t//create the layout\n\t\t\tVBox layout       = new VBox();\n\t\t\t//add the list\n\t\t\tScrolledWindow sw = new ScrolledWindow();\n\t\t\tsw.AddWithViewport( list );\n\t\t\tlayout.PackStart  ( sw   );\n\t\t\t//add the add/edit/remove buttons\n\t\t\tHBox hbox = new HBox();\n\t\t\thbox.PackStart  ( BtnAdd    );\n\t\t\thbox.PackStart  ( BtnEdit   );\n\t\t\thbox.PackStart  ( BtnRemove );\n\t\t\thbox.PackStart  ( BtnSort   );\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add the checkboxes\n\t\t\thbox = new HBox();\n\t\t\thbox.PackStart( ChkOwnerDrawned  , true, true, 0 );\n\t\t\thbox.PackStart( ChkIsCheckBoxList, true, true, 0 );\n\t\t\t//\n\t\t\tlayout.PackStart( hbox, false, true, 0 );\n\t\t\t//add layout\n\t\t\tthis.Add( layout );\n\t\t}\n\t\t\n\t}\n}\n";
             this.textview2.CanFocus = true;
             this.textview2.Name = "textview2";
             this.textview2.Editable = false;
@@ -610,14 +609,14 @@ namespace test {
             this.BtnToolTip.UseUnderline = true;
             // Container child BtnToolTip.Gtk.Container+ContainerChild
             Gtk.Alignment w51 = new Gtk.Alignment(0.5F, 0.5F, 0F, 0F);
-            // Container child GtkAlignment.Gtk.Container+ContainerChild
+            // Container child GtkAlignment9.Gtk.Container+ContainerChild
             Gtk.HBox w52 = new Gtk.HBox();
             w52.Spacing = 2;
-            // Container child GtkHBox.Gtk.Container+ContainerChild
+            // Container child GtkHBox1.Gtk.Container+ContainerChild
             Gtk.Image w53 = new Gtk.Image();
             w53.Pixbuf = Stetic.IconLoader.LoadIcon(this, "gtk-about", Gtk.IconSize.Menu, 16);
             w52.Add(w53);
-            // Container child GtkHBox.Gtk.Container+ContainerChild
+            // Container child GtkHBox1.Gtk.Container+ContainerChild
             Gtk.Label w55 = new Gtk.Label();
             w55.LabelProp = Mono.Unix.Catalog.GetString("Look ! I have a baloon tooltip over me!");
             w55.UseUnderline = true;
@@ -649,7 +648,7 @@ namespace test {
             this.hsimplelist1.HeadersClickable = true;
             this.hsimplelist1.ItemHeight = 0;
             this.hsimplelist1.SelectedIndex = 0;
-            this.hsimplelist1.OwnerDraw = false;
+            this.hsimplelist1.OwnerDraw = true;
             this.hsimplelist1.IsCheckBoxList = true;
             this.GtkScrolledWindow4.Add(this.hsimplelist1);
             this.notebook1.Add(this.GtkScrolledWindow4);
@@ -669,6 +668,7 @@ namespace test {
             this.ComboTreeDemo.Clicked += new System.EventHandler(this.OnComboTreeDemoClicked);
             this.BtnApplyRegex.Clicked += new System.EventHandler(this.OnBtnApplyRegexClicked);
             this.hsimplelist1.ItemCheck += new HollyLibrary.ListItemCheck(this.OnHsimplelist1ItemCheck);
+            this.hsimplelist1.DrawItem += new HollyLibrary.DrawItemEventHandler(this.OnHsimplelist1DrawItem);
         }
     }
 }

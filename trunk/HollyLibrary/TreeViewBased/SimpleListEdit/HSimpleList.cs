@@ -28,7 +28,8 @@ namespace HollyLibrary
 		public event EventHandler            SelectedIndexChanged;
 		public event DrawItemEventHandler    DrawItem;
 		public event MeasureItemEventHandler MeasureItem;
-		//TODO: new 2.0 event,add to wiki
+		
+		//new 2.0 event
 		public event ListItemCheck           ItemCheck;
 		
 		//store
@@ -268,6 +269,25 @@ namespace HollyLibrary
 
 		}
 		
+		public void CheckItemAt( int index )
+		{
+			if( checked_items.IndexOf( index ) == -1 )
+			{
+				checked_items.Add( index );
+				this.QueueDraw();
+			}
+		}
+		
+		
+		public void UncheckItemAt( int index )
+		{
+			if( checked_items.IndexOf( index ) != -1 )
+			{
+				checked_items.Remove( index );
+				this.QueueDraw();
+			}
+		}
+		
 		public int SelectedIndex 
 		{
 			get 
@@ -315,7 +335,7 @@ namespace HollyLibrary
 		
 		/// <value>
 		/// returns the checked items list
-		/// TODO: add to wiki
+		/// new 2.0
 		/// </value>
 		public List<System.Object> CheckedItems
 		{
@@ -332,7 +352,7 @@ namespace HollyLibrary
 		
 		/// <value>
 		/// returns the checked items indexes as a int list
-		/// TODO: add to wiki
+		/// new 2.0
 		/// </value>
 		public List<int> CheckedItemIndexes
 		{
@@ -418,6 +438,10 @@ namespace HollyLibrary
 			}
 		}
 		
+		/// <value>
+		/// if true, the list is a checkbox list
+		/// new 2.0
+		/// </value>
 		public bool IsCheckBoxList 
 		{
 			get 
@@ -431,6 +455,7 @@ namespace HollyLibrary
 				QueueDraw();
 			}
 		}
+		
 		
 	}
 }
