@@ -269,3 +269,89 @@ namespace test
 }
 
 }}}
+
+  * How to create a checkbox list, also ownerdrawn:
+
+{{{
+
+using System;
+using System.Drawing;
+using HollyLibrary;
+
+
+namespace test
+{
+	
+	
+	public class Test : Gtk.Window
+	{
+		
+	HSimpleList list   = new HSimpleList();
+
+        public Test() : base(Gtk.WindowType.Toplevel)
+        {
+            this.DeleteEvent   += new Gtk.DeleteEventHandler ( this.OnDeleteEvent   );
+	    list.OwnerDraw      = true;
+            list.IsCheckBoxList = true;
+            //list events
+	    list.DrawItem    += new DrawItemEventHandler   ( this.on_draw_item    );
+	    list.MeasureItem += new MeasureItemEventHandler( this.on_measure_item );
+            list.ItemCheck   += new ListItemCheck          ( this.on_item_check   ); 
+             //create a simple layout
+	     Gtk.ScrolledWindow sw  = new Gtk.ScrolledWindow();
+	     sw.Add( list );
+             //add the widget to the window
+             this.Add( sw );
+	     //add some items to the list
+	    
+	     list.ItemHeight = 25;
+	     for( int i = 0; i < 100; i++ )
+		list.Items.Add( "checked item no." + i );
+		
+            //show window
+            this.ShowAll();
+        }
+
+	private void on_draw_item( object o, DrawItemEventArgs args )
+	{
+		Graphics g       = args.Graphics;
+	        //get the item's text
+		String item_text = list.Items[ args.ItemIndex ].ToString();
+		//draw a small circle - just for fun
+		Rectangle rect   = new Rectangle( args.CellArea.X , args.CellArea.Y, 20, 20 );
+		g.FillEllipse( new SolidBrush( Color.DarkBlue ), rect );
+		//draw the item's text
+		Font font        = new Font("",12F);
+		g.DrawString ( item_text, font, new SolidBrush(Color.Red), args.CellArea.X +30, args.CellArea.Y );
+		//dispose
+		g.Dispose();
+	}
+
+        private void on_item_check (object sender, ListItemCheckEventArgs args)
+	{
+                //show the checked items:
+		Console.WriteLine("----------");
+		foreach( object obj in list.CheckedItems )
+		{
+			Console.WriteLine( obj.ToString() );
+		}
+		Console.WriteLine("----------");
+	}
+
+        protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
+        {
+                Gtk.Application.Quit();
+                args.RetVal = true;
+        }
+
+        public static void Main (string[] args)
+        {
+                Application.Init ();
+                Test win = new Test();
+                win.Show ();
+                Application.Run ();
+        }
+    }
+}
+
+}}}
