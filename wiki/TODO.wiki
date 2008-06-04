@@ -101,6 +101,13 @@ ObjectCollection to ListItemCollection
 
 ==================================================
 
+no need to add icon support, because I have the ownerdrawn property.
+See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here]
+
+- only add checkbox
+
+==================================================
+
 
 _New widget:_ *HNumericEntry*
   # a entry only for numeric values ( not a numeric up/down )
