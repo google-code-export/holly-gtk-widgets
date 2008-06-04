@@ -84,7 +84,7 @@
 
 ==================================================
 
-Make the HSimpleList to support checkbox and icon to each row.
+Make the HSimpleList to support checkbox to each row.
 new events :
    ItemCheckedStateChanged
 new methods :
