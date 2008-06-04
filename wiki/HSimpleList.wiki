@@ -23,6 +23,8 @@ Methods:
 || _void_ || *Sort*       || ( IComparer comparer ) || sorts the items of the list using a custom comparer||
 || _object[]_ || *getSelectedItems* || - || returns an array of the selected items ||
 || _int[]_    || *getSelectedIndexes* || - || returns an array of the selected indexes ||
+|| _void_     || * CheckItemAt *      || ( int index ) || check's the item at the given index ||
+|| _void_     || * UnCheckItemAt *      || ( int index ) || uncheck's the item at the given index ||
 
 Properties:
 || _int_ || *SelectedIndex* || gets/sets the current selected index ||
@@ -32,11 +34,15 @@ Properties:
 || _string_ || *Text*         || gets/sets the current selected item ( as a string ) ||
 || _bool_   || *OwnerDraw*    || gets/sets the items drawing mode. ||
 || _Gtk.SelectionMode_   || *SelectionType* || the current list selection mode ||
+|| _ List<Object> _      || * CheckedItems * || the current checked item list ||
+|| _ List<int>    _      || * CheckedItemIndexes * || the indexes list of the checked items ||
+|| _ bool _              || * IsCheckBoxList * || if true, the list is a checkbox list ||
 
 Events:
 ||_EventHandler_|| * SelectedIndexChanged * || - raised when the selection index changes ||
 ||_DrawItemEventHandler_|| * DrawItem * || - usefull when you set the OwnerDrawn to true. See code sample for example ||
 ||_MeasureItemEventHandler_|| * MeasureItem * || - usefull when you set the OwnerDrawn to true. See code sample for example ||
+|| _ ListItemCheck _ || * ItemCheck * || - raised when the checked state of a list item is changed ||
 
 ----
 
