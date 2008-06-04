@@ -98,7 +98,9 @@ ObjectCollection to ListItemCollection
 
 * update changes on wiki and write code sample 
 * show how to use the new list features on the HSimpleCombobox ( for example how to have a combo with icons on evry item ) 
+
 ==================================================
+
 
 _New widget:_ *HNumericEntry*
   # a entry only for numeric values ( not a numeric up/down )
