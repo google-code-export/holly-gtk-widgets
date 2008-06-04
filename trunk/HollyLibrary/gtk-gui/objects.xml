@@ -43,6 +43,7 @@
         <property name="SelectedIndex" />
         <property name="Text" />
         <property name="OwnerDraw" />
+        <property name="IsCheckBoxList" />
       </itemgroup>
     </itemgroups>
     <signals>
@@ -50,6 +51,7 @@
         <signal name="SelectedIndexChanged" />
         <signal name="DrawItem" />
         <signal name="MeasureItem" />
+        <signal name="ItemCheck" />
       </itemgroup>
     </signals>
   </object>
@@ -138,6 +140,14 @@
     <signals>
       <itemgroup label="HComboFolder Signals">
         <signal name="PathChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HList" palette-category="HollyLibrary" allow-children="false" base-type="HollyLibrary.HSimpleList">
+    <itemgroups />
+    <signals>
+      <itemgroup label="HList Signals">
+        <signal name="ItemCheck" />
       </itemgroup>
     </signals>
   </object>

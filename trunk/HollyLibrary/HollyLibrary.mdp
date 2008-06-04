@@ -75,14 +75,8 @@
     <File name="TreeViewBased/SimpleListEdit/Events/MeasureItemEventArgs.cs" subtype="Code" buildaction="Compile" />
     <File name="TreeViewBased/CellRendererCustom.cs" subtype="Code" buildaction="Compile" />
     <File name="TreeViewBased/ICustomCellTreeView.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/List" subtype="Directory" buildaction="Compile" />
-    <File name="TreeViewBased/List/HList.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/List/HListItem.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/List/ListItemCollection.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/List/Events" subtype="Directory" buildaction="Compile" />
-    <File name="TreeViewBased/List/Events/ListItemEventArgs.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/List/Events/ListItemEventList.cs" subtype="Code" buildaction="Compile" />
     <File name="TreeViewBased/TreeView/Events/NodeEventArgs.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/IBaseListWidget.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -119,6 +113,7 @@
       <Widget>HollyLibrary.HTreeView</Widget>
       <Widget>HollyLibrary.HComboTree</Widget>
       <Widget>HollyLibrary.HComboFolder</Widget>
+      <Widget>HollyLibrary.HList</Widget>
     </ExportedWidgets>
   </GtkDesignInfo>
 </Project>

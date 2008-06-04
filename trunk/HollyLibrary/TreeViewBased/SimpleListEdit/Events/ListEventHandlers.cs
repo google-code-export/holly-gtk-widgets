@@ -6,6 +6,36 @@ using System;
 
 namespace HollyLibrary
 {
+	
+	public class ListItemCheckEventArgs : EventArgs
+	{
+		int itemIndex;
+		bool newValue;
+		
+		public ListItemCheckEventArgs( int itemIndex, bool newValue )
+		{
+			this.itemIndex = itemIndex;
+			this.newValue  = newValue;
+		}
+		
+		public bool NewValue
+		{
+			get
+			{
+				return newValue;
+			}
+		}
+		
+		public int ItemIndex
+		{
+			get 
+			{
+				return itemIndex;
+			}
+		}
+		
+	}
+	
 	public class ListUpdateEventArgs : EventArgs
 	{
 		private object new_value;
@@ -76,5 +106,8 @@ namespace HollyLibrary
 	//
 	public delegate void MeasureItemEventHandler( object sender, MeasureItemEventArgs args );
 	public delegate void DrawItemEventHandler   ( object sender, DrawItemEventArgs args    );
+	//
+	public delegate void ListItemCheck ( object sender, ListItemCheckEventArgs args );
+	
 		
 }

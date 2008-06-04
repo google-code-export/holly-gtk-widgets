@@ -29,6 +29,11 @@ namespace test
 			
 			//set default regex
 			RegExEntry.RegularExpression = "\\d{3}-\\d{2}-\\d{4}";
+			
+			//development tests:
+			
+			hsimplelist1.ItemHeight = 25;
+			hsimplelist1.Items.AddRange( new String[] {"gigi1","gigi2","gigi3"} );
 		}
 		
 
@@ -66,6 +71,16 @@ namespace test
 		protected virtual void OnBtnApplyRegexClicked (object sender, System.EventArgs e)
 		{
 			RegExEntry.RegularExpression = TxtRegularExpresion.Text;
+		}
+
+		protected virtual void OnHsimplelist1ItemCheck (object sender, HollyLibrary.ListItemCheckEventArgs args)
+		{
+			Console.WriteLine("---");
+			foreach( object obj in hsimplelist1.CheckedItems )
+			{
+				Console.WriteLine( obj.ToString() );
+			}
+			Console.WriteLine("---");
 		}
 
 	

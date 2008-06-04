@@ -8,23 +8,6 @@ namespace HollyLibrary
 {
 	
 	
-	public class ListItemEventArgs : EventArgs
-	{
-		HListItem item;
-		
-		public ListItemEventArgs( HListItem item )
-		{
-			this.item = item;
-		}
-		
-		public HListItem Item 
-		{
-			get 
-			{
-				return item;
-			}
-		}
-		
-	}
+	
 	
 }
