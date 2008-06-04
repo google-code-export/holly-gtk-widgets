@@ -93,7 +93,6 @@ new properties:
    ~~IsCheckboxList~~
    ~~CheckedItems~~
    ~~CheckedItemIndexes~~
-   Editable property
 
   * update changes on wiki and write code sample
   * no need to add icon support, because I have the ownerdrawn property.
