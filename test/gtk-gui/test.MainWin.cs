@@ -139,11 +139,15 @@ namespace test {
         
         private Gtk.Button BtnApplyRegex;
         
-        private Gtk.Label GtkLabel11;
+        private Gtk.Label GtkLabel12;
         
         private Gtk.Button BtnToolTip;
         
-        private Gtk.Label label7;
+        private Gtk.Label label11;
+        
+        private Gtk.ScrolledWindow GtkScrolledWindow4;
+        
+        private HollyLibrary.HSimpleList hsimplelist1;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -155,7 +159,7 @@ namespace test {
             this.notebook1 = new Gtk.Notebook();
             this.notebook1.CanFocus = true;
             this.notebook1.Name = "notebook1";
-            this.notebook1.CurrentPage = 0;
+            this.notebook1.CurrentPage = 5;
             this.notebook1.Scrollable = true;
             // Container child notebook1.Gtk.Notebook+NotebookChild
             this.vpaned1 = new Gtk.VPaned();
@@ -589,11 +593,11 @@ namespace test {
             w47.Fill = false;
             this.GtkAlignment7.Add(this.vbox7);
             this.frame8.Add(this.GtkAlignment7);
-            this.GtkLabel11 = new Gtk.Label();
-            this.GtkLabel11.Name = "GtkLabel11";
-            this.GtkLabel11.LabelProp = Mono.Unix.Catalog.GetString("<b>HRegExEntry</b>");
-            this.GtkLabel11.UseMarkup = true;
-            this.frame8.LabelWidget = this.GtkLabel11;
+            this.GtkLabel12 = new Gtk.Label();
+            this.GtkLabel12.Name = "GtkLabel12";
+            this.GtkLabel12.LabelProp = Mono.Unix.Catalog.GetString("<b>HRegExEntry</b>");
+            this.GtkLabel12.UseMarkup = true;
+            this.frame8.LabelWidget = this.GtkLabel12;
             this.vbox6.Add(this.frame8);
             Gtk.Box.BoxChild w50 = ((Gtk.Box.BoxChild)(this.vbox6[this.frame8]));
             w50.Position = 5;
@@ -629,11 +633,28 @@ namespace test {
             Gtk.Notebook.NotebookChild w60 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.vbox6]));
             w60.Position = 4;
             // Notebook tab
-            this.label7 = new Gtk.Label();
-            this.label7.Name = "label7";
-            this.label7.LabelProp = Mono.Unix.Catalog.GetString("Other widgets");
-            this.notebook1.SetTabLabel(this.vbox6, this.label7);
-            this.label7.ShowAll();
+            this.label11 = new Gtk.Label();
+            this.label11.Name = "label11";
+            this.label11.LabelProp = Mono.Unix.Catalog.GetString("Other widgets");
+            this.notebook1.SetTabLabel(this.vbox6, this.label11);
+            this.label11.ShowAll();
+            // Container child notebook1.Gtk.Notebook+NotebookChild
+            this.GtkScrolledWindow4 = new Gtk.ScrolledWindow();
+            this.GtkScrolledWindow4.Name = "GtkScrolledWindow4";
+            this.GtkScrolledWindow4.ShadowType = ((Gtk.ShadowType)(1));
+            // Container child GtkScrolledWindow4.Gtk.Container+ContainerChild
+            this.hsimplelist1 = new HollyLibrary.HSimpleList();
+            this.hsimplelist1.CanFocus = true;
+            this.hsimplelist1.Name = "hsimplelist1";
+            this.hsimplelist1.HeadersClickable = true;
+            this.hsimplelist1.ItemHeight = 0;
+            this.hsimplelist1.SelectedIndex = 0;
+            this.hsimplelist1.OwnerDraw = false;
+            this.hsimplelist1.IsCheckBoxList = true;
+            this.GtkScrolledWindow4.Add(this.hsimplelist1);
+            this.notebook1.Add(this.GtkScrolledWindow4);
+            Gtk.Notebook.NotebookChild w62 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.GtkScrolledWindow4]));
+            w62.Position = 5;
             this.Add(this.notebook1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
@@ -647,6 +668,7 @@ namespace test {
             this.BtnStartComboDemo.Clicked += new System.EventHandler(this.OnBtnStartComboDemoClicked);
             this.ComboTreeDemo.Clicked += new System.EventHandler(this.OnComboTreeDemoClicked);
             this.BtnApplyRegex.Clicked += new System.EventHandler(this.OnBtnApplyRegexClicked);
+            this.hsimplelist1.ItemCheck += new HollyLibrary.ListItemCheck(this.OnHsimplelist1ItemCheck);
         }
     }
 }

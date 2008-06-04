@@ -13,41 +13,48 @@ using System.Drawing.Drawing2D;
 namespace HollyLibrary
 {
 
-	public class HSimpleList : TreeView, ICustomCellTreeView
+	public class HSimpleList : TreeView, IBaseListWidget, ICustomCellTreeView
 	{
 		//my standard properties
 		int itemHeight                 = 25;
 		ObjectCollection items         = new ObjectCollection();
 		int selectedIndex              = -1;
 		bool ownerDraw                 = false;
+		//cells
+		CellRendererToggle chk_cell  = new CellRendererToggle();
+		CellRendererCustom text_cell;
 		
 		//events
 		public event EventHandler            SelectedIndexChanged;
 		public event DrawItemEventHandler    DrawItem;
 		public event MeasureItemEventHandler MeasureItem;
+		//TODO: new 2.0 event,add to wiki
+		public event ListItemCheck           ItemCheck;
 		
-		Gtk.ListStore store = new Gtk.ListStore( typeof( string ) );
+		//store
+		Gtk.ListStore store = new Gtk.ListStore( typeof(bool), typeof( string ) );
+		
+		//checked items list
+		List<int> checked_items = new List<int>();
 		
 		public HSimpleList()
 		{
 			this.HeadersVisible         = false;
-			TreeViewColumn firstColumn  = new Gtk.TreeViewColumn ();
-			CellRendererCustom cell     = new CellRendererCustom( this );
 			this.Reorderable            = true;
-			firstColumn.PackStart (cell, true);
 			
-			firstColumn.SetCellDataFunc (cell, new Gtk.TreeCellDataFunc (RenderListItem));
+			//add columns
+			constructColumns();
+			//set model
+			this.Model                  = getInnerListStore();
 			
-			this.Model                  = store;
-			this.AppendColumn( firstColumn );
-			
-			this.Items.OnItemAdded   += new ListAddEventHandler( this.on_item_added   );
+			//inner objectcollection events
+			this.Items.OnItemAdded   += new ListAddEventHandler   ( this.on_item_added   );
 			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed );
 			this.items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated );
 			
 		}
 		
-		private void RenderListItem (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter)
+		internal virtual void RenderListItem (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter)
 		{
 			CellRendererCustom mycell   = (CellRendererCustom) cell;
 			mycell.ItemIndex            = int.Parse( model.GetPath(iter).ToString() );
@@ -108,14 +115,17 @@ namespace HollyLibrary
 			//updateaza itemul din store
 			Gtk.TreeIter iter;
 			this.Model.GetIterFromString( out iter, args.Index.ToString() );
-			this.Model.SetValue( iter, 0, args.NewValue );
+			//remove the checked index if it's in the checked_items
+			checked_items.Remove( args.Index );
+			//change the value
+			this.Model.SetValue         ( iter, 1, args.NewValue );
 			this.QueueDraw();
 		}
 		
 		private void on_item_added( object Sender, ListAddEventArgs args )
 		{
 			//adauga in store
-			store.AppendValues( args.Value );
+			store.AppendValues( false, args.Value );
 			this.QueueDraw();
 		}
 		
@@ -125,6 +135,8 @@ namespace HollyLibrary
 			Gtk.TreeIter iter;
 			this.Model.GetIterFromString( out iter, args.Index.ToString() );
 			store.Remove( ref iter );
+			//remove the index from the checked_items also
+			checked_items.Remove( args.Index );
 			this.QueueDraw();
 		}
 	
@@ -148,17 +160,22 @@ namespace HollyLibrary
 		{
 			Items.Sort();
 			store.Clear();
-			foreach( object obj in Items ) store.AppendValues( obj );
+			//clear the checkboxes also
+			checked_items.Clear();
+			//add all values again
+			foreach( object obj in Items ) store.AppendValues( false, obj );
 		}
 		
 		public void Sort( IComparer comparer )
 		{
 			Items.Sort( comparer );
 			store.Clear();
-			foreach( object obj in Items ) store.AppendValues( obj );
+			//clear the checkboxes also
+			checked_items.Clear();
+			//add all values again
+			foreach( object obj in Items ) store.AppendValues( false, obj );
 		}
 
-		
 
 		private int getSelectedIndex()
 		{
@@ -193,6 +210,62 @@ namespace HollyLibrary
 				ret[i] = Items[ indexes[i] ];
 			}
 			return ret;
+		}
+
+		public ListStore getInnerListStore ()
+		{
+			return store;
+		}
+
+		public void constructColumns ()
+		{
+			TreeViewColumn column        = new Gtk.TreeViewColumn ();
+			//create the text_cell
+			text_cell = new CellRendererCustom( this );
+			//
+			chk_cell.Visible             = false;
+			chk_cell.Toggled            += OnCelltoggled;
+			//add cells to column
+			column.PackStart( chk_cell , false );
+			column.PackStart( text_cell, true  );
+			//set data functions
+			column.SetCellDataFunc( text_cell, new Gtk.TreeCellDataFunc ( RenderListItem ) );
+			column.SetCellDataFunc( chk_cell , new TreeCellDataFunc     ( OnChkDataFunc  ) );
+			//add the column
+			AppendColumn( column );
+		}
+		
+		//checkbox cell function
+		private void OnChkDataFunc(
+		                        Gtk.TreeViewColumn col, Gtk.CellRenderer cell,
+		                        Gtk.TreeModel model, Gtk.TreeIter iter
+		                            )
+		{
+			CellRendererToggle c = cell as CellRendererToggle;
+			String path = model.GetPath(iter).ToString();
+
+			int item_index = int.Parse( path );
+			c.Active       = ( checked_items.IndexOf( item_index ) != -1 );
+		}
+		
+		private void OnCelltoggled( object sender, ToggledArgs args )
+		{
+            TreeIter iter;
+            if ( store.GetIterFromString( out iter, args.Path ) )
+            {
+				int item_index     = int.Parse( args.Path  );
+				//if it's checked, remove the check index
+				//else, add it
+				bool new_value = ( checked_items.IndexOf( item_index ) != -1 );
+				if( new_value )
+					checked_items.Remove( item_index );
+				else
+					checked_items.Add( item_index );
+				//raise itemcheck event
+				if( ItemCheck != null ) 
+					ItemCheck( this, new ListItemCheckEventArgs( item_index, new_value ) ); 
+			}
+
 		}
 		
 		public int SelectedIndex 
@@ -237,6 +310,35 @@ namespace HollyLibrary
 			set
 			{
 				items = value;
+			}
+		}
+		
+		/// <value>
+		/// returns the checked items list
+		/// TODO: add to wiki
+		/// </value>
+		public List<System.Object> CheckedItems
+		{
+			get
+			{
+				List<System.Object> ret = new List<System.Object>();
+				foreach( int index in checked_items )
+				{
+					ret.Add( Items[ index ] );
+				}
+				return ret;
+			}
+		}
+		
+		/// <value>
+		/// returns the checked items indexes as a int list
+		/// TODO: add to wiki
+		/// </value>
+		public List<int> CheckedItemIndexes
+		{
+			get
+			{
+				return checked_items;
 			}
 		}
 		
@@ -290,11 +392,14 @@ namespace HollyLibrary
 			}
 		}
 
-		public bool OwnerDraw {
-			get {
+		public bool OwnerDraw 
+		{
+			get 
+			{
 				return ownerDraw;
 			}
-			set {
+			set 
+			{
 				ownerDraw = value;
 				QueueDraw();
 			}
@@ -310,6 +415,20 @@ namespace HollyLibrary
 			set 
 			{
 				this.Selection.Mode = value;
+			}
+		}
+		
+		public bool IsCheckBoxList 
+		{
+			get 
+			{
+				return chk_cell.Visible ;
+			}
+			set 
+			{
+				chk_cell.Visible = value;
+				Columns[0].QueueResize();
+				QueueDraw();
 			}
 		}
 		

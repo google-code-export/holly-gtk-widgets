@@ -16,7 +16,7 @@
       <widget class="Gtk.Notebook" id="notebook1">
         <property name="MemberName" />
         <property name="CanFocus">True</property>
-        <property name="CurrentPage">0</property>
+        <property name="CurrentPage">5</property>
         <property name="Scrollable">True</property>
         <child>
           <widget class="Gtk.VPaned" id="vpaned1">
@@ -1079,7 +1079,7 @@ namespace test
                   </widget>
                 </child>
                 <child>
-                  <widget class="Gtk.Label" id="GtkLabel11">
+                  <widget class="Gtk.Label" id="GtkLabel12">
                     <property name="MemberName" />
                     <property name="LabelProp" translatable="yes">&lt;b&gt;HRegExEntry&lt;/b&gt;</property>
                     <property name="UseMarkup">True</property>
@@ -1118,12 +1118,34 @@ namespace test
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Label" id="label7">
+          <widget class="Gtk.Label" id="label11">
             <property name="MemberName" />
             <property name="LabelProp" translatable="yes">Other widgets</property>
           </widget>
           <packing>
             <property name="type">tab</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow4">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="HollyLibrary.HSimpleList" id="hsimplelist1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+                <property name="HeadersClickable">True</property>
+                <property name="ItemHeight">0</property>
+                <property name="SelectedIndex">0</property>
+                <property name="OwnerDraw">False</property>
+                <property name="IsCheckBoxList">True</property>
+                <signal name="ItemCheck" handler="OnHsimplelist1ItemCheck" />
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">5</property>
           </packing>
         </child>
       </widget>

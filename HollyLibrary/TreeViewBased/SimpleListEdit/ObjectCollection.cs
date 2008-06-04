@@ -13,7 +13,7 @@ namespace HollyLibrary
 	public class ObjectCollection : CollectionBase
 	{
 		
-		public event ListAddEventHandler OnItemAdded;
+		public event ListAddEventHandler      OnItemAdded;
 		public event ListRemoveEventHandler OnItemRemoved;
 		public event ListUpdateEventHandler OnItemUpdated;
 		
