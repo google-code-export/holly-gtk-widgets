@@ -33,7 +33,8 @@ namespace test
 			//development tests:
 			
 			hsimplelist1.ItemHeight = 25;
-			hsimplelist1.Items.AddRange( new String[] {"gigi1","gigi2","gigi3"} );
+			for( int i = 0; i < 100; i++ )
+				hsimplelist1.Items.Add( "checked item no." + i );
 		}
 		
 
@@ -80,7 +81,23 @@ namespace test
 			{
 				Console.WriteLine( obj.ToString() );
 			}
+			
 			Console.WriteLine("---");
+		}
+
+		protected virtual void OnHsimplelist1DrawItem (object sender, HollyLibrary.DrawItemEventArgs args)
+		{
+			Graphics g       = args.Graphics;
+			//get the item's text
+			String item_text = hsimplelist1.Items[ args.ItemIndex ].ToString();
+			//draw a small circle
+			Rectangle rect   = new Rectangle( args.CellArea.X , args.CellArea.Y, 20, 20 );
+			g.FillEllipse( new SolidBrush( Color.DarkBlue ), rect );
+			//draw the item's text
+			Font font        = new Font("Times New Roman",12F);
+			g.DrawString ( item_text, font, new SolidBrush(Color.Red), args.CellArea.X +30, args.CellArea.Y );
+			//dispose
+			g.Dispose();
 		}
 
 	
@@ -88,4 +105,5 @@ namespace test
 		
 	}
 }
+
 
