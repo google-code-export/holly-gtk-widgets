@@ -7,9 +7,13 @@ It also implements the nice ListBox events MeasureItem and DrawItem.
 It supports multiple selection also.   
 
 = Details =
+V 1.0
 
 [http://lh3.ggpht.com/fr.daniil/SC2zgXasyRI/AAAAAAAAABo/ZCjZjHBqLdA/simple-gtk-list.jpg]
 
+V 2.0 with checkbox support and a circle drawn with the OwnerDrawn property enabled
+
+[http://lh3.ggpht.com/fr.daniil/SEbvw_GpFvI/AAAAAAAAADo/AmfvBCaF8KQ/gtk-holly-simple-list-2.jpg]
 ----
 
 Methods:
@@ -249,6 +253,7 @@ namespace test
                 Gdk.Threads.Init ();
                 Application.Init ();
                 Test win = new Test();
+
                 win.Show ();
                 Gdk.Threads.Enter();
                 Application.Run ();
