@@ -94,9 +94,9 @@ new properties:
    ~~CheckedItems~~
    ~~CheckedItemIndexes~~
 
-  * update changes on wiki and write code sample
-  * no need to add icon support, because I have the ownerdrawn property.
-See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.
+  * ~~update changes on wiki and write code sample~~
+  * ~~no need to add icon support, because I have the ownerdrawn property.
+See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
   * ~~add checkbox support~~
 
 ==================================================
