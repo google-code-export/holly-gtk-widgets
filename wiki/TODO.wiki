@@ -90,21 +90,12 @@ new events :
 new methods :
    getCheckedItems()
 new properties:
-   IsIconVisible
    IsCheckboxList
 
-Also, make the inner list items to be a special class called SimpleListItem, and transform
-ObjectCollection to ListItemCollection
-
-* update changes on wiki and write code sample 
-* show how to use the new list features on the HSimpleCombobox ( for example how to have a combo with icons on evry item ) 
-
-==================================================
-
-no need to add icon support, because I have the ownerdrawn property.
+  * update changes on wiki and write code sample
+  * no need to add icon support, because I have the ownerdrawn property.
 See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here]
-
-- only add checkbox
+  * only add checkbox support
 
 ==================================================
 
