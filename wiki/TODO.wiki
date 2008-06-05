@@ -82,10 +82,10 @@
 = VERSION 2.0 =
 
 * HSimpleList *  new features:
-  * support checkbox to each item.
-  * new events :
+  * ~~support checkbox to each item.~~
+  * ~~new events :~~
    ~~ItemCheck~~
-  * new properties:
+  * ~~new properties:~~
    ~~IsCheckboxList~~
    ~~CheckedItems~~
    ~~CheckedItemIndexes~~
