@@ -82,23 +82,20 @@
 = VERSION 2.0 =
 
 
-==================================================
-
-Make the HSimpleList to support checkbox to each item.
-
-new events :
+* HSimpleList *  new features:
+  * support checkbox to each item.
+  * new events :
    ~~ItemCheck~~
-
-new properties:
+  * new properties:
    ~~IsCheckboxList~~
    ~~CheckedItems~~
    ~~CheckedItemIndexes~~
-
+  * make drag and drop work
+  * make Editable property
   * ~~update changes on wiki and write code sample~~
   * ~~no need to add icon support, because I have the ownerdrawn property.
 See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
 
-==================================================
 
 
 _New widget:_ *HNumericEntry*
