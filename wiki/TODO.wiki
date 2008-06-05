@@ -81,7 +81,6 @@
 
 = VERSION 2.0 =
 
-
 * HSimpleList *  new features:
   * support checkbox to each item.
   * new events :
@@ -97,10 +96,18 @@
 See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
 
 
+* HTreeView *  new features:
+  * make sure that drag and drop is working
+  * replace text cell renderer with custom renderer and implement ItemDraw and MeasureItem
+  * see how to simplify the contextmenu / item or something ( see [http://www.telerik.com/products/winforms/controls/treeview/overview.aspx here] )
+
 
 _New widget:_ *HNumericEntry*
   # a entry only for numeric values ( not a numeric up/down )
   # support for negative values
+
+_New dialog: _ * HColorDialog *
+  # see [http://www.telerik.com/products/winforms/controls/colordialog/overview.aspx this] it's nicer then what gtk has by default
 
 _New widget:_ *HComboCalculator*
   # a combobox with a calculator popup to do calculations
@@ -127,9 +134,8 @@ _New widget:_ *HPictureBox*
   # ImageChanged, ImageLoaded event
 
 _New widget:_ *HGridView*
-  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking.
+  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking. [http://www.telerik.com/products/winforms/controls/gridview/overview.aspx This] is nice also...
 
-  * make drag and drop work in HSimpleList and HTreeView
   * rebuild HFontPicker to be an extended HSimpleComboBox - also add a nice icon to each font - and maibe do the picker to be like the abiword's one ( it would load faster )
   * study data binding in winforms, maybe do something similar for gtk widgets
   * remove any cairo binding - use only System.Drawing ( it's really faster )
