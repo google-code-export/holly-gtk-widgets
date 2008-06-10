@@ -20,7 +20,7 @@ namespace HollyLibrary
 		Blue
 	}
 	
-	public class ColorPanel : Gtk.DrawingArea
+	internal class ColorPanel : Gtk.DrawingArea
 	{
 		#region Class Variables
 
@@ -516,25 +516,38 @@ namespace HollyLibrary
 		/// </summary>
 		private void Draw_Style_Saturation(Gdk.Window win)
 		{
-			Graphics g = Gtk.DotNet.Graphics.FromDrawable(win);
-
+			//hack: use CAIRO instead of Systme.Drawing  bug
+			Cairo.Context context = Gdk.CairoHelper.Create( win );
+			
+			
 			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
-			GraphUtil.HSL hsl_end = new GraphUtil.HSL();
+			GraphUtil.HSL hsl_end   = new GraphUtil.HSL();
 			hsl_start.S = m_hsl.S;
-			hsl_end.S = m_hsl.S;
+			hsl_end.S   = m_hsl.S;
 			hsl_start.L = 1.0;
-			hsl_end.L = 0.0;
+			hsl_end.L   = 0.0;
 
-			int width = this.Allocation.Width;
+			int width   = this.Allocation.Width;
 			for ( int i = 0; i <  width - 4; i++ )		//	For each vertical line in the control:
 			{
 				hsl_start.H = (double)i/(width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
 				hsl_end.H   = hsl_start.H;
 				
-				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
-				g.FillRectangle(br,new Rectangle(i + 2, 2, 1, this.Allocation.Height - 4)); 
+				Cairo.LinearGradient gradient = new Cairo.LinearGradient( 2,2, 1, this.Allocation.Height - 4 );
+				gradient.AddColorStop( 0, CairoUtil.ColorFromRgb( GraphUtil.HSL_to_RGB( hsl_start ) ) );
+				gradient.AddColorStop( 1, CairoUtil.ColorFromRgb( GraphUtil.HSL_to_RGB( hsl_end   ) ) );
+				
+				//LinearGradientBrush br = new LinearGradientBrush( , , 90, false); 
+				
+				context.Rectangle(i + 2, 2, 1, this.Allocation.Height - 4 );
+				context.Pattern = gradient;
+				
+				context.Fill();
+				
 			}
-			g.Dispose();
+			
+			context.Stroke();                          
+			((IDisposable) context).Dispose ();
 		}
 
 
@@ -543,24 +556,35 @@ namespace HollyLibrary
 		/// </summary>
 		private void Draw_Style_Luminance(Gdk.Window win)
 		{
-			Graphics g = Gtk.DotNet.Graphics.FromDrawable(win);
-
+			//hack: use CAIRO instead of Systme.Drawing bug
+			Cairo.Context context = Gdk.CairoHelper.Create( win );
+			
+			
 			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
 			GraphUtil.HSL hsl_end = new GraphUtil.HSL();
 			hsl_start.L = m_hsl.L;
-			hsl_end.L = m_hsl.L;
+			hsl_end.L   = m_hsl.L;
 			hsl_start.S = 1.0;
-			hsl_end.S = 0.0;
+			hsl_end.S   = 0.0;
 
 			for ( int i = 0; i < this.Allocation.Width - 4; i++ )		//	For each vertical line in the control:
 			{
 				hsl_start.H = (double)i/(this.Allocation.Width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
 				hsl_end.H = hsl_start.H;
 				
-				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
-				g.FillRectangle(br,new Rectangle(i + 2, 2, 1, this.Allocation.Height - 4)); 
+				Cairo.LinearGradient gradient = new Cairo.LinearGradient( 2,2, 1, this.Allocation.Height - 4 );
+				gradient.AddColorStop( 0, CairoUtil.ColorFromRgb( GraphUtil.HSL_to_RGB( hsl_start ) ) );
+				gradient.AddColorStop( 1, CairoUtil.ColorFromRgb( GraphUtil.HSL_to_RGB( hsl_end   ) ) );
+					
+				context.Rectangle(i + 2, 2, 1, this.Allocation.Height - 4 );
+				context.Pattern = gradient;
+				
+				context.Fill();
+				
 			}
-			g.Dispose();
+			
+			context.Stroke();                          
+			((IDisposable) context).Dispose ();
 		}
 
 

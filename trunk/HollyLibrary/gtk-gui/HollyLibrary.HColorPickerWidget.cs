@@ -238,7 +238,6 @@ namespace HollyLibrary {
             this.table1.ColumnSpacing = ((uint)(6));
             // Container child table1.Gtk.Table+TableChild
             this.chkB = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("B:"));
-            this.chkB.Sensitive = false;
             this.chkB.CanFocus = true;
             this.chkB.Name = "chkB";
             this.chkB.DrawIndicator = true;
@@ -263,7 +262,6 @@ namespace HollyLibrary {
             w16.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
             this.chkS = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("S:"));
-            this.chkS.Sensitive = false;
             this.chkS.CanFocus = true;
             this.chkS.Name = "chkS";
             this.chkS.DrawIndicator = true;
