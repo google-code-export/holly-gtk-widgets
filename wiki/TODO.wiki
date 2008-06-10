@@ -107,8 +107,8 @@ _New widget:_ *HNumericEntry*
   # a entry only for numeric values ( not a numeric up/down )
   # support for negative values
 
-_New dialog: _ * HColorDialog *
-  # see [http://www.telerik.com/products/winforms/controls/colordialog/overview.aspx this] it's nicer then what gtk has by default
+_New dialog: _ * HColorPickerWidget * && * HColorPickerDialog *
+  # ~ an adobe like color picker nicer then what gtk has by default ~
 
 _New widget:_ *HComboCalculator*
   # a combobox with a calculator popup to do calculations
