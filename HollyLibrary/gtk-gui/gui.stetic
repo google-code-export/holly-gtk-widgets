@@ -1266,7 +1266,6 @@
                 <child>
                   <widget class="Gtk.RadioButton" id="chkB">
                     <property name="MemberName" />
-                    <property name="Sensitive">False</property>
                     <property name="CanFocus">True</property>
                     <property name="Label" translatable="yes">B:</property>
                     <property name="DrawIndicator">True</property>
@@ -1315,7 +1314,6 @@
                 <child>
                   <widget class="Gtk.RadioButton" id="chkS">
                     <property name="MemberName" />
-                    <property name="Sensitive">False</property>
                     <property name="CanFocus">True</property>
                     <property name="Label" translatable="yes">S:</property>
                     <property name="DrawIndicator">True</property>

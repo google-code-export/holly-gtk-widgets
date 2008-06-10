@@ -24,6 +24,11 @@ namespace HollyLibrary
 			return ColorFromHexa( str, 1 );
 		}
 		
+		public static Color ColorFromRgb( System.Drawing.Color color )
+		{
+			return ColorFromRgb( color.R, color.G, color.B  );
+		}
+		
 		public static Color ColorFromRgb( int r, int g, int b )
 		{
 			return ColorFromRgb( r, g, b, 1 );

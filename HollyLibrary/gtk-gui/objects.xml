@@ -131,7 +131,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.VerticalColorSlider" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
+  <object type="HollyLibrary.VerticalColorSlider" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
     <itemgroups />
     <signals>
       <itemgroup label="VerticalColorSlider Signals">
@@ -139,7 +139,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.ColorPanel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
+  <object type="HollyLibrary.ColorPanel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
     <itemgroups />
     <signals>
       <itemgroup label="ColorPanel Signals">

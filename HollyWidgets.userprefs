@@ -1,28 +1,21 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/Dialogs/ColorPicker/HColorPickerWidget.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/Dialogs/ColorPicker/HColorPickerDialog.cs" ctype="Workbench">
     <Files>
       <File FileName="Welcome" />
-      <File FileName="HollyLibrary/Combos/ColorPicker/ColorPickerDialog.cs" Line="1" Column="1" />
-      <File FileName="HollyLibrary/Combos/ColorPicker/HColorPicker.cs" Line="21" Column="4" />
-      <File FileName="HollyLibrary/Dialogs/ColorPicker/ColorPanel.cs" Line="562" Column="17" />
-      <File FileName="HollyLibrary/Dialogs/ColorPicker/HColorPickerWidget.cs" Line="115" Column="4" />
-      <File FileName="HollyLibrary/GraphUtil.cs" Line="16" Column="9" />
+      <File FileName="HollyLibrary/Combos/ColorPicker/ColorPickerDialog.cs" Line="87" Column="12" />
+      <File FileName="HollyLibrary/Combos/ColorPicker/HColorPicker.cs" Line="18" Column="22" />
+      <File FileName="HollyLibrary/Dialogs/ColorPicker/ColorPanel.cs" Line="69" Column="10" />
+      <File FileName="HollyLibrary/Dialogs/ColorPicker/HColorPickerWidget.cs" Line="70" Column="1" />
+      <File FileName="HollyLibrary/GraphUtil.cs" Line="411" Column="3" />
       <File FileName="HollyLibrary/GrabUtil.cs" Line="1" Column="1" />
+      <File FileName="HollyLibrary/RegExEntry/HRegExEntry.cs" Line="1" Column="1" />
+      <File FileName="HollyLibrary/Dialogs/ColorPicker/VerticalColorSlider.cs" Line="65" Column="3" />
+      <File FileName="HollyLibrary/Dialogs/ColorPicker/HColorPickerDialog.cs" Line="70" Column="32" />
+      <File FileName="test/MainWin.cs" Line="39" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="HollyLibrary" expanded="True">
-            <Node name="Combos" expanded="True">
-              <Node name="ColorPicker" expanded="True" />
-            </Node>
-            <Node name="Dialogs" expanded="True">
-              <Node name="ColorPicker" expanded="True">
-                <Node name="HColorPickerWidget.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
+        <State expanded="True" selected="True" />
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" />
