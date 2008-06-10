@@ -655,13 +655,9 @@ namespace test {
             this.vbox8.Add(this.hcolorpickerwidget1);
             Gtk.Box.BoxChild w61 = ((Gtk.Box.BoxChild)(this.vbox8[this.hcolorpickerwidget1]));
             w61.Position = 0;
-            w61.Expand = false;
-            w61.Fill = false;
             this.hbox14.Add(this.vbox8);
             Gtk.Box.BoxChild w62 = ((Gtk.Box.BoxChild)(this.hbox14[this.vbox8]));
             w62.Position = 0;
-            w62.Expand = false;
-            w62.Fill = false;
             this.notebook1.Add(this.hbox14);
             Gtk.Notebook.NotebookChild w63 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.hbox14]));
             w63.Position = 5;
@@ -669,7 +665,7 @@ namespace test {
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 565;
+            this.DefaultWidth = 623;
             this.DefaultHeight = 523;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);

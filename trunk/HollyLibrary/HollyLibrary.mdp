@@ -79,12 +79,13 @@
     <File name="Dialogs/ColorPicker" subtype="Directory" buildaction="Compile" />
     <File name="color_picker_bar.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="Dialogs/ColorPicker/VerticalColorSlider.cs" subtype="Code" buildaction="Compile" />
-    <File name="Dialogs/ColorPicker/AdobeColors.cs" subtype="Code" buildaction="Compile" />
     <File name="Dialogs/ColorPicker/ColorPanel.cs" subtype="Code" buildaction="Compile" />
     <File name="Dialogs/ColorPicker/HColorPickerWidget.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HColorPickerWidget.cs" subtype="Code" buildaction="Compile" />
     <File name="Combos/ColorPicker/HColorPicker.cs" subtype="Code" buildaction="Compile" />
     <File name="gtk-gui/HollyLibrary.HColorPicker.cs" subtype="Code" buildaction="Compile" />
+    <File name="Dialogs/ColorPicker/HColorPickerDialog.cs" subtype="Code" buildaction="Compile" />
+    <File name="gtk-gui/HollyLibrary.HColorPickerDialog.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />

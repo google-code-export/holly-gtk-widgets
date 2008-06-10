@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="565 523">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="623 523">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterAlways</property>
@@ -1153,8 +1153,6 @@ namespace test
                   <packing>
                     <property name="Position">0</property>
                     <property name="AutoSize">True</property>
-                    <property name="Expand">False</property>
-                    <property name="Fill">False</property>
                   </packing>
                 </child>
                 <child>
@@ -1167,8 +1165,6 @@ namespace test
               <packing>
                 <property name="Position">0</property>
                 <property name="AutoSize">True</property>
-                <property name="Expand">False</property>
-                <property name="Fill">False</property>
               </packing>
             </child>
             <child>

@@ -11,9 +11,7 @@ namespace test
 	
 	
 	public partial class MainWin : Gtk.Window
-	{
-		
-		System.Collections.Generic.List<Color> culori = new System.Collections.Generic.List<Color>();
+	{		
 		
 		public MainWin() : 
 				base(Gtk.WindowType.Toplevel)
@@ -35,7 +33,13 @@ namespace test
 			//development tests:
 	
 			
-		
+			HColorPickerDialog dlg = new HColorPickerDialog();
+			dlg.ColorRGB   = Color.AliceBlue;
+			if( dlg.Run() == (int)Gtk.ResponseType.Ok )
+			{
+				Console.WriteLine( dlg.ColorHexa );
+			}
+			dlg.Destroy();
 		}
 		
 
