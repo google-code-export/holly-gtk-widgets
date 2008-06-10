@@ -15,16 +15,6 @@ namespace HollyLibrary
 	{
 		#region Class Variables
 
-		public enum eDrawStyle
-		{
-			Hue,
-			Saturation,
-			Brightness,
-			Red,
-			Green,
-			Blue
-		}
-
 
 		//	Slider properties
 		private int			m_iMarker_Start_Y = 0;
@@ -304,8 +294,6 @@ namespace HollyLibrary
 		/// </summary>
 		private void DrawBorder(Gdk.Window g)
 		{
-			Pen pencil;
-			
 			//	To make the control look like Adobe Photoshop's the border around the control will be a gray line
 			//	on the top and left side, a white line on the bottom and right side, and a black rectangle (line) 
 			//	inside the gray/white rectangle
@@ -329,34 +317,7 @@ namespace HollyLibrary
 		}
 
 
-		/// <summary>
-		/// Evaluates the DrawStyle of the control and calls the appropriate
-		/// drawing function for content
-		/// </summary>
-		private void DrawContent(Gdk.Window g)
-		{
-			switch (m_eDrawStyle)
-			{
-				case eDrawStyle.Hue :
-					Draw_Style_Hue(g);
-					break;
-				case eDrawStyle.Saturation :
-					Draw_Style_Saturation(g);
-					break;
-				case eDrawStyle.Brightness :
-					Draw_Style_Luminance(g);
-					break;
-				case eDrawStyle.Red :
-					Draw_Style_Red(g);
-					break;
-				case eDrawStyle.Green :
-					Draw_Style_Green(g);
-					break;
-				case eDrawStyle.Blue :
-					Draw_Style_Blue(g);
-					break;
-			}
-		}
+	
 
 
 		#region Draw_Style_X - Content drawing functions

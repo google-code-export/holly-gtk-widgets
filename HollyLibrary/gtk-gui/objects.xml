@@ -55,22 +55,6 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
-    <itemgroups>
-      <itemgroup label="HSimpleComboBox Properties">
-        <property name="DropDownHeight" />
-        <property name="IsEditable" />
-        <property name="Text" />
-      </itemgroup>
-    </itemgroups>
-    <signals>
-      <itemgroup label="HSimpleComboBox Signals">
-        <signal name="DropDownOpened" />
-        <signal name="DropDownClosed" />
-        <signal name="TextChanged" />
-      </itemgroup>
-    </signals>
-  </object>
   <object type="HollyLibrary.HRegExEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
       <itemgroup label="HRegExEntry Properties">
@@ -80,7 +64,11 @@
         <property name="ErrorMessage" />
       </itemgroup>
     </itemgroups>
-    <signals />
+    <signals>
+      <itemgroup label="HRegExEntry Signals">
+        <signal name="Changed" />
+      </itemgroup>
+    </signals>
   </object>
   <object type="HollyLibrary.HColorPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups />
@@ -143,12 +131,24 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HList" palette-category="HollyLibrary" allow-children="false" base-type="HollyLibrary.HSimpleList">
+  <object type="HollyLibrary.VerticalColorSlider" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
     <itemgroups />
     <signals>
-      <itemgroup label="HList Signals">
-        <signal name="ItemCheck" />
+      <itemgroup label="VerticalColorSlider Signals">
+        <signal name="Scroll" />
       </itemgroup>
     </signals>
+  </object>
+  <object type="HollyLibrary.ColorPanel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea">
+    <itemgroups />
+    <signals>
+      <itemgroup label="ColorPanel Signals">
+        <signal name="Scroll" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HColorPickerWidget" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals />
   </object>
 </objects>

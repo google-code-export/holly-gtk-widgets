@@ -18,6 +18,7 @@ namespace HollyLibrary
 		public HColorPicker()
 		{
 			this.Build();
+			
 			comboBox.PopupButton.Clicked += new EventHandler( OnPopupButtonClicked );
 			comboBox.Entry.IsEditable     = false;
 		}

@@ -16,6 +16,8 @@ namespace HollyLibrary
 			Error, Ok
 		}
 		
+		public event EventHandler Changed;
+		
 		string regularExpression = "";
 		string errorMessage      = "Error!";
 		string okMessage         = "Ok!";
@@ -25,6 +27,7 @@ namespace HollyLibrary
 			this.Build();
 			this.TextBox.FocusInEvent  += new Gtk.FocusInEventHandler ( delegate { this.QueueDraw(); } );
 			this.TextBox.FocusOutEvent += new Gtk.FocusOutEventHandler( delegate { this.QueueDraw(); } );
+			
 		}
 		
 		protected override bool OnExposeEvent (Gdk.EventExpose evnt)
@@ -57,6 +60,7 @@ namespace HollyLibrary
 				SetImage( ImageType.Ok    );
 			else
 				SetImage( ImageType.Error );
+			if( Changed != null ) Changed( sender, e );
 		}
 
 #region entry properties

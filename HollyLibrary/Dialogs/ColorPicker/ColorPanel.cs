@@ -10,20 +10,21 @@ using System.Drawing.Drawing2D;
 
 namespace HollyLibrary
 {
+	public enum eDrawStyle
+	{
+		Hue,
+		Saturation,
+		Brightness,
+		Red,
+		Green,
+		Blue
+	}
 	
 	public class ColorPanel : Gtk.DrawingArea
 	{
 		#region Class Variables
 
-		public enum eDrawStyle
-		{
-			Hue,
-			Saturation,
-			Brightness,
-			Red,
-			Green,
-			Blue
-		}
+		
 
 		private int		m_iMarker_X = 0;
 		private int		m_iMarker_Y = 0;
@@ -485,36 +486,6 @@ namespace HollyLibrary
 
 
 		/// <summary>
-		/// Evaluates the DrawStyle of the control and calls the appropriate
-		/// drawing function for content
-		/// </summary>
-		private void DrawContent( Gdk.Window win )
-		{
-			switch (m_eDrawStyle)
-			{
-				case eDrawStyle.Hue :
-					Draw_Style_Hue(win);
-					break;
-				case eDrawStyle.Saturation :
-					Draw_Style_Saturation(win);
-					break;
-				case eDrawStyle.Brightness :
-					Draw_Style_Luminance(win);
-					break;
-				case eDrawStyle.Red :
-					Draw_Style_Red(win);
-					break;
-				case eDrawStyle.Green :
-					Draw_Style_Green(win);
-					break;
-				case eDrawStyle.Blue :
-					Draw_Style_Blue(win);
-					break;
-			}
-		}
-
-
-		/// <summary>
 		/// Draws the content of the control filling in all color values with the provided Hue value.
 		/// </summary>
 		private void Draw_Style_Hue(Gdk.Window win)
@@ -554,10 +525,11 @@ namespace HollyLibrary
 			hsl_start.L = 1.0;
 			hsl_end.L = 0.0;
 
-			for ( int i = 0; i < this.Allocation.Width - 4; i++ )		//	For each vertical line in the control:
+			int width = this.Allocation.Width;
+			for ( int i = 0; i <  width - 4; i++ )		//	For each vertical line in the control:
 			{
-				hsl_start.H = (double)i/(this.Allocation.Width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
-				hsl_end.H = hsl_start.H;
+				hsl_start.H = (double)i/(width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
+				hsl_end.H   = hsl_start.H;
 				
 				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 90, false); 
 				g.FillRectangle(br,new Rectangle(i + 2, 2, 1, this.Allocation.Height - 4)); 

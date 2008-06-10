@@ -178,7 +178,7 @@ namespace HollyLibrary
 		{ 
 			HSL hsl =  new HSL(); 
           
-			int Max, Min, Diff, Sum;
+			int Max, Min, Diff;
 
 			//	Of our RGB values, assign the highest value to Max, and the Smallest to Min
 			if ( c.R > c.G )	{ Max = c.R; Min = c.G; }
@@ -187,7 +187,6 @@ namespace HollyLibrary
 			else if ( c.B < Min ) Min = c.B;
 
 			Diff = Max - Min;
-			Sum = Max + Min;
 
 			//	Luminance - a.k.a. Brightness - Adobe photoshop uses the logic that the
 			//	site VBspeed regards (regarded) as too primitive = superior decides the 
