@@ -51,6 +51,8 @@ namespace HollyLibrary
 			m_hsl.L = 1.0;
 			m_rgb   = GraphUtil.HSL_to_RGB(m_hsl);
 			m_eDrawStyle = eDrawStyle.Hue;
+			
+			this.DoubleBuffered = false;
 		}
 
 
