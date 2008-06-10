@@ -6,6 +6,7 @@ A adobe photoshop like color picker dialog.
 
 [http://lh6.ggpht.com/fr.daniil/SE5kKOy3aKI/AAAAAAAAAEI/wE-bDhxayho/color_picker_extended1.jpg]
 [http://lh6.ggpht.com/fr.daniil/SE5kKQSKwSI/AAAAAAAAAEQ/fElLuPTJCl8/color_picker_extended2.jpg]
+[http://lh4.ggpht.com/fr.daniil/SE7A0Ia9rXI/AAAAAAAAAEY/kzr4mHEFP3g/gtk-sharp-adobe-hsl-rgb-cmyk-color-picker.jpg]
 
 
 Properties:
