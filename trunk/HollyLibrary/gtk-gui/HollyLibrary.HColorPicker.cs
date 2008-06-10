@@ -28,7 +28,7 @@ namespace HollyLibrary {
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.Show();
+            this.Hide();
         }
     }
 }

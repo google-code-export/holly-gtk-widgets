@@ -7,7 +7,7 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="test.MainWin" design-size="434 543">
+  <widget class="Gtk.Window" id="test.MainWin" design-size="565 523">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWin</property>
     <property name="WindowPosition">CenterAlways</property>
@@ -16,7 +16,7 @@
       <widget class="Gtk.Notebook" id="notebook1">
         <property name="MemberName" />
         <property name="CanFocus">True</property>
-        <property name="CurrentPage">1</property>
+        <property name="CurrentPage">5</property>
         <property name="Scrollable">True</property>
         <child>
           <widget class="Gtk.VPaned" id="vpaned1">
@@ -1138,22 +1138,44 @@ namespace test
           </packing>
         </child>
         <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow4">
+          <widget class="Gtk.HBox" id="hbox14">
             <property name="MemberName" />
-            <property name="ShadowType">In</property>
+            <property name="Spacing">6</property>
             <child>
-              <widget class="HollyLibrary.HSimpleList" id="hsimplelist1">
+              <widget class="Gtk.VBox" id="vbox8">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
-                <property name="HeadersClickable">True</property>
-                <property name="ItemHeight">0</property>
-                <property name="SelectedIndex">0</property>
-                <property name="OwnerDraw">True</property>
-                <property name="IsCheckBoxList">True</property>
-                <signal name="ItemCheck" handler="OnHsimplelist1ItemCheck" />
-                <signal name="DrawItem" handler="OnHsimplelist1DrawItem" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="HollyLibrary.HColorPickerWidget" id="hcolorpickerwidget1">
+                    <property name="MemberName" />
+                    <property name="Events">ButtonPressMask</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
               </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
             </child>
           </widget>
           <packing>

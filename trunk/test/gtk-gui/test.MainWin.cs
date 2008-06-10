@@ -145,9 +145,11 @@ namespace test {
         
         private Gtk.Label label11;
         
-        private Gtk.ScrolledWindow GtkScrolledWindow4;
+        private Gtk.HBox hbox14;
         
-        private HollyLibrary.HSimpleList hsimplelist1;
+        private Gtk.VBox vbox8;
+        
+        private HollyLibrary.HColorPickerWidget hcolorpickerwidget1;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -158,7 +160,8 @@ namespace test {
             // Container child test.MainWin.Gtk.Container+ContainerChild
             this.notebook1 = new Gtk.Notebook();
             this.notebook1.CanFocus = true;
-            this.notebook1.CurrentPage = 1;
+            this.notebook1.Name = "notebook1";
+            this.notebook1.CurrentPage = 5;
             this.notebook1.Scrollable = true;
             // Container child notebook1.Gtk.Notebook+NotebookChild
             this.vpaned1 = new Gtk.VPaned();
@@ -609,14 +612,14 @@ namespace test {
             this.BtnToolTip.UseUnderline = true;
             // Container child BtnToolTip.Gtk.Container+ContainerChild
             Gtk.Alignment w51 = new Gtk.Alignment(0.5F, 0.5F, 0F, 0F);
-            // Container child GtkAlignment9.Gtk.Container+ContainerChild
+            // Container child GtkAlignment.Gtk.Container+ContainerChild
             Gtk.HBox w52 = new Gtk.HBox();
             w52.Spacing = 2;
-            // Container child GtkHBox1.Gtk.Container+ContainerChild
+            // Container child GtkHBox.Gtk.Container+ContainerChild
             Gtk.Image w53 = new Gtk.Image();
             w53.Pixbuf = Stetic.IconLoader.LoadIcon(this, "gtk-about", Gtk.IconSize.Menu, 16);
             w52.Add(w53);
-            // Container child GtkHBox1.Gtk.Container+ContainerChild
+            // Container child GtkHBox.Gtk.Container+ContainerChild
             Gtk.Label w55 = new Gtk.Label();
             w55.LabelProp = Mono.Unix.Catalog.GetString("Look ! I have a baloon tooltip over me!");
             w55.UseUnderline = true;
@@ -638,28 +641,36 @@ namespace test {
             this.notebook1.SetTabLabel(this.vbox6, this.label11);
             this.label11.ShowAll();
             // Container child notebook1.Gtk.Notebook+NotebookChild
-            this.GtkScrolledWindow4 = new Gtk.ScrolledWindow();
-            this.GtkScrolledWindow4.Name = "GtkScrolledWindow4";
-            this.GtkScrolledWindow4.ShadowType = ((Gtk.ShadowType)(1));
-            // Container child GtkScrolledWindow4.Gtk.Container+ContainerChild
-            this.hsimplelist1 = new HollyLibrary.HSimpleList();
-            this.hsimplelist1.CanFocus = true;
-            this.hsimplelist1.Name = "hsimplelist1";
-            this.hsimplelist1.HeadersClickable = true;
-            this.hsimplelist1.ItemHeight = 0;
-            this.hsimplelist1.SelectedIndex = 0;
-            this.hsimplelist1.OwnerDraw = true;
-            this.hsimplelist1.IsCheckBoxList = true;
-            this.GtkScrolledWindow4.Add(this.hsimplelist1);
-            this.notebook1.Add(this.GtkScrolledWindow4);
-            Gtk.Notebook.NotebookChild w62 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.GtkScrolledWindow4]));
-            w62.Position = 5;
+            this.hbox14 = new Gtk.HBox();
+            this.hbox14.Name = "hbox14";
+            this.hbox14.Spacing = 6;
+            // Container child hbox14.Gtk.Box+BoxChild
+            this.vbox8 = new Gtk.VBox();
+            this.vbox8.Name = "vbox8";
+            this.vbox8.Spacing = 6;
+            // Container child vbox8.Gtk.Box+BoxChild
+            this.hcolorpickerwidget1 = new HollyLibrary.HColorPickerWidget();
+            this.hcolorpickerwidget1.Events = ((Gdk.EventMask)(256));
+            this.hcolorpickerwidget1.Name = "hcolorpickerwidget1";
+            this.vbox8.Add(this.hcolorpickerwidget1);
+            Gtk.Box.BoxChild w61 = ((Gtk.Box.BoxChild)(this.vbox8[this.hcolorpickerwidget1]));
+            w61.Position = 0;
+            w61.Expand = false;
+            w61.Fill = false;
+            this.hbox14.Add(this.vbox8);
+            Gtk.Box.BoxChild w62 = ((Gtk.Box.BoxChild)(this.hbox14[this.vbox8]));
+            w62.Position = 0;
+            w62.Expand = false;
+            w62.Fill = false;
+            this.notebook1.Add(this.hbox14);
+            Gtk.Notebook.NotebookChild w63 = ((Gtk.Notebook.NotebookChild)(this.notebook1[this.hbox14]));
+            w63.Position = 5;
             this.Add(this.notebook1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
-            this.DefaultWidth = 434;
-            this.DefaultHeight = 543;
+            this.DefaultWidth = 565;
+            this.DefaultHeight = 523;
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
             this.BtnTreeViewDemo.Clicked += new System.EventHandler(this.OnBtnTreeViewDemoClicked);
@@ -667,8 +678,6 @@ namespace test {
             this.BtnStartComboDemo.Clicked += new System.EventHandler(this.OnBtnStartComboDemoClicked);
             this.ComboTreeDemo.Clicked += new System.EventHandler(this.OnComboTreeDemoClicked);
             this.BtnApplyRegex.Clicked += new System.EventHandler(this.OnBtnApplyRegexClicked);
-            this.hsimplelist1.ItemCheck += new HollyLibrary.ListItemCheck(this.OnHsimplelist1ItemCheck);
-            this.hsimplelist1.DrawItem += new HollyLibrary.DrawItemEventHandler(this.OnHsimplelist1DrawItem);
         }
     }
 }

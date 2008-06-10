@@ -13,6 +13,8 @@ namespace test
 	public partial class MainWin : Gtk.Window
 	{
 		
+		System.Collections.Generic.List<Color> culori = new System.Collections.Generic.List<Color>();
+		
 		public MainWin() : 
 				base(Gtk.WindowType.Toplevel)
 		{
@@ -31,10 +33,9 @@ namespace test
 			RegExEntry.RegularExpression = "\\d{3}-\\d{2}-\\d{4}";
 			
 			//development tests:
+	
 			
-			hsimplelist1.ItemHeight = 25;
-			for( int i = 0; i < 100; i++ )
-				hsimplelist1.Items.Add( "checked item no." + i );
+		
 		}
 		
 
@@ -74,32 +75,9 @@ namespace test
 			RegExEntry.RegularExpression = TxtRegularExpresion.Text;
 		}
 
-		protected virtual void OnHsimplelist1ItemCheck (object sender, HollyLibrary.ListItemCheckEventArgs args)
-		{
-			Console.WriteLine("---");
-			foreach( object obj in hsimplelist1.CheckedItems )
-			{
-				Console.WriteLine( obj.ToString() );
-			}
-			
-			Console.WriteLine("---");
-		}
+	
 
-		protected virtual void OnHsimplelist1DrawItem (object sender, HollyLibrary.DrawItemEventArgs args)
-		{
-			Graphics g       = args.Graphics;
-			//get the item's text
-			String item_text = hsimplelist1.Items[ args.ItemIndex ].ToString();
-			//draw a small circle
-			Rectangle rect   = new Rectangle( args.CellArea.X , args.CellArea.Y, 20, 20 );
-			g.FillEllipse( new SolidBrush( Color.DarkBlue ), rect );
-			//draw the item's text
-			Font font        = new Font("Times New Roman",12F);
-			g.DrawString ( item_text, font, new SolidBrush(Color.Red), args.CellArea.X +30, args.CellArea.Y );
-			//dispose
-			g.Dispose();
-		}
-
+	
 	
 
 		

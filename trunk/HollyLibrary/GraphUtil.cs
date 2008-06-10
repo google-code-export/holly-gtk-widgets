@@ -13,6 +13,43 @@ namespace HollyLibrary
 	public class GraphUtil
 	{
 		
+		public static string Color2Hex(Color rgb)
+		{
+			string red = Convert.ToString(rgb.R, 16);
+			if ( red.Length < 2 ) red = "0" + red;
+			string green = Convert.ToString(rgb.G, 16);
+			if ( green.Length < 2 ) green = "0" + green;
+			string blue = Convert.ToString(rgb.B, 16);
+			if ( blue.Length < 2 ) blue = "0" + blue;
+
+			return red.ToUpper() + green.ToUpper() + blue.ToUpper();
+		}
+
+
+		public static Color Hex2Color(string hex_data)
+		{
+			if ( hex_data.Length != 6 )
+				return Color.Black;
+
+			string r_text, g_text, b_text;
+			int r, g, b;
+
+			r_text = hex_data.Substring(0, 2);
+			g_text = hex_data.Substring(2, 2);
+			b_text = hex_data.Substring(4, 2);
+
+			r = int.Parse(r_text, System.Globalization.NumberStyles.HexNumber);
+			g = int.Parse(g_text, System.Globalization.NumberStyles.HexNumber);
+			b = int.Parse(b_text, System.Globalization.NumberStyles.HexNumber);
+
+			return Color.FromArgb(r, g, b);
+		}
+		
+		public static Gdk.Color gdkColorFromWinForms( System.Drawing.Color color )
+		{
+			return new Gdk.Color( color.R, color.G, color.B);
+		}
+		
 		public static Gdk.Pixbuf pixbufFromStock( String stock_id, Gtk.IconSize size )
 		{
 			Gdk.Pixbuf ret  = null;
