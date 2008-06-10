@@ -108,7 +108,7 @@ _New widget:_ *HNumericEntry*
   # support for negative values
 
 _New dialog: _ * HColorPickerWidget * && * HColorPickerDialog *
-  # ~ an adobe like color picker nicer then what gtk has by default ~
+  # ~~ an adobe like color picker nicer then what gtk has by default ~~
 
 _New widget:_ *HComboCalculator*
   # a combobox with a calculator popup to do calculations
