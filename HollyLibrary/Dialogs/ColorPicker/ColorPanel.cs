@@ -32,7 +32,7 @@ namespace HollyLibrary
 
 		//	These variables keep track of how to fill in the content inside the box;
 		private eDrawStyle		m_eDrawStyle = eDrawStyle.Hue;
-		private AdobeColors.HSL	m_hsl;
+		private GraphUtil.HSL	m_hsl;
 		private Color			m_rgb;
 
 		#endregion
@@ -45,11 +45,11 @@ namespace HollyLibrary
 			InitializeComponent();
 
 			//	Initialize Colors
-			m_hsl   = new AdobeColors.HSL();
+			m_hsl   = new GraphUtil.HSL();
 			m_hsl.H = 1.0;
 			m_hsl.S = 1.0;
 			m_hsl.L = 1.0;
-			m_rgb   = AdobeColors.HSL_to_RGB(m_hsl);
+			m_rgb   = GraphUtil.HSL_to_RGB(m_hsl);
 			m_eDrawStyle = eDrawStyle.Hue;
 		}
 
@@ -204,7 +204,7 @@ namespace HollyLibrary
 		/// <summary>
 		/// The HSL color of the control, changing the HSL will automatically change the RGB color for the control.
 		/// </summary>
-		public AdobeColors.HSL HSL
+		public GraphUtil.HSL HSL
 		{
 			get
 			{
@@ -213,7 +213,7 @@ namespace HollyLibrary
 			set
 			{
 				m_hsl = value;
-				m_rgb = AdobeColors.HSL_to_RGB(m_hsl);
+				m_rgb = GraphUtil.HSL_to_RGB(m_hsl);
 
 				//	Redraw the control based on the new color.
 				Reset_Marker(this.GdkWindow, true);
@@ -234,7 +234,7 @@ namespace HollyLibrary
 			set
 			{
 				m_rgb = value;
-				m_hsl = AdobeColors.RGB_to_HSL(m_rgb);
+				m_hsl = GraphUtil.RGB_to_HSL(m_rgb);
 
 				//	Redraw the control based on the new color.
 				Reset_Marker(this.GdkWindow, true);
@@ -256,8 +256,8 @@ namespace HollyLibrary
 			Graphics g = Gtk.DotNet.Graphics.FromDrawable( win );
 			int start_x, start_y, end_x, end_y;
 			int red = 0; int green = 0; int blue = 0;
-			AdobeColors.HSL hsl_start = new AdobeColors.HSL();
-			AdobeColors.HSL hsl_end   = new AdobeColors.HSL();
+			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
+			GraphUtil.HSL hsl_end   = new GraphUtil.HSL();
 
 			//	Find the markers corners
 			start_x = m_iMarker_X - 5;
@@ -292,7 +292,7 @@ namespace HollyLibrary
 						hsl_start.L = 1.0 - (double)i/(this.Allocation.Height - 4);	//	Brightness (L) WILL change for each horizontal
 						hsl_end.L = hsl_start.L;							//	line drawn
 				
-						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(start_x + 1,i + 2, end_x - start_x + 1, 1), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 0, false); 
+						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(start_x + 1,i + 2, end_x - start_x + 1, 1), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 0, false); 
 						g.FillRectangle(br,new Rectangle(start_x + 2,i + 2, end_x - start_x + 1 , 1)); 
 					}
 					
@@ -315,7 +315,7 @@ namespace HollyLibrary
 						hsl_start.H = (double)i/(this.Allocation.Width - 4);			//	Hue (H) WILL change for each vertical
 						hsl_end.H = hsl_start.H;							//	line drawn
 				
-						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(i + 2,start_y + 1, 1, end_y - start_y + 2), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 90, false); 
+						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(i + 2,start_y + 1, 1, end_y - start_y + 2), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
 						g.FillRectangle(br,new Rectangle(i + 2, start_y + 2, 1, end_y - start_y + 1)); 
 					}
 					break;
@@ -337,7 +337,7 @@ namespace HollyLibrary
 						hsl_start.H = (double)i/(this.Allocation.Width - 4);			//	Hue (H) WILL change for each vertical
 						hsl_end.H = hsl_start.H;							//	line drawn
 				
-						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(i + 2,start_y + 1, 1, end_y - start_y + 2), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 90, false); 
+						LinearGradientBrush br = new LinearGradientBrush(new Rectangle(i + 2,start_y + 1, 1, end_y - start_y + 2), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
 						g.FillRectangle(br,new Rectangle(i + 2, start_y + 2, 1, end_y - start_y + 1)); 
 					}
 
@@ -437,7 +437,7 @@ namespace HollyLibrary
 			//Graphics g = Gtk.DotNet.Graphics.FromDrawable( win );
 
 			//Pen pen;
-			AdobeColors.HSL _hsl = GetColor(x,y);	//	The selected color determines the color of the marker drawn over
+			GraphUtil.HSL _hsl = GetColor(x,y);	//	The selected color determines the color of the marker drawn over
 			//	it (black or white)
 			Color color = Color.White;
 			if ( _hsl.L < (double)200/255 )
@@ -492,8 +492,8 @@ namespace HollyLibrary
 		{
 			Graphics g = Gtk.DotNet.Graphics.FromDrawable(win);
 
-			AdobeColors.HSL hsl_start = new AdobeColors.HSL();
-			AdobeColors.HSL hsl_end = new AdobeColors.HSL();
+			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
+			GraphUtil.HSL hsl_end = new GraphUtil.HSL();
 			hsl_start.H = m_hsl.H;
 			hsl_end.H = m_hsl.H;
 			hsl_start.S = 0.0;
@@ -504,7 +504,7 @@ namespace HollyLibrary
 				hsl_start.L = 1.0 - (double)i/(this.Allocation.Height - 4);	//	Calculate luminance at this line (Hue and Saturation are constant)
 				hsl_end.L = hsl_start.L;
 				
-				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, this.Allocation.Width - 4, 1), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 0, false); 
+				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, this.Allocation.Width - 4, 1), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 0, false); 
 				g.FillRectangle(br,new Rectangle(2,i + 2, this.Allocation.Width - 4, 1)); 
 			}
 			g.Dispose();
@@ -518,8 +518,8 @@ namespace HollyLibrary
 		{
 			Graphics g = Gtk.DotNet.Graphics.FromDrawable(win);
 
-			AdobeColors.HSL hsl_start = new AdobeColors.HSL();
-			AdobeColors.HSL hsl_end = new AdobeColors.HSL();
+			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
+			GraphUtil.HSL hsl_end = new GraphUtil.HSL();
 			hsl_start.S = m_hsl.S;
 			hsl_end.S = m_hsl.S;
 			hsl_start.L = 1.0;
@@ -531,7 +531,7 @@ namespace HollyLibrary
 				hsl_start.H = (double)i/(width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
 				hsl_end.H   = hsl_start.H;
 				
-				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 90, false); 
+				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
 				g.FillRectangle(br,new Rectangle(i + 2, 2, 1, this.Allocation.Height - 4)); 
 			}
 			g.Dispose();
@@ -545,8 +545,8 @@ namespace HollyLibrary
 		{
 			Graphics g = Gtk.DotNet.Graphics.FromDrawable(win);
 
-			AdobeColors.HSL hsl_start = new AdobeColors.HSL();
-			AdobeColors.HSL hsl_end = new AdobeColors.HSL();
+			GraphUtil.HSL hsl_start = new GraphUtil.HSL();
+			GraphUtil.HSL hsl_end = new GraphUtil.HSL();
 			hsl_start.L = m_hsl.L;
 			hsl_end.L = m_hsl.L;
 			hsl_start.S = 1.0;
@@ -557,7 +557,7 @@ namespace HollyLibrary
 				hsl_start.H = (double)i/(this.Allocation.Width - 4);	//	Calculate Hue at this line (Saturation and Luminance are constant)
 				hsl_end.H = hsl_start.H;
 				
-				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), AdobeColors.HSL_to_RGB(hsl_start), AdobeColors.HSL_to_RGB(hsl_end), 90, false); 
+				LinearGradientBrush br = new LinearGradientBrush(new Rectangle(2,2, 1, this.Allocation.Height - 4), GraphUtil.HSL_to_RGB(hsl_start), GraphUtil.HSL_to_RGB(hsl_end), 90, false); 
 				g.FillRectangle(br,new Rectangle(i + 2, 2, 1, this.Allocation.Height - 4)); 
 			}
 			g.Dispose();
@@ -711,35 +711,35 @@ namespace HollyLibrary
 				case eDrawStyle.Hue :
 					m_hsl.S = (double)m_iMarker_X/(this.Allocation.Width - 4);
 					m_hsl.L = 1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4);
-					m_rgb = AdobeColors.HSL_to_RGB(m_hsl);
+					m_rgb = GraphUtil.HSL_to_RGB(m_hsl);
 					break;
 				case eDrawStyle.Saturation :
 					m_hsl.H = (double)m_iMarker_X/(this.Allocation.Width - 4);
 					m_hsl.L = 1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4);
-					m_rgb = AdobeColors.HSL_to_RGB(m_hsl);
+					m_rgb = GraphUtil.HSL_to_RGB(m_hsl);
 					break;
 				case eDrawStyle.Brightness :
 					m_hsl.H = (double)m_iMarker_X/(this.Allocation.Width - 4);
 					m_hsl.S = 1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4);
-					m_rgb = AdobeColors.HSL_to_RGB(m_hsl);
+					m_rgb = GraphUtil.HSL_to_RGB(m_hsl);
 					break;
 				case eDrawStyle.Red :
 					blue = Round(255 * (double)m_iMarker_X/(this.Allocation.Width - 4));
 					green = Round(255 * (1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4)));
 					m_rgb = Color.FromArgb(m_rgb.R, green, blue);
-					m_hsl = AdobeColors.RGB_to_HSL(m_rgb);
+					m_hsl = GraphUtil.RGB_to_HSL(m_rgb);
 					break;
 				case eDrawStyle.Green :
 					blue = Round(255 * (double)m_iMarker_X/(this.Allocation.Width - 4));
 					red = Round(255 * (1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4)));
 					m_rgb = Color.FromArgb(red, m_rgb.G, blue);
-					m_hsl = AdobeColors.RGB_to_HSL(m_rgb);
+					m_hsl = GraphUtil.RGB_to_HSL(m_rgb);
 					break;
 				case eDrawStyle.Blue :
 					red = Round(255 * (double)m_iMarker_X/(this.Allocation.Width - 4));
 					green = Round(255 * (1.0 - (double)m_iMarker_Y/(this.Allocation.Height - 4)));
 					m_rgb = Color.FromArgb(red, green, m_rgb.B);
-					m_hsl = AdobeColors.RGB_to_HSL(m_rgb);
+					m_hsl = GraphUtil.RGB_to_HSL(m_rgb);
 					break;
 			}
 		}
@@ -770,10 +770,10 @@ namespace HollyLibrary
 		/// <param name="x"></param>
 		/// <param name="y"></param>
 		/// <returns></returns>
-		private AdobeColors.HSL GetColor(int x, int y)
+		private GraphUtil.HSL GetColor(int x, int y)
 		{
 
-			AdobeColors.HSL _hsl = new AdobeColors.HSL();
+			GraphUtil.HSL _hsl = new GraphUtil.HSL();
 
 			switch (m_eDrawStyle)
 			{
@@ -793,13 +793,13 @@ namespace HollyLibrary
 					_hsl.S = 1.0 - (double)y/(this.Allocation.Height - 4);
 					break;
 				case eDrawStyle.Red :
-					_hsl = AdobeColors.RGB_to_HSL(Color.FromArgb(m_rgb.R, Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), Round(255 * (double)x/(this.Allocation.Width - 4))));
+					_hsl = GraphUtil.RGB_to_HSL(Color.FromArgb(m_rgb.R, Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), Round(255 * (double)x/(this.Allocation.Width - 4))));
 					break;
 				case eDrawStyle.Green :
-					_hsl = AdobeColors.RGB_to_HSL(Color.FromArgb(Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), m_rgb.G, Round(255 * (double)x/(this.Allocation.Width - 4))));
+					_hsl = GraphUtil.RGB_to_HSL(Color.FromArgb(Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), m_rgb.G, Round(255 * (double)x/(this.Allocation.Width - 4))));
 					break;
 				case eDrawStyle.Blue :
-					_hsl = AdobeColors.RGB_to_HSL(Color.FromArgb(Round(255 * (double)x/(this.Allocation.Width - 4)), Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), m_rgb.B));
+					_hsl = GraphUtil.RGB_to_HSL(Color.FromArgb(Round(255 * (double)x/(this.Allocation.Width - 4)), Round(255 * (1.0 - (double)y/(this.Allocation.Height - 4))), m_rgb.B));
 					break;
 			}
 

@@ -148,7 +148,11 @@
     </signals>
   </object>
   <object type="HollyLibrary.HColorPickerWidget" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
-    <itemgroups />
+    <itemgroups>
+      <itemgroup label="HColorPickerWidget Properties">
+        <property name="ColorHexa" />
+      </itemgroup>
+    </itemgroups>
     <signals />
   </object>
 </objects>

@@ -31,27 +31,28 @@ namespace HollyLibrary
 
 		protected virtual void OnColorWellScroll (object sender, System.EventArgs e)
 		{
-			UpdatePreview();
+			UpdatePreview();	
+		}
+		
+		private void UpdatePreview()
+		{
 			//hsb
-			TxtH.Value = Math.Round(ColorWell.HSL.H * 360);
-			TxtS.Value = Math.Round(ColorWell.HSL.S* 100);
-			TxtB.Value = Math.Round(ColorWell.HSL.L* 100);
+			TxtH.Value     = Math.Round(ColorWell.HSL.H * 360);
+			TxtS.Value     = Math.Round(ColorWell.HSL.S* 100);
+			TxtB.Value     = Math.Round(ColorWell.HSL.L* 100);
 			//rgb
-			TxtRed.Value = ColorWell.RGB.R;
-			TxtBlue.Value = ColorWell.RGB.B;
+			TxtRed.Value   = ColorWell.RGB.R;
+			TxtBlue.Value  = ColorWell.RGB.B;
 			TxtGreen.Value = ColorWell.RGB.G;
 			//cmyk
-			AdobeColors.CMYK cmyk = AdobeColors.RGB_to_CMYK( ColorWell.RGB );
+			GraphUtil.CMYK cmyk = GraphUtil.RGB_to_CMYK( ColorWell.RGB );
 			TxtC.Value = Math.Round(cmyk.C * 100);
 			TxtM.Value = Math.Round(cmyk.M * 100);
 			TxtY.Value = Math.Round(cmyk.Y * 100);
 			TxtK.Value = Math.Round(cmyk.K * 100);
 			//hex
 			TxtHexa.Text = GraphUtil.Color2Hex( ColorWell.RGB );
-		}
-		
-		private void UpdatePreview()
-		{
+			
 			Preview.ModifyBg( Preview.State, GraphUtil.gdkColorFromWinForms( ColorWell.RGB ) );
 		}
 		
@@ -62,9 +63,8 @@ namespace HollyLibrary
 				ColorWell.DrawStyle = style;
 				Slider.DrawStyle    = style;
 			}
-			catch(Exception ex)
+			catch
 			{
-				Console.WriteLine( ex.Message );
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace HollyLibrary
 	
 		private void UpdateCMYK()
 		{
-			ColorRGB = AdobeColors.CMYK_to_RGB( ColorCMYK );
+			ColorRGB = GraphUtil.CMYK_to_RGB( ColorCMYK );
 			UpdatePreview();
 		}
 		
@@ -162,28 +162,28 @@ namespace HollyLibrary
 
 		protected virtual void OnTxtCValueChanged (object sender, System.EventArgs e)
 		{
-			AdobeColors.CMYK cmyk = AdobeColors.RGB_to_CMYK( ColorWell.RGB );
+			GraphUtil.CMYK cmyk = GraphUtil.RGB_to_CMYK( ColorWell.RGB );
 			int val = (int)Math.Round(cmyk.C * 100 );
 			if( val != TxtC.Value ) UpdateCMYK();
 		}
 
 		protected virtual void OnTxtMValueChanged (object sender, System.EventArgs e)
 		{
-			AdobeColors.CMYK cmyk = AdobeColors.RGB_to_CMYK( ColorWell.RGB );
+			GraphUtil.CMYK cmyk = GraphUtil.RGB_to_CMYK( ColorWell.RGB );
 			int val = (int)Math.Round(cmyk.M * 100 );
 			if( val != TxtM.Value ) UpdateCMYK();
 		}
 
 		protected virtual void OnTxtYValueChanged (object sender, System.EventArgs e)
 		{
-			AdobeColors.CMYK cmyk = AdobeColors.RGB_to_CMYK( ColorWell.RGB );
+			GraphUtil.CMYK cmyk = GraphUtil.RGB_to_CMYK( ColorWell.RGB );
 			int val = (int)Math.Round(cmyk.Y * 100 );
 			if( val != TxtY.Value ) UpdateCMYK();
 		}
 
 		protected virtual void OnTxtKValueChanged (object sender, System.EventArgs e)
 		{
-			AdobeColors.CMYK cmyk = AdobeColors.RGB_to_CMYK( ColorWell.RGB );
+			GraphUtil.CMYK cmyk = GraphUtil.RGB_to_CMYK( ColorWell.RGB );
 			int val = (int)Math.Round(cmyk.K * 100 );
 			if( val != TxtK.Value ) UpdateCMYK();
 		}
@@ -204,11 +204,23 @@ namespace HollyLibrary
 			}
 		}
 		
-		public AdobeColors.CMYK ColorCMYK
+		public String ColorHexa
 		{
 			get
 			{
-				AdobeColors.CMYK ret = new AdobeColors.CMYK();
+				return TxtHexa.Text;
+			}
+			set
+			{
+				TxtHexa.Text = value;
+			}
+		}
+		
+		public GraphUtil.CMYK ColorCMYK
+		{
+			get
+			{
+				GraphUtil.CMYK ret = new GraphUtil.CMYK();
 				ret.C = (double)TxtC.Value  / 100 ;
 				ret.M = (double)TxtM.Value  / 100 ;
 				ret.Y = (double)TxtY.Value  / 100 ;
@@ -256,11 +268,11 @@ namespace HollyLibrary
 			}
 		}
 		
-		public AdobeColors.HSL ColorHSL
+		public GraphUtil.HSL ColorHSL
 		{
 			get
 			{
-				AdobeColors.HSL hsl = new AdobeColors.HSL();
+				GraphUtil.HSL hsl = new GraphUtil.HSL();
 				hsl.H = (double)TxtH.Value  / 360 ;
 				hsl.S = (double)TxtS.Value  / 100;
 				hsl.L = (double)TxtB.Value  / 100;
