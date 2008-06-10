@@ -89,10 +89,10 @@ namespace HollyLibrary
 
 		protected virtual void OnBtnMoreColorsClicked (object sender, System.EventArgs e)
 		{
-			Gtk.ColorSelectionDialog dlg = new Gtk.ColorSelectionDialog ("More colors");
+			HColorPickerDialog dlg = new HColorPickerDialog();
 			if (dlg.Run () == (int) Gtk.ResponseType.Ok)
 			{
-				parent.Color = dlg.ColorSelection.CurrentColor;
+				parent.Color = dlg.ColorGdk;
 			}
 			dlg.Hide();
 			Close();

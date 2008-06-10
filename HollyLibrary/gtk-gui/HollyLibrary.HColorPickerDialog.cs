@@ -25,6 +25,8 @@ namespace HollyLibrary {
             this.Name = "HollyLibrary.HColorPickerDialog";
             this.Title = Mono.Unix.Catalog.GetString("Pick a color");
             this.WindowPosition = ((Gtk.WindowPosition)(4));
+            this.Resizable = false;
+            this.AllowGrow = false;
             this.HasSeparator = false;
             // Internal child HollyLibrary.HColorPickerDialog.VBox
             Gtk.VBox w1 = this.VBox;
