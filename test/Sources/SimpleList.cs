@@ -19,6 +19,8 @@ namespace test
 		//checkboxes
 		CheckButton ChkOwnerDrawned   = new CheckButton("List is ownerdrawed");
 		CheckButton ChkIsCheckBoxList = new CheckButton("Checkbox list");
+		CheckButton ChkIsEditable     = new CheckButton("Editable items");
+		CheckButton ChkDragAndDrop    = new CheckButton("Drag and drop enable");
 		
 		public SimpleList() : base( WindowType.Toplevel )
 		{
@@ -35,6 +37,8 @@ namespace test
 			//checkbox events
 			ChkOwnerDrawned.Toggled   += OnOwnerDrawnedChecked;
 			ChkIsCheckBoxList.Toggled += OnIsCheckBoxListChecked;
+			ChkIsEditable.Toggled     += OnIsEditableChecked;
+			ChkDragAndDrop.Toggled    += OnDragAndDrop;
 			//ownerdrawned event
 			list.DrawItem           += OnItemDraw;
 		}
@@ -77,6 +81,16 @@ namespace test
 			list.IsCheckBoxList = ChkIsCheckBoxList.Active;
 		}
 		
+		private void OnIsEditableChecked( object sender, EventArgs args )
+		{
+			list.IsEditable       = ChkIsEditable.Active;
+		}
+		
+		private void OnDragAndDrop( object sender, EventArgs args )
+		{
+			list.IsDragAndDropEnable = ChkDragAndDrop.Active;
+		}
+		
 		private void OnItemDraw( object sender, DrawItemEventArgs args )
 		{
 			String text      = list.Items[ args.ItemIndex ].ToString();
@@ -113,7 +127,10 @@ namespace test
 			hbox = new HBox();
 			hbox.PackStart( ChkOwnerDrawned  , true, true, 0 );
 			hbox.PackStart( ChkIsCheckBoxList, true, true, 0 );
+			hbox.PackStart( ChkIsEditable    , true, true, 0 );
+			hbox.PackStart( ChkDragAndDrop   , true, true, 0 );
 			//
+			
 			layout.PackStart( hbox, false, true, 0 );
 			//add layout
 			this.Add( layout );

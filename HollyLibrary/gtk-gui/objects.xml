@@ -39,11 +39,13 @@
   <object type="HollyLibrary.HSimpleList" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
     <itemgroups>
       <itemgroup label="HSimpleList Properties">
-        <property name="ItemHeight" />
         <property name="SelectedIndex" />
+        <property name="ItemHeight" />
         <property name="Text" />
         <property name="OwnerDraw" />
         <property name="IsCheckBoxList" />
+        <property name="IsEditable" />
+        <property name="IsDragAndDropEnable" />
       </itemgroup>
     </itemgroups>
     <signals>

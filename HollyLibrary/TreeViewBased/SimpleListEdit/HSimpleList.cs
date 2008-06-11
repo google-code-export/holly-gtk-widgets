@@ -32,6 +32,9 @@ namespace HollyLibrary
 		//new 2.0 event
 		public event ListItemCheck           ItemCheck;
 		
+		//new 2.0 stuff: drag buffer
+		int[] drag_buffer = null;
+		
 		//store
 		Gtk.ListStore store = new Gtk.ListStore( typeof(bool), typeof( string ) );
 		
@@ -41,25 +44,84 @@ namespace HollyLibrary
 		public HSimpleList()
 		{
 			this.HeadersVisible         = false;
-			this.Reorderable            = true;
 			
 			//add columns
 			constructColumns();
 			//set model
 			this.Model                  = getInnerListStore();
+			this.DragBegin             += OnDragBegin;
+			this.DragDataReceived      += OnDragDataReceived;
 			
 			//inner objectcollection events
-			this.Items.OnItemAdded   += new ListAddEventHandler   ( this.on_item_added   );
-			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed );
-			this.items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated );
-			
+			this.Items.OnItemAdded   += new ListAddEventHandler   ( this.on_item_added    );
+			this.items.OnItemRemoved += new ListRemoveEventHandler( this.on_item_removed  );
+			this.Items.OnItemUpdated += new ListUpdateEventHandler( this.on_item_updated  );
+			this.Items.OnItemInserted+= new ListInsertEventHandler( this.on_item_inserted );
 		}
+		
+		public void constructColumns ()
+		{
+			TreeViewColumn column        = new Gtk.TreeViewColumn ();
+			column.Clickable             = true;
+			
+			
+			//create the text_cell
+			text_cell          = new CellRendererCustom( this );
+			text_cell.Edited  += OnCellEdited;
+			//
+			chk_cell.Visible             = false;
+			chk_cell.Toggled            += OnCelltoggled;
+			//add cells to column
+			column.PackStart( chk_cell , false );
+			column.PackStart( text_cell, true  );
+			//set data functions
+			column.SetCellDataFunc( text_cell, new Gtk.TreeCellDataFunc ( RenderListItem ) );
+			column.SetCellDataFunc( chk_cell , new TreeCellDataFunc     ( OnChkDataFunc  ) );
+			//add the column
+			AppendColumn( column );
+		}
+		
+		private void OnDragBegin( object sender, DragBeginArgs args )	
+		{
+			drag_buffer = getSelectedIndexes();
+		}
+		
+		private void OnDragDataReceived( object sender, DragDataReceivedArgs args )
+		{
+			if( args.X > 0 && args.Y > 0 )
+			{
+				TreePath path;
+				this.GetPathAtPos( args.X, args.Y, out path );
+				
+				if( drag_buffer != null )
+				{
+					//update indexes
+					int insert_point = int.Parse( path.ToString() ) - 1;
+					if( insert_point >= 0 )
+					{
+						foreach( int index in drag_buffer )
+						{
+							object temp_value = Items[ index ];
+							//removes the old item
+							Items.RemoveAt( index );
+							//add it to the new location
+							Items.InsertAt( insert_point, temp_value );
+							insert_point++;
+						}
+					}
+				}
+			}
+		}
+	
+	
 		
 		internal virtual void RenderListItem (Gtk.TreeViewColumn column, Gtk.CellRenderer cell, Gtk.TreeModel model, Gtk.TreeIter iter)
 		{
 			CellRendererCustom mycell   = (CellRendererCustom) cell;
 			mycell.ItemIndex            = int.Parse( model.GetPath(iter).ToString() );
+			mycell.Text                 = this.Items[ mycell.ItemIndex ].ToString();
 		}
+		
 
 		//pot fi overrideuite pentru a crea o lista cat mai customizata
 		public virtual void OnMeasureItem ( int ItemIndex, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
@@ -127,6 +189,13 @@ namespace HollyLibrary
 		{
 			//adauga in store
 			store.AppendValues( false, args.Value );
+			this.QueueDraw();
+		}
+		
+		private void on_item_inserted( object Sender, ListInsertEventArgs args )
+		{
+			//adauga in store
+			store.InsertWithValues( args.Index, false, args.Value );
 			this.QueueDraw();
 		}
 		
@@ -218,23 +287,31 @@ namespace HollyLibrary
 			return store;
 		}
 
-		public void constructColumns ()
+		
+		
+		private void OnCellEdited( object sender, EditedArgs args )
 		{
-			TreeViewColumn column        = new Gtk.TreeViewColumn ();
-			//create the text_cell
-			text_cell = new CellRendererCustom( this );
-			//
-			chk_cell.Visible             = false;
-			chk_cell.Toggled            += OnCelltoggled;
-			//add cells to column
-			column.PackStart( chk_cell , false );
-			column.PackStart( text_cell, true  );
-			//set data functions
-			column.SetCellDataFunc( text_cell, new Gtk.TreeCellDataFunc ( RenderListItem ) );
-			column.SetCellDataFunc( chk_cell , new TreeCellDataFunc     ( OnChkDataFunc  ) );
-			//add the column
-			AppendColumn( column );
+			int item_index = int.Parse( args.Path );
+			
+			Type type = Items[ item_index ].GetType();
+			
+			//TODO: make it support more types
+			if     ( type == typeof( string ) )
+				Items[ item_index ] =   args.NewText;
+			else if( type == typeof( double ) )
+			{
+				double val = 0;
+				double.TryParse( args.NewText, out val );
+				Items[ item_index ] =  val;
+			}
+			else if( type == typeof( int    ) )
+			{
+				int val = 0;
+				int.TryParse( args.NewText, out val );
+				Items[ item_index ] =  val;
+			}
 		}
+		
 		
 		//checkbox cell function
 		private void OnChkDataFunc(
@@ -435,6 +512,38 @@ namespace HollyLibrary
 			set 
 			{
 				this.Selection.Mode = value;
+			}
+		}
+		
+		/// <value>
+		/// if true, list items are editable
+		/// new in 2.0
+		/// </value>
+		public bool IsEditable
+		{
+			get
+			{
+				return text_cell.Editable;
+			}
+			set
+			{
+				text_cell.Editable = value;
+			}
+		}
+		
+		/// <value>
+		/// if true, allow drag and drop reordering in the list items
+		/// new 2.0
+		/// </value>
+		public bool IsDragAndDropEnable
+		{
+			get
+			{
+				return this.Reorderable;
+			}
+			set
+			{
+				this.Reorderable = value;
 			}
 		}
 		
