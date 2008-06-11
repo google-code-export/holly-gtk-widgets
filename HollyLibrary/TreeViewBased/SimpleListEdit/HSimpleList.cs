@@ -102,10 +102,16 @@ namespace HollyLibrary
 						foreach( int index in drag_buffer )
 						{
 							object temp_value = Items[ index ];
+							bool was_checked  = ( checked_items.IndexOf( index ) != -1 );
 							//removes the old item
 							Items.RemoveAt( index );
 							//add it to the new location
 							Items.InsertAt( insert_point, temp_value );
+							if( was_checked ) 
+							{
+								checked_items.Remove( index        );
+								checked_items.Add   ( insert_point );
+							}
 							insert_point++;
 						}
 					}
@@ -196,6 +202,7 @@ namespace HollyLibrary
 		{
 			//adauga in store
 			store.InsertWithValues( args.Index, false, args.Value );
+			
 			this.QueueDraw();
 		}
 		
@@ -286,8 +293,6 @@ namespace HollyLibrary
 		{
 			return store;
 		}
-
-		
 		
 		private void OnCellEdited( object sender, EditedArgs args )
 		{
@@ -344,6 +349,11 @@ namespace HollyLibrary
 					ItemCheck( this, new ListItemCheckEventArgs( item_index, new_value ) ); 
 			}
 
+		}
+		
+		public bool IsItemChecked( int index )
+		{
+			return (checked_items.IndexOf( index ) != -1);
 		}
 		
 		public void CheckItemAt( int index )
