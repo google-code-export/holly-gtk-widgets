@@ -64,6 +64,34 @@ namespace HollyLibrary
 		}
 	}
 	
+	public class ListInsertEventArgs : EventArgs
+	{
+		private object val;
+		private int index;
+		
+		public object Value 
+		{
+			get 
+			{
+				return val;
+			}
+		}
+
+		public int Index 
+		{
+			get 
+			{
+				return index;
+			}
+		}
+		
+		public ListInsertEventArgs( int index, object val )
+		{
+			this.index = index;
+			this.val   =  val;
+		}
+	}
+	
 	public class ListAddEventArgs : EventArgs
 	{
 		private object val;
@@ -102,6 +130,7 @@ namespace HollyLibrary
 	
 	public delegate void ListRemoveEventHandler ( object sender, ListRemoveEventArgs args  );
 	public delegate void ListAddEventHandler    ( object sender, ListAddEventArgs args     );
+	public delegate void ListInsertEventHandler ( object sender, ListInsertEventArgs args  );
 	public delegate void ListUpdateEventHandler ( object sender, ListUpdateEventArgs args  );
 	//
 	public delegate void MeasureItemEventHandler( object sender, MeasureItemEventArgs args );

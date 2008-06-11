@@ -16,6 +16,7 @@ namespace HollyLibrary
 		public event ListAddEventHandler      OnItemAdded;
 		public event ListRemoveEventHandler OnItemRemoved;
 		public event ListUpdateEventHandler OnItemUpdated;
+		public event ListInsertEventHandler OnItemInserted;
 		
 
 		public void AddRange( object[] objects )
@@ -56,6 +57,13 @@ namespace HollyLibrary
 			this.InnerList.Sort();
 		}
 		
+		public void InsertAt( int index, object val )
+		{
+			this.InnerList.Insert( index, val );
+			if( OnItemInserted != null ) 
+				OnItemInserted( this, new ListInsertEventArgs( index, val ) );
+		}
+
 		internal void Sort( IComparer comparer )
 		{
 			this.InnerList.Sort(comparer);

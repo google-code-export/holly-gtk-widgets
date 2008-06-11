@@ -9,7 +9,7 @@ using Gdk;
 namespace HollyLibrary
 {
 
-	public class CellRendererCustom : CellRenderer
+	public class CellRendererCustom : CellRendererText
 	{
 		ICustomCellTreeView Father;
 		private int itemIndex = -1;
@@ -17,6 +17,7 @@ namespace HollyLibrary
 		public CellRendererCustom( ICustomCellTreeView father ) 
 		{
 			this.Father = father;
+			this.Mode   = CellRendererMode.Editable;
 		}
 		
 		public override void GetSize (Widget widget, ref Rectangle cell_area, out int x_offset, out int y_offset, out int width, out int height)
@@ -33,7 +34,7 @@ namespace HollyLibrary
 		{	
 			Father.OnDrawItem(ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
 		}
-
+		
 		public int ItemIndex 
 		{
 			get 
