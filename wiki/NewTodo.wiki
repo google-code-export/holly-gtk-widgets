@@ -11,15 +11,16 @@
   * ~~make drag and drop work~~ ~~some testing to the drag and drop is still needed~~
   * ~~make IsEditable property~~
   * ~~update changes on wiki and write code sample~~
-  * ~~no need to add icon support, because I have the ownerdrawn property.
-See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
+  * ~~no need to add icon support, because I have the ownerdrawn property.~~
+  * ~~See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
 
 
 
 * HTreeView *  new features:
   * make sure that drag and drop is working
-  * ~replace text cell renderer with custom renderer and implement ItemDraw and MeasureItem~
+  * ~~replace text cell renderer with custom renderer and implement ItemDraw and MeasureItem~~
   * see how to simplify the contextmenu / item or something ( see [http://www.telerik.com/products/winforms/controls/treeview/overview.aspx here] )
+  * update wiki
 
 
 _New widget:_ *HNumericEntry*
