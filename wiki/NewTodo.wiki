@@ -17,7 +17,7 @@
 
 
 * HTreeView *  new features:
-  * make sure that drag and drop is working
+  * ~~make sure that drag and drop is working~~
   * ~~replace text cell renderer with custom renderer and implement ItemDraw and MeasureItem~~
   * see how to simplify the contextmenu / item or something ( see [http://www.telerik.com/products/winforms/controls/treeview/overview.aspx here] )
   * update wiki
