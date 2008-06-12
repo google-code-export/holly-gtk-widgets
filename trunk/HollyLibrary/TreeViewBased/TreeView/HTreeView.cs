@@ -36,6 +36,7 @@ namespace HollyLibrary
 		//
 		public event DrawItemEventHandler    DrawItem;
 		public event MeasureItemEventHandler MeasureItem;
+		public event NodeEventHandler        NodeRightClick;
 		
 		public HTreeView()
 		{
@@ -81,6 +82,28 @@ namespace HollyLibrary
 			Nodes.NodeUpdated += OnNodeUpdated;
 			//
 			
+		}
+		
+		protected override bool OnButtonPressEvent (Gdk.EventButton evnt)
+		{
+			if( evnt.Button == 3 )
+			{
+				//get path at current mouse position
+				TreePath path;
+				this.GetPathAtPos( (int)evnt.X, (int)evnt.Y , out path );
+				//get iter from path
+				TreeIter iter;
+				store.GetIter( out iter, path );
+				if( NodeRightClick != null)
+				{
+					//get node from iter
+					HTreeNode node = getNodeFromIter( iter );
+					//raise event
+					NodeRightClick( this, new NodeEventArgs( node ) );
+				}
+				
+			}
+			return base.OnButtonPressEvent (evnt);
 		}
 		
 		private void OnTextEdited( object sender, EditedArgs args )
