@@ -39,10 +39,12 @@ namespace HollyLibrary {
             this.TvFonts.CanFocus = true;
             this.TvFonts.Name = "TvFonts";
             this.TvFonts.HeadersClickable = true;
-            this.TvFonts.ItemHeight = 0;
             this.TvFonts.SelectedIndex = 0;
+            this.TvFonts.ItemHeight = 0;
             this.TvFonts.OwnerDraw = true;
             this.TvFonts.IsCheckBoxList = false;
+            this.TvFonts.IsEditable = false;
+            this.TvFonts.IsDragAndDropEnable = false;
             this.GtkScrolledWindow.Add(this.TvFonts);
             this.vbox1.Add(this.GtkScrolledWindow);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));

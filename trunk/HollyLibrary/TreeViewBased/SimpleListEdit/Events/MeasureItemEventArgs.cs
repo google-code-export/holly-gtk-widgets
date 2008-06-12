@@ -12,6 +12,7 @@ namespace HollyLibrary
 	{
 		private int index;
 		int itemLeft, itemTop, itemHeight, itemWidth;
+		private Gtk.TreeIter iter;
 		
 		public int Index 
 		{
@@ -56,14 +57,27 @@ namespace HollyLibrary
 				itemWidth = value;
 			}
 		}
+
+		public Gtk.TreeIter Iter 
+		{
+			get 
+			{
+				return iter;
+			}
+			internal set 
+			{
+				iter = value;
+			}
+		}
 		
-		public MeasureItemEventArgs( int index, Gdk.Rectangle rect )
+		public MeasureItemEventArgs( int index, Gtk.TreeIter iter, Gdk.Rectangle rect )
 		{
 			this.index = index;
 			this.ItemHeight = rect.Height;
 			this.ItemWidth  = rect.Width;
 			this.ItemLeft   = rect.X;
 			this.ItemTop    = rect.Y;
+			this.iter       = iter;
 		}
 	}
 	

@@ -92,9 +92,12 @@
   <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
     <itemgroups>
       <itemgroup label="HTreeView Properties">
+        <property name="OwnerDraw" />
+        <property name="ItemHeight" />
         <property name="NodeIconVisible" />
         <property name="IsCheckBoxTree" />
         <property name="Editable" />
+        <property name="IsDragAndDropEnable" />
       </itemgroup>
     </itemgroups>
     <signals>
@@ -104,6 +107,8 @@
         <signal name="BeforeNodeCollapse" />
         <signal name="BeforeNodeExpand" />
         <signal name="NodeEdited" />
+        <signal name="DrawItem" />
+        <signal name="MeasureItem" />
       </itemgroup>
     </signals>
   </object>

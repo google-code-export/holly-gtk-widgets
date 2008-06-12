@@ -1,14 +1,40 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/Dialogs/ColorPicker/ColorPanel.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="test/Sources/TreeView.cs" ctype="Workbench">
     <Files>
-      <File FileName="HollyLibrary/Dialogs/ColorPicker/ColorPanel.cs" Line="45" Column="20" />
-      <File FileName="HollyLibrary/Dialogs/ColorPicker/VerticalColorSlider.cs" Line="14" Column="10" />
-      <File FileName="HollyLibrary/Dialogs/ColorPicker/HColorPickerWidget.cs" Line="82" Column="3" />
-      <File FileName="HollyLibrary/CairoUtil.cs" Line="29" Column="51" />
+      <File FileName="Welcome" />
+      <File FileName="HollyLibrary/TreeViewBased/IBaseListWidget.cs" Line="1" Column="1" />
+      <File FileName="HollyLibrary/TreeViewBased/ICustomCellTreeView.cs" Line="19" Column="53" />
+      <File FileName="HollyLibrary/TreeViewBased/CellRendererCustom.cs" Line="36" Column="34" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="151" Column="1" />
+      <File FileName="test/Sources/SimpleList.cs" Line="19" Column="10" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/ObjectCollection.cs" Line="64" Column="5" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/Events/ListEventHandlers.cs" Line="88" Column="29" />
+      <File FileName="HollyLibrary/Combos/DateEdit/DateEditDialog.cs" Line="1" Column="1" />
+      <File FileName="HollyLibrary/Combos/DateEdit/AnalogClock.cs" Line="87" Column="3" />
+      <File FileName="HollyLibrary/Combos/ComboFolder/FolderChooserDialog.cs" Line="22" Column="73" />
+      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="296" Column="29" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/Events/MeasureItemEventArgs.cs" Line="67" Column="13" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/Events/DrawItemEventArgs.cs" Line="88" Column="27" />
+      <File FileName="test/MainWin.cs" Line="1" Column="1" />
+      <File FileName="test/Sources/TreeView.cs" Line="12" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="HollyLibrary" expanded="True">
+            <Node name="TreeViewBased" expanded="True">
+              <Node name="SimpleListEdit" expanded="True">
+                <Node name="Events" expanded="True" />
+              </Node>
+              <Node name="TreeView" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="test" expanded="True">
+            <Node name="Sources" expanded="True">
+              <Node name="TreeView.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" />

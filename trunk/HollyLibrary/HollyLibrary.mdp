@@ -77,7 +77,6 @@
     <File name="TreeViewBased/IBaseListWidget.cs" subtype="Code" buildaction="Compile" />
     <File name="Dialogs" subtype="Directory" buildaction="Compile" />
     <File name="Dialogs/ColorPicker" subtype="Directory" buildaction="Compile" />
-    <File name="color_picker_bar.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="Dialogs/ColorPicker/VerticalColorSlider.cs" subtype="Code" buildaction="Compile" />
     <File name="Dialogs/ColorPicker/ColorPanel.cs" subtype="Code" buildaction="Compile" />
     <File name="Dialogs/ColorPicker/HColorPickerWidget.cs" subtype="Code" buildaction="Compile" />

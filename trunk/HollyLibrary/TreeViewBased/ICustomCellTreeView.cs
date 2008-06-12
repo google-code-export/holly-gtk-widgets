@@ -13,9 +13,9 @@ namespace HollyLibrary
 	{
 		
 		//on measure item 
-		void OnMeasureItem ( int ItemIndex, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result );
+		void OnMeasureItem ( int ItemIndex, Gtk.TreeIter iter, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result );
 		
 		//on draw item 
-		void OnDrawItem ( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags);
+		void OnDrawItem ( int ItemIndex, Gtk.TreeIter iter, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags);
 	}
 }

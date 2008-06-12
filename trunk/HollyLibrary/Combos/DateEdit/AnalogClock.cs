@@ -83,14 +83,7 @@ namespace HollyLibrary
 			e.FillPreserve();
 			e.Stroke();
 		}
-		
-		private void DrawCenterCircle( Cairo.PointD center, double radius, int width, Cairo.Color color, Cairo.Context e )
-		{
-			e.Arc( center.X, center.Y, radius, 0, 360 );
-			e.LineWidth = width;
-			e.Color     = color;
-			e.Stroke();
-		}
+	
 		
 		private void DrawLine(double fThickness, float fLength, Cairo.Color color,
 		                      float fRadians, Cairo.Context e)
@@ -112,31 +105,15 @@ namespace HollyLibrary
 		{
 			base.OnExposeEvent (evnt);
 			Cairo.Context e = CairoHelper.Create( evnt.Window);
-			//draw background
-			e.MoveTo(0,0);
-			e.LineTo( this.Allocation.Width, 0 );
-			e.LineTo( this.Allocation.Width, this.Allocation.Height );
-			e.LineTo( 0, this.Allocation.Height );
-			e.LineTo( 0, 0);
-			e.ClosePath();
-			e.Color = CairoUtil.ColorFromHexa("#FFFFFF");
-			e.FillPreserve();
-			e.Color = secColor;
-			e.Stroke();
+			
 			//
 			DateTime dateTime = this.datetime;
 			float fRadHr      = (dateTime.Hour%12+dateTime.Minute/60F) *30*PI/180;
 			float fRadMin     = (dateTime.Minute)*6*PI / 180;
 			float fRadSec     = (dateTime.Second)*6*PI / 180;
-
+			
 			
 			Cairo.PointD center = new Cairo.PointD( fCenterX, fCenterY );
-			
-			DrawCenterCircle( center, ( fRadius / 2 ) + 10, 6, CairoUtil.ColorFromHexa("#d5cab6", 0.8 ), e );
-			DrawCenterCircle( center, ( fRadius / 2 ) + 15, 1, CairoUtil.ColorFromHexa("#8f857b"), e );
-			DrawCenterCircle( center, ( fRadius / 2 ) + 16, 2, CairoUtil.ColorFromHexa("#d5cab6"), e );
-			DrawCenterCircle( center, ( fRadius / 2 ) + 17, 1, CairoUtil.ColorFromHexa("#8f857b"), e );
-			
 			
 			DrawLine( this.fHourTickness, this.fHourLength, hrColor , fRadHr , e );
 			DrawLine( this.fMinTickness , this.fMinLength , minColor, fRadMin, e );
