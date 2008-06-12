@@ -31,6 +31,7 @@ namespace HollyLibrary
 		
 		//new 2.0 event
 		public event ListItemCheck           ItemCheck;
+		public event ListItemRightClick      ItemRightClick;
 		
 		//new 2.0 stuff: drag buffer
 		int[] drag_buffer = null;
@@ -80,6 +81,24 @@ namespace HollyLibrary
 			//add the column
 			AppendColumn( column );
 		}
+		
+		protected override bool OnButtonPressEvent (Gdk.EventButton evnt)
+		{
+			if( evnt.Button == 3 )
+			{
+				int index = -1;
+				TreePath path;
+				this.GetPathAtPos( (int)evnt.X, (int)evnt.Y , out path );
+				if( int.TryParse     ( path.ToString(), out index ) )
+				{
+					if( ItemRightClick != null && index != -1 ) 
+						ItemRightClick( this, new ListItemRightClickEventArgs( index ) );
+				}
+			}
+			return base.OnButtonPressEvent (evnt);
+		}
+
+		
 		
 		private void OnDragBegin( object sender, DragBeginArgs args )	
 		{

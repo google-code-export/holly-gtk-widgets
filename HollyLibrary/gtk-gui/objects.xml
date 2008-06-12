@@ -54,6 +54,7 @@
         <signal name="DrawItem" />
         <signal name="MeasureItem" />
         <signal name="ItemCheck" />
+        <signal name="ItemRightClick" />
       </itemgroup>
     </signals>
   </object>
@@ -109,6 +110,7 @@
         <signal name="NodeEdited" />
         <signal name="DrawItem" />
         <signal name="MeasureItem" />
+        <signal name="NodeRightClick" />
       </itemgroup>
     </signals>
   </object>

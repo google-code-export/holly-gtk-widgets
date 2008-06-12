@@ -7,6 +7,25 @@ using System;
 namespace HollyLibrary
 {
 	
+	public class ListItemRightClickEventArgs
+	{
+		int itemIndex;
+		
+		public int ItemIndex 
+		{
+			get 
+			{
+				return itemIndex;
+			}
+		}
+		
+		public ListItemRightClickEventArgs( int itemIndex )
+		{
+			this.itemIndex = itemIndex;
+		}
+		
+	}
+	
 	public class ListItemCheckEventArgs : EventArgs
 	{
 		int itemIndex;
@@ -136,7 +155,8 @@ namespace HollyLibrary
 	public delegate void MeasureItemEventHandler( object sender, MeasureItemEventArgs args );
 	public delegate void DrawItemEventHandler   ( object sender, DrawItemEventArgs args    );
 	//
-	public delegate void ListItemCheck ( object sender, ListItemCheckEventArgs args );
+	public delegate void ListItemCheck      ( object sender, ListItemCheckEventArgs args );
+	public delegate void ListItemRightClick ( object sender, ListItemRightClickEventArgs args );
 	
 		
 }

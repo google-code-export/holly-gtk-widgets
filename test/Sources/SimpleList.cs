@@ -29,6 +29,7 @@ namespace test
 			this.Resize( 320, 240 );
 			//
 			initGui();
+			list.ItemRightClick     += OnItemRightClick;
 			//button events
 			BtnAdd.Clicked          += OnBtnAddClicked;
 			BtnEdit.Clicked         += OnBtnEditClicked;
@@ -41,6 +42,16 @@ namespace test
 			ChkDragAndDrop.Toggled    += OnDragAndDrop;
 			//ownerdrawned event
 			list.DrawItem           += OnItemDraw;
+		}
+		
+		private void OnItemRightClick( object sender, ListItemRightClickEventArgs args )
+		{
+			Menu menu = new Menu();
+			ImageMenuItem item = new ImageMenuItem( list.Items[ args.ItemIndex ].ToString() );
+			item.Image = new Gtk.Image(Stock.Quit,IconSize.Menu);
+			menu.Add( item );
+			menu.ShowAll();
+			menu.Popup(  );
 		}
 		
 		private void OnBtnSortClicked( object sender, EventArgs args )
