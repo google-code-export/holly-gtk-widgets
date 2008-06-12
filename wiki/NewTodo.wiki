@@ -1,0 +1,67 @@
+= VERSION 2.0 TODO =
+
+* HSimpleList *  new features:
+  * ~~support checkbox to each item.~~
+  * ~~new events :~~
+   ~~ItemCheck~~
+  * ~~new properties:~~
+   ~~IsCheckboxList~~
+   ~~CheckedItems~~
+   ~~CheckedItemIndexes~~
+  * ~~make drag and drop work~~ ~~some testing to the drag and drop is still needed~~
+  * ~~make IsEditable property~~
+  * ~~update changes on wiki and write code sample~~
+  * ~~no need to add icon support, because I have the ownerdrawn property.
+See example [http://www.codeproject.com/KB/combobox/glistbox.aspx here] and make an example for wiki also.~~
+
+
+
+* HTreeView *  new features:
+  * make sure that drag and drop is working
+  * ~replace text cell renderer with custom renderer and implement ItemDraw and MeasureItem~
+  * see how to simplify the contextmenu / item or something ( see [http://www.telerik.com/products/winforms/controls/treeview/overview.aspx here] )
+
+
+_New widget:_ *HNumericEntry*
+  # a entry only for numeric values ( not a numeric up/down )
+  # support for negative values
+
+_New dialog: _ * HColorPickerWidget * && * HColorPickerDialog *
+  # ~~ an adobe like color picker nicer then what gtk has by default ~~
+
+_New widget:_ *HComboCalculator*
+  # a combobox with a calculator popup to do calculations
+
+_New widget:_ *HImageCheckbox*
+  # a checkbox with images for Checked, Indeterminate and Unchecked states
+
+_New widget:_ *HPictureBox*
+  # a picturebox widget similar to the winforms one
+  # ErrorImage property - Gets or sets the image to display when an error occurs during the image-loading process or if the image load is canceled.
+  # Image        - Gets or sets the image that is displayed ( winforms image );
+  # ImagePixbuf  - Gets or sets the image that is displayed ( gtk pixbuf );
+  # ImagePixmap  - Gets or sets the image that is displayed ( gtk pixmap );
+  # InitialImage - Gets or sets the image displayed in the PictureBox control when the main image is loading.
+  # SizeMode     - Indicates how the image is displayed.
+
+||Member name||Description||
+||CenterImage||The image is displayed in the center if the PictureBox is larger than the image. If the image is larger than the PictureBox, the picture is placed in the center of the PictureBox and the outside edges are clipped. ||
+||Normal||The image is placed in the upper-left corner of the PictureBox. The image is clipped if it is larger than the PictureBox it is contained in. ||
+||StretchImage||The image within the PictureBox is stretched or shrunk to fit the size of the PictureBox. ||
+||Zoom||The size of the image is increased or decreased maintaining the size ratio.|| 
+
+  # SaveAs( String file, String type ) method ( type= jpg/png etc ) 
+  # ImageChanged, ImageLoaded event
+
+_New widget:_ *HGridView*
+  # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking. [http://www.telerik.com/products/winforms/controls/gridview/overview.aspx This] is nice also...
+
+  * rebuild HFontPicker to be an extended HSimpleComboBox - also add a nice icon to each font - and maibe do the picker to be like the abiword's one ( it would load faster )
+  * verify if i have rights to create a new folder on the HComboFolder widget
+  * study data binding in winforms, maybe do something similar for gtk widgets
+  * remove any cairo binding - use only System.Drawing ( it's really faster )
+  * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
+
+_New widget:_ *HSchedulingCalendar*
+  # a nice calendar widget with scheduling features 
+  # see [http://www.devexpress.com/Products/NET/WinForms/XtraScheduler here] a nice one
