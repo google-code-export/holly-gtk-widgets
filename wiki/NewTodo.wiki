@@ -8,6 +8,7 @@
    ~~IsCheckboxList~~
    ~~CheckedItems~~
    ~~CheckedItemIndexes~~
+  * add the ContextMenu event
   * ~~make drag and drop work~~ ~~some testing to the drag and drop is still needed~~
   * ~~make IsEditable property~~
   * ~~update changes on wiki and write code sample~~
