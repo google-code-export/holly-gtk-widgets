@@ -1,6 +1,9 @@
 using System;
+using System.Drawing;
+using System.Drawing.Drawing2D;
 using HollyLibrary;
 using Gtk;
+
 
 namespace test
 {
@@ -17,6 +20,8 @@ namespace test
 		CheckButton ChkNodeIconVisible = new CheckButton("Node icon is visible");
 		CheckButton ChkCheckBoxTree    = new CheckButton("Tree is checkbox tree");
 		CheckButton ChkEditableTree    = new CheckButton("Tree is editable");
+		CheckButton ChkOwnerDrawn      = new CheckButton("Tree is OwnerDrawn");
+		CheckButton ChkDragAndDrop     = new CheckButton("Drag and drop enabled");
 		
 		public TreeView() : base( WindowType.Toplevel )
 		{
@@ -25,6 +30,8 @@ namespace test
 			this.Resize( 320, 240 );
 			//
 			initGui();
+			//
+			tree.DrawItem              +=  OnItemDrawn;
 			//button events
 			BtnAddNode.Clicked         += OnBtnAddClicked;
 			BtnEditNode.Clicked        += OnBtnEditClicked;
@@ -33,9 +40,25 @@ namespace test
 			ChkCheckBoxTree.Toggled    += OnCheckBoxChecked;
 			ChkEditableTree.Toggled    += OnEditableChecked;
 			ChkNodeIconVisible.Toggled += OnNodeIconChecked;
+			ChkOwnerDrawn.Toggled      += OnChkOwnerDrawnChecked;
+			ChkDragAndDrop.Toggled     += OnChkDragAndDropChecked;
 			//make the tree to show icons by default
-			ChkNodeIconVisible.Active   = true;
-			
+			ChkNodeIconVisible.Active   = true;	
+		}
+		
+		private void OnItemDrawn( object sender, DrawItemEventArgs args )
+		{
+			//take the text
+			String text      = tree.getNodeFromIter( args.Iter ).Text;
+			//take font from style
+			Font font        = new Font( "Courier New" , 14F );
+			// take color from style
+			Color c          = Color.DarkCyan;
+			Brush b          = new SolidBrush( c );
+			//set quality to HighSpeed
+			args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+			args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+			args.Graphics.Dispose();
 		}
 		
 		private void OnBtnAddClicked( object sender, EventArgs args )
@@ -77,6 +100,12 @@ namespace test
 			}
 		}
 		
+		
+		private void OnChkDragAndDropChecked( object sender, EventArgs args )
+		{
+			tree.IsDragAndDropEnable = ChkDragAndDrop.Active;
+		}
+		
 		private void OnCheckBoxChecked( object sender, EventArgs args )
 		{
 			tree.IsCheckBoxTree = ChkCheckBoxTree.Active;
@@ -90,6 +119,11 @@ namespace test
 		private void OnNodeIconChecked( object sender, EventArgs args )
 		{
 			tree.NodeIconVisible = ChkNodeIconVisible.Active;
+		}
+		
+		private void OnChkOwnerDrawnChecked( object sender, EventArgs args )
+		{
+			tree.OwnerDraw = ChkOwnerDrawn.Active;
 		}
 		
 		private void initGui()
@@ -111,6 +145,8 @@ namespace test
 			hbox.PackStart  ( ChkNodeIconVisible );
 			hbox.PackStart  ( ChkCheckBoxTree    );
 			hbox.PackStart  ( ChkEditableTree    );
+			hbox.PackStart  ( ChkOwnerDrawn      );
+			hbox.PackStart  ( ChkDragAndDrop     );
 			layout.PackStart( hbox, false, true, 0 );
 			//add layout
 			this.Add( layout );

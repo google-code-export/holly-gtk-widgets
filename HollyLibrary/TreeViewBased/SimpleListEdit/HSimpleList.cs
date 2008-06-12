@@ -90,10 +90,10 @@ namespace HollyLibrary
 		{
 			if( args.X > 0 && args.Y > 0 )
 			{
-				TreePath path;
+				TreePath path = null;
 				this.GetPathAtPos( args.X, args.Y, out path );
 				
-				if( drag_buffer != null )
+				if( drag_buffer != null && path != null )
 				{
 					//update indexes
 					int insert_point = int.Parse( path.ToString() ) - 1;
@@ -125,15 +125,16 @@ namespace HollyLibrary
 		{
 			CellRendererCustom mycell   = (CellRendererCustom) cell;
 			mycell.ItemIndex            = int.Parse( model.GetPath(iter).ToString() );
+			mycell.Iter                 = iter;
 			mycell.Text                 = this.Items[ mycell.ItemIndex ].ToString();
 		}
 		
 
 		//pot fi overrideuite pentru a crea o lista cat mai customizata
-		public virtual void OnMeasureItem ( int ItemIndex, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
+		public virtual void OnMeasureItem ( int ItemIndex, TreeIter iter, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
 		{
 			//	
-			MeasureItemEventArgs args = new MeasureItemEventArgs( ItemIndex, cell_area );
+			MeasureItemEventArgs args = new MeasureItemEventArgs( ItemIndex, iter, cell_area );
 			
 			if( ownerDraw &&  MeasureItem != null )
 				MeasureItem( this, args );					
@@ -145,9 +146,9 @@ namespace HollyLibrary
 			result.Height  = args.ItemHeight;
 		}
 		
-		public virtual void OnDrawItem ( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
+		public virtual void OnDrawItem ( int ItemIndex, TreeIter iter, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
 		{
-			DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
+			DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, iter, window, widget, background_area, cell_area, expose_area, flags );
 			//
 			if( OwnerDraw && DrawItem != null )
 			{
@@ -184,10 +185,11 @@ namespace HollyLibrary
 			//updateaza itemul din store
 			Gtk.TreeIter iter;
 			this.Model.GetIterFromString( out iter, args.Index.ToString() );
-			//remove the checked index if it's in the checked_items
-			checked_items.Remove( args.Index );
 			//change the value
-			this.Model.SetValue         ( iter, 1, args.NewValue );
+			bool is_checked = ( checked_items.IndexOf( args.Index ) != -1 );
+			Console.WriteLine("era checkuit:" + is_checked);
+			store.SetValues( iter, is_checked, args.NewValue );
+			//this.Model.SetValue         ( iter, 1, args.NewValue );
 			this.QueueDraw();
 		}
 		
@@ -302,7 +304,9 @@ namespace HollyLibrary
 			
 			//TODO: make it support more types
 			if     ( type == typeof( string ) )
+			{
 				Items[ item_index ] =   args.NewText;
+			}
 			else if( type == typeof( double ) )
 			{
 				double val = 0;

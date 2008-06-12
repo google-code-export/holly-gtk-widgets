@@ -4,24 +4,27 @@
 
 using System;
 using Gtk;
+using System.Drawing;
 
 namespace HollyLibrary
 {
 	
 	public delegate void NodeEventHandler      ( object sender, NodeEventArgs args );
 	
-	public class HTreeView : TreeView
+	public class HTreeView : TreeView, ICustomCellTreeView
 	{
+		//
+		private bool ownerDraw         = false;
+		private int itemHeight         = 20;
 		//checkbox, text, HTreeNode, expanded icon, unexpanded icon
 		TreeStore store = new TreeStore( typeof(HTreeNode) );
 		
 		internal TreeViewColumn   BaseColumn;
-		internal CellRendererText TextRenderer;
 
 		//cells
 		CellRendererToggle cell_chk    = new CellRendererToggle();
 		CellRendererPixbuf cell_icon   = new CellRendererPixbuf();
-		CellRendererText cell_text     = new CellRendererText();
+		CellRendererCustom cell_text   = null;
 		//node list
 		private NodeCollection nodes   = new NodeCollection();
 		//my events
@@ -30,9 +33,15 @@ namespace HollyLibrary
 		public event NodeEventHandler BeforeNodeCollapse;
 		public event NodeEventHandler   BeforeNodeExpand;
 		public event NodeEventHandler         NodeEdited;
+		//
+		public event DrawItemEventHandler    DrawItem;
+		public event MeasureItemEventHandler MeasureItem;
 		
 		public HTreeView()
 		{
+			//create the text cell
+			cell_text = new CellRendererCustom( this );
+			//create model
 			this.Model          = store;
 			//default settings
 			this.HeadersVisible = false;
@@ -51,7 +60,7 @@ namespace HollyLibrary
 		
 		public virtual void AddBaseColumn()
 		{
-			BaseColumn     = new TreeViewColumn();
+			BaseColumn                  = new TreeViewColumn();
 			//set renderers properties
 			cell_chk.Toggled           += OnCelltoggled;
 			cell_chk.Visible            = false;
@@ -116,8 +125,9 @@ namespace HollyLibrary
 		{
 			//renderer node text
 			HTreeNode nod      = getNodeFromIter( iter );
-			CellRendererText c = cell as CellRendererText;
+			CellRendererCustom c = cell as CellRendererCustom;
 			c.Text             = nod.Text;
+			c.Iter             = iter;
 		}
 		
 		//icon data function
@@ -245,7 +255,77 @@ namespace HollyLibrary
 			TreePath path = this.Model.GetPath( node.InnerIter );
 			CollapseRow( path );
 		}
+
+		
+		public virtual void OnMeasureItem ( int ItemIndex, Gtk.TreeIter iter, Widget widget, ref Gdk.Rectangle cell_area, out Gdk.Rectangle result )
+		{
+			//	
+			MeasureItemEventArgs args = new MeasureItemEventArgs( ItemIndex, iter, cell_area );
+			
+			if( ownerDraw &&  MeasureItem != null )
+				MeasureItem( this, args );					
+			else
+				args.ItemHeight  = ItemHeight; 			
+			result.X       = args.ItemLeft;
+			result.Y       = args.ItemTop;
+			result.Width   = args.ItemWidth;
+			result.Height  = args.ItemHeight;
+		}
+		
+		public virtual void OnDrawItem ( int ItemIndex, TreeIter iter, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags)
+		{
+			DrawItemEventArgs args = new DrawItemEventArgs( ItemIndex, iter, window, widget, background_area, cell_area, expose_area, flags );
+			//
+			if( OwnerDraw && DrawItem != null )
+			{
+				DrawItem( this, args );
+			}
+			else
+			{				
+				
+				String text      = getNodeFromIter( args.Iter ).Text;
+				//take font from style
+				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
+				// take color from style
+				Gdk.Color gcolor = Style.Foreground( StateType.Normal );
+				Color c          = Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
+				Brush b          = new SolidBrush( c );
+				//set quality to HighSpeed
+				args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+				args.Graphics.Dispose();
+			}
+		}
+		
+		
 #region properties
+		
+		
+		public bool OwnerDraw 
+		{
+			get 
+			{
+				return ownerDraw;
+			}
+			set 
+			{
+				ownerDraw = value;
+				QueueDraw();
+			}
+		}
+		
+		public int ItemHeight 
+		{
+			get
+			{
+				return itemHeight;
+			}
+			set
+			{
+				itemHeight = value;
+			}
+		}
+		
 		public bool NodeIconVisible
 		{
 			get
@@ -279,6 +359,18 @@ namespace HollyLibrary
 			get 
 			{
 				return nodes;
+			}
+		}
+		
+		public bool IsDragAndDropEnable
+		{
+			get
+			{
+				return this.Reorderable;
+			}
+			set
+			{
+				this.Reorderable = value;
 			}
 		}
 

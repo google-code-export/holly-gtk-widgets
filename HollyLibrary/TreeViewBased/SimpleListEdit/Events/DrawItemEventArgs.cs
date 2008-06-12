@@ -12,6 +12,7 @@ namespace HollyLibrary
 	
 	public class DrawItemEventArgs : EventArgs
 	{
+		TreeIter iter;
 		int itemIndex = -1;
 		private Gdk.Drawable drawable;
 		private Gtk.Widget widget;
@@ -69,12 +70,22 @@ namespace HollyLibrary
 				return cellFlags;
 			}
 		}
+
+		public TreeIter Iter {
+			get {
+				return iter;
+			}
+			internal set {
+				iter = value;
+			}
+		}
 		
-		public DrawItemEventArgs( int ItemIndex, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags )
+		public DrawItemEventArgs( int ItemIndex, TreeIter iter, Gdk.Drawable window, Widget widget, Gdk.Rectangle background_area, Gdk.Rectangle cell_area, Gdk.Rectangle expose_area, CellRendererState flags )
 		{
 			this.itemIndex  = ItemIndex;
 			this.drawable   = window;
 			this.widget     = widget;
+			this.iter       = iter;
 			this.backgroundArea = background_area;
 			this.cellArea   = cell_area;
 			this.exposeArea = expose_area;

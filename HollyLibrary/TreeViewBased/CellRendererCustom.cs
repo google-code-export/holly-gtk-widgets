@@ -13,6 +13,7 @@ namespace HollyLibrary
 	{
 		ICustomCellTreeView Father;
 		private int itemIndex = -1;
+		private TreeIter iter;
 		
 		public CellRendererCustom( ICustomCellTreeView father ) 
 		{
@@ -23,7 +24,7 @@ namespace HollyLibrary
 		public override void GetSize (Widget widget, ref Rectangle cell_area, out int x_offset, out int y_offset, out int width, out int height)
 		{
 			Rectangle result;
-			Father.OnMeasureItem( ItemIndex, widget, ref cell_area, out result );
+			Father.OnMeasureItem( ItemIndex, Iter, widget, ref cell_area, out result );
 			x_offset = result.X;
 			y_offset = result.Y;
 			width    = result.Width;
@@ -32,7 +33,7 @@ namespace HollyLibrary
 
 		protected override void Render (Drawable window, Widget widget, Rectangle background_area, Rectangle cell_area, Rectangle expose_area, CellRendererState flags)
 		{	
-			Father.OnDrawItem(ItemIndex, window, widget, background_area, cell_area, expose_area, flags );
+			Father.OnDrawItem(ItemIndex, Iter, window, widget, background_area, cell_area, expose_area, flags );
 		}
 		
 		public int ItemIndex 
@@ -44,6 +45,15 @@ namespace HollyLibrary
 			set 
 			{
 				itemIndex = value;
+			}
+		}
+
+		public TreeIter Iter {
+			get {
+				return iter;
+			}
+			set {
+				iter = value;
 			}
 		}
 		
