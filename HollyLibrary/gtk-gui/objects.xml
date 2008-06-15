@@ -164,4 +164,24 @@
     </itemgroups>
     <signals />
   </object>
+  <object type="HollyLibrary.HImageCheckBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals />
+  </object>
+  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HSimpleComboBox Properties">
+        <property name="IsEditable" />
+        <property name="Text" />
+        <property name="DropDownHeight" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HSimpleComboBox Signals">
+        <signal name="DropDownOpened" />
+        <signal name="DropDownClosed" />
+        <signal name="TextChanged" />
+      </itemgroup>
+    </signals>
+  </object>
 </objects>

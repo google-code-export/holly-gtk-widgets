@@ -311,7 +311,17 @@ namespace HollyLibrary
 				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
 				// take color from style
 				Gdk.Color gcolor = Style.Foreground( StateType.Normal );
-				Color c          = Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
+				
+				Color c          = Color.Black;
+				try
+				{
+					Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
+				}
+				catch(Exception ex)
+				{
+					Console.WriteLine( ex.Message );
+				}
+				
 				Brush b          = new SolidBrush( c );
 				//set quality to HighSpeed
 				args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;

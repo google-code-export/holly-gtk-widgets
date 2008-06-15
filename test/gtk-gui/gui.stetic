@@ -16,7 +16,7 @@
       <widget class="Gtk.Notebook" id="notebook1">
         <property name="MemberName" />
         <property name="CanFocus">True</property>
-        <property name="CurrentPage">5</property>
+        <property name="CurrentPage">2</property>
         <property name="Scrollable">True</property>
         <child>
           <widget class="Gtk.VPaned" id="vpaned1">
