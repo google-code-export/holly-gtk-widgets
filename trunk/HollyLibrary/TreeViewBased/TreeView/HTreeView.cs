@@ -317,10 +317,7 @@ namespace HollyLibrary
 				{
 					Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
 				}
-				catch(Exception ex)
-				{
-					Console.WriteLine( ex.Message );
-				}
+				catch{}
 				
 				Brush b          = new SolidBrush( c );
 				//set quality to HighSpeed
