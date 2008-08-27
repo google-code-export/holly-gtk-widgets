@@ -237,10 +237,12 @@
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
                 <property name="HeadersClickable">True</property>
-                <property name="ItemHeight">0</property>
                 <property name="SelectedIndex">0</property>
+                <property name="ItemHeight">0</property>
                 <property name="OwnerDraw">True</property>
                 <property name="IsCheckBoxList">False</property>
+                <property name="IsEditable">False</property>
+                <property name="IsDragAndDropEnable">False</property>
                 <signal name="RowActivated" handler="OnTvFontsRowActivated" />
                 <signal name="ButtonPressEvent" handler="OnTvFontsButtonPressEvent" />
                 <signal name="DrawItem" handler="OnTvFontsDrawItem" />
@@ -345,10 +347,12 @@
             <property name="CanFocus">True</property>
             <property name="ShowScrollbars">True</property>
             <property name="HeadersClickable">True</property>
-            <property name="ItemHeight">20</property>
             <property name="SelectedIndex">0</property>
+            <property name="ItemHeight">20</property>
             <property name="OwnerDraw">False</property>
             <property name="IsCheckBoxList">False</property>
+            <property name="IsEditable">False</property>
+            <property name="IsDragAndDropEnable">False</property>
             <signal name="RowActivated" handler="OnTvListRowActivated" />
           </widget>
         </child>
@@ -902,9 +906,12 @@
             <property name="CanFocus">True</property>
             <property name="ShowScrollbars">True</property>
             <property name="HeadersClickable">True</property>
+            <property name="OwnerDraw">False</property>
+            <property name="ItemHeight">0</property>
             <property name="NodeIconVisible">False</property>
             <property name="IsCheckBoxTree">False</property>
             <property name="Editable">False</property>
+            <property name="IsDragAndDropEnable">False</property>
             <signal name="ButtonPressEvent" handler="OnTreeButtonPressEvent" />
             <signal name="RowActivated" handler="OnTreeRowActivated" />
             <signal name="CursorChanged" handler="OnTreeCursorChanged" />
@@ -950,9 +957,12 @@
                 <property name="CanFocus">True</property>
                 <property name="ShowScrollbars">True</property>
                 <property name="HeadersClickable">True</property>
+                <property name="OwnerDraw">False</property>
+                <property name="ItemHeight">0</property>
                 <property name="NodeIconVisible">True</property>
                 <property name="IsCheckBoxTree">False</property>
                 <property name="Editable">False</property>
+                <property name="IsDragAndDropEnable">False</property>
                 <signal name="ButtonPressEvent" handler="OnFolderTreeButtonPressEvent" />
                 <signal name="CursorChanged" handler="OnFolderTreeCursorChanged" />
                 <signal name="RowActivated" handler="OnFolderTreeRowActivated" />
