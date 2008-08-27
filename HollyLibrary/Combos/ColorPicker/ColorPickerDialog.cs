@@ -18,7 +18,8 @@ namespace HollyLibrary
 		public ColorPickerDialog( int x, int y, HColorPicker parent ) : 
 				base(Gtk.WindowType.Toplevel)
 		{
-			this.parent = parent;
+			this.parent       = parent;
+			this.AppPaintable = true;
 			Move  ( x - 180 , y   );
 			Resize( 120     , 120 );
 			this.Build();
@@ -37,15 +38,13 @@ namespace HollyLibrary
 					left = 0;
 					top++;
 				}
-				Gtk.Button btn    = new Gtk.Button("");
-				btn.DoubleBuffered= false;
-				btn.BorderWidth   = 0;
+				//color button
+				ColorButton btn   = new ColorButton( c );
+				btn.BorderWidth   = 1;
 				btn.HeightRequest = 20;
 				btn.WidthRequest  = 20;
-				btn.Relief        = Gtk.ReliefStyle.Half;
-				btn.ModifyBg( Gtk.StateType.Normal  , c );
-				btn.ModifyBg( Gtk.StateType.Selected, c );
-				btn.Clicked      += new EventHandler( OnColorChange );
+				//
+				btn.ButtonPressEvent += new Gtk.ButtonPressEventHandler( OnColorChange );
 				TblColors.Attach( btn, left, left + 1, top, top + 1 );
 				left++;
 			}
@@ -55,8 +54,8 @@ namespace HollyLibrary
 		
 		private void OnColorChange( object sender, EventArgs args )
 		{
-			Gtk.Button btn = (Gtk.Button) sender;
-			parent.Color   = btn.Style.Background( Gtk.StateType.Normal );
+			ColorButton btn = (ColorButton) sender;
+			parent.Color    = btn.Style.Background( Gtk.StateType.Normal );
 			Close();
 		}
 		
