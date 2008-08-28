@@ -34,8 +34,8 @@ _New dialog: _ * HColorPickerWidget * && * HColorPickerDialog *
 _New widget:_ *HComboCalculator*
   # a combobox with a calculator popup to do calculations
 
-_New widget:_ *HImageCheckbox*
-  # a checkbox with images for Checked, Indeterminate and Unchecked states
+*HImageCheckbox*
+  # ~~a checkbox with images for Checked and Unchecked state~~
 
 _New widget:_ *HPictureBox*
   # a picturebox widget similar to the winforms one
