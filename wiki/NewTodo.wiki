@@ -69,4 +69,4 @@ _New widget:_ *HSchedulingCalendar*
   # see [http://www.devexpress.com/Products/NET/WinForms/XtraScheduler here] a nice one
 
 * HColorPicker *
-  * fix button bug - in some themes, buttons do not renderer corectly
+  * ~~fix button bug - in some themes, buttons do not renderer corectly~~
