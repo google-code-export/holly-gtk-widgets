@@ -67,3 +67,6 @@ _New widget:_ *HGridView*
 _New widget:_ *HSchedulingCalendar*
   # a nice calendar widget with scheduling features 
   # see [http://www.devexpress.com/Products/NET/WinForms/XtraScheduler here] a nice one
+
+* HColorPicker *
+  * fix button bug - in some themes, buttons do not renderer corectly
