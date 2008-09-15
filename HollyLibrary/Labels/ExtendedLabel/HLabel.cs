@@ -22,8 +22,14 @@ namespace HollyLibrary
 		HPosition iconPosition = HPosition.Left;
 		HPosition textPosition = HPosition.Left;
 		bool textOweritesIcon  = false;
+		bool horizontalLine    = false;
+		int lineTextPadding    = 6;
 		
-		public HLabel()
+		public HLabel() 
+		{
+		}
+		
+		public HLabel( String str ) : base( str )
 		{
 		}
 		
@@ -111,15 +117,17 @@ namespace HollyLibrary
 				if( IconPosition == HPosition.TopRight    ) rect = new Rectangle( 0       , imgheight, wwidth - imgwidth , wheight  - imgheight );
 			}
 			
+			
+			//calculate text size
+			float fnt_sz = this.PangoContext.FontDescription.Size / 1000;
+			
+			Font fnt   = new Font       ( this.PangoContext.FontDescription.Family , fnt_sz );
+			SizeF ts   = g.MeasureString( this.Text, fnt );
 			//draw text
 			if( this.Text.Length > 0 )
 			{
 				float x      = rect.Left, y = rect.Top;
-				//calculate text size
-				float fnt_sz = this.PangoContext.FontDescription.Size / 1000;
 				
-				Font fnt   = new Font       ( this.PangoContext.FontDescription.Family , fnt_sz );
-				SizeF ts   = g.MeasureString( this.Text, fnt );
 				//calculate x and y for text
 				if( TextPosition == HPosition.Bottom )
 				{
@@ -166,8 +174,19 @@ namespace HollyLibrary
 					x = wwidth   - ts.Width;
 					y = rect.Top;
 				}
-				
-				g.DrawString( this.Text, fnt, Brushes.Black, x, y );
+				//draw text
+				Gdk.Color c  = this.Style.Text( this.State );
+				SolidBrush b = new SolidBrush( GraphUtil.winFormsColorFromGdk( c ) );
+				g.DrawString( this.Text, fnt, b, x, y );
+			}
+			//draw line if horizonatlLine is true
+			if( this.HorizontalLine )
+			{
+				int x1  = rect.Left  + (int)ts.Width + lineTextPadding;
+				int y   = Allocation.Height / 2;
+				int x2  = Allocation.Width - lineTextPadding;
+				if( x2 > x1 )
+					Gtk.Style.PaintHline( this.Style, GdkWindow, this.State, this.Allocation, this, "hline", x1, x2, y );
 			}
 			return true;
 		}
@@ -181,7 +200,7 @@ namespace HollyLibrary
 			set 
 			{
 				icon = value;
-				this.QueueDraw();
+				this.QueueResize();
 			}
 		}
 
@@ -194,7 +213,7 @@ namespace HollyLibrary
 			set 
 			{
 				textPosition = value;
-				this.QueueDraw();
+				this.QueueResize();
 			}
 		}
 
@@ -207,7 +226,7 @@ namespace HollyLibrary
 			set 
 			{
 				iconPosition = value;
-				this.QueueDraw();
+				this.QueueResize();
 			}
 		}
 
@@ -223,37 +242,59 @@ namespace HollyLibrary
 			}
 		}
 
+		public bool HorizontalLine 
+		{
+			get 
+			{
+				return horizontalLine;
+			}
+			set 
+			{
+				horizontalLine = value;
+			}
+		}
+
+		
+		private Size MeasureString( Pango.FontDescription font, string s) 
+		{
+			Pango.Layout ly = this.Layout;
+			ly.SetText(s);
+			
+			ly.FontDescription = font;
+			int width, height;
+			ly.GetSize( out width, out height );
+			return new Size( (int)(width/1024.0f), (int)(height/1024.0f) );		
+		}
+
+		private Size getMininumSize()
+		{
+			int width = 5, height = 5;
+
+			Size ts     = MeasureString( this.PangoContext.FontDescription, this.Text );
+			Console.WriteLine( ts );
+			if( Icon != null  )
+			{
+				width  = Icon.Width + ts.Width ;
+				height = Math.Max( Icon.Height, ts.Height );
+			}
+			else
+			{
+				width  = ts.Width ;
+				height = ts.Height;
+			}
+			
+			return new Size( width, height );
+		}
+
+
+		
 		protected override void OnSizeRequested (ref Requisition requisition)
 		{
 			//set minimum size
-			float min_width  = 5;
-			float min_height = 5;
-			
-			try
-			{
-				Graphics g   = Gtk.DotNet.Graphics.FromDrawable( this.GdkWindow );
-				float fnt_sz = this.PangoContext.FontDescription.Size / 1000;
-				Font fnt     = new Font       ( this.PangoContext.FontDescription.Family , fnt_sz );
-				SizeF ts     = g.MeasureString( this.Text, fnt );
-				
-				if( Icon != null  )
-				{
-					min_width  = Icon.Width + ts.Width ;
-					min_height = Math.Max( Icon.Height, ts.Height );
-				}
-				else
-				{
-					min_width  = ts.Width ;
-					min_height = ts.Height;
-				}
-			}
-			catch( Exception ex)
-			{
-				Console.WriteLine( ex.Message + ex.StackTrace );
-			}
-			requisition.Width  = (int)min_width;
-			requisition.Height = (int)min_height;
-			Console.WriteLine( requisition );
+			Size size          = getMininumSize();
+			requisition.Width  = size.Width;
+			requisition.Height = size.Height;
+			//
 			base.OnSizeRequested (ref requisition);
 		}
 
