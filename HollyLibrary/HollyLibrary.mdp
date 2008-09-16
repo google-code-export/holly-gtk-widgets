@@ -102,7 +102,7 @@
     <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <ProjectReference type="Gac" localcopy="True" refto="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   </References>
-  <GtkDesignInfo isWidgetLibrary="True" gtkVersion="2.12.0">
+  <GtkDesignInfo isWidgetLibrary="True">
     <ExportedWidgets>
       <Widget>HollyLibrary.ExEntry</Widget>
       <Widget>HollyLibrary.HMaskedEntry</Widget>
@@ -132,6 +132,7 @@
       <Widget>HollyLibrary.HImageCheckBox</Widget>
       <Widget>HollyLibrary.HColorPicker</Widget>
       <Widget>HollyLibrary.HSimpleComboBox</Widget>
+      <Widget>HollyLibrary.HLabel</Widget>
     </ExportedWidgets>
   </GtkDesignInfo>
 </Project>

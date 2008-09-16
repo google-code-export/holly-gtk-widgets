@@ -193,4 +193,13 @@
       </itemgroup>
     </signals>
   </object>
+  <object type="HollyLibrary.HLabel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Label">
+    <itemgroups>
+      <itemgroup label="HLabel Properties">
+        <property name="TextOweritesIcon" />
+        <property name="HorizontalLine" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
 </objects>
