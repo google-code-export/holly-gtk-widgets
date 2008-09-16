@@ -13,7 +13,7 @@ namespace HollyLibrary {
     
     public partial class HImageCheckBox {
         
-        private Gtk.EventBox eventbox1;
+        private Gtk.EventBox ECheckbox;
         
         private Gtk.HBox hbox1;
         
@@ -27,9 +27,9 @@ namespace HollyLibrary {
             Stetic.BinContainer.Attach(this);
             this.Name = "HollyLibrary.HImageCheckBox";
             // Container child HollyLibrary.HImageCheckBox.Gtk.Container+ContainerChild
-            this.eventbox1 = new Gtk.EventBox();
-            this.eventbox1.Name = "eventbox1";
-            // Container child eventbox1.Gtk.Container+ContainerChild
+            this.ECheckbox = new Gtk.EventBox();
+            this.ECheckbox.Name = "ECheckbox";
+            // Container child ECheckbox.Gtk.Container+ContainerChild
             this.hbox1 = new Gtk.HBox();
             this.hbox1.Name = "hbox1";
             this.hbox1.Spacing = 6;
@@ -49,8 +49,8 @@ namespace HollyLibrary {
             this.hbox1.Add(this.LblText);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.LblText]));
             w2.Position = 1;
-            this.eventbox1.Add(this.hbox1);
-            this.Add(this.eventbox1);
+            this.ECheckbox.Add(this.hbox1);
+            this.Add(this.ECheckbox);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }

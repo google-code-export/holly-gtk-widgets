@@ -165,8 +165,17 @@
     <signals />
   </object>
   <object type="HollyLibrary.HImageCheckBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
-    <itemgroups />
-    <signals />
+    <itemgroups>
+      <itemgroup label="HImageCheckBox Properties">
+        <property name="Checked" />
+        <property name="Text" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HImageCheckBox Signals">
+        <signal name="CheckedStateChanged" />
+      </itemgroup>
+    </signals>
   </object>
   <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
