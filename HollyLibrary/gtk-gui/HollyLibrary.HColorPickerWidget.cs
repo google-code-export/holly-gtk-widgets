@@ -133,6 +133,7 @@ namespace HollyLibrary {
             this.ChkR1 = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("R:"));
             this.ChkR1.CanFocus = true;
             this.ChkR1.Name = "ChkR1";
+            this.ChkR1.Active = true;
             this.ChkR1.DrawIndicator = true;
             this.ChkR1.UseUnderline = true;
             this.ChkR1.Group = new GLib.SList(System.IntPtr.Zero);
