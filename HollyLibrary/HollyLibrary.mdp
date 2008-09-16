@@ -90,6 +90,8 @@
     <File name="gtk-gui/HollyLibrary.HImageCheckBox.cs" subtype="Code" buildaction="Compile" />
     <File name="Combos/ColorPicker/ColorButton.cs" subtype="Code" buildaction="Compile" />
     <File name="Labels/ExtendedLabel/HLabel.cs" subtype="Code" buildaction="Compile" />
+    <File name="FileSelector/FileViewWidget.cs" subtype="Code" buildaction="Compile" />
+    <File name="FileSelector/HFileSelectorWidget.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
