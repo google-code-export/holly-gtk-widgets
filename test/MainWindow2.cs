@@ -22,7 +22,11 @@ namespace test
 
 			hlabel1.TextOweritesIcon = false;
 			hlabel1.HorizontalLine   = true;
-			hlabel1.Icon             = GraphUtil.pixbufFromStock("gtk-ok", Gtk.IconSize.Button );
+			
+			Gtk.IconTheme theme = Gtk.IconTheme.Default;
+			Gdk.Pixbuf buf      = theme.LoadIcon("folder",24, Gtk.IconLookupFlags.ForceSvg);
+			
+			hlabel1.Icon        = buf;
 		}
 
 		protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)

@@ -19,8 +19,14 @@ namespace HollyLibrary
 		public FolderChooserDialog( HComboFolder father ) : 
 				base(Gtk.WindowType.Popup)
 		{
+			Gtk.IconTheme theme = Gtk.IconTheme.Default;
+			
 			folder_icon = new Gdk.Pixbuf( this.GetType().Assembly, "folder.png");
 			drive_icon  = new Gdk.Pixbuf( this.GetType().Assembly, "drive.png");
+			if( theme.HasIcon("folder") )
+				folder_icon = theme.LoadIcon( "folder", 24, Gtk.IconLookupFlags.ForceSvg );
+			if( theme.HasIcon("harddrive") )
+				drive_icon = theme.LoadIcon( "harddrive", 24, Gtk.IconLookupFlags.ForceSvg );
 			
 			this.father = father;
 			this.Build();
