@@ -20,7 +20,7 @@ namespace test
 			
 			this.Build();
 			
-			//set colorpicker color
+			//settest colorpicker color
 			ColorPicker.Color = new Gdk.Color( 255, 0, 0 );
 			
 			//add tooltip

@@ -6,6 +6,7 @@
   </configuration>
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
+    <widget-library name="gtksourceview-sharp, Version=1.0.0.2, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </import>
   <widget class="Gtk.Window" id="test.MainWin" design-size="623 523">
     <property name="MemberName" />
