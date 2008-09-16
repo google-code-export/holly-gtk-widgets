@@ -25,6 +25,7 @@ namespace HollyLibrary
 		bool horizontalLine    = false;
 		int lineTextPadding    = 6;
 		
+		
 		public HLabel() 
 		{
 		}
@@ -254,6 +255,7 @@ namespace HollyLibrary
 			}
 		}
 
+		
 		
 		private Size MeasureString( Pango.FontDescription font, string s) 
 		{
