@@ -473,6 +473,41 @@ namespace HollyLibrary
             this.Graphics = graphics; 
         } 
 
+		
+		public static System.Drawing.Color winFormsColorFromGdk( Gdk.Color color )
+		{
+			int r = (int)color.Red   / 255;
+			int g = (int)color.Green / 255;
+			int b = (int)color.Blue  / 255;
+			if( r > 255 ) r = 255;
+			if( g > 255 ) g = 255;
+			if( b > 255 ) b = 255;
+			return System.Drawing.Color.FromArgb( r, g, b );
+		}
+		
+		public static Gdk.Pixbuf PixbufFromBitmap( Bitmap bmp )
+		{
+			//save bitmap to stream
+			System.IO.MemoryStream stream = new System.IO.MemoryStream();
+			bmp.Save( stream, System.Drawing.Imaging.ImageFormat.Png );
+			//verry important: put stream on position 0
+			stream.Position     = 0;
+			//get the pixmap mask
+			Gdk.Pixbuf buf      = new Gdk.Pixbuf( stream, bmp.Width, bmp.Height );
+			return buf;
+		}
+		
+		public static Bitmap BitmapFromPixbuf( Gdk.Pixbuf pixbuf )
+		{
+			//save bitmap to stream
+			byte[] bytes = pixbuf.SaveToBuffer( "png" );
+			System.IO.MemoryStream stream = new System.IO.MemoryStream( bytes );
+			//verry important: put stream on position 0
+			stream.Position     = 0;
+			//get the pixmap mask
+			Bitmap bmp = new Bitmap( stream );
+			return bmp;
+		}
 
         #region Fills a Rounded Rectangle with integers. 
         public void FillRoundRectangle(System.Drawing.Brush brush, 

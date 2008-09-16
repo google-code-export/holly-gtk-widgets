@@ -1182,4 +1182,18 @@ namespace test
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Window" id="test.MainWindow2" design-size="400 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">MainWindow2</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="HollyLibrary.HLabel" id="hlabel1">
+        <property name="MemberName" />
+        <property name="LabelProp" translatable="yes">hlabel1</property>
+        <property name="TextOweritesIcon">False</property>
+        <property name="HorizontalLine">False</property>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>
