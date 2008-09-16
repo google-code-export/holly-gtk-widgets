@@ -1,5 +1,8 @@
 = VERSION 2.0 TODO =
 
+* HComboFolder *
+  * ~~ now it's using the system theme folder / drive icon ~~
+
 * HSimpleList *  new features:
   * ~~support checkbox to each item.~~
   * ~~new events :~~
