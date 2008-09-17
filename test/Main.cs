@@ -13,7 +13,7 @@ namespace test
 		public static void Main (string[] args)
 		{
 			Application.Init ();
-			MainWin win = new MainWin();
+			MainWindow2 win = new MainWindow2();
 			win.ShowAll ();
 			Application.Run ();
 		}
