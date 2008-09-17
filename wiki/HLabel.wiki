@@ -13,14 +13,39 @@ with text on bottom and icon on center:
 [http://lh6.ggpht.com/fr.daniil/SNFCKrzOD-I/AAAAAAAAAHc/OSfjvHvcAuQ/hlabel2.jpg]
 
 Properties:
-|| _HPosition_ || *IconPosition* || gets/sets the icon position ||
-|| _HPosition_ || *TextPosition* || gets/sets the text position ||
-|| _ bool _    || *TextOweritesIcon* || gets/sets if the text owerites the icon   ||
-|| _ bool_  || *HorizontalLine* || gets/sets if text has a horizonatl line in the right ||
-|| _string_ || *Text*         || gets/sets the current selected item ( as a string ) ||
-|| _bool_   || *OwnerDraw*    || gets/sets the items drawing mode. ||
-|| _Gtk.SelectionMode_   || *SelectionType* || the current list selection mode ||
-|| _ List<Object> _      || * CheckedItems * || the current checked item list ||
-|| _ List<int>    _      || * CheckedItemIndexes * || the indexes list of the checked items ||
-|| _ bool _              || * IsCheckBoxList * || if true, the list is a checkbox list ||
+|| _HPosition_ || *IconPosition*       || gets/sets the icon position ||
+|| _HPosition_ || *TextPosition*       || gets/sets the text position ||
+|| _ bool _    || *TextOverwritesIcon* || gets/sets if the text overwrites the icon   ||
+|| _ bool_     || *HorizontalLine*     || gets/sets if text has a horizontal line in the right ||
+|| _string_    || *Text*               || the text displayed  ||
 
+
+HPosition enum:
+*Top, Bottom, Left, Right, TopLeft, TopRight, BottomLeft, BottomRight, Center*
+
+= Code samples =
+
+  * How to set the text position:
+{{{
+   lbl.TextPosition     = HPosition.Bottom;
+}}}
+
+  * How to set the icon position:
+{{{
+   IconPosition         = HPosition.TopRight;
+}}}
+
+  * code sample:
+{{{
+
+   hlabel1.TextOverwritesIcon = false;
+   hlabel1.HorizontalLine     = true;
+   hlabel1.TextPosition       = HPosition.Center;
+   hlabel1.IconPosition       = HPosition.Left;
+
+   //for example, get the theme folder icon
+   Gtk.IconTheme theme = Gtk.IconTheme.Default;
+   Gdk.Pixbuf buf      = theme.LoadIcon("folder",24, Gtk.IconLookupFlags.ForceSvg);
+   //set icon for label
+   hlabel1.Icon        = buf;
+}}}
