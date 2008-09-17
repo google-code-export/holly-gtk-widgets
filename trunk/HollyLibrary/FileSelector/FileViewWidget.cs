@@ -32,8 +32,8 @@ namespace HollyLibrary
 			//daca este List
 			if( ViewType == FileViewTypes.List )
 			{
-				Label lbl = new Label("");
-				
+				//calculeaza nr de randuri in functie de height
+				//calculeaza nr de coloane
 			}
 		}
 		
