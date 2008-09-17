@@ -13,7 +13,7 @@ namespace HollyLibrary
 	
 	public partial class HImageCheckBox : Gtk.Bin
 	{
-		Gtk.ToggleButton checkbutton = new Gtk.ToggleButton();
+		
 		
 		public event EventHandler CheckedStateChanged;
 		Pixbuf checkedImage;
@@ -24,7 +24,7 @@ namespace HollyLibrary
 		{
 			this.Build();
 			this.AppPaintable = true;
-			hbox1.PackStart( checkbutton );
+			
 			this.ECheckbox.Visible = false;
 			on_init();
 		}
@@ -39,8 +39,14 @@ namespace HollyLibrary
 			ImgCheck.WidgetFlags       |= WidgetFlags.CanFocus;
 			
 			//add events
+			ImgCheck.FocusGrabbed += new EventHandler( this.OnImgGrabFocus );
 			ECheckbox.ButtonPressEvent += new ButtonPressEventHandler( OnButtonPress );
 			ImgCheck.KeyPressEvent     += new KeyPressEventHandler   ( OnImgKeyPress );
+		}
+		
+		private void OnImgGrabFocus( object sender, EventArgs args )
+		{
+			Console.WriteLine("m-am focusarit!");
 		}
 		
 		private void OnImgKeyPress( object sender, Gtk.KeyPressEventArgs e )
@@ -64,6 +70,8 @@ namespace HollyLibrary
 			if( CheckedStateChanged != null )
 					CheckedStateChanged( this, new EventArgs() );
 		}
+		
+		
 
 		
 

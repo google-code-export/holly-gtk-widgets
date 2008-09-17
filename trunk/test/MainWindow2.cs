@@ -20,13 +20,9 @@ namespace test
 		{
 			this.Build();
 
-			hlabel1.TextOweritesIcon = false;
-			hlabel1.HorizontalLine   = true;
+			himagecheckbox1.CheckedImage = GraphUtil.pixbufFromStock( "gtk-yes", Gtk.IconSize.Button );
+			himagecheckbox1.UncheckedImage = GraphUtil.pixbufFromStock( "gtk-no", Gtk.IconSize.Button );
 			
-			Gtk.IconTheme theme = Gtk.IconTheme.Default;
-			Gdk.Pixbuf buf      = theme.LoadIcon("folder",24, Gtk.IconLookupFlags.ForceSvg);
-			
-			hlabel1.Icon        = buf;
 		}
 
 		protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)

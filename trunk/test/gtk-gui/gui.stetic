@@ -1188,11 +1188,30 @@ namespace test
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="HollyLibrary.HLabel" id="hlabel1">
+      <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
-        <property name="LabelProp" translatable="yes">hlabel1</property>
-        <property name="TextOweritesIcon">False</property>
-        <property name="HorizontalLine">False</property>
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox1">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="HollyLibrary.HImageCheckBox" id="himagecheckbox1">
+                <property name="MemberName" />
+                <property name="Events">ButtonPressMask</property>
+                <property name="Checked">False</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">False</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

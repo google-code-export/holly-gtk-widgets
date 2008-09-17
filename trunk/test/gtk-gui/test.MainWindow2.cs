@@ -13,7 +13,11 @@ namespace test {
     
     public partial class MainWindow2 {
         
-        private HollyLibrary.HLabel hlabel1;
+        private Gtk.VBox vbox1;
+        
+        private Gtk.HBox hbox1;
+        
+        private HollyLibrary.HImageCheckBox himagecheckbox1;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -22,12 +26,25 @@ namespace test {
             this.Title = Mono.Unix.Catalog.GetString("MainWindow2");
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             // Container child test.MainWindow2.Gtk.Container+ContainerChild
-            this.hlabel1 = new HollyLibrary.HLabel();
-            this.hlabel1.Name = "hlabel1";
-            this.hlabel1.LabelProp = Mono.Unix.Catalog.GetString("hlabel1");
-            this.hlabel1.TextOweritesIcon = false;
-            this.hlabel1.HorizontalLine = false;
-            this.Add(this.hlabel1);
+            this.vbox1 = new Gtk.VBox();
+            this.vbox1.Name = "vbox1";
+            this.vbox1.Spacing = 6;
+            // Container child vbox1.Gtk.Box+BoxChild
+            this.hbox1 = new Gtk.HBox();
+            this.hbox1.Name = "hbox1";
+            this.hbox1.Spacing = 6;
+            // Container child hbox1.Gtk.Box+BoxChild
+            this.himagecheckbox1 = new HollyLibrary.HImageCheckBox();
+            this.himagecheckbox1.Events = ((Gdk.EventMask)(256));
+            this.himagecheckbox1.Name = "himagecheckbox1";
+            this.himagecheckbox1.Checked = false;
+            this.hbox1.Add(this.himagecheckbox1);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.hbox1[this.himagecheckbox1]));
+            w1.Position = 0;
+            this.vbox1.Add(this.hbox1);
+            Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+            w2.Position = 0;
+            this.Add(this.vbox1);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }
