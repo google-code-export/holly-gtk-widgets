@@ -6,6 +6,9 @@ a combobox widget with a folder tree popup
 
 [http://lh4.ggpht.com/fr.daniil/SD2eomqEj-I/AAAAAAAAADI/8CgFaNkOiCo/gtk-folder-combo.jpg]
 
+in 2.0 the widget uses the default theme icons:
+
+[http://lh5.ggpht.com/fr.daniil/SNFJBjbRUWI/AAAAAAAAAHk/SoKrDFHXrd0/HComboFolder-gtk.jpg]
 
 
 ----
