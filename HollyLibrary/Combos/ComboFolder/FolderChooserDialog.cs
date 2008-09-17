@@ -148,18 +148,25 @@ namespace HollyLibrary
 		{
 			String path          = getPathFromNode(node);
 			DirectoryInfo di     = new DirectoryInfo( path );
-			DirectoryInfo[] dirs = di.GetDirectories();
-			node.Nodes.Clear();
-			foreach( DirectoryInfo d in dirs )
+			try
 			{
-				node.Nodes.Add( new HTreeNode( d.Name, folder_icon ) );
+				DirectoryInfo[] dirs = di.GetDirectories();
+				node.Nodes.Clear();
+				foreach( DirectoryInfo d in dirs )
+				{
+					node.Nodes.Add( new HTreeNode( d.Name, folder_icon ) );
+				}
+				//add dummy childs
+				foreach( HTreeNode n in node.Nodes )
+				{
+					n.Nodes.Add( new HTreeNode("dummy") );
+				}
 			}
-			//add dummy childs
-			foreach( HTreeNode n in node.Nodes )
+			catch( Exception ex )
 			{
-				n.Nodes.Add( new HTreeNode("dummy") );
+				node.Nodes.Clear();
+				Console.WriteLine("Cannot acces folder!");
 			}
-			
 		}
 		
 

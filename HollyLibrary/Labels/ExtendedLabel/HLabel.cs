@@ -21,7 +21,7 @@ namespace HollyLibrary
 		Gdk.Pixbuf icon;
 		HPosition iconPosition = HPosition.Left;
 		HPosition textPosition = HPosition.Left;
-		bool textOweritesIcon  = false;
+		bool textOverwritesIcon  = false;
 		bool horizontalLine    = false;
 		int lineTextPadding    = 6;
 		
@@ -105,7 +105,7 @@ namespace HollyLibrary
 				imgwidth  = img.Width;
 				imgheight = img.Height;
 			}
-			if( !TextOweritesIcon )
+			if( !TextOverwritesIcon )
 			{
 				if( IconPosition == HPosition.Bottom      ) rect = new Rectangle( 0       , 0        , wwidth            , wheight - imgheight  );
 				if( IconPosition == HPosition.BottomLeft  ) rect = new Rectangle( imgwidth, 0        , wwidth            , wheight - imgheight  );
@@ -231,15 +231,15 @@ namespace HollyLibrary
 			}
 		}
 
-		public bool TextOweritesIcon 
+		public bool TextOverwritesIcon 
 		{
 			get 
 			{
-				return textOweritesIcon;
+				return textOverwritesIcon;
 			}
 			set 
 			{
-				textOweritesIcon = value;
+				textOverwritesIcon = value;
 			}
 		}
 
