@@ -1192,24 +1192,85 @@ namespace test
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
+          <widget class="Gtk.Button" id="button4">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">button4</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="HollyLibrary.HImageCheckBox" id="himagecheckbox1">
+              <widget class="Gtk.Button" id="button3">
                 <property name="MemberName" />
-                <property name="Events">ButtonPressMask</property>
-                <property name="Checked">False</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">button3</property>
+                <property name="UseUnderline">True</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="HollyLibrary.HLabel" id="hlabel1">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">hlabel1</property>
+                <property name="HorizontalLine">False</property>
+                <property name="TextOverwritesIcon">False</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
                 <property name="AutoSize">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button2">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">button2</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
               </packing>
             </child>
           </widget>
           <packing>
-            <property name="Position">0</property>
+            <property name="Position">1</property>
             <property name="AutoSize">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button5">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">button5</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
       </widget>

@@ -44,61 +44,61 @@ namespace HollyLibrary
 			//draw icon
 			if( this.Icon != null )
 			{
-				int x = 0, y = 0;
+				int x = Allocation.Left, y = Allocation.Top;
 				
 				
 				//calculate x and y for icon
 				if( IconPosition == HPosition.Bottom )
 				{
-					x = ( wwidth / 2 ) - ( img.Width / 2 );
-					y = wheight - img.Height;
+					x += ( wwidth / 2 ) - ( img.Width / 2 );
+					y += wheight - img.Height;
 				}
 				if( IconPosition == HPosition.BottomLeft )
 				{
-					x = 0;
-					y = wheight - img.Height;
+					x = Allocation.Left;
+					y += wheight - img.Height;
 				}
 				if( IconPosition == HPosition.BottomRight )
 				{
-					x = wwidth  - img.Width ;
-					y = wheight - img.Height;
+					x += wwidth  - img.Width ;
+					y += wheight - img.Height;
 				}
 				if( IconPosition == HPosition.Center )
 				{
-					x = ( wwidth  / 2 ) - ( img.Width  / 2 );
-					y = ( wheight / 2 ) - ( img.Height / 2 );
+					x += ( wwidth  / 2 ) - ( img.Width  / 2 );
+					y += ( wheight / 2 ) - ( img.Height / 2 );
 				}
 				if( IconPosition == HPosition.Left)
 				{
-					x = 0;
-					y = ( wheight / 2 ) - ( img.Height / 2 );
+					x = Allocation.Left;
+					y += ( wheight / 2 ) - ( img.Height / 2 );
 				}
 				if( IconPosition == HPosition.Right )
 				{
-					x = wwidth   -  img.Width;
-					y = ( wheight / 2 ) - ( img.Height / 2 );
+					x += wwidth   -  img.Width;
+					y += ( wheight / 2 ) - ( img.Height / 2 );
 				}
 				if( IconPosition == HPosition.Top )
 				{
-					x = ( wwidth  / 2 ) - ( img.Width  / 2 );
-					y = 0;
+					x += ( wwidth  / 2 ) - ( img.Width  / 2 );
+					y = Allocation.Top;
 				}
 				if( IconPosition == HPosition.TopLeft )
 				{
-					x = 0;
-					y = 0;
+					x = Allocation.Left;
+					y = Allocation.Top;
 				}
 				if( IconPosition == HPosition.TopRight )
 				{
-					x = wwidth   - img.Width;
-					y = 0;
+					x += wwidth   - img.Width;
+					y = Allocation.Top;
 				}
 				
 				g.DrawImageUnscaled( img, x, y, img.Width, img.Height );
 			}
 			//
 			//calculate text rectangle
-			Rectangle rect = new Rectangle( 0, 0, wwidth, wheight );
+			Rectangle rect = new Rectangle( Allocation.Left, Allocation.Top, wwidth, wheight );
 			int imgwidth   = 0, imgheight = 0;
 			if( Icon != null ) 
 			{
@@ -107,15 +107,15 @@ namespace HollyLibrary
 			}
 			if( !TextOverwritesIcon )
 			{
-				if( IconPosition == HPosition.Bottom      ) rect = new Rectangle( 0       , 0        , wwidth            , wheight - imgheight  );
-				if( IconPosition == HPosition.BottomLeft  ) rect = new Rectangle( imgwidth, 0        , wwidth            , wheight - imgheight  );
-				if( IconPosition == HPosition.BottomRight ) rect = new Rectangle( 0       , 0        , wwidth - imgwidth , wheight - imgheight  );
-				if( IconPosition == HPosition.Left        ) rect = new Rectangle( imgwidth, 0        , wwidth            , wheight - imgheight  );
+				if( IconPosition == HPosition.Bottom      ) rect = new Rectangle( Allocation.Left                  , Allocation.Top        , wwidth            , wheight - imgheight  );
+				if( IconPosition == HPosition.BottomLeft  ) rect = new Rectangle( Allocation.Left + imgwidth       , Allocation.Top        , wwidth            , wheight - imgheight  );
+				if( IconPosition == HPosition.BottomRight ) rect = new Rectangle( Allocation.Left                  , Allocation.Top        , wwidth - imgwidth , wheight - imgheight  );
+				if( IconPosition == HPosition.Left        ) rect = new Rectangle( Allocation.Left + imgwidth       , Allocation.Top        , wwidth            , wheight - imgheight  );
 				
-				if( IconPosition == HPosition.Right       ) rect = new Rectangle( 0       , 0        , wwidth - imgwidth , wheight              );
-				if( IconPosition == HPosition.Top         ) rect = new Rectangle( 0       , imgheight, wwidth            , wheight  - imgheight );
-				if( IconPosition == HPosition.TopLeft     ) rect = new Rectangle( imgwidth, imgheight, wwidth - imgwidth , wheight  - imgheight );
-				if( IconPosition == HPosition.TopRight    ) rect = new Rectangle( 0       , imgheight, wwidth - imgwidth , wheight  - imgheight );
+				if( IconPosition == HPosition.Right       ) rect = new Rectangle( Allocation.Left, Allocation.Top, wwidth - imgwidth , wheight              );
+				if( IconPosition == HPosition.Top         ) rect = new Rectangle( Allocation.Left, Allocation.Top + imgheight     , wwidth            , wheight  - imgheight );
+				if( IconPosition == HPosition.TopLeft     ) rect = new Rectangle( Allocation.Left + imgwidth       , Allocation.Top +imgheight     , wwidth - imgwidth , wheight  - imgheight );
+				if( IconPosition == HPosition.TopRight    ) rect = new Rectangle( Allocation.Left, Allocation.Top + imgheight     , wwidth - imgwidth , wheight  - imgheight );
 			}
 			
 			
@@ -132,37 +132,37 @@ namespace HollyLibrary
 				//calculate x and y for text
 				if( TextPosition == HPosition.Bottom )
 				{
-					x = ( wwidth / 2 ) - ( ts.Width / 2 );
-					y = wheight        - ts.Height;
+					x += ( wwidth / 2 ) - ( ts.Width / 2 );
+					y += wheight        - ts.Height;
 				}
 				if( TextPosition == HPosition.BottomLeft )
 				{
 					x = rect.Left;
-					y = wheight - ts.Height;
+					y += wheight - ts.Height;
 				}
 				if( TextPosition == HPosition.BottomRight )
 				{
-					x = wwidth  - ts.Width ;
-					y = wheight - ts.Height;
+					x += wwidth  - ts.Width ;
+					y += wheight - ts.Height;
 				}
 				if( TextPosition == HPosition.Center )
 				{
-					x = ( wwidth  / 2 ) - ( ts.Width  / 2 );
-					y = ( wheight / 2 ) - ( ts.Height / 2 );
+					x += ( wwidth  / 2 ) - ( ts.Width  / 2 );
+					y += ( wheight / 2 ) - ( ts.Height / 2 );
 				}
 				if( TextPosition == HPosition.Left)
 				{
 					x = rect.Left;
-					y = ( wheight / 2 ) - ( ts.Height / 2 );
+					y += ( wheight / 2 ) - ( ts.Height / 2 );
 				}
 				if( TextPosition == HPosition.Right )
 				{
-					x = wwidth   -  ts.Width;
-					y = ( wheight / 2 ) - ( ts.Height / 2 );
+					x += wwidth   -  ts.Width;
+					y += ( wheight / 2 ) - ( ts.Height / 2 );
 				}
 				if( TextPosition == HPosition.Top )
 				{
-					x = ( wwidth  / 2 ) - ( ts.Width  / 2 );
+					x += ( wwidth  / 2 ) - ( ts.Width  / 2 );
 					y = rect.Top;
 				}
 				if( TextPosition == HPosition.TopLeft )
@@ -172,7 +172,7 @@ namespace HollyLibrary
 				}
 				if( TextPosition == HPosition.TopRight )
 				{
-					x = wwidth   - ts.Width;
+					x += wwidth   - ts.Width;
 					y = rect.Top;
 				}
 				//draw text
@@ -184,8 +184,8 @@ namespace HollyLibrary
 			if( this.HorizontalLine )
 			{
 				int x1  = rect.Left  + (int)ts.Width + lineTextPadding;
-				int y   = Allocation.Height / 2;
-				int x2  = Allocation.Width - lineTextPadding;
+				int y   = rect.Top   + Allocation.Height / 2;
+				int x2  = rect.Left  + Allocation.Width - lineTextPadding;
 				if( x2 > x1 )
 					Gtk.Style.PaintHline( this.Style, GdkWindow, this.State, this.Allocation, this, "hline", x1, x2, y );
 			}
