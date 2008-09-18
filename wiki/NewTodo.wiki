@@ -21,9 +21,8 @@
 * HLabel * 
   * ~~a nicer label widget with support for icon, icon position and text position~~
   * ~~add support for a horizontal line in the right of the text like a groupbox header~~
-  * add support for multi-line
-  * fix drawing bugs when there are multiple widgets on the same window near the label
-  * update wiki page
+  * ~~fix drawing bugs when there are multiple widgets on the same window near the label~~
+  * ~~update wiki page~~
 
 * HTreeView *  new features:
   * ~~make sure that drag and drop is working~~
