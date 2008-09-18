@@ -32,7 +32,7 @@ HPosition enum:
 
   * How to set the icon position:
 {{{
-   IconPosition         = HPosition.TopRight;
+   lbl.IconPosition         = HPosition.TopRight;
 }}}
 
   * code sample:
