@@ -1226,11 +1226,11 @@ namespace test
               </packing>
             </child>
             <child>
-              <widget class="HollyLibrary.HLabel" id="hlabel1">
+              <widget class="HollyLibrary.HImageCheckBox" id="himagecheckbox1">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">hlabel1</property>
-                <property name="HorizontalLine">False</property>
-                <property name="TextOverwritesIcon">False</property>
+                <property name="Events">ButtonPressMask</property>
+                <property name="Checked">False</property>
+                <property name="Text">gigi duru</property>
               </widget>
               <packing>
                 <property name="Position">1</property>

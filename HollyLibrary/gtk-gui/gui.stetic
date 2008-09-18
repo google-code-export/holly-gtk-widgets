@@ -1748,7 +1748,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Bin" id="HollyLibrary.HImageCheckBox" design-size="331 48">
+  <widget class="Gtk.Bin" id="HollyLibrary.HImageCheckBox" design-size="331 54">
     <property name="MemberName" />
     <property name="Visible">False</property>
     <child>
@@ -1758,6 +1758,7 @@
           <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
             <property name="Spacing">6</property>
+            <property name="BorderWidth">3</property>
             <child>
               <widget class="Gtk.Image" id="ImgCheck">
                 <property name="MemberName" />
@@ -1774,6 +1775,7 @@
                 <property name="MemberName" />
                 <property name="Xalign">0</property>
                 <property name="LabelProp" translatable="yes">text</property>
+                <signal name="ExposeEvent" handler="OnLblTextExposeEvent" />
               </widget>
               <packing>
                 <property name="Position">1</property>

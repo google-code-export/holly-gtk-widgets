@@ -33,6 +33,7 @@ namespace HollyLibrary {
             this.hbox1 = new Gtk.HBox();
             this.hbox1.Name = "hbox1";
             this.hbox1.Spacing = 6;
+            this.hbox1.BorderWidth = ((uint)(3));
             // Container child hbox1.Gtk.Box+BoxChild
             this.ImgCheck = new Gtk.Image();
             this.ImgCheck.Name = "ImgCheck";
@@ -55,6 +56,7 @@ namespace HollyLibrary {
                 this.Child.ShowAll();
             }
             this.Hide();
+            this.LblText.ExposeEvent += new Gtk.ExposeEventHandler(this.OnLblTextExposeEvent);
         }
     }
 }
