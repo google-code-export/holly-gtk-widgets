@@ -41,7 +41,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.HToolTip
             this.Name = "HollyLibrary.HToolTip";
-            this.Title = Mono.Unix.Catalog.GetString("HToolTip");
+            this.Title = "HToolTip";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.Decorated = false;
             this.SkipPagerHint = true;
@@ -106,7 +106,7 @@ namespace HollyLibrary {
             this.LblTitle.Name = "LblTitle";
             this.LblTitle.Xalign = 0F;
             this.LblTitle.Yalign = 0F;
-            this.LblTitle.LabelProp = Mono.Unix.Catalog.GetString("<b>title</b>");
+            this.LblTitle.LabelProp = "<b>title</b>";
             this.LblTitle.UseMarkup = true;
             this.hbox3.Add(this.LblTitle);
             Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.hbox3[this.LblTitle]));
@@ -129,7 +129,7 @@ namespace HollyLibrary {
             this.LblContent.Name = "LblContent";
             this.LblContent.Xalign = 0F;
             this.LblContent.Yalign = 0F;
-            this.LblContent.LabelProp = Mono.Unix.Catalog.GetString("    * HFontPicker - a office like font picker widget\n    * HDateEdit - a date-time picker supporting custom formatting options\n    * HColorPicker - a simple color picker drop-down ( office like ) \n\n");
+            this.LblContent.LabelProp = "    * HFontPicker - a office like font picker widget\n    * HDateEdit - a date-time picker supporting custom formatting options\n    * HColorPicker - a simple color picker drop-down ( office like ) \n\n";
             this.LblContent.Wrap = true;
             this.vbox6.Add(this.LblContent);
             Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.vbox6[this.LblContent]));

@@ -130,7 +130,7 @@ namespace HollyLibrary {
             this.hbox3.Name = "hbox3";
             this.hbox3.Spacing = 6;
             // Container child hbox3.Gtk.Box+BoxChild
-            this.ChkR1 = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("R:"));
+            this.ChkR1 = new Gtk.RadioButton("R:");
             this.ChkR1.CanFocus = true;
             this.ChkR1.Name = "ChkR1";
             this.ChkR1.DrawIndicator = true;
@@ -152,7 +152,7 @@ namespace HollyLibrary {
             w5.Expand = false;
             w5.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
-            this.ChkG = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("G:"));
+            this.ChkG = new Gtk.RadioButton("G:");
             this.ChkG.CanFocus = true;
             this.ChkG.Name = "ChkG";
             this.ChkG.DrawIndicator = true;
@@ -174,7 +174,7 @@ namespace HollyLibrary {
             w7.Expand = false;
             w7.Fill = false;
             // Container child hbox3.Gtk.Box+BoxChild
-            this.CkkB = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("B:"));
+            this.CkkB = new Gtk.RadioButton("B:");
             this.CkkB.CanFocus = true;
             this.CkkB.Name = "CkkB";
             this.CkkB.DrawIndicator = true;
@@ -223,7 +223,7 @@ namespace HollyLibrary {
             this.frame1.Add(this.GtkAlignment);
             this.GtkLabel3 = new Gtk.Label();
             this.GtkLabel3.Name = "GtkLabel3";
-            this.GtkLabel3.LabelProp = Mono.Unix.Catalog.GetString("<b>Preview</b>");
+            this.GtkLabel3.LabelProp = "<b>Preview</b>";
             this.GtkLabel3.UseMarkup = true;
             this.frame1.LabelWidget = this.GtkLabel3;
             this.vbox1.Add(this.frame1);
@@ -237,7 +237,7 @@ namespace HollyLibrary {
             this.table1.RowSpacing = ((uint)(6));
             this.table1.ColumnSpacing = ((uint)(6));
             // Container child table1.Gtk.Table+TableChild
-            this.chkB = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("B:"));
+            this.chkB = new Gtk.RadioButton("B:");
             this.chkB.CanFocus = true;
             this.chkB.Name = "chkB";
             this.chkB.DrawIndicator = true;
@@ -250,7 +250,7 @@ namespace HollyLibrary {
             w15.XOptions = ((Gtk.AttachOptions)(4));
             w15.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
-            this.chkH = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("H:"));
+            this.chkH = new Gtk.RadioButton("H:");
             this.chkH.CanFocus = true;
             this.chkH.Name = "chkH";
             this.chkH.DrawIndicator = true;
@@ -261,7 +261,7 @@ namespace HollyLibrary {
             w16.XOptions = ((Gtk.AttachOptions)(4));
             w16.YOptions = ((Gtk.AttachOptions)(4));
             // Container child table1.Gtk.Table+TableChild
-            this.chkS = new Gtk.RadioButton(Mono.Unix.Catalog.GetString("S:"));
+            this.chkS = new Gtk.RadioButton("S:");
             this.chkS.CanFocus = true;
             this.chkS.Name = "chkS";
             this.chkS.DrawIndicator = true;
@@ -276,7 +276,7 @@ namespace HollyLibrary {
             // Container child table1.Gtk.Table+TableChild
             this.label2 = new Gtk.Label();
             this.label2.Name = "label2";
-            this.label2.LabelProp = Mono.Unix.Catalog.GetString("K:");
+            this.label2.LabelProp = "K:";
             this.table1.Add(this.label2);
             Gtk.Table.TableChild w18 = ((Gtk.Table.TableChild)(this.table1[this.label2]));
             w18.TopAttach = ((uint)(3));
@@ -288,7 +288,7 @@ namespace HollyLibrary {
             // Container child table1.Gtk.Table+TableChild
             this.label5 = new Gtk.Label();
             this.label5.Name = "label5";
-            this.label5.LabelProp = Mono.Unix.Catalog.GetString("C:");
+            this.label5.LabelProp = "C:";
             this.table1.Add(this.label5);
             Gtk.Table.TableChild w19 = ((Gtk.Table.TableChild)(this.table1[this.label5]));
             w19.LeftAttach = ((uint)(2));
@@ -298,7 +298,7 @@ namespace HollyLibrary {
             // Container child table1.Gtk.Table+TableChild
             this.label6 = new Gtk.Label();
             this.label6.Name = "label6";
-            this.label6.LabelProp = Mono.Unix.Catalog.GetString("M:");
+            this.label6.LabelProp = "M:";
             this.table1.Add(this.label6);
             Gtk.Table.TableChild w20 = ((Gtk.Table.TableChild)(this.table1[this.label6]));
             w20.TopAttach = ((uint)(1));
@@ -310,7 +310,7 @@ namespace HollyLibrary {
             // Container child table1.Gtk.Table+TableChild
             this.label7 = new Gtk.Label();
             this.label7.Name = "label7";
-            this.label7.LabelProp = Mono.Unix.Catalog.GetString("Y:");
+            this.label7.LabelProp = "Y:";
             this.table1.Add(this.label7);
             Gtk.Table.TableChild w21 = ((Gtk.Table.TableChild)(this.table1[this.label7]));
             w21.TopAttach = ((uint)(2));
@@ -433,7 +433,7 @@ namespace HollyLibrary {
             // Container child hbox4.Gtk.Box+BoxChild
             this.label1 = new Gtk.Label();
             this.label1.Name = "label1";
-            this.label1.LabelProp = Mono.Unix.Catalog.GetString("#");
+            this.label1.LabelProp = "#";
             this.hbox4.Add(this.label1);
             Gtk.Box.BoxChild w30 = ((Gtk.Box.BoxChild)(this.hbox4[this.label1]));
             w30.Position = 0;

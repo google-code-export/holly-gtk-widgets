@@ -225,7 +225,8 @@ namespace HollyLibrary
 			args.NewNode.Store     = args.OldNode.Store;
 			args.NewNode.InnerIter = args.OldNode.InnerIter;
 			args.NewNode.Treeview  = args.OldNode.Treeview;
-			store.SetValues( args.OldNode.InnerIter, args.NewNode );
+			//store.SetValues( args.OldNode.InnerIter, args.NewNode );
+			store.SetValue( args.OldNode.InnerIter, 0 , args.NewNode );
 			QueueDraw();
 		}
 		
@@ -321,9 +322,11 @@ namespace HollyLibrary
 				
 				Brush b          = new SolidBrush( c );
 				//set quality to HighSpeed
+				
 				args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
 				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
-				args.Graphics.Dispose();
+					
+				
 			}
 		}
 		

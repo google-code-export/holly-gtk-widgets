@@ -45,7 +45,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.DateEditDialog
             this.Name = "HollyLibrary.DateEditDialog";
-            this.Title = Mono.Unix.Catalog.GetString("DateEditDialog");
+            this.Title = "DateEditDialog";
             this.TypeHint = ((Gdk.WindowTypeHint)(2));
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.BorderWidth = ((uint)(1));
@@ -93,7 +93,7 @@ namespace HollyLibrary {
             w3.Add(w4);
             // Container child GtkHBox.Gtk.Container+ContainerChild
             Gtk.Label w6 = new Gtk.Label();
-            w6.LabelProp = Mono.Unix.Catalog.GetString("Now");
+            w6.LabelProp = "Now";
             w6.UseUnderline = true;
             w3.Add(w6);
             w2.Add(w3);
@@ -129,7 +129,7 @@ namespace HollyLibrary {
             // Container child hbox3.Gtk.Box+BoxChild
             this.label4 = new Gtk.Label();
             this.label4.Name = "label4";
-            this.label4.LabelProp = Mono.Unix.Catalog.GetString("H:");
+            this.label4.LabelProp = "H:";
             this.hbox3.Add(this.label4);
             Gtk.Box.BoxChild w14 = ((Gtk.Box.BoxChild)(this.hbox3[this.label4]));
             w14.Position = 0;
@@ -150,7 +150,7 @@ namespace HollyLibrary {
             // Container child hbox3.Gtk.Box+BoxChild
             this.label2 = new Gtk.Label();
             this.label2.Name = "label2";
-            this.label2.LabelProp = Mono.Unix.Catalog.GetString("M:");
+            this.label2.LabelProp = "M:";
             this.hbox3.Add(this.label2);
             Gtk.Box.BoxChild w16 = ((Gtk.Box.BoxChild)(this.hbox3[this.label2]));
             w16.Position = 2;
@@ -171,7 +171,7 @@ namespace HollyLibrary {
             // Container child hbox3.Gtk.Box+BoxChild
             this.label3 = new Gtk.Label();
             this.label3.Name = "label3";
-            this.label3.LabelProp = Mono.Unix.Catalog.GetString("S:");
+            this.label3.LabelProp = "S:";
             this.hbox3.Add(this.label3);
             Gtk.Box.BoxChild w18 = ((Gtk.Box.BoxChild)(this.hbox3[this.label3]));
             w18.Position = 4;

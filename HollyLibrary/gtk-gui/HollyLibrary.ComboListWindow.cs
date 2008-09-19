@@ -21,7 +21,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.ComboListWindow
             this.Name = "HollyLibrary.ComboListWindow";
-            this.Title = Mono.Unix.Catalog.GetString("ComboListWindow");
+            this.Title = "ComboListWindow";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.Decorated = false;
             // Container child HollyLibrary.ComboListWindow.Gtk.Container+ContainerChild

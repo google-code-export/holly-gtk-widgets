@@ -214,8 +214,10 @@ namespace HollyLibrary
 			//change the value
 			bool is_checked = ( checked_items.IndexOf( args.Index ) != -1 );
 			Console.WriteLine("era checkuit:" + is_checked);
-			store.SetValues( iter, is_checked, args.NewValue );
-			//this.Model.SetValue         ( iter, 1, args.NewValue );
+			//store.SetValues( iter, is_checked, args.NewValue );
+			store.SetValue( iter, 0, is_checked );
+			store.SetValue( iter, 1, args.NewValue);
+			
 			this.QueueDraw();
 		}
 		

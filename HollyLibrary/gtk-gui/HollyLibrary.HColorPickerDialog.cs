@@ -23,7 +23,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.HColorPickerDialog
             this.Name = "HollyLibrary.HColorPickerDialog";
-            this.Title = Mono.Unix.Catalog.GetString("Pick a color");
+            this.Title = "Pick a color";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.Resizable = false;
             this.AllowGrow = false;

@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" ctype="Workbench">
     <Files>
       <File FileName="Welcome" />
-      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="30" Column="4" />
+      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="86" Column="5" />
       <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="323" Column="6" />
       <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="193" Column="3" />
       <File FileName="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" Line="108" Column="27" />
@@ -12,14 +12,19 @@
       <File FileName="test/MainWin.cs" Line="1" Column="1" />
       <File FileName="test/Main.cs" Line="16" Column="15" />
       <File FileName="HollyLibrary/FileSelector/FileViewWidget.cs" Line="35" Column="31" />
+      <File FileName="HollyLibrary/Combos/ComboTree/HComboTree.cs" Line="33" Column="9" />
+      <File FileName="HollyLibrary/Combos/ComboTree/TreePopupDialog.cs" Line="1" Column="1" />
+      <File FileName="HollyLibrary/Combos/FontEdit/FontChooserDialog.cs" Line="127" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True" selected="True">
           <Node name="HollyLibrary" expanded="True">
+            <Node name="Combos" expanded="True">
+              <Node name="FontEdit" expanded="True" />
+            </Node>
             <Node name="ImageCheckBox" expanded="True" />
           </Node>
-          <Node name="test" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

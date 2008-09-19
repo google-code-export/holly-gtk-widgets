@@ -45,8 +45,8 @@ namespace HollyLibrary {
             // Container child hbox1.Gtk.Box+BoxChild
             this.LblText = new Gtk.Label();
             this.LblText.Name = "LblText";
-            this.LblText.Xalign = 0F;
-            this.LblText.LabelProp = Mono.Unix.Catalog.GetString("text");
+            this.LblText.Yalign = 0.3F;
+            this.LblText.LabelProp = "text";
             this.hbox1.Add(this.LblText);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.LblText]));
             w2.Position = 1;
