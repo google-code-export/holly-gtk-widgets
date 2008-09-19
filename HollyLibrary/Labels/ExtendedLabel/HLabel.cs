@@ -21,9 +21,12 @@ namespace HollyLibrary
 		Gdk.Pixbuf icon;
 		HPosition iconPosition = HPosition.Left;
 		HPosition textPosition = HPosition.Left;
-		bool textOverwritesIcon  = false;
-		bool horizontalLine    = false;
-		int lineTextPadding    = 6;
+		//
+		bool textOverwritesIcon       = false;
+		bool horizontalLine           = false;
+		bool textInSelectionRectangle = false;
+		//
+		int lineTextPadding           = 6;
 		
 		
 		public HLabel() 
@@ -179,6 +182,13 @@ namespace HollyLibrary
 				Gdk.Color c  = this.Style.Text( this.State );
 				SolidBrush b = new SolidBrush( GraphUtil.winFormsColorFromGdk( c ) );
 				g.DrawString( this.Text, fnt, b, x, y );
+				//draw selection rectangle if necesary
+				if( TextInSelectionRectangle )
+				{
+					Gdk.GC gc     = this.Style.TextGC( Gtk.StateType.Insensitive );
+					gc.SetLineAttributes( 1, Gdk.LineStyle.OnOffDash, Gdk.CapStyle.NotLast, Gdk.JoinStyle.Round);
+					evnt.Window.DrawRectangle ( gc, false, (int)x, (int)y, (int)ts.Width, (int)ts.Height );
+				}
 			}
 			//draw line if horizonatlLine is true
 			if( this.HorizontalLine )
@@ -252,6 +262,18 @@ namespace HollyLibrary
 			set 
 			{
 				horizontalLine = value;
+			}
+		}
+
+		public bool TextInSelectionRectangle {
+			get 
+			{
+				return textInSelectionRectangle;
+			}
+			set 
+			{
+				textInSelectionRectangle = value;
+				this.QueueDraw();
 			}
 		}
 

@@ -198,6 +198,7 @@
       <itemgroup label="HLabel Properties">
         <property name="HorizontalLine" />
         <property name="TextOverwritesIcon" />
+        <property name="TextInSelectionRectangle" />
       </itemgroup>
     </itemgroups>
     <signals />

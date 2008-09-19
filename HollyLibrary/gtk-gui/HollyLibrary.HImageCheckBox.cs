@@ -19,7 +19,7 @@ namespace HollyLibrary {
         
         private Gtk.Image ImgCheck;
         
-        private Gtk.Label LblText;
+        private HollyLibrary.HLabel LblText;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -28,6 +28,7 @@ namespace HollyLibrary {
             this.Name = "HollyLibrary.HImageCheckBox";
             // Container child HollyLibrary.HImageCheckBox.Gtk.Container+ContainerChild
             this.ECheckbox = new Gtk.EventBox();
+            this.ECheckbox.Events = ((Gdk.EventMask)(86004));
             this.ECheckbox.Name = "ECheckbox";
             // Container child ECheckbox.Gtk.Container+ContainerChild
             this.hbox1 = new Gtk.HBox();
@@ -43,10 +44,12 @@ namespace HollyLibrary {
             w1.Expand = false;
             w1.Fill = false;
             // Container child hbox1.Gtk.Box+BoxChild
-            this.LblText = new Gtk.Label();
+            this.LblText = new HollyLibrary.HLabel();
             this.LblText.Name = "LblText";
-            this.LblText.Yalign = 0.3F;
-            this.LblText.LabelProp = "text";
+            this.LblText.LabelProp = "hlabel1";
+            this.LblText.HorizontalLine = false;
+            this.LblText.TextOverwritesIcon = false;
+            this.LblText.TextInSelectionRectangle = false;
             this.hbox1.Add(this.LblText);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.LblText]));
             w2.Position = 1;
@@ -56,7 +59,6 @@ namespace HollyLibrary {
                 this.Child.ShowAll();
             }
             this.Hide();
-            this.LblText.ExposeEvent += new Gtk.ExposeEventHandler(this.OnLblTextExposeEvent);
         }
     }
 }

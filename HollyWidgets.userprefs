@@ -1,30 +1,39 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" ctype="Workbench">
     <Files>
       <File FileName="Welcome" />
-      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="86" Column="5" />
-      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="323" Column="6" />
-      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="193" Column="3" />
-      <File FileName="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" Line="108" Column="27" />
+      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="94" Column="13" />
+      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="325" Column="5" />
+      <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="219" Column="42" />
+      <File FileName="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" Line="180" Column="49" />
       <File FileName="test/MainWindow2.cs" Line="24" Column="69" />
       <File FileName="HollyLibrary/Combos/ComboFolder/HComboFolder.cs" Line="23" Column="18" />
       <File FileName="HollyLibrary/Combos/ComboFolder/FolderChooserDialog.cs" Line="173" Column="9" />
-      <File FileName="test/MainWin.cs" Line="1" Column="1" />
-      <File FileName="test/Main.cs" Line="16" Column="15" />
+      <File FileName="test/Main.cs" Line="18" Column="17" />
       <File FileName="HollyLibrary/FileSelector/FileViewWidget.cs" Line="35" Column="31" />
       <File FileName="HollyLibrary/Combos/ComboTree/HComboTree.cs" Line="33" Column="9" />
       <File FileName="HollyLibrary/Combos/ComboTree/TreePopupDialog.cs" Line="1" Column="1" />
       <File FileName="HollyLibrary/Combos/FontEdit/FontChooserDialog.cs" Line="127" Column="4" />
+      <File FileName="test/testuu.cs" Line="19" Column="7" />
+      <File FileName="HollyLibrary/Combos/ComboEdit/HBaseComboBox.cs" Line="27" Column="4" />
+      <File FileName="HollyLibrary/RegExEntry/HRegExEntry.cs" Line="42" Column="4" />
+      <File FileName="HollyLibrary/IpEntry/HIpEntry.cs" Line="107" Column="1" />
+      <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeNode.cs" Line="106" Column="46" />
+      <File FileName="test/Sources/TreeView.cs" Line="17" Column="52" />
+      <File FileName="test2/MainWindow.cs" Line="27" Column="60" />
+      <File FileName="test2/Main.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="HollyLibrary" expanded="True">
-            <Node name="Combos" expanded="True">
-              <Node name="FontEdit" expanded="True" />
+            <Node name="Labels" expanded="True">
+              <Node name="ExtendedLabel" expanded="True">
+                <Node name="HLabel.cs" selected="True" />
+              </Node>
             </Node>
-            <Node name="ImageCheckBox" expanded="True" />
           </Node>
+          <Node name="test2" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">

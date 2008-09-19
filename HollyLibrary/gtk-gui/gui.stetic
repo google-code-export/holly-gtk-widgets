@@ -1105,6 +1105,7 @@
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Label" translatable="yes">R:</property>
+                    <property name="Active">True</property>
                     <property name="DrawIndicator">True</property>
                     <property name="HasLabel">True</property>
                     <property name="UseUnderline">True</property>
@@ -1754,6 +1755,7 @@
     <child>
       <widget class="Gtk.EventBox" id="ECheckbox">
         <property name="MemberName" />
+        <property name="Events">PointerMotionMask, ButtonMotionMask, Button1MotionMask, Button2MotionMask, Button3MotionMask, ButtonPressMask, ButtonReleaseMask, KeyPressMask, KeyReleaseMask, FocusChangeMask, PropertyChangeMask</property>
         <child>
           <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
@@ -1771,11 +1773,12 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Label" id="LblText">
+              <widget class="HollyLibrary.HLabel" id="LblText">
                 <property name="MemberName" />
-                <property name="Yalign">0.3</property>
-                <property name="LabelProp" translatable="yes">text</property>
-                <signal name="ExposeEvent" handler="OnLblTextExposeEvent" />
+                <property name="LabelProp" translatable="yes">hlabel1</property>
+                <property name="HorizontalLine">False</property>
+                <property name="TextOverwritesIcon">False</property>
+                <property name="TextInSelectionRectangle">False</property>
               </widget>
               <packing>
                 <property name="Position">1</property>
