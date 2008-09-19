@@ -12,7 +12,7 @@ using System.Drawing.Drawing2D;
 public partial class MainWindow: Gtk.Window
 {	
 	
-	HImageCheckBox chk = new HImageCheckBox();
+	HImageCheckBox chk = new HImageCheckBox("gigel duru este bun?");
 	
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
