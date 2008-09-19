@@ -67,11 +67,14 @@ _New widget:_ *HPictureBox*
 _New widget:_ *HGridView*
   # a simpler version of [http://www.codeproject.com/KB/grid/csharpgridcontrol.aspx SourceGrid], or the XPTable, or a swt-table like widget.  Still thinking. [http://www.telerik.com/products/winforms/controls/gridview/overview.aspx This] is nice also...
 
+
+
   * rebuild HFontPicker to be an extended HSimpleComboBox - also add a nice icon to each font - and maibe do the picker to be like the abiword's one ( it would load faster )
   * verify if i have rights to create a new folder on the HComboFolder widget
   * study data binding in winforms, maybe do something similar for gtk widgets
   * remove any cairo binding - use only System.Drawing ( it's really faster )
   * make a nicer analog clock :) Nice example [http://wwww.vgdotnet.com/blog/shiny_clock.png here]
+  * ~~downgrade Gtk sharp version requirement to 2.10~~
 
 _New widget:_ *HSchedulingCalendar*
   # a nice calendar widget with scheduling features 
