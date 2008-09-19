@@ -7,13 +7,18 @@
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="400 300">
+  <widget class="Gtk.Window" id="MainWindow" design-size="400 60">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <placeholder />
+      <widget class="HollyLibrary.HSimpleComboBox" id="hsimplecombobox1">
+        <property name="MemberName" />
+        <property name="Events">ButtonPressMask</property>
+        <property name="IsEditable">False</property>
+        <property name="DropDownHeight">0</property>
+      </widget>
     </child>
   </widget>
 </stetic-interface>
