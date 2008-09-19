@@ -67,7 +67,7 @@ namespace HollyLibrary {
             // Container child hbox4.Gtk.Box+BoxChild
             this.label3 = new Gtk.Label();
             this.label3.Name = "label3";
-            this.label3.LabelProp = Mono.Unix.Catalog.GetString(".");
+            this.label3.LabelProp = ".";
             this.hbox4.Add(this.label3);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox4[this.label3]));
             w2.Position = 1;
@@ -89,7 +89,7 @@ namespace HollyLibrary {
             // Container child hbox4.Gtk.Box+BoxChild
             this.label4 = new Gtk.Label();
             this.label4.Name = "label4";
-            this.label4.LabelProp = Mono.Unix.Catalog.GetString(".");
+            this.label4.LabelProp = ".";
             this.hbox4.Add(this.label4);
             Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox4[this.label4]));
             w4.Position = 3;
@@ -111,7 +111,7 @@ namespace HollyLibrary {
             // Container child hbox4.Gtk.Box+BoxChild
             this.label5 = new Gtk.Label();
             this.label5.Name = "label5";
-            this.label5.LabelProp = Mono.Unix.Catalog.GetString(".");
+            this.label5.LabelProp = ".";
             this.hbox4.Add(this.label5);
             Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox4[this.label5]));
             w6.Position = 5;

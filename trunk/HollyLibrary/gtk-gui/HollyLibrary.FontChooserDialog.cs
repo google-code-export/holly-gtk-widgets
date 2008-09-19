@@ -23,7 +23,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.FontChooserDialog
             this.Name = "HollyLibrary.FontChooserDialog";
-            this.Title = Mono.Unix.Catalog.GetString("FontChooserDialog");
+            this.Title = "FontChooserDialog";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.BorderWidth = ((uint)(1));
             this.Decorated = false;

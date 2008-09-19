@@ -18,12 +18,17 @@ namespace HollyLibrary
 			this.Build();
 		}
 		
+		[GLib.ConnectBefore]
 		protected override bool OnExposeEvent (Gdk.EventExpose evnt)
 		{
 			Gdk.Rectangle rect = new Gdk.Rectangle( Allocation.X, Allocation.Y, Allocation.Width , Allocation.Height );
 			
-			Gtk.Style.PaintFlatBox( Entry.Style, this.GdkWindow, Entry.State, Entry.ShadowType, this.Allocation, Entry, "entry_bg", rect.X, rect.Y, rect.Width, rect.Height );
-			Gtk.Style.PaintShadow ( Entry.Style, this.GdkWindow, Entry.State, Entry.ShadowType, this.Allocation, Entry, "entry"   , rect.X, rect.Y, rect.Width, rect.Height );
+			
+			
+			//in loc de Gtk.ShadowType.None era Entry.ShadowType
+			
+			Gtk.Style.PaintFlatBox( Entry.Style, this.GdkWindow, Entry.State, Gtk.ShadowType.In, this.Allocation, Entry, "entry_bg", rect.X, rect.Y, rect.Width, rect.Height );
+			Gtk.Style.PaintShadow ( Entry.Style, this.GdkWindow, Entry.State, Gtk.ShadowType.In, this.Allocation, Entry, "entry"   , rect.X, rect.Y, rect.Width, rect.Height );
 			
 			return base.OnExposeEvent (evnt);
 		}

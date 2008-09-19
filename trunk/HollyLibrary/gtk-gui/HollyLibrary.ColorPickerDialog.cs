@@ -23,7 +23,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.ColorPickerDialog
             this.Name = "HollyLibrary.ColorPickerDialog";
-            this.Title = Mono.Unix.Catalog.GetString("ColorPickerDialog");
+            this.Title = "ColorPickerDialog";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.Resizable = false;
             this.AllowGrow = false;
@@ -60,7 +60,7 @@ namespace HollyLibrary {
             w3.Add(w4);
             // Container child GtkHBox.Gtk.Container+ContainerChild
             Gtk.Label w6 = new Gtk.Label();
-            w6.LabelProp = Mono.Unix.Catalog.GetString("More");
+            w6.LabelProp = "More";
             w6.UseUnderline = true;
             w3.Add(w6);
             w2.Add(w3);

@@ -21,7 +21,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.TreePopupDialog
             this.Name = "HollyLibrary.TreePopupDialog";
-            this.Title = Mono.Unix.Catalog.GetString("TreePopupDialog");
+            this.Title = "TreePopupDialog";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.Decorated = false;
             this.SkipPagerHint = true;

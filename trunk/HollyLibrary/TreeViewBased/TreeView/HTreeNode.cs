@@ -102,7 +102,9 @@ namespace HollyLibrary
 			args.NewNode.InnerIter = args.OldNode.InnerIter;
 			args.NewNode.Treeview  = args.OldNode.Treeview;
 			args.NewNode.ParentNode= args.OldNode.ParentNode;
-			Store.SetValues( args.OldNode.InnerIter, args.NewNode );
+			
+			store.SetValue(args.OldNode.InnerIter, 0,  args.NewNode );
+			//Store.SetValues( args.OldNode.InnerIter, args.NewNode );
 		}
 		
 		public virtual void OnNodeRemoved( object sender, NodeRemoveEventArgs args )

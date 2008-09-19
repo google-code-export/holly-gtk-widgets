@@ -33,7 +33,7 @@ namespace HollyLibrary {
             Stetic.Gui.Initialize(this);
             // Widget HollyLibrary.FolderChooserDialog
             this.Name = "HollyLibrary.FolderChooserDialog";
-            this.Title = Mono.Unix.Catalog.GetString("FolderChooserDialog");
+            this.Title = "FolderChooserDialog";
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             this.BorderWidth = ((uint)(2));
             this.Decorated = false;
@@ -81,7 +81,7 @@ namespace HollyLibrary {
             this.label1 = new Gtk.Label();
             this.label1.Name = "label1";
             this.label1.Xalign = 0F;
-            this.label1.LabelProp = Mono.Unix.Catalog.GetString("Add new folder:");
+            this.label1.LabelProp = "Add new folder:";
             this.hbox1.Add(this.label1);
             Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.label1]));
             w4.Position = 0;
