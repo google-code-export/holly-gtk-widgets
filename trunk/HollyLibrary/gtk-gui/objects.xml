@@ -20,7 +20,7 @@
     </itemgroups>
     <signals />
   </object>
-  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="folder.png">
     <itemgroups>
       <itemgroup label="HFontPicker Properties">
         <property name="Font" />
@@ -36,7 +36,7 @@
     <itemgroups />
     <signals />
   </object>
-  <object type="HollyLibrary.HSimpleList" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+  <object type="HollyLibrary.HSimpleList" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView" icon="HSimpleList.png">
     <itemgroups>
       <itemgroup label="HSimpleList Properties">
         <property name="SelectedIndex" />
@@ -90,7 +90,7 @@
     </itemgroups>
     <signals />
   </object>
-  <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+  <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView" icon="HTreeView.png">
     <itemgroups>
       <itemgroup label="HTreeView Properties">
         <property name="OwnerDraw" />
@@ -177,7 +177,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin"  icon="HSimpleComboBox.png">
     <itemgroups>
       <itemgroup label="HSimpleComboBox Properties">
         <property name="IsEditable" />
