@@ -40,22 +40,22 @@ namespace HollyLibrary
 			ImgCheck.WidgetFlags       |= WidgetFlags.CanFocus;
 			
 			//add events
-			ImgCheck.FocusGrabbed += new EventHandler( this.OnImgGrabFocus );
-			ImgCheck.FocusOutEvent += new FocusOutEventHandler( this.OnImgFocusOut );
+			ImgCheck.FocusGrabbed      += new EventHandler           ( this.OnImgGrabFocus );
+			ImgCheck.FocusOutEvent     += new FocusOutEventHandler   ( this.OnImgFocusOut );
 			ECheckbox.ButtonPressEvent += new ButtonPressEventHandler( OnButtonPress );
 			ImgCheck.KeyPressEvent     += new KeyPressEventHandler   ( OnImgKeyPress );
 		}
 		
+		
+		
 		private void OnImgGrabFocus( object sender, EventArgs args )
 		{
-			focused = true;
-			QueueDraw();
+			LblText.TextInSelectionRectangle = true;
 		}
 		
 		private void OnImgFocusOut( object sender, FocusOutEventArgs args )
 		{
-			focused = false;
-			QueueDraw();
+			LblText.TextInSelectionRectangle = false;
 		}
 		
 		private void OnImgKeyPress( object sender, Gtk.KeyPressEventArgs e )
@@ -67,7 +67,9 @@ namespace HollyLibrary
 		private void OnButtonPress( object sender, EventArgs args )
 		{
 			Checked = !Checked;
+			LblText.TextInSelectionRectangle = true;
 		}
+		
 		
 		private void OnCheckedStateChanged()
 		{
@@ -78,21 +80,6 @@ namespace HollyLibrary
 			//
 			if( CheckedStateChanged != null )
 					CheckedStateChanged( this, new EventArgs() );
-		}
-
-		protected virtual void OnLblTextExposeEvent (object o, Gtk.ExposeEventArgs args)
-		{
-			if( focused )
-			{
-				System.Drawing.Graphics g = Gtk.DotNet.Graphics.FromDrawable( args.Event.Window );
-				int x         = LblText.Allocation.X ;
-				int y         = LblText.Allocation.Y;
-				int winHeight = LblText.Allocation.Height;
-				int winWidth  = LblText.Allocation.Width;
-				Gdk.GC gc = this.Style.TextGC( Gtk.StateType.Insensitive );
-				gc.SetLineAttributes( 1, Gdk.LineStyle.OnOffDash, Gdk.CapStyle.NotLast, Gdk.JoinStyle.Round);
-				LblText.GdkWindow.DrawRectangle ( gc, false, x, y, winWidth - 1, winHeight - 1 );
-			}
 		}
 
 		
@@ -146,6 +133,18 @@ namespace HollyLibrary
 			set
 			{
 				LblText.Text = value;
+			}
+		}
+		
+		public HPosition TextPosition
+		{
+			get
+			{
+				return LblText.TextPosition;
+			}
+			set
+			{
+				LblText.TextPosition = value;
 			}
 		}
 #endregion
