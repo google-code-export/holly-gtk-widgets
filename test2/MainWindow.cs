@@ -8,23 +8,24 @@ using Gtk;
 using HollyLibrary;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.ComponentModel;
+
+
 
 public partial class MainWindow: Gtk.Window
 {	
 	
-	HImageCheckBox chk = new HImageCheckBox("gigel duru este bun?");
+	HImageCheckBox chk = new HImageCheckBox("Holly widgets are the best");
 	
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
-		this.Title          = "HTreeView demo";
-		this.WindowPosition = Gtk.WindowPosition.CenterAlways;
-		this.Resize( 320, 240 );
 		//
 		//
 		VBox box = new VBox();
 		chk.CheckedImage   = GraphUtil.pixbufFromStock( "gtk-yes", Gtk.IconSize.Button );
 		chk.UncheckedImage = GraphUtil.pixbufFromStock( "gtk-no" , Gtk.IconSize.Button );
+		chk.TextPosition = HPosition.Center;
 		box.PackStart( chk );
 		box.PackStart( new Button("asdf") );
 		this.Add( box );

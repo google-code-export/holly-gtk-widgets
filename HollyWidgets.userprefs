@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="test2/MainWindow.cs" ctype="Workbench">
     <Files>
       <File FileName="Welcome" />
-      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="94" Column="13" />
+      <File FileName="HollyLibrary/ImageCheckBox/HImageCheckBox.cs" Line="125" Column="31" />
       <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeView.cs" Line="325" Column="5" />
       <File FileName="HollyLibrary/TreeViewBased/SimpleListEdit/HSimpleList.cs" Line="219" Column="42" />
-      <File FileName="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" Line="180" Column="49" />
+      <File FileName="HollyLibrary/Labels/ExtendedLabel/HLabel.cs" Line="183" Column="21" />
       <File FileName="test/MainWindow2.cs" Line="24" Column="69" />
       <File FileName="HollyLibrary/Combos/ComboFolder/HComboFolder.cs" Line="23" Column="18" />
       <File FileName="HollyLibrary/Combos/ComboFolder/FolderChooserDialog.cs" Line="173" Column="9" />
@@ -20,18 +20,14 @@
       <File FileName="HollyLibrary/IpEntry/HIpEntry.cs" Line="107" Column="1" />
       <File FileName="HollyLibrary/TreeViewBased/TreeView/HTreeNode.cs" Line="106" Column="46" />
       <File FileName="test/Sources/TreeView.cs" Line="17" Column="52" />
-      <File FileName="test2/MainWindow.cs" Line="27" Column="60" />
+      <File FileName="test2/MainWindow.cs" Line="19" Column="12" />
       <File FileName="test2/Main.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
+        <State expanded="True" selected="True">
           <Node name="HollyLibrary" expanded="True">
-            <Node name="Labels" expanded="True">
-              <Node name="ExtendedLabel" expanded="True">
-                <Node name="HLabel.cs" selected="True" />
-              </Node>
-            </Node>
+            <Node name="TreeViewBased" expanded="True" />
           </Node>
           <Node name="test2" expanded="True" />
         </State>

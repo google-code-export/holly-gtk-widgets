@@ -19,7 +19,6 @@ namespace HollyLibrary
 		Pixbuf checkedImage;
 		Pixbuf uncheckedImage;
 		bool _checked = false;
-		bool focused  = false;
 		
 		public HImageCheckBox()
 		{
