@@ -43,7 +43,7 @@ _New widget:_ *HComboCalculator*
 
 *HImageCheckbox*
   # ~~a checkbox with images for Checked and Unchecked state~~
-  # draw selection rectangle when widget has focus
+  # ~~draw selection rectangle when widget has focus~~
   # write wiki page
 
 _New widget:_ *HPictureBox*
