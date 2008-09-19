@@ -24,9 +24,16 @@ namespace HollyLibrary
 		public HImageCheckBox()
 		{
 			this.Build();
-			this.AppPaintable = true;
-			
-			this.ECheckbox.Visible = false;
+			this.AppPaintable      = true;
+			on_init();
+		}
+		
+		
+		public HImageCheckBox( String text )
+		{
+			this.Build();
+			this.Text = text;
+			this.AppPaintable      = true;
 			on_init();
 		}
 		
@@ -42,7 +49,8 @@ namespace HollyLibrary
 			//add events
 			ImgCheck.FocusGrabbed      += new EventHandler           ( this.OnImgGrabFocus );
 			ImgCheck.FocusOutEvent     += new FocusOutEventHandler   ( this.OnImgFocusOut );
-			ECheckbox.ButtonPressEvent += new ButtonPressEventHandler( OnButtonPress );
+			ECheckbox.ButtonPressEvent   += new ButtonPressEventHandler  ( OnButtonPress );
+			ECheckbox.ButtonReleaseEvent += new ButtonReleaseEventHandler( OnButtonRelease );
 			ImgCheck.KeyPressEvent     += new KeyPressEventHandler   ( OnImgKeyPress );
 		}
 		
@@ -70,6 +78,10 @@ namespace HollyLibrary
 			LblText.TextInSelectionRectangle = true;
 		}
 		
+		private void OnButtonRelease( object sender, EventArgs args )
+		{
+			LblText.TextInSelectionRectangle = false;
+		}
 		
 		private void OnCheckedStateChanged()
 		{
@@ -81,7 +93,6 @@ namespace HollyLibrary
 			if( CheckedStateChanged != null )
 					CheckedStateChanged( this, new EventArgs() );
 		}
-
 		
 
 #region properties
