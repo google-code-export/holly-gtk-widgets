@@ -162,7 +162,7 @@ namespace HollyLibrary
 					n.Nodes.Add( new HTreeNode("dummy") );
 				}
 			}
-			catch( Exception ex )
+			catch
 			{
 				node.Nodes.Clear();
 				Console.WriteLine("Cannot acces folder!");

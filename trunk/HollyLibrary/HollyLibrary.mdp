@@ -91,6 +91,15 @@
     <File name="Combos/ColorPicker/ColorButton.cs" subtype="Code" buildaction="Compile" />
     <File name="Labels/ExtendedLabel/HLabel.cs" subtype="Code" buildaction="Compile" />
     <File name="FileSelector/FileViewWidget.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/HTable.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Backend" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Backend/HTableCell.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Backend/HTableRow.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Backend/HTableColumn.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Collections" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Collections/RowCollection.cs" subtype="Code" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Collections/ColumnCollection.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
