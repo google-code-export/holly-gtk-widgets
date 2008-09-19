@@ -13,12 +13,7 @@
     <property name="WindowPosition">CenterOnParent</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
     <child>
-      <widget class="HollyLibrary.HSimpleComboBox" id="hsimplecombobox1">
-        <property name="MemberName" />
-        <property name="Events">ButtonPressMask</property>
-        <property name="IsEditable">False</property>
-        <property name="DropDownHeight">0</property>
-      </widget>
+      <placeholder />
     </child>
   </widget>
 </stetic-interface>
