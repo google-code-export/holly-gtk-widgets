@@ -1,5 +1,5 @@
 <objects>
-  <object type="HollyLibrary.HDateEdit" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HDateEdit" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HDateEdit.png">
     <itemgroups>
       <itemgroup label="HDateEdit Properties">
         <property name="CurrentDate" />
@@ -19,8 +19,8 @@
       </itemgroup>
     </itemgroups>
     <signals />
-  </object>
-  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="folder.png">
+  </object> 
+  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HFontPicker.png">
     <itemgroups>
       <itemgroup label="HFontPicker Properties">
         <property name="Font" />
@@ -58,7 +58,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HRegExEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HRegExEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HRegExEntry.png">
     <itemgroups>
       <itemgroup label="HRegExEntry Properties">
         <property name="Text" />
@@ -73,7 +73,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HColorPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HColorPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HColorPicker.png">
     <itemgroups />
     <signals>
       <itemgroup label="HColorPicker Signals">
@@ -81,7 +81,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HIpEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HIpEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HIpEntry.png">
     <itemgroups>
       <itemgroup label="HIpEntry Properties">
         <property name="Text" />
@@ -114,7 +114,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HComboTree.png"> 
     <itemgroups>
       <itemgroup label="HComboTree Properties">
         <property name="DropDownHeight" />
@@ -127,7 +127,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HComboFolder" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HComboFolder" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HComboFolder.png">
     <itemgroups>
       <itemgroup label="HComboFolder Properties">
         <property name="DropDownHeight" />
@@ -156,7 +156,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HColorPickerWidget" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HColorPickerWidget" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HColorPickerPanel.png">
     <itemgroups>
       <itemgroup label="HColorPickerWidget Properties">
         <property name="ColorHexa" />
@@ -164,7 +164,7 @@
     </itemgroups>
     <signals />
   </object>
-  <object type="HollyLibrary.HImageCheckBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+  <object type="HollyLibrary.HImageCheckBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HImageCheckBox.png">
     <itemgroups>
       <itemgroup label="HImageCheckBox Properties">
         <property name="Checked" />
@@ -193,7 +193,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HLabel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Label">
+  <object type="HollyLibrary.HLabel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Label" icon="HLabel.png">
     <itemgroups>
       <itemgroup label="HLabel Properties">
         <property name="HorizontalLine" />
