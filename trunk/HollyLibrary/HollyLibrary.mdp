@@ -93,13 +93,6 @@
     <File name="FileSelector/FileViewWidget.cs" subtype="Code" buildaction="Compile" />
     <File name="TreeViewBased/Table" subtype="Directory" buildaction="Compile" />
     <File name="TreeViewBased/Table/HTable.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Backend" subtype="Directory" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Backend/HTableCell.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Backend/HTableRow.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Backend/HTableColumn.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Collections" subtype="Directory" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Collections/RowCollection.cs" subtype="Code" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Collections/ColumnCollection.cs" subtype="Code" buildaction="Compile" />
     <File name="HTreeView.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="HSimpleList.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="HSimpleComboBox.png" subtype="Code" buildaction="EmbedAsResource" />
@@ -125,37 +118,5 @@
     <ProjectReference type="Gac" localcopy="True" refto="pango-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </References>
-  <GtkDesignInfo generateGettext="False" isWidgetLibrary="True" gtkVersion="2.10.3">
-    <ExportedWidgets>
-      <Widget>HollyLibrary.ExEntry</Widget>
-      <Widget>HollyLibrary.HMaskedEntry</Widget>
-      <Widget>HollyLibrary.DateEdit</Widget>
-      <Widget>HollyLibrary.AnalogClock</Widget>
-      <Widget>HollyLibrary.HDateEdit</Widget>
-      <Widget>HollyLibrary.ExtendedCombo</Widget>
-      <Widget>HollyLibrary.TestCombo</Widget>
-      <Widget>HollyLibrary.HComboBox</Widget>
-      <Widget>comboBox</Widget>
-      <Widget>HollyLibrary.HFontPicker</Widget>
-      <Widget>HollyLibrary.test</Widget>
-      <Widget>HollyLibrary.HComboBoxBase</Widget>
-      <Widget>HollyLibrary.HBaseComboBox</Widget>
-      <Widget>HollyLibrary.HSimpleList</Widget>
-      <Widget>HollyLibrary.BaseList</Widget>
-      <Widget>HollyLibrary.HRegExEntry</Widget>
-      <Widget>HollyLibrary.HIpEntry</Widget>
-      <Widget>HollyLibrary.HTreeView</Widget>
-      <Widget>HollyLibrary.HComboTree</Widget>
-      <Widget>HollyLibrary.HComboFolder</Widget>
-      <Widget>HollyLibrary.HList</Widget>
-      <Widget>ColorPanel</Widget>
-      <Widget>HollyLibrary.VerticalColorSlider</Widget>
-      <Widget>HollyLibrary.ColorPanel</Widget>
-      <Widget>HollyLibrary.HColorPickerWidget</Widget>
-      <Widget>HollyLibrary.HImageCheckBox</Widget>
-      <Widget>HollyLibrary.HColorPicker</Widget>
-      <Widget>HollyLibrary.HSimpleComboBox</Widget>
-      <Widget>HollyLibrary.HLabel</Widget>
-    </ExportedWidgets>
-  </GtkDesignInfo>
+  <GtkDesignInfo generateGettext="False" />
 </Project>
