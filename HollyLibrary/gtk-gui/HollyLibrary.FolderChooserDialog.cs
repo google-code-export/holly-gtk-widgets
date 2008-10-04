@@ -59,8 +59,8 @@ namespace HollyLibrary {
             this.FolderTree.ItemHeight = 0;
             this.FolderTree.NodeIconVisible = true;
             this.FolderTree.IsCheckBoxTree = false;
-            this.FolderTree.Editable = false;
             this.FolderTree.IsDragAndDropEnable = false;
+            this.FolderTree.Editable = false;
             this.GtkScrolledWindow.Add(this.FolderTree);
             this.vbox1.Add(this.GtkScrolledWindow);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));

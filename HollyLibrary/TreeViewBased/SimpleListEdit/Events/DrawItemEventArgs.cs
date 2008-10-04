@@ -27,11 +27,28 @@ namespace HollyLibrary
 			}
 		}
 		
+		public Cairo.Context CairoContext
+		{
+			get
+			{
+				return Gdk.CairoHelper.Create(this.Drawable);
+			}
+		}
+		
 		public System.Drawing.Graphics Graphics
 		{
 			get
 			{
-				return Gtk.DotNet.Graphics.FromDrawable( this.Drawable );
+				System.Drawing.Graphics ret = null;
+				try
+				{
+					ret = Gtk.DotNet.Graphics.FromDrawable( this.drawable );
+				}
+				catch( Exception ex )
+				{
+					Console.WriteLine( ex.Message + ex.StackTrace + ex.Source );
+				}
+				return ret;
 			}
 		}
 

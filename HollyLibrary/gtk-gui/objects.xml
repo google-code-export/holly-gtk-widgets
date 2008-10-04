@@ -19,7 +19,7 @@
       </itemgroup>
     </itemgroups>
     <signals />
-  </object> 
+  </object>
   <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HFontPicker.png">
     <itemgroups>
       <itemgroup label="HFontPicker Properties">
@@ -97,8 +97,8 @@
         <property name="ItemHeight" />
         <property name="NodeIconVisible" />
         <property name="IsCheckBoxTree" />
-        <property name="Editable" />
         <property name="IsDragAndDropEnable" />
+        <property name="Editable" />
       </itemgroup>
     </itemgroups>
     <signals>
@@ -114,7 +114,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HComboTree.png"> 
+  <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HComboTree.png">
     <itemgroups>
       <itemgroup label="HComboTree Properties">
         <property name="DropDownHeight" />
@@ -177,7 +177,7 @@
       </itemgroup>
     </signals>
   </object>
-  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin"  icon="HSimpleComboBox.png">
+  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" icon="HSimpleComboBox.png">
     <itemgroups>
       <itemgroup label="HSimpleComboBox Properties">
         <property name="IsEditable" />

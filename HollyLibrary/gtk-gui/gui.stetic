@@ -910,8 +910,8 @@
             <property name="ItemHeight">0</property>
             <property name="NodeIconVisible">False</property>
             <property name="IsCheckBoxTree">False</property>
-            <property name="Editable">False</property>
             <property name="IsDragAndDropEnable">False</property>
+            <property name="Editable">False</property>
             <signal name="ButtonPressEvent" handler="OnTreeButtonPressEvent" />
             <signal name="RowActivated" handler="OnTreeRowActivated" />
             <signal name="CursorChanged" handler="OnTreeCursorChanged" />
@@ -961,8 +961,8 @@
                 <property name="ItemHeight">0</property>
                 <property name="NodeIconVisible">True</property>
                 <property name="IsCheckBoxTree">False</property>
-                <property name="Editable">False</property>
                 <property name="IsDragAndDropEnable">False</property>
+                <property name="Editable">False</property>
                 <signal name="ButtonPressEvent" handler="OnFolderTreeButtonPressEvent" />
                 <signal name="CursorChanged" handler="OnFolderTreeCursorChanged" />
                 <signal name="RowActivated" handler="OnFolderTreeRowActivated" />
@@ -1105,7 +1105,6 @@
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Label" translatable="yes">R:</property>
-                    <property name="Active">True</property>
                     <property name="DrawIndicator">True</property>
                     <property name="HasLabel">True</property>
                     <property name="UseUnderline">True</property>
