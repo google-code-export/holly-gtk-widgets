@@ -106,6 +106,12 @@
     <File name="HComboFolder.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="HColorPicker.png" subtype="Code" buildaction="EmbedAsResource" />
     <File name="HColorPickerPanel.png" subtype="Code" buildaction="EmbedAsResource" />
+    <File name="TreeViewBased/Table/Editors" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Renderers" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Models" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Events" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Sorting" subtype="Directory" buildaction="Compile" />
+    <File name="TreeViewBased/Table/Models/Design" subtype="Directory" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
