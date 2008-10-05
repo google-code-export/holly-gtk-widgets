@@ -36,9 +36,9 @@ namespace HollyLibrary {
             this.TvList.SelectedIndex = 0;
             this.TvList.ItemHeight = 20;
             this.TvList.OwnerDraw = false;
-            this.TvList.IsCheckBoxList = false;
             this.TvList.IsEditable = false;
             this.TvList.IsDragAndDropEnable = false;
+            this.TvList.IsCheckBoxList = false;
             this.GtkScrolledWindow.Add(this.TvList);
             this.Add(this.GtkScrolledWindow);
             if ((this.Child != null)) {

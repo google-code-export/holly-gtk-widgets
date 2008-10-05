@@ -112,11 +112,31 @@
     <ProjectReference type="Gac" localcopy="True" refto="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
     <ProjectReference type="Gac" localcopy="True" refto="Mono.Cairo, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756" />
     <ProjectReference type="Gac" localcopy="True" refto="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <ProjectReference type="Gac" localcopy="True" refto="gtk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <ProjectReference type="Gac" localcopy="True" refto="gdk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <ProjectReference type="Gac" localcopy="True" refto="glib-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <ProjectReference type="Gac" localcopy="True" refto="pango-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </References>
-  <GtkDesignInfo generateGettext="False" />
+  <GtkDesignInfo generateGettext="False" isWidgetLibrary="True" gtkVersion="2.12.1">
+    <ExportedWidgets>
+      <Widget>HollyLibrary.HSimpleComboBox</Widget>
+      <Widget>HollyLibrary.HColorPickerWidget</Widget>
+      <Widget>HollyLibrary.HComboTree</Widget>
+      <Widget>HollyLibrary.HComboFolder</Widget>
+      <Widget>HollyLibrary.HDateEdit</Widget>
+      <Widget>HollyLibrary.HSimpleList</Widget>
+      <Widget>HollyLibrary.HRegExEntry</Widget>
+      <Widget>HollyLibrary.HImageCheckBox</Widget>
+      <Widget>HollyLibrary.HIpEntry</Widget>
+      <Widget>HollyLibrary.HLabel</Widget>
+      <Widget>HollyLibrary.HTable</Widget>
+      <Widget>HollyLibrary.HFontPicker</Widget>
+      <Widget>HollyLibrary.HTreeView</Widget>
+      <Widget>HollyLibrary.ColorPanel</Widget>
+      <Widget>HollyLibrary.AnalogClock</Widget>
+      <Widget>HollyLibrary.VerticalColorSlider</Widget>
+      <Widget>HollyLibrary.HBaseComboBox</Widget>
+    </ExportedWidgets>
+  </GtkDesignInfo>
 </Project>

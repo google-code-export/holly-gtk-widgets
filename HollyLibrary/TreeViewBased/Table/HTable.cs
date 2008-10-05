@@ -14,55 +14,5 @@ namespace HollyLibrary
 	
 	public class HTable : TreeView
 	{
-		ListStore innerStore = null;
-		RowCollection    rows    = new RowCollection   ();
-		ColumnCollection columns = new ColumnCollection();
-		
-		public HTable()
-		{
-			
-		}
-		
-		public HTableCell this[int row_index, int column_index ]
-		{
-			get
-			{
-				//TODO:
-				return null;
-			}
-			set
-			{
-				//TODO:
-				
-			}
-		}
-		
-		
-		
-#region properties
-		public RowCollection TableRows 
-		{
-			get 
-			{
-				return rows;
-			}
-			set 
-			{
-				rows = value;
-			}
-		}
-		
-		public ColumnCollection TableColumns 
-		{
-			get 
-			{
-				return columns;
-			}
-			set 
-			{
-				columns = value;
-			}
-		}
-#endregion
 	}
 }

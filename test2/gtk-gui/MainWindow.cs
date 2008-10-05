@@ -46,8 +46,8 @@ public partial class MainWindow {
         this.hlabel1 = new HollyLibrary.HLabel();
         this.hlabel1.Name = "hlabel1";
         this.hlabel1.LabelProp = "hlabel1";
-        this.hlabel1.HorizontalLine = false;
         this.hlabel1.TextOverwritesIcon = false;
+        this.hlabel1.HorizontalLine = false;
         this.hlabel1.TextInSelectionRectangle = false;
         this.vbox1.Add(this.hlabel1);
         Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hlabel1]));
