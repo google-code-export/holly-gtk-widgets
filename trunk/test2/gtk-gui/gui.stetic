@@ -2,11 +2,10 @@
 <stetic-interface>
   <configuration>
     <images-root-path>..</images-root-path>
-    <target-gtk-version>2.10.3</target-gtk-version>
+    <target-gtk-version>2.12.1</target-gtk-version>
   </configuration>
   <import>
     <widget-library name="../../HollyLibrary/bin/Debug/HollyLibrary.dll" />
-    <widget-library name="../bin/Debug/test2.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="577 400">
     <property name="MemberName" />

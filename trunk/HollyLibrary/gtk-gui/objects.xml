@@ -1,2 +1,202 @@
 <objects attr-sync="on">
+  <object type="HollyLibrary.HSimpleComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HSimpleComboBox Properties">
+        <property name="IsEditable" />
+        <property name="Text" />
+        <property name="DropDownHeight" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HSimpleComboBox Signals">
+        <signal name="DropDownOpened" />
+        <signal name="DropDownClosed" />
+        <signal name="TextChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HColorPickerWidget" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HColorPickerWidget Properties">
+        <property name="ColorHexa" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.HComboTree" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HComboTree Properties">
+        <property name="Text" />
+        <property name="DropDownHeight" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HComboTree Signals">
+        <signal name="ValueChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HComboFolder" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HComboFolder Properties">
+        <property name="SelectedPath" />
+        <property name="DropDownHeight" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HComboFolder Signals">
+        <signal name="PathChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HDateEdit" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HDateEdit Properties">
+        <property name="CurrentDate" />
+        <property name="CustomFormat" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HDateEdit Signals">
+        <signal name="DateChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HSimpleList" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+    <itemgroups>
+      <itemgroup label="HSimpleList Properties">
+        <property name="SelectedIndex" />
+        <property name="ItemHeight" />
+        <property name="Text" />
+        <property name="OwnerDraw" />
+        <property name="IsEditable" />
+        <property name="IsDragAndDropEnable" />
+        <property name="IsCheckBoxList" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HSimpleList Signals">
+        <signal name="SelectedIndexChanged" />
+        <signal name="DrawItem" />
+        <signal name="MeasureItem" />
+        <signal name="ItemCheck" />
+        <signal name="ItemRightClick" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HRegExEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HRegExEntry Properties">
+        <property name="Text" />
+        <property name="RegularExpression" />
+        <property name="OkMessage" />
+        <property name="ErrorMessage" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HRegExEntry Signals">
+        <signal name="Changed" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HImageCheckBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HImageCheckBox Properties">
+        <property name="Checked" />
+        <property name="Text" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HImageCheckBox Signals">
+        <signal name="CheckedStateChanged" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HIpEntry" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HIpEntry Properties">
+        <property name="Text" />
+        <property name="ErrorMessage" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.HLabel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Label">
+    <itemgroups>
+      <itemgroup label="HLabel Properties">
+        <property name="TextOverwritesIcon" />
+        <property name="HorizontalLine" />
+        <property name="TextInSelectionRectangle" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.HTable" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+    <itemgroups />
+    <signals />
+  </object>
+  <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="HFontPicker Properties">
+        <property name="Font" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HFontPicker Signals">
+        <signal name="FontChange" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HTreeView" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
+    <itemgroups>
+      <itemgroup label="HTreeView Properties">
+        <property name="OwnerDraw" />
+        <property name="ItemHeight" />
+        <property name="NodeIconVisible" />
+        <property name="IsCheckBoxTree" />
+        <property name="IsDragAndDropEnable" />
+        <property name="Editable" />
+      </itemgroup>
+    </itemgroups>
+    <signals>
+      <itemgroup label="HTreeView Signals">
+        <signal name="NodeExpanded" />
+        <signal name="NodeCollapsed" />
+        <signal name="BeforeNodeCollapse" />
+        <signal name="BeforeNodeExpand" />
+        <signal name="NodeEdited" />
+        <signal name="DrawItem" />
+        <signal name="MeasureItem" />
+        <signal name="NodeRightClick" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.ColorPanel" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
+    <itemgroups />
+    <signals>
+      <itemgroup label="ColorPanel Signals">
+        <signal name="Scroll" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.AnalogClock" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
+    <itemgroups>
+      <itemgroup label="AnalogClock Properties">
+        <property name="Datetime" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="HollyLibrary.VerticalColorSlider" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.DrawingArea" internal="true">
+    <itemgroups />
+    <signals>
+      <itemgroup label="VerticalColorSlider Signals">
+        <signal name="Scroll" />
+      </itemgroup>
+    </signals>
+  </object>
+  <object type="HollyLibrary.HBaseComboBox" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin" internal="true">
+    <itemgroups />
+    <signals />
+  </object>
 </objects>

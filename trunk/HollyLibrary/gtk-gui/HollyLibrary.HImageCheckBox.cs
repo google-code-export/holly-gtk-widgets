@@ -47,8 +47,8 @@ namespace HollyLibrary {
             this.LblText = new HollyLibrary.HLabel();
             this.LblText.Name = "LblText";
             this.LblText.LabelProp = "hlabel1";
-            this.LblText.HorizontalLine = false;
             this.LblText.TextOverwritesIcon = false;
+            this.LblText.HorizontalLine = false;
             this.LblText.TextInSelectionRectangle = false;
             this.hbox1.Add(this.LblText);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.hbox1[this.LblText]));

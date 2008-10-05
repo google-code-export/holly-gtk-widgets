@@ -42,9 +42,9 @@ namespace HollyLibrary {
             this.TvFonts.SelectedIndex = 0;
             this.TvFonts.ItemHeight = 0;
             this.TvFonts.OwnerDraw = true;
-            this.TvFonts.IsCheckBoxList = false;
             this.TvFonts.IsEditable = false;
             this.TvFonts.IsDragAndDropEnable = false;
+            this.TvFonts.IsCheckBoxList = false;
             this.GtkScrolledWindow.Add(this.TvFonts);
             this.vbox1.Add(this.GtkScrolledWindow);
             Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));

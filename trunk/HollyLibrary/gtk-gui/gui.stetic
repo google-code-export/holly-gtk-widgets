@@ -2,7 +2,7 @@
 <stetic-interface>
   <configuration>
     <images-root-path>..</images-root-path>
-    <target-gtk-version>2.10.3</target-gtk-version>
+    <target-gtk-version>2.12.1</target-gtk-version>
   </configuration>
   <import>
     <widget-library name="../bin/Debug/HollyLibrary.dll" internal="true" />
@@ -240,9 +240,9 @@
                 <property name="SelectedIndex">0</property>
                 <property name="ItemHeight">0</property>
                 <property name="OwnerDraw">True</property>
-                <property name="IsCheckBoxList">False</property>
                 <property name="IsEditable">False</property>
                 <property name="IsDragAndDropEnable">False</property>
+                <property name="IsCheckBoxList">False</property>
                 <signal name="RowActivated" handler="OnTvFontsRowActivated" />
                 <signal name="ButtonPressEvent" handler="OnTvFontsButtonPressEvent" />
                 <signal name="DrawItem" handler="OnTvFontsDrawItem" />
@@ -350,9 +350,9 @@
             <property name="SelectedIndex">0</property>
             <property name="ItemHeight">20</property>
             <property name="OwnerDraw">False</property>
-            <property name="IsCheckBoxList">False</property>
             <property name="IsEditable">False</property>
             <property name="IsDragAndDropEnable">False</property>
+            <property name="IsCheckBoxList">False</property>
             <signal name="RowActivated" handler="OnTvListRowActivated" />
           </widget>
         </child>
@@ -1105,6 +1105,7 @@
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="Label" translatable="yes">R:</property>
+                    <property name="Active">True</property>
                     <property name="DrawIndicator">True</property>
                     <property name="HasLabel">True</property>
                     <property name="UseUnderline">True</property>
@@ -1775,8 +1776,8 @@
               <widget class="HollyLibrary.HLabel" id="LblText">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">hlabel1</property>
-                <property name="HorizontalLine">False</property>
                 <property name="TextOverwritesIcon">False</property>
+                <property name="HorizontalLine">False</property>
                 <property name="TextInSelectionRectangle">False</property>
               </widget>
               <packing>
