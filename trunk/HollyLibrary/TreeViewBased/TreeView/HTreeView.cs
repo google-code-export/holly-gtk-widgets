@@ -325,9 +325,10 @@ namespace HollyLibrary
 				
 				args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
 				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
-					
 				
 			}
+			//TODO: this is a workaround for the ugly xcb_lock.c:77: _XGetXCBBuffer: Assertion `((int) ((xcb_req) - (dpy->request)) >= 0)' failed.
+			System.Threading.Thread.Sleep(5);
 		}
 		
 		

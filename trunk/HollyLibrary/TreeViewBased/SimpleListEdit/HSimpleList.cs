@@ -190,10 +190,12 @@ namespace HollyLibrary
 				
 				Brush b          = new SolidBrush( c );
 				//set quality to HighSpeed
-				args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
+				//args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
 				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
-				args.Graphics.Dispose();
+				
 			}
+			//TODO: this is a workaround for the ugly xcb_lock.c:77: _XGetXCBBuffer: Assertion `((int) ((xcb_req) - (dpy->request)) >= 0)' failed.
+			System.Threading.Thread.Sleep(5);
 		}
 		
 		public bool IsSelected( int index )
