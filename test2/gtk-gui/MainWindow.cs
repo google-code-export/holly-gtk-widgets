@@ -14,13 +14,11 @@ public partial class MainWindow {
     
     private Gtk.VBox vbox1;
     
-    private HollyLibrary.HComboFolder hcombofolder2;
+    private Gtk.Button button1;
     
-    private HollyLibrary.HLabel hlabel1;
+    private HollyLibrary.GtkControl gtkcontrol1;
     
-    private HollyLibrary.HDateEdit hdateedit2;
-    
-    private HollyLibrary.HFontPicker hfontpicker1;
+    private Gtk.Button button2;
     
     protected virtual void Build() {
         Stetic.Gui.Initialize(this);
@@ -33,46 +31,33 @@ public partial class MainWindow {
         this.vbox1.Name = "vbox1";
         this.vbox1.Spacing = 6;
         // Container child vbox1.Gtk.Box+BoxChild
-        this.hcombofolder2 = new HollyLibrary.HComboFolder();
-        this.hcombofolder2.Events = ((Gdk.EventMask)(256));
-        this.hcombofolder2.Name = "hcombofolder2";
-        this.hcombofolder2.DropDownHeight = 0;
-        this.vbox1.Add(this.hcombofolder2);
-        Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.hcombofolder2]));
+        this.button1 = new Gtk.Button();
+        this.button1.CanFocus = true;
+        this.button1.Name = "button1";
+        this.button1.UseUnderline = true;
+        this.button1.Label = "button1";
+        this.vbox1.Add(this.button1);
+        Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox1[this.button1]));
         w1.Position = 0;
         w1.Expand = false;
         w1.Fill = false;
         // Container child vbox1.Gtk.Box+BoxChild
-        this.hlabel1 = new HollyLibrary.HLabel();
-        this.hlabel1.Name = "hlabel1";
-        this.hlabel1.LabelProp = "hlabel1";
-        this.hlabel1.TextOverwritesIcon = false;
-        this.hlabel1.HorizontalLine = false;
-        this.hlabel1.TextInSelectionRectangle = false;
-        this.vbox1.Add(this.hlabel1);
-        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.hlabel1]));
+        this.gtkcontrol1 = new HollyLibrary.GtkControl();
+        this.gtkcontrol1.Name = "gtkcontrol1";
+        this.vbox1.Add(this.gtkcontrol1);
+        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.gtkcontrol1]));
         w2.Position = 1;
-        w2.Expand = false;
-        w2.Fill = false;
         // Container child vbox1.Gtk.Box+BoxChild
-        this.hdateedit2 = new HollyLibrary.HDateEdit();
-        this.hdateedit2.Events = ((Gdk.EventMask)(256));
-        this.hdateedit2.Name = "hdateedit2";
-        this.hdateedit2.CurrentDate = new System.DateTime(0);
-        this.vbox1.Add(this.hdateedit2);
-        Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.hdateedit2]));
+        this.button2 = new Gtk.Button();
+        this.button2.CanFocus = true;
+        this.button2.Name = "button2";
+        this.button2.UseUnderline = true;
+        this.button2.Label = "button2";
+        this.vbox1.Add(this.button2);
+        Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.button2]));
         w3.Position = 2;
         w3.Expand = false;
         w3.Fill = false;
-        // Container child vbox1.Gtk.Box+BoxChild
-        this.hfontpicker1 = new HollyLibrary.HFontPicker();
-        this.hfontpicker1.Events = ((Gdk.EventMask)(256));
-        this.hfontpicker1.Name = "hfontpicker1";
-        this.vbox1.Add(this.hfontpicker1);
-        Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vbox1[this.hfontpicker1]));
-        w4.Position = 3;
-        w4.Expand = false;
-        w4.Fill = false;
         this.Add(this.vbox1);
         if ((this.Child != null)) {
             this.Child.ShowAll();
@@ -81,5 +66,14 @@ public partial class MainWindow {
         this.DefaultHeight = 400;
         this.Show();
         this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
+        this.gtkcontrol1.KeyUp += new HollyLibrary.GcKeyUp(this.OnGtkcontrol1KeyUp);
+        this.gtkcontrol1.KeyDown += new HollyLibrary.GcKeyDown(this.OnGtkcontrol1KeyDown);
+        this.gtkcontrol1.KeyPressed += new HollyLibrary.GcKeyPressed(this.OnGtkcontrol1KeyPressed);
+        this.gtkcontrol1.MouseMove += new HollyLibrary.GcMouseMove(this.OnGtkcontrol1MouseMove);
+        this.gtkcontrol1.MouseUp += new HollyLibrary.GcMouseUp(this.OnGtkcontrol1MouseUp);
+        this.gtkcontrol1.MouseDown += new HollyLibrary.GcMouseDown(this.OnGtkcontrol1MouseDown);
+        this.gtkcontrol1.MouseClick += new HollyLibrary.GcMouseClick(this.OnGtkcontrol1MouseClick);
+        this.gtkcontrol1.MouseDoubleClick += new HollyLibrary.GcMouseDoubleClick(this.OnGtkcontrol1MouseDoubleClick);
+        this.gtkcontrol1.MouseWheel += new HollyLibrary.GcMouseWheel(this.OnGtkcontrol1MouseWheel);
     }
 }
