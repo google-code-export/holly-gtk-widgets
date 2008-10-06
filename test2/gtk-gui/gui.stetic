@@ -32,6 +32,19 @@
           </packing>
         </child>
         <child>
+          <widget class="HollyLibrary.HImageCheckBox" id="himagecheckbox1">
+            <property name="MemberName" />
+            <property name="Events">ButtonPressMask</property>
+            <property name="Checked">False</property>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="HollyLibrary.GtkControl" id="gtkcontrol1">
             <property name="MemberName" />
             <signal name="KeyUp" handler="OnGtkcontrol1KeyUp" />
@@ -45,7 +58,7 @@
             <signal name="MouseWheel" handler="OnGtkcontrol1MouseWheel" />
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">False</property>
           </packing>
         </child>
@@ -58,7 +71,7 @@
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>

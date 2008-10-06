@@ -47,6 +47,7 @@ namespace HollyLibrary
 			this.WidgetFlags       |= WidgetFlags.CanFocus;
 			this.AppPaintable       = true;
 			
+			
 		}
 		
 #region events

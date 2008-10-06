@@ -187,7 +187,7 @@ namespace HollyLibrary
 				{
 					Gdk.GC gc     = this.Style.TextGC( Gtk.StateType.Insensitive );
 					gc.SetLineAttributes( 1, Gdk.LineStyle.OnOffDash, Gdk.CapStyle.NotLast, Gdk.JoinStyle.Round);
-					evnt.Window.DrawRectangle ( gc, false, (int)x, (int)y, (int)ts.Width, (int)ts.Height );
+					evnt.Window.DrawRectangle ( gc, false, (int)x, (int)y+1, (int)ts.Width, (int)ts.Height );
 				}
 			}
 			//draw line if horizonatlLine is true
