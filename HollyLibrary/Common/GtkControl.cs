@@ -33,6 +33,7 @@ namespace HollyLibrary
 		public event EventHandler              LostFocus;
 		//
 		bool suppress_key_press           = false;
+		//
 		Gdk.Pixbuf backgroundImage        = null;
 		ImageLayout backgroundImageLayout = ImageLayout.None;
 		ShadowType border                 = ShadowType.In;

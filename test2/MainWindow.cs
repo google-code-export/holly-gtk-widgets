@@ -88,8 +88,6 @@ public partial class MainWindow: Gtk.Window
 	{
 		HollyLibrary.GcMouseEventArgs a = args;
 		Console.WriteLine( "mouse wheel!" + a.Delta );
-		gtkcontrol1.BackgroundImageLayout = HollyLibrary.ImageLayout.Zoom;
-		gtkcontrol1.BackgroundImage = new Gdk.Pixbuf("/home/dantes/gtk-widgets-mono.jpg");
 	}
 	
 
