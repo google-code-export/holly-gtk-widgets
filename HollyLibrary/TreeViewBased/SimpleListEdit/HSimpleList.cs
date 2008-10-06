@@ -183,7 +183,6 @@ namespace HollyLibrary
 				l.GetPixelSize( out width, out height );
 				
 				args.Drawable.DrawLayout( this.Style.TextGC( this.State ) , args.CellArea.X, args.CellArea.Y + (height/2), l );
-				
 			}
 			
 		}
