@@ -408,6 +408,14 @@ namespace HollyLibrary
 		#endregion
 #endregion
 		
+		public static Gdk.Color GdkTransparentColor
+		{
+			get
+			{
+				return GraphUtil.gdkColorFromWinForms( System.Drawing.Color.Transparent );
+			}
+		}
+		
 		public static string Color2Hex(Color rgb)
 		{
 			string red = Convert.ToString(rgb.R, 16);

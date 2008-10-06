@@ -6,13 +6,13 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Gtk;
+using System.ComponentModel;
 
-namespace HollyLibrary
+namespace HollyLibrary.Table
 {
 	
-	public class HTable : TreeView
+	
+	public class HTable : Gtk.Bin
 	{
 	}
 }

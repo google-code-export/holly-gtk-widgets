@@ -308,28 +308,18 @@ namespace HollyLibrary
 			{				
 				
 				String text      = getNodeFromIter( args.Iter ).Text;
-				//take font from style
-				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
-				// take color from style
-				Gdk.Color gcolor = Style.Foreground( StateType.Normal );
 				
-				Color c          = Color.Black;
-				try
-				{
-					Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
-				}
-				catch{}
+				Pango.Layout l = new Pango.Layout( this.PangoContext );
+				l.SetText( text );
+				int width, height;
+				l.GetPixelSize( out width, out height );
 				
-				Brush b          = new SolidBrush( c );
-				//set quality to HighSpeed
+				args.Drawable.DrawLayout( this.Style.TextGC( this.State ) , args.CellArea.X, args.CellArea.Y + (height/2), l );
 				
-				args.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
-				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
 				
 			}
-			//TODO: this is a workaround for the ugly xcb_lock.c:77: _XGetXCBBuffer: Assertion `((int) ((xcb_req) - (dpy->request)) >= 0)' failed.
-			System.Threading.Thread.Sleep(5);
 		}
+		
 		
 		
 #region properties
