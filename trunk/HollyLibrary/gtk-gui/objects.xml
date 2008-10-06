@@ -131,10 +131,6 @@
     </itemgroups>
     <signals />
   </object>
-  <object type="HollyLibrary.HTable" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.TreeView">
-    <itemgroups />
-    <signals />
-  </object>
   <object type="HollyLibrary.HFontPicker" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
       <itemgroup label="HFontPicker Properties">

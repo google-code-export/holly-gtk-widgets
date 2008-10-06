@@ -176,26 +176,16 @@ namespace HollyLibrary
 			else
 			{				
 				String text      = Items[ItemIndex].ToString();
-				//take font from style
-				Font font        = new Font( Style.FontDesc.Family , Style.FontDesc.Size / 1000 );
-				// take color from style
-				Gdk.Color gcolor = Style.Foreground( StateType.Normal );
+				//draw text
+				Pango.Layout l = new Pango.Layout( this.PangoContext );
+				l.SetText( text );
+				int width, height;
+				l.GetPixelSize( out width, out height );
 				
-				Color c          = Color.Black;
-				try
-				{
-					Color.FromArgb( gcolor.Red, gcolor.Green, gcolor.Blue );
-				}
-				catch{}
-				
-				Brush b          = new SolidBrush( c );
-				//set quality to HighSpeed
-				//args.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
-				args.Graphics.DrawString( text, font, b, args.CellArea.X, args.CellArea.Y );
+				args.Drawable.DrawLayout( this.Style.TextGC( this.State ) , args.CellArea.X, args.CellArea.Y + (height/2), l );
 				
 			}
-			//TODO: this is a workaround for the ugly xcb_lock.c:77: _XGetXCBBuffer: Assertion `((int) ((xcb_req) - (dpy->request)) >= 0)' failed.
-			System.Threading.Thread.Sleep(5);
+			
 		}
 		
 		public bool IsSelected( int index )

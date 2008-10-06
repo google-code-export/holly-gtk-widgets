@@ -111,7 +111,8 @@
     <File name="TreeViewBased/Table/Models" subtype="Directory" buildaction="Compile" />
     <File name="TreeViewBased/Table/Events" subtype="Directory" buildaction="Compile" />
     <File name="TreeViewBased/Table/Sorting" subtype="Directory" buildaction="Compile" />
-    <File name="TreeViewBased/Table/Models/Design" subtype="Directory" buildaction="Compile" />
+    <File name="Common" subtype="Directory" buildaction="Compile" />
+    <File name="Common/GtkControl.cs" subtype="Code" buildaction="Compile" />
   </Contents>
   <References>
     <ProjectReference type="Gac" localcopy="True" refto="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -124,7 +125,7 @@
     <ProjectReference type="Gac" localcopy="True" refto="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <ProjectReference type="Gac" localcopy="True" refto="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
   </References>
-  <GtkDesignInfo generateGettext="False" isWidgetLibrary="True" gtkVersion="2.12.1">
+  <GtkDesignInfo generateGettext="False" isWidgetLibrary="True" gtkVersion="2.12.4">
     <ExportedWidgets>
       <Widget>HollyLibrary.HSimpleComboBox</Widget>
       <Widget>HollyLibrary.HColorPickerWidget</Widget>
