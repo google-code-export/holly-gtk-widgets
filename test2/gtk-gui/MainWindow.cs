@@ -16,8 +16,6 @@ public partial class MainWindow {
     
     private Gtk.Button button1;
     
-    private HollyLibrary.HImageCheckBox himagecheckbox1;
-    
     private HollyLibrary.GtkControl gtkcontrol1;
     
     private Gtk.Button button2;
@@ -44,21 +42,11 @@ public partial class MainWindow {
         w1.Expand = false;
         w1.Fill = false;
         // Container child vbox1.Gtk.Box+BoxChild
-        this.himagecheckbox1 = new HollyLibrary.HImageCheckBox();
-        this.himagecheckbox1.Events = ((Gdk.EventMask)(256));
-        this.himagecheckbox1.Name = "himagecheckbox1";
-        this.himagecheckbox1.Checked = false;
-        this.vbox1.Add(this.himagecheckbox1);
-        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.himagecheckbox1]));
-        w2.Position = 1;
-        w2.Expand = false;
-        w2.Fill = false;
-        // Container child vbox1.Gtk.Box+BoxChild
         this.gtkcontrol1 = new HollyLibrary.GtkControl();
         this.gtkcontrol1.Name = "gtkcontrol1";
         this.vbox1.Add(this.gtkcontrol1);
-        Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.gtkcontrol1]));
-        w3.Position = 2;
+        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox1[this.gtkcontrol1]));
+        w2.Position = 1;
         // Container child vbox1.Gtk.Box+BoxChild
         this.button2 = new Gtk.Button();
         this.button2.CanFocus = true;
@@ -66,10 +54,10 @@ public partial class MainWindow {
         this.button2.UseUnderline = true;
         this.button2.Label = "button2";
         this.vbox1.Add(this.button2);
-        Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vbox1[this.button2]));
-        w4.Position = 3;
-        w4.Expand = false;
-        w4.Fill = false;
+        Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.button2]));
+        w3.Position = 2;
+        w3.Expand = false;
+        w3.Fill = false;
         this.Add(this.vbox1);
         if ((this.Child != null)) {
             this.Child.ShowAll();
