@@ -195,4 +195,22 @@
     <itemgroups />
     <signals />
   </object>
+  <object type="HollyLibrary.GtkControl" palette-category="HollyLibrary" allow-children="false" base-type="Gtk.EventBox">
+    <itemgroups />
+    <signals>
+      <itemgroup label="GtkControl Signals">
+        <signal name="KeyUp" />
+        <signal name="KeyDown" />
+        <signal name="KeyPressed" />
+        <signal name="MouseMove" />
+        <signal name="MouseUp" />
+        <signal name="MouseDown" />
+        <signal name="MouseClick" />
+        <signal name="MouseDoubleClick" />
+        <signal name="MouseWheel" />
+        <signal name="GotFocus" />
+        <signal name="LostFocus" />
+      </itemgroup>
+    </signals>
+  </object>
 </objects>
