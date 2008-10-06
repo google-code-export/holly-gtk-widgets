@@ -46,8 +46,6 @@ namespace HollyLibrary
 				       	   EventMask.PointerMotionHintMask;
 			this.WidgetFlags       |= WidgetFlags.CanFocus;
 			this.AppPaintable       = true;
-			
-			
 		}
 		
 #region events
