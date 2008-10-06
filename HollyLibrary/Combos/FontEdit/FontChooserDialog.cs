@@ -175,13 +175,16 @@ namespace HollyLibrary
 
 		protected virtual void OnTvFontsDrawItem (object sender, HollyLibrary.DrawItemEventArgs args)
 		{
-			Graphics g           = args.Graphics;
-			g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+			//draw each font
 			String font_name     = TvFonts.Items[ args.ItemIndex ].ToString();
-			Font font            = new System.Drawing.Font( font_name, 10F );
-			Color color          = System.Drawing.Color.Black;
-			SolidBrush b         = new System.Drawing.SolidBrush( color );
-			g.DrawString( font_name, font, b, args.CellArea.X, args.CellArea.Y );
+				
+			Pango.Layout l = new Pango.Layout( this.PangoContext );
+			l.SetText( font_name );
+			l.FontDescription = Pango.FontDescription.FromString( font_name );
+			int width, height;
+			l.GetPixelSize( out width, out height );
+			
+			args.Drawable.DrawLayout( this.Style.TextGC( this.State ) , args.CellArea.X, args.CellArea.Y + (height/2), l );
 		}
 
 		protected virtual void OnTvFontsMeasureItem (object sender, HollyLibrary.MeasureItemEventArgs args)
