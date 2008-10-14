@@ -44,11 +44,27 @@ namespace HollyLibrary
 				           EventMask.ScrollMask      | EventMask.EnterNotifyMask   | EventMask.ExposureMask      |
 				       	   EventMask.ButtonPressMask | EventMask.PointerMotionMask | EventMask.ButtonReleaseMask |
 				       	   EventMask.PointerMotionHintMask;
+			this.SetFlag( Gtk.WidgetFlags.AppPaintable );
+			this.SetFlag( Gtk.WidgetFlags.Sensitive );
 			this.WidgetFlags       |= WidgetFlags.CanFocus;
 			this.AppPaintable       = true;
+
 		}
 		
 #region events
+
+		protected override bool OnWidgetEvent(Event evnt)
+		{
+			if(evnt.Window.Equals (this.GdkWindow))
+			{
+				if(evnt.Type != Gdk.EventType.Expose)
+				{
+
+					if(Child != null) Child.ProcessEvent (evnt);
+				}
+			}
+			return base.OnWidgetEvent (evnt);
+		}
 		
 		//paint me event
 		protected override bool OnExposeEvent (EventExpose evnt)
@@ -120,14 +136,19 @@ namespace HollyLibrary
 				}
 				
 			}
-			                   
+			base.OnExposeEvent (evnt);                   
+			//draw border
+			DrawBorder();
+			return true;
+		}
+		
+
+		public void DrawBorder()
+		{
 			//draw border
 			Gdk.Rectangle r = new Gdk.Rectangle( 0, 0, Allocation.Width, Allocation.Height );
             Style.PaintShadow(Style, GdkWindow, State, Border, r, this, "frame", 0, 0, Allocation.Width, Allocation.Height );
-			return base.OnExposeEvent (evnt);
 		}
-		
-		
 
 		
 		//LOST FOCUS

@@ -8,7 +8,6 @@ using Gtk;
 namespace HollyLibrary
 {
 	
-	
 	public interface ICustomCellTreeView
 	{
 		
